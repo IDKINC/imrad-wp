@@ -6,7 +6,9 @@ var gulp = require('gulp'),
     sourcemaps = require('gulp-sourcemaps'),
     browserSync = require('browser-sync'),
     uglify = require('gulp-uglify'),
-    concat = require('gulp-concat');
+    concat = require('gulp-concat'),
+    fs = require('fs');
+
 
 
 // ----- Package.Json -----
@@ -80,3 +82,34 @@ gulp.task('serve', gulp.parallel(function() {
 }));
 
 gulp.task('default', gulp.series('sass', 'serve'));
+
+gulp.task("components", gulp.series(function(done) {
+
+    var watcher = gulp.watch('components/**/*.php', gulp.parallel('sass'));
+    watcher.on('add', function(path, stats) {
+        console.log('File ' + path + ' was added');
+        fileName = path.replace(/^.*[\\\/]/, '').replace(/\.[^/.]+$/, "");
+        console.log(fileName);
+        filepath = 'scss/components/_' + fileName + '.scss';
+        fs.access(filepath, (err) => {
+            if (err) {
+                // file/path is not visible to the calling process
+                console.log(err.message);
+                console.log(err.code);
+
+                fs.writeFile(filepath, "//" + fileName + " component page", (err) => {
+                    if (err) throw err;
+
+                    console.log("The file was succesfully saved!");
+                });
+
+            }
+        });
+
+    });
+
+    watcher.on('unlink', function(path) {
+        console.log('File ' + path + ' was removed');
+    });
+
+}));
