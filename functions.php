@@ -1,5 +1,7 @@
 <?php 
 
+include __DIR__ . "/includes/first_post_date.php";
+include __DIR__ . "/includes/inc.input.php";
 
 // wp_enqueue_script("theme", __DIR__."/theme.js", array("jquery")); 
 

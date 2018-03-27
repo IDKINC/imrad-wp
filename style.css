@@ -7,7 +7,447 @@
  * Author: 
  * Author URI: 
  * License: ISC
- *  *//* line 1, assets/scss/style.scss */
+ *  *//* line 1, assets/scss/_reset.scss */
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+/* line 94, assets/scss/_reset.scss */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block; }
+
+/* line 108, assets/scss/_reset.scss */
+body {
+  line-height: 1; }
+
+/* line 112, assets/scss/_reset.scss */
+ol,
+ul {
+  list-style: none; }
+
+/* line 117, assets/scss/_reset.scss */
+blockquote,
+q {
+  quotes: none; }
+
+/* line 123, assets/scss/_reset.scss */
+blockquote:before, blockquote:after {
+  content: '';
+  content: none; }
+
+/* line 131, assets/scss/_reset.scss */
+q:before, q:after {
+  content: '';
+  content: none; }
+
+/* line 138, assets/scss/_reset.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+/* line 143, assets/scss/_reset.scss */
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; }
+
+/*
+ * Variables
+ */
+/*------------------------------------*               # Colors
+\*------------------------------------*/
+/*------------------------------------*    # Simple Typography Settings
+\*------------------------------------*/
+/*------------------------------------*    # Type
+\*------------------------------------*/
+/* line 6, assets/scss/_type.scss */
+*,
+html,
+body {
+  font-size: 16px;
+  font-family: "Ubuntu", serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%; }
+
+/* line 19, assets/scss/_type.scss */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 36px 0 24px 0;
+  color: #f44336;
+  line-height: 1.25em;
+  font-weight: 400; }
+
+/* line 31, assets/scss/_type.scss */
+h1 {
+  font-size: 2.5rem; }
+
+/* line 35, assets/scss/_type.scss */
+h2 {
+  font-size: 1.92308rem; }
+
+/* line 39, assets/scss/_type.scss */
+h3 {
+  font-size: 1.66667rem; }
+
+/* line 43, assets/scss/_type.scss */
+h4 {
+  font-size: 1.47059rem; }
+
+/* line 47, assets/scss/_type.scss */
+h5 {
+  font-size: 1.38889rem; }
+
+/* line 51, assets/scss/_type.scss */
+h6 {
+  font-size: 1.25rem; }
+
+/* line 58, assets/scss/_type.scss */
+p {
+  margin-top: 20px;
+  font-size: 1.0625rem;
+  line-height: 1.5em;
+  color: #505050; }
+  /* line 64, assets/scss/_type.scss */
+  p:first-of-type {
+    margin-top: 0; }
+
+/* line 72, assets/scss/_type.scss */
+a {
+  color: #2196F3;
+  text-decoration: none;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease; }
+  /* line 77, assets/scss/_type.scss */
+  a:hover {
+    color: #0c7cd5; }
+
+/* line 84, assets/scss/_type.scss */
+ul,
+ol {
+  margin: 20px 0 0 20px; }
+  /* line 88, assets/scss/_type.scss */
+  ul li,
+  ol li {
+    margin-top: 10px;
+    line-height: 1.5em;
+    color: #505050; }
+  /* line 94, assets/scss/_type.scss */
+  ul ul,
+  ul ol,
+  ol ul,
+  ol ol {
+    margin-top: 0; }
+
+/* line 102, assets/scss/_type.scss */
+ul li {
+  list-style: disc; }
+
+/* line 108, assets/scss/_type.scss */
+ul ul li {
+  list-style: circle; }
+
+/* line 116, assets/scss/_type.scss */
+ol li {
+  list-style: decimal; }
+
+/* line 123, assets/scss/_type.scss */
+hr {
+  height: 1px;
+  margin: 30px 0;
+  border: none;
+  background-color: #DADADA; }
+
+/* line 132, assets/scss/_type.scss */
+blockquote {
+  margin: 30px 0;
+  font-size: 1.4375rem;
+  line-height: 1.5em;
+  color: #505050;
+  text-align: center;
+  font-style: italic; }
+
+/* line 143, assets/scss/_type.scss */
+table {
+  width: 100%;
+  margin: 30px 0;
+  border-collapse: collapse; }
+
+/* line 149, assets/scss/_type.scss */
+table,
+td,
+th {
+  border: 1px solid #DADADA;
+  text-align: left; }
+
+/* line 156, assets/scss/_type.scss */
+th {
+  font-weight: 800; }
+
+/* line 160, assets/scss/_type.scss */
+th,
+td {
+  padding: 15px; }
+
+/* line 167, assets/scss/_type.scss */
+figure {
+  margin: 30px 0; }
+  /* line 170, assets/scss/_type.scss */
+  figure img {
+    margin: 0; }
+
+/* line 175, assets/scss/_type.scss */
+figcaption {
+  margin-top: 10px;
+  color: #6a6a6a;
+  font-size: 16px; }
+
+/* line 183, assets/scss/_type.scss */
+pre {
+  display: block;
+  margin: 0 0 40px 0;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border: 1px solid #DADADA;
+  overflow: auto;
+  border-radius: 3px; }
+  /* line 194, assets/scss/_type.scss */
+  pre code {
+    position: static;
+    padding: 0;
+    border: none;
+    line-height: 1.5em; }
+
+/* line 202, assets/scss/_type.scss */
+code {
+  position: relative;
+  top: -0.2em;
+  padding: 3px;
+  font-family: Courier New, Courier, monospace;
+  font-size: 0.75893rem;
+  color: #747474;
+  line-height: 1em;
+  pointer-events: none;
+  border: 1px solid #DADADA;
+  border-radius: 3px; }
+
+/* line 220, assets/scss/_type.scss */
+em,
+i,
+.italic {
+  font-style: italic; }
+
+/* line 226, assets/scss/_type.scss */
+strong,
+b,
+.bold {
+  font-weight: 800; }
+
+/* line 232, assets/scss/_type.scss */
+img {
+  display: block;
+  max-width: 100%;
+  margin: 30px 0; }
+
+/* line 1, assets/scss/components/_formField.scss */
+.group {
+  position: relative; }
+
+/* line 5, assets/scss/components/_formField.scss */
+.material_input {
+  /*height: 2em;*/
+  display: block;
+  width: 100%;
+  margin: 1em 0 2em; }
+  /* line 11, assets/scss/components/_formField.scss */
+  .material_input input, .material_input textarea, .material_input input[type="submit"] {
+    border: none;
+    border-bottom: 2px solid;
+    line-height: 1.5em;
+    height: 1.5em;
+    width: 100%;
+    padding: 0.25em;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease; }
+    /* line 21, assets/scss/components/_formField.scss */
+    .material_input input::-webkit-input-placeholder, .material_input textarea::-webkit-input-placeholder, .material_input input[type="submit"]::-webkit-input-placeholder {
+      -webkit-transition: all 0.2s ease;
+      transition: all 0.2s ease;
+      padding-left: 0.25em;
+      opacity: 0; }
+    .material_input input:-ms-input-placeholder, .material_input textarea:-ms-input-placeholder, .material_input input[type="submit"]:-ms-input-placeholder {
+      -webkit-transition: all 0.2s ease;
+      transition: all 0.2s ease;
+      padding-left: 0.25em;
+      opacity: 0; }
+    .material_input input::-ms-input-placeholder, .material_input textarea::-ms-input-placeholder, .material_input input[type="submit"]::-ms-input-placeholder {
+      -webkit-transition: all 0.2s ease;
+      transition: all 0.2s ease;
+      padding-left: 0.25em;
+      opacity: 0; }
+    .material_input input::placeholder, .material_input textarea::placeholder, .material_input input[type="submit"]::placeholder {
+      -webkit-transition: all 0.2s ease;
+      transition: all 0.2s ease;
+      padding-left: 0.25em;
+      opacity: 0; }
+    /* line 28, assets/scss/components/_formField.scss */
+    .material_input input:focus, .material_input textarea:focus, .material_input input:valid, .material_input textarea:valid {
+      outline: none;
+      border-bottom: 2px solid #2196F3; }
+      /* line 32, assets/scss/components/_formField.scss */
+      .material_input input:focus::-webkit-input-placeholder, .material_input textarea:focus::-webkit-input-placeholder, .material_input input:valid::-webkit-input-placeholder, .material_input textarea:valid::-webkit-input-placeholder {
+        opacity: 0.5;
+        -webkit-transition: all 0.3s ease 0.3s;
+        transition: all 0.3s ease 0.3s; }
+      .material_input input:focus:-ms-input-placeholder, .material_input textarea:focus:-ms-input-placeholder, .material_input input:valid:-ms-input-placeholder, .material_input textarea:valid:-ms-input-placeholder {
+        opacity: 0.5;
+        -webkit-transition: all 0.3s ease 0.3s;
+        transition: all 0.3s ease 0.3s; }
+      .material_input input:focus::-ms-input-placeholder, .material_input textarea:focus::-ms-input-placeholder, .material_input input:valid::-ms-input-placeholder, .material_input textarea:valid::-ms-input-placeholder {
+        opacity: 0.5;
+        -webkit-transition: all 0.3s ease 0.3s;
+        transition: all 0.3s ease 0.3s; }
+      .material_input input:focus::placeholder, .material_input textarea:focus::placeholder, .material_input input:valid::placeholder, .material_input textarea:valid::placeholder {
+        opacity: 0.5;
+        -webkit-transition: all 0.3s ease 0.3s;
+        transition: all 0.3s ease 0.3s; }
+      /* line 37, assets/scss/components/_formField.scss */
+      .material_input input:focus ~ label, .material_input textarea:focus ~ label, .material_input input:valid ~ label, .material_input textarea:valid ~ label {
+        top: 0;
+        -webkit-transform: translate(0, -110%);
+        transform: translate(0, -110%);
+        color: #2196F3;
+        font-size: 0.8em; }
+  /* line 46, assets/scss/components/_formField.scss */
+  .material_input textarea {
+    line-height: 1.5em;
+    height: 1.5em; }
+    /* line 52, assets/scss/components/_formField.scss */
+    .material_input textarea:focus, .material_input textarea:valid {
+      height: 5em; }
+  /* line 58, assets/scss/components/_formField.scss */
+  .material_input textarea[type="submit"], .material_input input[type="submit"] {
+    border: 0;
+    background: #2196F3;
+    color: #fff;
+    padding: 0.5em 0;
+    height: auto;
+    -webkit-transition: all 0.3s ease 0.3s;
+    transition: all 0.3s ease 0.3s; }
+    /* line 67, assets/scss/components/_formField.scss */
+    .material_input textarea[type="submit"]:hover, .material_input input[type="submit"]:hover {
+      background: #1597ff; }
+  /* line 72, assets/scss/components/_formField.scss */
+  .material_input label {
+    position: absolute;
+    left: 0.25em;
+    top: 50%;
+    -webkit-transform: translate(0, -50%);
+    transform: translate(0, -50%);
+    opacity: 0.5;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease; }
+
+/* line 11, assets/scss/style.scss */
 body {
   background: #fff; }
 

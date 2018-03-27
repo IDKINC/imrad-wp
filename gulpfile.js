@@ -19,7 +19,7 @@ var package = require('./package.json');
 
 var scss_path = './assets/scss/style.scss';
 var js_watch = './assets/js/*.js';
-var scss_watch = './assets/scss/*.scss';
+var scss_watch = './assets/scss/**/*.scss';
 var proxy = "localhost/blank2";
 
 // ----- CSS Banner -----

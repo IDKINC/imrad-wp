@@ -1,0 +1,80 @@
+.group {
+    position: relative;
+}
+
+.material_input {
+    /*height: 2em;*/
+    display: block;
+    width: 100%;
+    margin: 1em 0 2em;
+
+    input {
+        border: none;
+        border-bottom: 2px solid;
+        line-height: 1.5em;
+        height: 1.5em;
+        width: 100%;
+        padding: 0.25em;
+
+        @include transition(all .3s ease);
+
+        &::placeholder {
+            @include transition(all .2s ease);
+            padding-left: 0.25em;
+            opacity: 0;
+        }
+
+
+        &:focus,
+        &:valid {
+            outline: none;
+            border-bottom: 2px solid $accentColor;
+            &::placeholder {
+                opacity: 0.5;
+                @include transition(all .3s ease .3s);
+            }
+
+            &~label {
+                top: 0;
+                transform: translate(0, -110%);
+                color: $accentColor;
+                font-size: 0.8em;
+            }
+        }
+    }
+
+    textarea {
+        @extend input;
+        line-height: 1.5em;
+
+        height: 1.5em;
+
+        &:focus,
+        &:valid {
+            height: 5em;
+        }
+    }
+
+    input[type="submit"] {
+        @extend input;
+        border: 0;
+        background: $accentColor;
+        color: #fff;
+        padding: 0.5em 0;
+        height: auto;
+        @include transition(all .3s ease .3s);
+
+        &:hover {
+            background: saturate($accentColor, 30);
+        }
+    }
+
+    label {
+        position: absolute;
+        left: 0.25em;
+        top: 50%;
+        transform: translate(0, -50%);
+        opacity: 0.5;
+        @include transition(all .3s ease);
+    }
+}

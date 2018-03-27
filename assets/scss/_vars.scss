@@ -1,0 +1,52 @@
+/*
+ * Variables
+ */
+
+
+/*------------------------------------*\
+               # Colors
+\*------------------------------------*/
+
+$mainColor: #f44336;
+$accentColor: #2196F3;
+
+
+
+/*------------------------------------*\
+    # Simple Typography Settings
+\*------------------------------------*/
+
+// Font Family
+$font-family: 'Ubuntu',
+serif;
+
+// Base Font for HTML
+$base-font-size: 16px;
+
+// Paragraph Styles
+$paragraph-color: #505050;
+$paragraph-size: rem(17px);
+$paragraph-line-height: 1.5em;
+$paragraph-margin: 20px;
+
+// Header Styles
+$header-color: $mainColor;
+$header-size: rem(40px);
+$header-line-height: 1.25em;
+$header-margin: $paragraph-margin * 1.2;
+
+// Blockquote Styles
+$blockquote-color: #505050;
+$blockquote-size: rem(23px);
+$blockquote-line-height: 1.5em;
+$blockquote-margin: $paragraph-margin * 1.5;
+
+// Links
+$link-color: $accentColor;
+
+// hr
+$hr-margin: 30px;
+
+// Type Misc
+$font-weight-bold: 800;
+$border-color: #DADADA;
