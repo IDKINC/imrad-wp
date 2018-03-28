@@ -2,7 +2,7 @@
 
 class FormField {
 
-	private $type; 
+	private $type;
 	private $name; 
 
 
