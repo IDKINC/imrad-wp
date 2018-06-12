@@ -1,6 +1,6 @@
 {
   "name": "blank2",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Blank Wordpress Theme. Speed Up Development. Make Money.",
   "main": "gulpfile.js",
   "dependencies": {},
