@@ -3,17 +3,24 @@
   "version": "1.0.1",
   "description": "Blank Wordpress Theme. Speed Up Development. Make Money.",
   "main": "gulpfile.js",
-  "dependencies": {},
+  "dependencies": {
+    "gulp-connect": "^5.5.0"
+  },
   "devDependencies": {
     "browser-sync": "^2.23.6",
     "gulp": "github:gulpjs/gulp#4.0",
     "gulp-autoprefixer": "^5.0.0",
+    "gulp-bump": "^3.1.1",
     "gulp-concat": "^2.6.1",
-    "gulp-header": "^2.0.5",
+    "gulp-connect": "^5.2.0",
+    "gulp-git": "^2.7.0",
+    "gulp-header": "^1.8.9",
+    "gulp-rename": "^1.2.2",
     "gulp-sass": "^3.1.0",
     "gulp-sourcemaps": "^2.6.4",
     "gulp-uglify": "^3.0.0",
-    "gulp-util": "^3.0.8"
+    "gulp-util": "^3.0.8",
+    "gulp-zip": "^4.1.0"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
