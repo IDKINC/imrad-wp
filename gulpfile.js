@@ -95,7 +95,7 @@ var banner = {
 gulp.task('serve', gulp.parallel(function() {
 
     browserSync.init({
-        proxy: "localhost/blank"
+        proxy: "localhost/blank2"
     });
 }, function() {
 
