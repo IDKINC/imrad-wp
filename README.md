@@ -43,4 +43,4 @@ If you like this Blank Wordpress Theme and would like to by us a beer, We'd be f
 
 | Paypal | Bitcoin | Litecoin |
 |------------------------------------------------------------------------------------------------------------------|------------------------------------|------------------------------------|
-| [![](assets/img/btn_donate_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=3U4LLKF93P22J) | 1K5D3v1J36hQ3f25S3YYHVd9YpgKtUADfH | LSpqVw3gDwWgBcrBarX663TwZdGZrXfmQ7 |
+| [![](assets/img/btn_donate_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=SSP65VFE3ALN6) | 1K5D3v1J36hQ3f25S3YYHVd9YpgKtUADfH | LSpqVw3gDwWgBcrBarX663TwZdGZrXfmQ7 |
