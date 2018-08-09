@@ -1,66 +1,39 @@
+// Gulp Dependencies
+
 var gulp = require('gulp'),
     gutil = require('gulp-util'),
     sass = require('gulp-sass'),
     connect = require('gulp-connect'),
     uglify = require('gulp-uglify'),
-    concat = require('gulp-concat');
-var rename = require('gulp-rename');
-var header = require('gulp-header');
-var sourcemaps = require('gulp-sourcemaps');
-var package = require('./package.json');
-const zip = require('gulp-zip');
-const autoprefixer = require('gulp-autoprefixer');
-var browserSync = require('browser-sync').create();
-var bump = require('gulp-bump');
-var git = require('gulp-git');
+    concat = require('gulp-concat'),
+    rename = require('gulp-rename'),
+    header = require('gulp-header'),
+    sourcemaps = require('gulp-sourcemaps'),
+    package = require('./package.json'),
+    zip = require('gulp-zip'),
+    autoprefixer = require('gulp-autoprefixer'),
+    browserSync = require('browser-sync').create(),
+    bump = require('gulp-bump'),
+    git = require('gulp-git');
 
 
 
 
-gulp.task('log', function() { gutil.log("== MY LOG TASK ==") });
+
+// Env Vars
+
+var browserSyncProxy = "localhost/blank2";
 
 
-gulp.task('sass', gulp.series(function(done) {
-    gulp.src('assets/scss/style.scss')
-        .pipe(sourcemaps.init())
-        .pipe(sass({ sourceComments: 'map' }))
-        .on('error', gutil.log)
-        .pipe(header(banner.theme, { package: package }))
-        .pipe(autoprefixer({
-            browsers: ['last 2 versions'],
-            cascade: false
-        }))
-        .pipe(sourcemaps.write('.'))
-        .pipe(gulp.dest("./"))
-        .pipe(browserSync.stream());;
-    done();
-}));
+var sassFiles = ["assets/scss/style.scss"];
+var sassDest = "./";
 
-gulp.task('js', gulp.series(function() {
-    return gulp.src(['assets/js/vendor/*.js', 'assets/js/animations/*.js', 'assets/js/*.js'])
-        .pipe(sourcemaps.init())
-        .pipe(concat('theme.js'))
-        .pipe(uglify())
-        .pipe(sourcemaps.write('.'))
+var jsFiles = ['assets/js/vendor/*.js', 'assets/js/animations/*.js', 'assets/js/*.js'];
+var jsDest = "./"
 
-        .pipe(gulp.dest('.'));
-}))
-
-gulp.task('watch', gulp.series(function() {
-    gulp.watch('assets/scss/**/*.scss', gulp.series('sass'));
-
-
-}));
-
-// gulp.task('default', gulp.series('watch'));
-
-
-// Remove pre-existing content from output and test folders
-gulp.task('clean:dist', function() {
-
-});
-
-
+var watchSassFiles = ['assets/scss/**/*.scss'];
+var watchJsFiles = [''];
+var watchPhpFiles = ['**/*.php'];
 
 var banner = {
     full: '/*!\n' +
@@ -92,18 +65,66 @@ var banner = {
 
 
 
+
+
+gulp.task('sass', gulp.series(function(done) {
+    gulp.src(sassFiles)
+        .pipe(sourcemaps.init())
+        .pipe(sass({ sourceComments: 'map' }))
+        .on('error', gutil.log)
+        .pipe(header(banner.theme, { package: package }))
+        .pipe(autoprefixer({
+            browsers: ['last 2 versions'],
+            cascade: false
+        }))
+        .pipe(sourcemaps.write(sassDest))
+        .pipe(gulp.dest(sassDest))
+        .pipe(browserSync.stream());
+    done();
+}));
+
+
+
+
+gulp.task('js', gulp.series(function() {
+    return gulp.src(jsFiles)
+        .pipe(sourcemaps.init())
+        .pipe(concat('theme.js'))
+        .pipe(uglify())
+        .pipe(sourcemaps.write(jsDest))
+
+        .pipe(gulp.dest(jsDest));
+}));
+
+
+
+
+
+gulp.task('watch', gulp.series(function() {
+    gulp.watch(watchSassFiles, gulp.series('sass'));
+    gulp.watch(watchJsFiles, gulp.series('js'));
+
+
+}));
+
+
+
+
+
+
+
 gulp.task('serve', gulp.parallel(function() {
 
     browserSync.init({
-        proxy: "localhost/blank2"
+        proxy: browserSyncProxy
     });
 }, function() {
 
-    gulp.watch("assets/scss/**/*.scss", gulp.series('sass'));
+    gulp.watch(watchSassFiles, gulp.series('sass'));
 
-    gulp.watch("assets/js/**/*.js", gulp.series('js'));
+    gulp.watch(watchJsFiles, gulp.series('js'));
 
-    gulp.watch("**/*.php").on('change', browserSync.reload);
+    gulp.watch(watchPhpFiles).on('change', browserSync.reload);
 
     gulp.watch("theme.js").on('change', browserSync.reload);
 }));
