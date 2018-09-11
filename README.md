@@ -36,10 +36,14 @@ Reloads the page on `watchPhpFiles` change.
 
 Reloads the page on `theme.js` change.
 
+## Need A WordPress Site, but don't want to do it yourself?
+
+[Hire Us](https://harnerdesigns.com/contact-us/).
+
 
 ## Like the Theme? Wanna Buy Us A Beer?
 
-If you like this Blank Wordpress Theme and would like to by us a beer, We'd be flattered.
+If you like/use this Blank Wordpress Theme and would like to by us a beer, We'd be flattered.
 
 | Paypal | Bitcoin | Litecoin |
 |------------------------------------------------------------------------------------------------------------------|------------------------------------|------------------------------------|

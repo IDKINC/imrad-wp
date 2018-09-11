@@ -1,5 +1,9 @@
 <?php 
-
+/**
+ *	Create Material Design Form Inputs
+ * 
+ * new FormField( type, name, array(args));
+ */
 class FormField {
 
 	private $type;
