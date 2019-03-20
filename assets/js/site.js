@@ -1,1 +1,1 @@
-console.log("FUCK");
+console.log("Welcome To Blank2 - Speed Up WordPress Development");
