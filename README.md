@@ -3,6 +3,16 @@
 
 Blank2 is a blank wordpress to start off with. It includes Gulp functions to handle JS, SASS, BrowserSync, and more. 
 
+## Get Started
+
+All you need to do to get started with Blank2 is run the following commands in your terminal:
+
+```
+$ git clone https://github.com/harnerdesigns/blank2.git new-wp-theme
+
+$ cd new-wp-theme && npm install
+```
+
 ## Gulp Functions
 
 Make sure to sent the environment variables in the `gulpfile.js` to match your environment.
