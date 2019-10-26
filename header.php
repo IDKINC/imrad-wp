@@ -17,7 +17,6 @@
  
     <!--=== TITLE ===-->  
     <title><?php wp_title(); ?> - <?php bloginfo( 'name' ); ?></title>
-     
     <!--=== WP_HEAD() ===-->
     <?php wp_head(); ?>
       
@@ -27,10 +26,11 @@
 <!-- HERE GOES YOUR HEADER MARKUP, LIKE LOGO, MENU, SOCIAL ICONS AND MORE -->
  
 <!-- DON'T FORGET TO CLOSE THE BODY TAG ON footer.php FILE -->
-<header>
+<header class="site-header">
 	
 	<?php get_template_part("components/common/siteLogo"); ?>
 	<?php get_template_part("components/common/nav"); ?>
- 
 
+	<?php get_template_part("components/common/searchBar"); ?> 
+ 
 </header>

@@ -1,2 +1,2 @@
-console.log("FUCK");
+!function(a){function s(s,e){a(s).click(function(){var s=a(e);s.hasClass("is-open")?s.removeClass("is-open"):(a(".is-open").removeClass("is-open"),s.addClass("is-open"))})}s("#mobileSearchToggle","#searchBar"),s("#mobileMenuToggle",".header__nav"),a("#submitSearch").click(function(s){a("#searchBar").hasClass("is-open")||(s.preventDefault(),a("#searchBar").addClass("is-open"),a("#searchBar input").focus())}),a("#searchBar input").focusout(function(){""===a(this).val()&&a("#searchBar").removeClass("is-open")})}(jQuery);
 //# sourceMappingURL=theme.js.map

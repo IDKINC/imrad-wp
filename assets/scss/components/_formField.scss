@@ -28,7 +28,7 @@
         &:focus,
         &:valid {
             outline: none;
-            border-bottom: 2px solid $accentColor;
+            border-bottom: 2px solid $mainColor;
             &::placeholder {
                 opacity: 0.5;
                 @include transition(all .3s ease .3s);
@@ -37,7 +37,7 @@
             &~label {
                 top: 0;
                 transform: translate(0, -110%);
-                color: $accentColor;
+                color: $mainColor;
                 font-size: 0.8em;
             }
         }
@@ -58,14 +58,14 @@
     input[type="submit"] {
         @extend input;
         border: 0;
-        background: $accentColor;
+        background: $mainColor;
         color: #fff;
         padding: 0.5em 0;
         height: auto;
         @include transition(all .3s ease .3s);
 
         &:hover {
-            background: saturate($accentColor, 30);
+            background: saturate($mainColor, 30);
         }
     }
 

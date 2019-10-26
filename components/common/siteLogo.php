@@ -2,7 +2,7 @@
 $image = wp_get_attachment_image_src( $custom_logo_id , 'full' );?>
 
 
-<div class='logo'>
+<div class='site-logo'>
 	<?php if($image): ?>
 	<a href="<?php echo get_site_url('/'); ?>" title="<?php bloginfo( 'name' ); ?>">
 		<img src="<?php echo $image[0];?>">

@@ -1,9 +1,9 @@
 /*!
- * Theme Name: blank2
+ * Theme Name: imrad
  * Theme URI: git+https://github.com/harnerdesigns/Harner-Blank-Theme.git
  * GitHub Theme URI: git+https://github.com/harnerdesigns/Harner-Blank-Theme.git
- * Description: Blank Wordpress Theme. Speed Up Development. Make Money.
- * Version: 1.0.1
+ * Description: Is My Rep A Dipshit?
+ * Version: 0.0.1
  * Author: 
  * Author URI: 
  * License: ISC
@@ -176,91 +176,92 @@ h4,
 h5,
 h6 {
   margin: 36px 0 24px 0;
-  color: #f44336;
+  color: #c56cf0;
   line-height: 1.25em;
-  font-weight: 400; }
+  font-weight: 400;
+  font-family: "Oswald", sans-serif; }
 
-/* line 31, assets/scss/_type.scss */
+/* line 32, assets/scss/_type.scss */
 h1 {
   font-size: 2.5rem; }
 
-/* line 35, assets/scss/_type.scss */
+/* line 36, assets/scss/_type.scss */
 h2 {
   font-size: 1.92308rem; }
 
-/* line 39, assets/scss/_type.scss */
+/* line 40, assets/scss/_type.scss */
 h3 {
   font-size: 1.66667rem; }
 
-/* line 43, assets/scss/_type.scss */
+/* line 44, assets/scss/_type.scss */
 h4 {
   font-size: 1.47059rem; }
 
-/* line 47, assets/scss/_type.scss */
+/* line 48, assets/scss/_type.scss */
 h5 {
   font-size: 1.38889rem; }
 
-/* line 51, assets/scss/_type.scss */
+/* line 52, assets/scss/_type.scss */
 h6 {
   font-size: 1.25rem; }
 
-/* line 58, assets/scss/_type.scss */
+/* line 59, assets/scss/_type.scss */
 p {
   margin-top: 20px;
   font-size: 1.0625rem;
   line-height: 1.5em;
   color: #505050; }
-  /* line 64, assets/scss/_type.scss */
+  /* line 65, assets/scss/_type.scss */
   p:first-of-type {
     margin-top: 0; }
 
-/* line 72, assets/scss/_type.scss */
+/* line 73, assets/scss/_type.scss */
 a {
-  color: #2196F3;
+  color: #c56cf0;
   text-decoration: none;
   -webkit-transition: all 0.2s ease;
   transition: all 0.2s ease; }
-  /* line 77, assets/scss/_type.scss */
+  /* line 78, assets/scss/_type.scss */
   a:hover {
-    color: #0c7cd5; }
+    color: #b33eeb; }
 
-/* line 84, assets/scss/_type.scss */
+/* line 85, assets/scss/_type.scss */
 ul,
 ol {
   margin: 20px 0 0 20px; }
-  /* line 88, assets/scss/_type.scss */
+  /* line 89, assets/scss/_type.scss */
   ul li,
   ol li {
     margin-top: 10px;
     line-height: 1.5em;
     color: #505050; }
-  /* line 94, assets/scss/_type.scss */
+  /* line 95, assets/scss/_type.scss */
   ul ul,
   ul ol,
   ol ul,
   ol ol {
     margin-top: 0; }
 
-/* line 102, assets/scss/_type.scss */
+/* line 103, assets/scss/_type.scss */
 ul li {
   list-style: disc; }
 
-/* line 108, assets/scss/_type.scss */
+/* line 109, assets/scss/_type.scss */
 ul ul li {
   list-style: circle; }
 
-/* line 116, assets/scss/_type.scss */
+/* line 117, assets/scss/_type.scss */
 ol li {
   list-style: decimal; }
 
-/* line 123, assets/scss/_type.scss */
+/* line 124, assets/scss/_type.scss */
 hr {
   height: 1px;
   margin: 30px 0;
   border: none;
   background-color: #DADADA; }
 
-/* line 132, assets/scss/_type.scss */
+/* line 133, assets/scss/_type.scss */
 blockquote {
   margin: 30px 0;
   font-size: 1.4375rem;
@@ -269,42 +270,42 @@ blockquote {
   text-align: center;
   font-style: italic; }
 
-/* line 143, assets/scss/_type.scss */
+/* line 144, assets/scss/_type.scss */
 table {
   width: 100%;
   margin: 30px 0;
   border-collapse: collapse; }
 
-/* line 149, assets/scss/_type.scss */
+/* line 150, assets/scss/_type.scss */
 table,
 td,
 th {
   border: 1px solid #DADADA;
   text-align: left; }
 
-/* line 156, assets/scss/_type.scss */
+/* line 157, assets/scss/_type.scss */
 th {
   font-weight: 800; }
 
-/* line 160, assets/scss/_type.scss */
+/* line 161, assets/scss/_type.scss */
 th,
 td {
   padding: 15px; }
 
-/* line 167, assets/scss/_type.scss */
+/* line 168, assets/scss/_type.scss */
 figure {
   margin: 30px 0; }
-  /* line 170, assets/scss/_type.scss */
+  /* line 171, assets/scss/_type.scss */
   figure img {
     margin: 0; }
 
-/* line 175, assets/scss/_type.scss */
+/* line 176, assets/scss/_type.scss */
 figcaption {
   margin-top: 10px;
   color: #6a6a6a;
   font-size: 16px; }
 
-/* line 183, assets/scss/_type.scss */
+/* line 184, assets/scss/_type.scss */
 pre {
   display: block;
   margin: 0 0 40px 0;
@@ -313,14 +314,14 @@ pre {
   border: 1px solid #DADADA;
   overflow: auto;
   border-radius: 3px; }
-  /* line 194, assets/scss/_type.scss */
+  /* line 195, assets/scss/_type.scss */
   pre code {
     position: static;
     padding: 0;
     border: none;
     line-height: 1.5em; }
 
-/* line 202, assets/scss/_type.scss */
+/* line 203, assets/scss/_type.scss */
 code {
   position: relative;
   top: -0.2em;
@@ -333,19 +334,19 @@ code {
   border: 1px solid #DADADA;
   border-radius: 3px; }
 
-/* line 220, assets/scss/_type.scss */
+/* line 221, assets/scss/_type.scss */
 em,
 i,
 .italic {
   font-style: italic; }
 
-/* line 226, assets/scss/_type.scss */
+/* line 227, assets/scss/_type.scss */
 strong,
 b,
 .bold {
   font-weight: 800; }
 
-/* line 232, assets/scss/_type.scss */
+/* line 233, assets/scss/_type.scss */
 img {
   display: block;
   max-width: 100%;
@@ -395,7 +396,7 @@ img {
     /* line 28, assets/scss/components/_formField.scss */
     .material_input input:focus, .material_input textarea:focus, .material_input input:valid, .material_input textarea:valid {
       outline: none;
-      border-bottom: 2px solid #2196F3; }
+      border-bottom: 2px solid #c56cf0; }
       /* line 32, assets/scss/components/_formField.scss */
       .material_input input:focus::-webkit-input-placeholder, .material_input textarea:focus::-webkit-input-placeholder, .material_input input:valid::-webkit-input-placeholder, .material_input textarea:valid::-webkit-input-placeholder {
         opacity: 0.5;
@@ -418,7 +419,7 @@ img {
         top: 0;
         -webkit-transform: translate(0, -110%);
         transform: translate(0, -110%);
-        color: #2196F3;
+        color: #c56cf0;
         font-size: 0.8em; }
   /* line 46, assets/scss/components/_formField.scss */
   .material_input textarea {
@@ -430,7 +431,7 @@ img {
   /* line 58, assets/scss/components/_formField.scss */
   .material_input textarea[type="submit"], .material_input input[type="submit"] {
     border: 0;
-    background: #2196F3;
+    background: #c56cf0;
     color: #fff;
     padding: 0.5em 0;
     height: auto;
@@ -438,7 +439,7 @@ img {
     transition: all 0.3s ease 0.3s; }
     /* line 67, assets/scss/components/_formField.scss */
     .material_input textarea[type="submit"]:hover, .material_input input[type="submit"]:hover {
-      background: #1597ff; }
+      background: #ca5dff; }
   /* line 72, assets/scss/components/_formField.scss */
   .material_input label {
     position: absolute;
@@ -449,6 +450,153 @@ img {
     opacity: 0.5;
     -webkit-transition: all 0.3s ease;
     transition: all 0.3s ease; }
+
+/* line 1, assets/scss/components/common/_header.scss */
+.site-header {
+  width: 100%;
+  max-width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  background: #c56cf0;
+  color: #fff;
+  padding: 0.5em;
+  position: relative; }
+  /* line 13, assets/scss/components/common/_header.scss */
+  .site-header .site-logo {
+    color: #fff; }
+    /* line 16, assets/scss/components/common/_header.scss */
+    .site-header .site-logo a,
+    .site-header .site-logo h1 {
+      color: inherit;
+      margin: 0; }
+
+/* line 1, assets/scss/components/common/_searchBar.scss */
+#searchBar {
+  display: none; }
+  /* line 5, assets/scss/components/common/_searchBar.scss */
+  #searchBar button[type=submit] {
+    background: none;
+    color: #fff;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    background: #c56cf0; }
+  /* line 14, assets/scss/components/common/_searchBar.scss */
+  #searchBar input, #searchBar .material_input textarea, .material_input #searchBar textarea {
+    margin: 0; }
+  /* line 19, assets/scss/components/common/_searchBar.scss */
+  #searchBar.is-open {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    display: grid;
+    grid-template-columns: 6fr 1fr;
+    -webkit-transform: translatey(100%);
+    transform: translatey(100%);
+    background: #b33eeb;
+    padding: 0.5em; }
+  @media (min-width: 64em) {
+    /* line 1, assets/scss/components/common/_searchBar.scss */
+    #searchBar {
+      display: grid;
+      grid-template-columns: 6fr 1fr;
+      position: relative; }
+      /* line 39, assets/scss/components/common/_searchBar.scss */
+      #searchBar input, #searchBar .material_input textarea, .material_input #searchBar textarea {
+        display: none; }
+      /* line 43, assets/scss/components/common/_searchBar.scss */
+      #searchBar.is-open {
+        position: relative;
+        width: auto;
+        bottom: 0;
+        left: 0;
+        -webkit-transform: none;
+        transform: none;
+        background: none;
+        padding: 0.5em; }
+        /* line 54, assets/scss/components/common/_searchBar.scss */
+        #searchBar.is-open input, #searchBar.is-open .material_input textarea, .material_input #searchBar.is-open textarea {
+          display: block; } }
+
+/* line 65, assets/scss/components/common/_searchBar.scss */
+#mobileSearchToggle {
+  font-size: 2em;
+  margin: 0.5em;
+  cursor: pointer; }
+  @media (min-width: 64em) {
+    /* line 65, assets/scss/components/common/_searchBar.scss */
+    #mobileSearchToggle {
+      display: none; } }
+
+/* line 1, assets/scss/components/common/_nav.scss */
+.header__nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  display: none; }
+  /* line 6, assets/scss/components/common/_nav.scss */
+  .header__nav ul {
+    margin: 0;
+    padding: 0; }
+  /* line 11, assets/scss/components/common/_nav.scss */
+  .header__nav li {
+    list-style: none;
+    margin: 0; }
+  /* line 16, assets/scss/components/common/_nav.scss */
+  .header__nav a {
+    color: #fff;
+    width: 100%;
+    padding: 0.5em;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    border-bottom: 1px solid #fff; }
+    /* line 23, assets/scss/components/common/_nav.scss */
+    .header__nav a:hover {
+      background: rgba(255, 255, 255, 0.1); }
+    @media (min-width: 64em) {
+      /* line 16, assets/scss/components/common/_nav.scss */
+      .header__nav a {
+        border: none; } }
+  /* line 34, assets/scss/components/common/_nav.scss */
+  .header__nav.is-open {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    -webkit-transform: translatey(100%);
+    transform: translatey(100%);
+    background: #b33eeb;
+    padding: 0.5em; }
+  @media (min-width: 64em) {
+    /* line 1, assets/scss/components/common/_nav.scss */
+    .header__nav {
+      margin-left: auto;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex; } }
+
+/* line 61, assets/scss/components/common/_nav.scss */
+#mobileMenuToggle {
+  font-size: 2em;
+  margin: 0.5em;
+  -webkit-box-ordinal-group: 0;
+  -ms-flex-order: -1;
+  order: -1;
+  cursor: pointer; }
+  @media (min-width: 64em) {
+    /* line 61, assets/scss/components/common/_nav.scss */
+    #mobileMenuToggle {
+      display: none; } }
 
 /* line 11, assets/scss/style.scss */
 body {

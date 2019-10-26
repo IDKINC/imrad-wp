@@ -22,7 +22,7 @@ var gulp = require('gulp'),
 
 // Env Vars
 
-var browserSyncProxy = "localhost/blank2";
+var browserSyncProxy = "imrad.local";
 
 
 var sassFiles = ["assets/scss/style.scss"];
@@ -32,7 +32,7 @@ var jsFiles = ['assets/js/vendor/*.js', 'assets/js/animations/*.js', 'assets/js/
 var jsDest = "./"
 
 var watchSassFiles = ['assets/scss/**/*.scss'];
-var watchJsFiles = [''];
+var watchJsFiles = ['assets/js/**/*.js'];
 var watchPhpFiles = ['**/*.php'];
 
 var banner = {

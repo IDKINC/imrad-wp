@@ -1,0 +1,27 @@
+.site-header {
+
+    width: 100%;
+    max-width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: $mainColor;
+    color: #fff;
+    padding: 0.5em;
+    position:relative;
+
+    .site-logo {
+        color: #fff;
+
+        a,
+        h1 {
+            color: inherit;
+            margin: 0;
+        }
+    }
+
+    @include breakpoint(medium) {
+        padding: 1em;
+
+    }
+}

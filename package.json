@@ -1,7 +1,7 @@
 {
-  "name": "blank2",
-  "version": "1.0.2",
-  "description": "Blank Wordpress Theme. Speed Up Development. Make Money.",
+  "name": "imrad",
+  "version": "0.0.1",
+  "description": "Is My Rep A Dipshit?",
   "main": "gulpfile.js",
   "dependencies": {},
   "devDependencies": {

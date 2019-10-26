@@ -7,7 +7,7 @@
 html,
 body {
     font-size: $base-font-size;
-    font-family: $font-family;
+    font-family: $font-family--body;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     -webkit-text-size-adjust: 100%;
@@ -26,6 +26,7 @@ h6 {
     color: $header-color;
     line-height: $header-line-height;
     font-weight: 400;
+    font-family: $font-family--header;
 }
 
 h1 {

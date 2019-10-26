@@ -7,8 +7,8 @@
                # Colors
 \*------------------------------------*/
 
-$mainColor: #f44336;
-$accentColor: #2196F3;
+$mainColor: #c56cf0;
+$darkerColor: darken($mainColor, 10);
 
 
 
@@ -17,7 +17,9 @@ $accentColor: #2196F3;
 \*------------------------------------*/
 
 // Font Family
-$font-family: 'Ubuntu',
+$font-family--header: 'Oswald',
+sans-serif;
+$font-family--body: 'Ubuntu',
 serif;
 
 // Base Font for HTML
@@ -42,7 +44,7 @@ $blockquote-line-height: 1.5em;
 $blockquote-margin: $paragraph-margin * 1.5;
 
 // Links
-$link-color: $accentColor;
+$link-color: $mainColor;
 
 // hr
 $hr-margin: 30px;

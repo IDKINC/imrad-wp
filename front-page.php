@@ -1,5 +1,5 @@
 <?php get_header();?>
 <main>
-<?php get_template_part("loop", "excerpt"); ?>
-	</main>
+
+</main>
 <?php get_footer();?>

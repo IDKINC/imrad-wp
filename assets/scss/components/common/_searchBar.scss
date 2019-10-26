@@ -1,0 +1,77 @@
+#searchBar {
+
+    display: none;
+
+    button[type=submit] {
+        background: none;
+        color: #fff;
+        border: none;
+        border-radius: 0 5px 5px 0;
+        background: $mainColor;
+
+    }
+
+    input{
+        margin: 0;
+    }
+
+
+    &.is-open{
+
+        position: absolute;
+        width: 100%;
+        bottom: 0;
+        left: 0;
+        display: grid;
+        grid-template-columns: 6fr 1fr;
+        transform:translatey(100%);
+        background: $darkerColor;
+        padding: 0.5em;
+    }
+
+
+    @include breakpoint(laptop) {
+
+        display: grid;
+        grid-template-columns: 6fr 1fr;
+        position:relative;
+
+        input{
+            display: none;
+        }
+
+        &.is-open{
+
+            position: relative;
+        width: auto;
+        bottom: 0;
+        left: 0;
+        
+        transform:none;
+        background: none;
+        padding: 0.5em;
+
+            input{
+                display: block;
+            }
+        }
+
+
+    }
+
+}
+
+
+#mobileSearchToggle {
+
+    font-size: 2em;
+    margin: 0.5em;
+    cursor: pointer;
+
+
+    @include breakpoint(laptop) {
+        display: none;
+    }
+
+
+}
