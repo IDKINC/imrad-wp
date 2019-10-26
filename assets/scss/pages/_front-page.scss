@@ -1,0 +1,43 @@
+.site__intro {
+    font-size: 2rem;
+    padding: 2em;
+
+    @include breakpoint(laptop) {
+
+        padding: 5vw 20vw;
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+        color: #fff;
+        font-size: inherit;
+        text-align: center;
+    }
+
+    h1 {
+        font-size: 4em;
+    }
+
+
+}
+
+.home {
+
+    .map__link {
+
+        padding: 2em;
+
+        @include breakpoint(laptop) {
+
+            padding: 1vw 20vw;
+        }
+
+        h2{
+            color: #fff;
+            font-size: 3em;
+        }
+    }
+
+}

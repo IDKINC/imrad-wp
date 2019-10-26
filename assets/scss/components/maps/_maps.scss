@@ -1,0 +1,20 @@
+svg.map {
+
+    width: 100%;
+    height: auto;
+    display: block;
+
+
+    path {
+        transform-origin: 50% 50%;
+
+        transition: 100ms;
+        z-index: 1;
+
+        &:hover {
+            fill: $mainColor;
+            filter: drop-shadow(0 1px 3px $darkerColor);
+            z-index: 2;
+        }
+    }
+}

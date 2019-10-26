@@ -1,0 +1,19 @@
+.banner{
+
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    &.purple{
+        background: $mainColor;
+
+        color: #fff;
+    }
+
+    &.half-purple{
+
+        background: linear-gradient(to bottom, $mainColor 50%, transparent 50%);
+    }
+}
