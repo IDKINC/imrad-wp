@@ -500,7 +500,14 @@ img {
     .site-header .site-logo a,
     .site-header .site-logo h1 {
       color: inherit;
-      margin: 0; }
+      margin: 0;
+      text-align: center;
+      font-size: 1.25em; }
+      @media (min-width: 64em) {
+        /* line 16, assets/scss/components/common/_header.scss */
+        .site-header .site-logo a,
+        .site-header .site-logo h1 {
+          font-size: 2em; } }
 
 /* line 1, assets/scss/components/common/_searchBar.scss */
 #searchBar {
@@ -806,37 +813,45 @@ svg.map {
   -ms-flex-pack: center;
   justify-content: center; }
 
-/* line 1, assets/scss/pages/_front-page.scss */
-.site__intro {
-  font-size: 2rem;
-  padding: 2em; }
-  @media (min-width: 64em) {
-    /* line 1, assets/scss/pages/_front-page.scss */
-    .site__intro {
-      padding: 5vw 20vw; } }
-  /* line 10, assets/scss/pages/_front-page.scss */
-  .site__intro h1,
-  .site__intro h2,
-  .site__intro h3,
-  .site__intro p {
-    color: #fff;
-    font-size: inherit;
-    text-align: center; }
-  /* line 19, assets/scss/pages/_front-page.scss */
-  .site__intro h1 {
-    font-size: 4em; }
+@media (min-width: 64em) {
+  /* line 1, assets/scss/pages/_front-page.scss */
+  .site__intro {
+    font-size: 2rem;
+    padding: 2em;
+    padding: 5vw 20vw; } }
 
-/* line 28, assets/scss/pages/_front-page.scss */
+/* line 10, assets/scss/pages/_front-page.scss */
+.site__intro h1,
+.site__intro h2,
+.site__intro h3,
+.site__intro p {
+  color: #fff;
+  font-size: inherit;
+  text-align: center; }
+
+/* line 19, assets/scss/pages/_front-page.scss */
+.site__intro h1 {
+  font-size: 3em; }
+  @media (min-width: 64em) {
+    /* line 19, assets/scss/pages/_front-page.scss */
+    .site__intro h1 {
+      font-size: 4em; } }
+
+/* line 33, assets/scss/pages/_front-page.scss */
 .home .map__link {
   padding: 2em; }
   @media (min-width: 64em) {
-    /* line 28, assets/scss/pages/_front-page.scss */
+    /* line 33, assets/scss/pages/_front-page.scss */
     .home .map__link {
       padding: 1vw 20vw; } }
-  /* line 37, assets/scss/pages/_front-page.scss */
+  /* line 42, assets/scss/pages/_front-page.scss */
   .home .map__link h2 {
     color: #fff;
-    font-size: 3em; }
+    font-size: 1.5em; }
+    @media (min-width: 64em) {
+      /* line 42, assets/scss/pages/_front-page.scss */
+      .home .map__link h2 {
+        font-size: 3em; } }
 
 /* line 12, assets/scss/style.scss */
 body {
