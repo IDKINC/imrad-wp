@@ -1,0 +1,89 @@
+.single-state {
+
+
+    .state__header {
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+
+        .state__name {
+            font-size: 3em;
+
+
+            @include breakpoint(laptop) {
+                font-size: 6em;
+            }
+        }
+
+    }
+}
+
+
+.state__images {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+    max-width: 100%;
+
+    @include breakpoint(laptop) {
+
+        max-width: 80%;
+    }
+
+    img {
+        margin: 1em;
+        width: 40%;
+    }
+
+    .state__flag{
+        @include card(1);
+    }
+
+    .dynamicMap{
+        width: 50%;
+    }
+
+
+}
+
+
+.state__meta {
+    ul {
+
+        display: flex;
+        margin: 0;
+        padding: 0;
+        color: #aaa;
+
+        li {
+            list-style: none;
+            margin: 0;
+            color: #333;
+            border-right: 1px solid #aaa;
+            padding: 0.1em 0.5em;
+
+            &:last-of-type{
+                border-right: none;
+            }
+
+
+            i {
+                font-size: 2em;
+                vertical-align: middle;
+                margin: 0 0.25em;
+            }
+        }
+    }
+}
+
+
+.state__representatives{
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}

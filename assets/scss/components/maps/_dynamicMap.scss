@@ -1,0 +1,62 @@
+.dynamicMap {
+
+    width: 100%;
+    padding: 1em;
+    margin: 1em;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+
+
+    svg {
+        width: 100%;
+
+    }
+
+    #zoomToggle{
+
+        position: absolute; top: 2em;
+        right: 2em;
+        cursor: pointer;
+        i{
+            font-size: 1.5em;
+
+        }
+
+        .fa-times{display: none;}
+    }
+
+
+    &.zoom {
+        width: 100%; 
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        background: #fff;
+        margin: 0;
+        padding: 0;
+        height: 100vh;
+        overflow: auto;
+        align-items: flex-start;
+
+        #zoomToggle{
+            position: fixed;
+
+            i{
+                font-size: 3em;
+            }
+            .fa-search-plus{display: none;}
+            .fa-times{display: block;}
+        }
+
+        svg.map{
+            width: 80%;
+
+            margin-top: 1vh;
+            margin-bottom: 1vh;
+        }
+    }
+}

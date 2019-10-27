@@ -5,7 +5,8 @@ svg.map {
     display: block;
 
 
-    path {
+    .state {fill:#333333; stroke: #fff; stroke-width: 0.5px;}
+    .state path {
         transform-origin: 50% 50%;
 
         transition: 100ms;
@@ -18,3 +19,6 @@ svg.map {
         }
     }
 }
+
+
+@import "dynamicMap";
