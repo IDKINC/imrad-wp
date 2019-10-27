@@ -4,19 +4,31 @@ svg.map {
     height: auto;
     display: block;
 
+    .state {
+        fill: #ccc;
+        stroke: #fff;
+        stroke-width: 0.5px;
+    }
 
-    .state {fill:#333333; stroke: #fff; stroke-width: 0.5px;}
-    .state path {
-        transform-origin: 50% 50%;
-
-        transition: 100ms;
-        z-index: 1;
+    .state a path {
+        fill: #333333;
+        stroke: #fff;
+        stroke-width: 0.5px;
 
         &:hover {
             fill: $mainColor;
             filter: drop-shadow(0 1px 3px $darkerColor);
             z-index: 2;
         }
+    }
+
+    .state path {
+        transform-origin: 50% 50%;
+
+        transition: 100ms;
+        z-index: 1;
+
+
     }
 }
 

@@ -628,24 +628,29 @@ svg.map {
   width: 100%;
   height: auto;
   display: block; }
-  /* line 8, assets/scss/components/maps/_maps.scss */
+  /* line 7, assets/scss/components/maps/_maps.scss */
   svg.map .state {
+    fill: #ccc;
+    stroke: #fff;
+    stroke-width: 0.5px; }
+  /* line 13, assets/scss/components/maps/_maps.scss */
+  svg.map .state a path {
     fill: #333333;
     stroke: #fff;
     stroke-width: 0.5px; }
-  /* line 9, assets/scss/components/maps/_maps.scss */
+    /* line 18, assets/scss/components/maps/_maps.scss */
+    svg.map .state a path:hover {
+      fill: #c56cf0;
+      -webkit-filter: drop-shadow(0 1px 3px #b33eeb);
+      filter: drop-shadow(0 1px 3px #b33eeb);
+      z-index: 2; }
+  /* line 25, assets/scss/components/maps/_maps.scss */
   svg.map .state path {
     -webkit-transform-origin: 50% 50%;
     transform-origin: 50% 50%;
     -webkit-transition: 100ms;
     transition: 100ms;
     z-index: 1; }
-    /* line 15, assets/scss/components/maps/_maps.scss */
-    svg.map .state path:hover {
-      fill: #c56cf0;
-      -webkit-filter: drop-shadow(0 1px 3px #b33eeb);
-      filter: drop-shadow(0 1px 3px #b33eeb);
-      z-index: 2; }
 
 /* line 1, assets/scss/components/maps/_dynamicMap.scss */
 .dynamicMap {
