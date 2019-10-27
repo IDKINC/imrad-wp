@@ -40,7 +40,8 @@ function state_post_type()
         'labels' => $labels,
         'supports' => array('title', 'editor', 'thumbnail', 'revisions'),
         'hierarchical' => false,
-        'public' => true,
+		'public' => true,
+		'menu_icon' => 'dashicons-admin-site',
         'show_ui' => true,
         'show_in_menu' => true,
         'menu_position' => 5,
@@ -100,12 +101,17 @@ function state_build_info_meta_box($post)
     wp_nonce_field(basename(__FILE__), 'state_meta_box_nonce');
 
     $current_abbreviation = get_post_meta($post->ID, 'abbreviation', true);
+    $current_motto = get_post_meta($post->ID, 'motto', true);
 
     ?>
 
     <div class='inside'>
     <p>
 	Abbreviation: <input type="text" maxlength="2" placeholder="e.g. NM" name="abbreviation" value="<?php echo $current_abbreviation; ?>" />
+	</p>
+	
+	<p>
+	State Motto: <input type="text" placeholder="e.g. Land of Enchantment" name="motto" value="<?php echo $current_motto; ?>" />
     </p>
 
 </div> <?php
@@ -143,6 +149,10 @@ function state_save_meta_boxes_data($post_id)
 
     if (isset($_REQUEST['abbreviation'])) {
         update_post_meta($post_id, 'abbreviation', strtoupper(sanitize_text_field($_POST['abbreviation'])));
+	}
+	
+	if (isset($_REQUEST['motto'])) {
+        update_post_meta($post_id, 'motto', sanitize_text_field($_POST['motto']));
     }
 
 }
@@ -150,7 +160,9 @@ add_action('save_post_state', 'state_save_meta_boxes_data', 10, 2);
 
 // start Logo Image
 
-add_action('after_setup_theme', 'custom_logo_setup');
+// add_action('after_setup_theme', 'custom_logo_setup');
+
+
 function custom_logo_setup()
 {
     add_action('add_meta_boxes', 'custom_logo_meta_box');

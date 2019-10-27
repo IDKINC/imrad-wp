@@ -1,0 +1,55 @@
+<?php 
+/**
+ *	Create Material Design Form Inputs
+ * 
+ * new FormField( type, name, array(args));
+ */
+class State {
+
+	private $id;
+	public $name; 
+	public $abbr;
+
+
+	public function __construct($post = array()){
+		$this->id = $post->ID;
+		$this->name = get_the_title($this->id);
+		$this->motto = $this->getPostMeta($this->id, 'motto', true);
+		$this->abbr = get_post_meta($this->id, 'abbreviation', true);
+	}
+
+	private function getPostMeta($id, $meta_key, $arg = array()){
+
+		return get_post_meta($id, $meta_key, $arg);
+
+	}
+
+
+	public function state_title(){
+
+		echo sprintf("<h1 class='state__name'><a href='%s'>%s</a></h1>" . ($this->motto ? "<h2 class='state__motto'>%s</h2>": ""), get_the_permalink($this->id), $this->name, $this->motto);
+	}
+
+	public function state_meta(){ 
+
+		$population = array('meta_id' => 'population', 'label' => 'Population', 'icon' => 'fas faw fa-users', 'format' => true);
+        $districts = array('meta_id' => 'districts_count', 'label' => '# of Districts', 'icon' => 'fas faw fa-border-none');
+
+        $meta_keys = array($population, $districts);
+
+        foreach ($meta_keys as $meta_key) {
+
+			$meta = get_post_meta($this->id, $meta_key['meta_id']);
+
+            if ($meta[0]) {
+
+                echo sprintf("<li><i class='%s'></i>%s: %s</li>", $meta_key['icon'], $meta_key['label'], ($meta_key['format'] ? number_format($meta[0]) : $meta[0]));
+            }
+
+        }
+
+	}
+
+}
+
+?>

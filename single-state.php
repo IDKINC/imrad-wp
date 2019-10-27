@@ -1,3 +1,4 @@
+<?php get_template_part("includes/inc.state"); ?>
 <?php get_header();?>
 <main>
 	<article class="single single-state">
@@ -8,8 +9,11 @@ if (have_posts()) {
     while (have_posts()) {
         the_post();
 
-        $post_id = get_the_id();
+		$post_id = get_the_id();
+		
+		$state = new State(get_post());
 
+ 
         //
         // Post Content here
         //
@@ -17,28 +21,14 @@ if (have_posts()) {
 
 
 <header class="state__header">
-<?=sprintf("<h1 class='state__name'><a href='%s'>%s</a></h1>", get_the_permalink(), get_the_title());?>
+<?php $state->state_title() ?>
 
 
 <section class="state__meta">
 
 		<ul>
 		<?php
-$population = array('meta_id' => 'population', 'label' => 'Population', 'icon' => 'fas faw fa-users', 'format' => true);
-        $districts = array('meta_id' => 'districts_count', 'label' => '# of Districts', 'icon' => 'fas faw fa-border-none');
-
-        $meta_keys = array($population, $districts);
-
-        foreach ($meta_keys as $meta_key) {
-
-			$meta = get_post_meta($post_id, $meta_key['meta_id']);
-
-            if ($meta[0]) {
-
-                echo sprintf("<li><i class='%s'></i>%s: %s</li>", $meta_key['icon'], $meta_key['label'], ($meta_key['format'] ? number_format($meta[0]) : $meta[0]));
-            }
-
-        }
+	$state->state_meta();
         ?>
 		</ul>
 		</section>
