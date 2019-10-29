@@ -2,6 +2,7 @@
 
 include __DIR__ . "/includes/first_post_date.php";
 include __DIR__ . "/includes/inc.input.php";
+include __DIR__ . "/includes/author_subpages.php";
 
 
 include __DIR__ . "/includes/customPostTypes/states.php";
@@ -24,7 +25,7 @@ function imrad_theme_support()
 {
 
     add_theme_support('custom-logo');
-    add_theme_support('post-thumbnails', array('post', 'state')); // Posts and Movies
+    add_theme_support('post-thumbnails', array('post', 'state', 'people')); // Posts and Movies
 }
 
 add_action('after_setup_theme', 'imrad_theme_support');

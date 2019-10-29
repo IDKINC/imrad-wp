@@ -1,0 +1,57 @@
+.people__header{
+
+    width: 100%;
+    min-height: 25vh;
+    border-bottom: 15px solid $black;
+
+    .header__content{
+        display: grid;
+        align-items: flex-end;
+        grid-column-gap: 1em;
+        @include breakpoint(laptop){
+
+
+            grid-template-columns: 1fr 5fr;
+            grid-template-rows: 4fr 1fr;
+            justify-content: flex-end;
+        }
+    }
+
+    .people__name{
+
+        font-size: 2em;
+        @include breakpoint(laptop){
+
+            font-size: 4em;
+        }
+    }
+
+    .people__actions{
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        align-self: center;
+        margin: 0;
+
+        li{
+            list-style: none;
+            padding: 0.25em 0.5em;
+        }
+
+        .social-link{
+            display: flex;
+            flex-direction: column;
+            align-items: center; justify-content: center;
+            i{
+                font-size: 2em;
+            }
+        }
+    }
+
+    .people__headshot{
+
+        width: 100%;
+        grid-row: 1 / span 2;
+
+    }
+}
