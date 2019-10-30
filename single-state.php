@@ -61,6 +61,28 @@ if (have_posts()) {
 
 <h2>Current <?= get_the_title() ?> Representatives</h2>
 
+<?php 
+$people = $state->getPeople();
+
+
+if ($people->have_posts()) {
+    while ($people->have_posts()) {
+		$people->the_post();
+
+		echo sprintf("<a href='%s'>%s</a>", get_the_permalink(), get_the_title());
+		
+	}
+	}
+
+	else {
+
+		echo "No Current Reps";
+	}
+
+    wp_reset_postdata();
+
+?>
+
 	</section>
 
 

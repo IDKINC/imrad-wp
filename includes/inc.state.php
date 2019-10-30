@@ -50,6 +50,25 @@ class State {
 
 	}
 
+	public function getPeople(){
+
+		$args = array(
+			'post_type' => array('people'),
+			'meta_query' => array(
+				array(
+					'key' => 'state',
+					'value' => $this->abbr,
+					'compare' => '=',
+				)
+			)
+		 );
+		 $query = new WP_Query($args);
+		
+
+		return $query;
+	}
+
+
 }
 
 ?>

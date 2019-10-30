@@ -24,7 +24,7 @@ if (have_posts()) {
 
 <section class="header__content">
 
-<h2 class="people__title"><?=$person->title?></h2>
+<h2 class="people__title"><?=$person->title?> from <a href="<?=$person->stateLink()?>"><?=$person->stateName()?></a></h2>
 <h1 class="people__name"><?=$person->name?></h1>
 
 <ul class="people__actions"> 

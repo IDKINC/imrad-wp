@@ -64,11 +64,72 @@ add_action('init', 'people_post_type', 0);
 function people_add_meta_boxes($post)
 {
     add_meta_box('people_info', __('People Info', 'imrad'), 'people_build_info_meta_box', 'people', 'normal', 'high');
+    add_meta_box('people_info', __('State & District', 'imrad'), 'people_build_state_meta_box', 'people', 'normal', 'high');
+
     add_meta_box('people_stats', __('People Stats', 'imrad'), 'people_build_stats_meta_box', 'people', 'side', 'high');
     add_meta_box('people_social', __('People Social Links', 'imrad'), 'people_build_social_meta_box', 'people', 'side', 'high');
 
 }
 add_action('add_meta_boxes_people', 'people_add_meta_boxes');
+
+function people_build_state_meta_box($post)
+{
+
+
+
+    wp_nonce_field(basename(__FILE__), 'people_meta_box_nonce');
+
+    $current_state = get_post_meta($post->ID, 'state', true);
+
+    ?>
+
+    <div class='inside'>
+    <p>
+        State: <select name="state" id="state">
+
+    <option <?=(!$current_state ? "selected" : "") ?> disabled>Select A State</option>
+
+        <?php // WP_Query arguments
+    $args = array(
+        'post_type' => array('state'),
+        'order' => 'ASC',
+        'orderby' => 'menu_order',
+    );
+
+// The Query
+    $states = new WP_Query($args);
+
+// The Loop
+    if ($states->have_posts()) {
+        while ($states->have_posts()) {
+            $states->the_post();
+            // do something
+            $abbr = get_post_meta(get_the_id(), 'abbreviation', true);
+
+    
+    echo sprintf('<option %s value="%s">%s - %s</option>',($current_state == $abbr ? "selected": ""), $abbr, $abbr, get_the_title());
+
+        }
+    } else {
+        // no posts found
+    }
+
+// Restore original Post Data
+    wp_reset_postdata(); ?>
+
+        </select>
+	</p>
+
+
+
+
+</div>
+
+
+
+<?php
+
+}
 
 function people_build_stats_meta_box($post)
 {
@@ -169,6 +230,10 @@ function people_save_meta_boxes_data($post_id)
         return;
 
     }
+
+    if (isset($_REQUEST['state'])) {
+        update_post_meta($post_id, 'state', sanitize_text_field($_POST['state']));
+    }
 ///////////
     // Stats //
     ///////////
@@ -192,8 +257,6 @@ function people_save_meta_boxes_data($post_id)
         update_post_meta($post_id, 'motto', sanitize_text_field($_POST['motto']));
     }
 
-
-
     // Social Links
 
     if (isset($_REQUEST['website'])) {
@@ -203,7 +266,6 @@ function people_save_meta_boxes_data($post_id)
     if (isset($_REQUEST['facebook'])) {
         update_post_meta($post_id, 'facebook', sanitize_text_field($_POST['facebook']));
     }
-
 
     if (isset($_REQUEST['twitter'])) {
         update_post_meta($post_id, 'twitter', sanitize_text_field($_POST['twitter']));

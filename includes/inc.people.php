@@ -15,8 +15,9 @@ class Person {
 		$this->id = $post->ID;
 		$this->name = get_the_title($this->id);
 		$this->title = $this->setTitles($this->id);
+		$this->state = $this->getPostMeta($this->id, 'state', true);
+
 		$this->motto = $this->getPostMeta($this->id, 'motto', true);
-		$this->abbr = get_post_meta($this->id, 'abbreviation', true);
 		$this->headshotUrl = wp_get_attachment_image_url(get_post_thumbnail_id($post_id), 'headshot');
 		$this->bannerUrl = wp_get_attachment_image_url(get_post_meta($post_id, 'people_banner', true), 'full');
 
@@ -51,28 +52,44 @@ class Person {
 	}
 
 
-	public function state_title(){
+	private function getState($stateAbbr){
 
-		echo sprintf("<h1 class='state__name'><a href='%s'>%s</a></h1>", get_the_permalink($this->id), $this->name);
+		$args = array(
+			'post_type' => array('state'),
+			'meta_query' => array(
+				array(
+					'key' => 'abbreviation',
+					'value' => $stateAbbr,
+					'compare' => '=',
+				)
+			)
+		 );
+		 $query = new WP_Query($args);
+
+		 if ($query->have_posts()) {
+			while ($query->have_posts()) {
+				$query->the_post();
+				// do something
+			return get_post();
+	
+			}
+		} else {
+			// no posts found
+			return false;
+		}
 	}
 
-	public function state_meta(){ 
+	public function stateName(){
+		$state = $this->getState($this->state);
 
-		$population = array('meta_id' => 'population', 'label' => 'Population', 'icon' => 'fas faw fa-users', 'format' => true);
-        $districts = array('meta_id' => 'districts_count', 'label' => '# of Districts', 'icon' => 'fas faw fa-border-none');
+		return get_the_title($state->id);
 
-        $meta_keys = array($population, $districts);
+	}
 
-        foreach ($meta_keys as $meta_key) {
+	public function stateLink(){
+		$state = $this->getState($this->state);
 
-			$meta = get_post_meta($this->id, $meta_key['meta_id']);
-
-            if ($meta[0]) {
-
-                echo sprintf("<li><i class='%s'></i>%s: %s</li>", $meta_key['icon'], $meta_key['label'], ($meta_key['format'] ? number_format($meta[0]) : $meta[0]));
-            }
-
-        }
+		return get_the_permalink($state->id);
 
 	}
 
