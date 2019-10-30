@@ -1,57 +1,128 @@
-.people__header{
+.people__header {
 
     width: 100%;
-    min-height: 25vh;
-    border-bottom: 15px solid $black;
+    // min-height: 25vh;
+    // border-bottom: 15px solid $black;
 
-    .header__content{
+    background: url('assets/img/dark-honeycomb.png');
+    @include card(-2);
+
+    .header__content {
         display: grid;
         align-items: flex-end;
         grid-column-gap: 1em;
-        @include breakpoint(laptop){
+        padding: 1em;
+
+        @include breakpoint(laptop) {
 
 
-            grid-template-columns: 1fr 5fr;
-            grid-template-rows: 4fr 1fr;
+            grid-template-columns: 5fr 1fr;
+            grid-template-rows: 3fr 1fr 0.5fr;
             justify-content: flex-end;
         }
     }
 
-    .people__name{
+    .people__name {
+
+        margin: 0;
 
         font-size: 2em;
-        @include breakpoint(laptop){
+
+
+        // text-shadow: 2px 2px 0 #000, 3px 3px 0 #fff;
+
+        @include breakpoint(laptop) {
 
             font-size: 4em;
         }
     }
 
-    .people__actions{
+    .people__title {
+        margin: 0;
+    }
+
+    .people__actions {
         display: flex;
         align-items: center;
         justify-content: flex-start;
         align-self: center;
         margin: 0;
 
-        li{
+        li {
             list-style: none;
             padding: 0.25em 0.5em;
         }
 
-        .social-link{
+        .social-link {
             display: flex;
             flex-direction: column;
-            align-items: center; justify-content: center;
-            i{
+            align-items: center;
+            justify-content: center;
+
+            i {
                 font-size: 2em;
             }
         }
     }
 
-    .people__headshot{
+    .people__headshot {
 
         width: 100%;
-        grid-row: 1 / span 2;
+        grid-row: 1 / span 3;
+        align-self: center;
+        grid-column: 2;
+        border-radius: 50%;
+        // border-radius: 10px; 
+        // border-radius: 0px;
+        margin: 1em 0;
+        @include card(-1);
+
 
     }
+}
+
+.people__subpage-nav {
+
+    width: 100%;
+
+    ul {
+        display: flex;
+
+        margin: 0;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+
+        li {
+            margin: 0;
+            display: block;
+            width: 100%;
+
+            a {
+                display: block;
+
+                width: 100%;
+                text-align: center;
+                font-size: 1.25em;
+                padding: 1em;
+
+                &.current {
+                    font-weight: 700;
+
+                    border-bottom: 3px solid $mainColor;
+
+                    background: $mainColor;
+                    color: #fff;
+                }
+
+                &:hover {
+                    background: lighten($mainColor, 20);
+                    border-bottom: 3px solid $mainColor;
+
+                }
+
+            }
+        }
+    }
+
 }

@@ -1,0 +1,23 @@
+button{
+
+    background: $mainColor;
+    color: #fff;
+    border: none;
+    padding: 0.5em 1em;
+
+    cursor: pointer;
+
+
+    &.btn-alt{
+        color: $mainColor;
+        background: none;
+        border: 2px solid $mainColor;
+
+        &:hover{
+            background: $lighterColor;
+            color: #fff;
+        }
+    }
+
+    
+}

@@ -5,15 +5,15 @@ svg.map {
     display: block;
 
     .state {
-        fill: #ccc;
-        stroke: #fff;
+        fill: rgba(0,0,0,0.4);
+        stroke: $mainColor;
         stroke-width: 0.5px;
     }
 
     .state a path {
-        fill: #333333;
-        stroke: #fff;
-        stroke-width: 0.5px;
+        fill: #aaa;
+        stroke: none;
+
 
         &:hover {
             fill: $mainColor;

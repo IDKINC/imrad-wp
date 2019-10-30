@@ -1,6 +1,6 @@
-<?php get_template_part("includes/inc.people"); ?>
+<?php get_template_part("includes/inc.people");?>
 <?php get_header();?>
-<?php $current_fp = get_query_var('fpage'); ?>
+<?php $current_fp = get_query_var('fpage');?>
 <main>
 	<article class="single single-people">
 
@@ -10,11 +10,10 @@ if (have_posts()) {
     while (have_posts()) {
         the_post();
 
-		$post_id = get_the_id();
-		
-		$people = new Person(get_post());
+        $post_id = get_the_id();
 
- 
+        $person = new Person(get_post());
+
         //
         // Post Content here
         //
@@ -25,52 +24,57 @@ if (have_posts()) {
 
 <section class="header__content">
 
-<img src="<?= $people->headshotUrl ?>" alt="<?= $people->name ?>" class="people__headshot"> 
+<h2 class="people__title"><?=$person->title?></h2>
+<h1 class="people__name"><?=$person->name?></h1>
 
-<h1 class="people__name"><?= $people->name ?></h1>
-    
-<ul class="people__actions">
-    <li><button class="follow-button">Follow</button></li>
-    
+<ul class="people__actions"> 
+    <li><button class="follow-button btn-alt">Follow</button></li>
 
-    <?php 
-    
-    // $url, $icon, $label
-    $link_template = "<li><a href='%s' class='social-link'><i class='fa-fw %s'></i>%s</a></li>"; ?>
 
-<?= ($people->website ? sprintf($link_template, $people->website, "fas fa-globe", "Website") : ""); ?>
-<?= ($people->facebook ? sprintf($link_template, "https://facebook.com/" . $people->facebook, "fab fa-facebook-f", "Facebook") : ""); ?>
-<?= ($people->twitter ? sprintf($link_template, "https://twitter.com/" . $people->twitter, "fab fa-twitter", "Twitter") : ""); ?>
+    <?php
+
+        // $url, $icon, $label
+        $link_template = "<li><a href='%s' class='social-link'><i class='fa-fw %s'></i>%s</a></li>";?>
+
+<?=($person->website ? sprintf($link_template, $person->website, "fas fa-globe", "Website") : "");?>
+<?=($person->facebook ? sprintf($link_template, "https://facebook.com/" . $person->facebook, "fab fa-facebook-f", "Facebook") : "");?>
+<?=($person->twitter ? sprintf($link_template, "https://twitter.com/" . $person->twitter, "fab fa-twitter", "Twitter") : "");?>
 
     </ul>
 
+
+<img src="<?=$person->headshotUrl?>" alt="<?=$person->name?>" class="people__headshot">
+
     </section>
 
-    
+
 
 </header>
 
 <nav class="people__subpage-nav">
 
 <ul>
-    <li><a href="<?= $people->url ?>">Overview</a></li>
-    <li><a href="<?= $people->url ?>voting-history/">Voting History</a></li>
-    <li><a href="<?= $people->url ?>donations/">Donation History</a></li>
-    <li><a href="<?= $people->url ?>bio/">About</a></li>
+    <li><a href="<?=$person->url?>" <?= (!$current_fp ? "class='current'" : "") ?>>Overview</a></li>
+    <li><a href="<?=$person->url?>voting-history/" <?= ($current_fp == 'voting-history' ? "class='current'" : "") ?>>Voting History</a></li>
+    <li><a href="<?=$person->url?>donations/" <?= ($current_fp == 'donations' ? "class='current'" : "") ?>>Donation History</a></li>
+    <li><a href="<?=$person->url?>bio/" <?= ($current_fp == 'bio' ? "class='current'" : "") ?>>About</a></li>
 
     </ul>
 
     </nav>
 
+    
+
 <?php if (!$current_fp) {
-        get_template_part( 'single', 'people-index' );
-    } else if ($current_fp == 'voting-history') {
-        get_template_part( 'single', 'people-voting-history' );
-    } else if ($current_fp == 'donations') {
-        get_template_part( 'single', 'people-donations' );
-    } else if ($current_fp == 'bio') {
-        get_template_part( 'single', 'people-bio' );
-    }; ?>
+            get_template_part('single', 'people-index');
+        } else if ($current_fp == 'voting-history') {
+            get_template_part('single', 'people-voting-history');
+        } else if ($current_fp == 'donations') {
+            get_template_part('single', 'people-donations');
+        } else if ($current_fp == 'bio') {
+            get_template_part('single', 'people-bio');
+        }
+        ;?>
 
 
 

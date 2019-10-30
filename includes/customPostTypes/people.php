@@ -54,6 +54,7 @@ function people_post_type()
         'hierarchical' => true,
         'exclude_from_search' => false,
         'publicly_queryable' => true,
+        'taxonomies' => ['title'],
     );
     register_post_type('people', $args);
 

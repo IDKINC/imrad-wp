@@ -20,6 +20,7 @@
         position: absolute; top: 2em;
         right: 2em;
         cursor: pointer;
+        color: #fff;
         i{
             font-size: 1.5em;
 
@@ -35,7 +36,7 @@
         top: 0;
         left: 0;
         right: 0;
-        background: #fff;
+        background: $bgColor;
         margin: 0;
         padding: 0;
         height: 100vh;

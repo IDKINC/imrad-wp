@@ -3,10 +3,14 @@
 include __DIR__ . "/includes/first_post_date.php";
 include __DIR__ . "/includes/inc.input.php";
 include __DIR__ . "/includes/author_subpages.php";
+include __DIR__ . "/includes/image_sizes.php";
 
 
 include __DIR__ . "/includes/customPostTypes/states.php";
 include __DIR__ . "/includes/customPostTypes/people.php";
+
+include __DIR__ . "/includes/customTaxonomies/title.php";
+
 
 /**
  * Proper way to enqueue scripts and styles.

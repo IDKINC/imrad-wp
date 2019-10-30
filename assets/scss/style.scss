@@ -4,11 +4,13 @@
 
 @import "type";
 
+@import "atoms/button";
+
 @import "components/components";
 @import "pages/pages";
 
 
 
 body {
-    background: #fff;
+    background: $bgColor;
 }
