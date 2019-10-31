@@ -667,23 +667,25 @@ footer.site__footer {
 svg.map {
   width: 100%;
   height: auto;
-  display: block; }
-  /* line 7, assets/scss/components/maps/_maps.scss */
+  display: block;
+  -ms-touch-action: auto;
+  touch-action: auto; }
+  /* line 8, assets/scss/components/maps/_maps.scss */
   svg.map .state {
     fill: rgba(0, 0, 0, 0.4);
     stroke: #c56cf0;
     stroke-width: 0.5px; }
-  /* line 13, assets/scss/components/maps/_maps.scss */
+  /* line 14, assets/scss/components/maps/_maps.scss */
   svg.map .state a path {
     fill: #aaa;
     stroke: none; }
-    /* line 18, assets/scss/components/maps/_maps.scss */
+    /* line 19, assets/scss/components/maps/_maps.scss */
     svg.map .state a path:hover {
       fill: #c56cf0;
       -webkit-filter: drop-shadow(0 1px 3px #b33eeb);
       filter: drop-shadow(0 1px 3px #b33eeb);
       z-index: 2; }
-  /* line 25, assets/scss/components/maps/_maps.scss */
+  /* line 26, assets/scss/components/maps/_maps.scss */
   svg.map .state path {
     -webkit-transform-origin: 50% 50%;
     transform-origin: 50% 50%;
@@ -705,24 +707,26 @@ svg.map {
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
-  position: relative; }
-  /* line 13, assets/scss/components/maps/_dynamicMap.scss */
+  position: relative;
+  -ms-touch-action: auto;
+  touch-action: auto; }
+  /* line 14, assets/scss/components/maps/_dynamicMap.scss */
   .dynamicMap svg {
     width: 100%; }
-  /* line 18, assets/scss/components/maps/_dynamicMap.scss */
+  /* line 19, assets/scss/components/maps/_dynamicMap.scss */
   .dynamicMap #zoomToggle {
     position: absolute;
     top: 2em;
     right: 2em;
     cursor: pointer;
     color: #fff; }
-    /* line 24, assets/scss/components/maps/_dynamicMap.scss */
+    /* line 25, assets/scss/components/maps/_dynamicMap.scss */
     .dynamicMap #zoomToggle i {
       font-size: 1.5em; }
-    /* line 29, assets/scss/components/maps/_dynamicMap.scss */
+    /* line 30, assets/scss/components/maps/_dynamicMap.scss */
     .dynamicMap #zoomToggle .fa-times {
       display: none; }
-  /* line 33, assets/scss/components/maps/_dynamicMap.scss */
+  /* line 34, assets/scss/components/maps/_dynamicMap.scss */
   .dynamicMap.zoom {
     width: 100%;
     position: fixed;
@@ -736,20 +740,22 @@ svg.map {
     overflow: auto;
     -webkit-box-align: start;
     -ms-flex-align: start;
-    align-items: flex-start; }
-    /* line 46, assets/scss/components/maps/_dynamicMap.scss */
+    align-items: flex-start;
+    -ms-touch-action: auto;
+    touch-action: auto; }
+    /* line 49, assets/scss/components/maps/_dynamicMap.scss */
     .dynamicMap.zoom #zoomToggle {
       position: fixed; }
-      /* line 49, assets/scss/components/maps/_dynamicMap.scss */
+      /* line 52, assets/scss/components/maps/_dynamicMap.scss */
       .dynamicMap.zoom #zoomToggle i {
         font-size: 3em; }
-      /* line 52, assets/scss/components/maps/_dynamicMap.scss */
+      /* line 55, assets/scss/components/maps/_dynamicMap.scss */
       .dynamicMap.zoom #zoomToggle .fa-search-plus {
         display: none; }
-      /* line 53, assets/scss/components/maps/_dynamicMap.scss */
+      /* line 56, assets/scss/components/maps/_dynamicMap.scss */
       .dynamicMap.zoom #zoomToggle .fa-times {
         display: block; }
-    /* line 56, assets/scss/components/maps/_dynamicMap.scss */
+    /* line 59, assets/scss/components/maps/_dynamicMap.scss */
     .dynamicMap.zoom svg.map {
       width: 80%;
       margin-top: 1vh;
@@ -772,16 +778,17 @@ svg.map {
   flex-direction: column; }
   /* line 11, assets/scss/components/states/_states.scss */
   .single-state .state__header .state__name {
-    font-size: 3em; }
+    font-size: 3em;
+    color: #fff; }
     @media (min-width: 64em) {
       /* line 11, assets/scss/components/states/_states.scss */
       .single-state .state__header .state__name {
         font-size: 6em; } }
-  /* line 20, assets/scss/components/states/_states.scss */
+  /* line 21, assets/scss/components/states/_states.scss */
   .single-state .state__header .state__motto {
     margin: 0 auto 0.5em; }
 
-/* line 29, assets/scss/components/states/_states.scss */
+/* line 30, assets/scss/components/states/_states.scss */
 .state__images {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -792,24 +799,40 @@ svg.map {
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  max-width: 100%; }
+  max-width: 100%;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column; }
   @media (min-width: 64em) {
-    /* line 29, assets/scss/components/states/_states.scss */
+    /* line 30, assets/scss/components/states/_states.scss */
     .state__images {
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+      flex-direction: row;
       max-width: 80%; } }
-  /* line 41, assets/scss/components/states/_states.scss */
+  /* line 43, assets/scss/components/states/_states.scss */
   .state__images img {
     margin: 1em;
-    width: 40%; }
-  /* line 46, assets/scss/components/states/_states.scss */
+    width: 80%; }
+    @media (min-width: 64em) {
+      /* line 43, assets/scss/components/states/_states.scss */
+      .state__images img {
+        width: 40%; } }
+  /* line 52, assets/scss/components/states/_states.scss */
   .state__images .state__flag {
     -webkit-box-shadow: 0 1.5px 4px rgba(0, 0, 0, 0.24), 0 1px 8px rgba(0, 0, 0, 0.12);
     box-shadow: 0 1.5px 4px rgba(0, 0, 0, 0.24), 0 1px 8px rgba(0, 0, 0, 0.12); }
-  /* line 50, assets/scss/components/states/_states.scss */
+  /* line 56, assets/scss/components/states/_states.scss */
   .state__images .dynamicMap {
-    width: 50%; }
+    width: 80%; }
+    @media (min-width: 64em) {
+      /* line 56, assets/scss/components/states/_states.scss */
+      .state__images .dynamicMap {
+        width: 50%; } }
 
-/* line 59, assets/scss/components/states/_states.scss */
+/* line 69, assets/scss/components/states/_states.scss */
 .state__meta ul {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -817,23 +840,56 @@ svg.map {
   margin: 0;
   padding: 0;
   color: #aaa; }
-  /* line 66, assets/scss/components/states/_states.scss */
+  /* line 76, assets/scss/components/states/_states.scss */
   .state__meta ul li {
     list-style: none;
     margin: 0;
     color: #fff;
     border-right: 1px solid #aaa;
-    padding: 0.1em 0.5em; }
-    /* line 73, assets/scss/components/states/_states.scss */
+    padding: 0.1em 0.5em;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center; }
+    @media (min-width: 64em) {
+      /* line 76, assets/scss/components/states/_states.scss */
+      .state__meta ul li {
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+        flex-direction: row; } }
+    /* line 95, assets/scss/components/states/_states.scss */
     .state__meta ul li:last-of-type {
       border-right: none; }
-    /* line 78, assets/scss/components/states/_states.scss */
+    /* line 99, assets/scss/components/states/_states.scss */
+    .state__meta ul li .value {
+      -webkit-box-ordinal-group: 0;
+      -ms-flex-order: -1;
+      order: -1;
+      font-weight: 700;
+      font-size: 1.25em; }
+      @media (min-width: 64em) {
+        /* line 99, assets/scss/components/states/_states.scss */
+        .state__meta ul li .value {
+          -webkit-box-ordinal-group: unset;
+          -ms-flex-order: unset;
+          order: unset; } }
+    /* line 111, assets/scss/components/states/_states.scss */
     .state__meta ul li i {
       font-size: 2em;
       vertical-align: middle;
       margin: 0 0.25em; }
 
-/* line 88, assets/scss/components/states/_states.scss */
+/* line 121, assets/scss/components/states/_states.scss */
 .state__representatives {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -847,7 +903,12 @@ svg.map {
   align-items: center;
   -webkit-box-pack: center;
   -ms-flex-pack: center;
-  justify-content: center; }
+  justify-content: center;
+  width: 80%;
+  margin: 0 auto; }
+  /* line 130, assets/scss/components/states/_states.scss */
+  .state__representatives h2 {
+    text-align: center; }
 
 /* line 1, assets/scss/components/people/_people.scss */
 .people__header {
@@ -1038,6 +1099,28 @@ svg.map {
         .people__subpage-nav ul li {
           white-space: nowrap; } }
 
+/* line 1, assets/scss/components/people/_people-card.scss */
+.card-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 1em; }
+  @media (min-width: 64em) {
+    /* line 1, assets/scss/components/people/_people-card.scss */
+    .card-grid {
+      grid-template-columns: 1fr 1fr 1fr; } }
+
+/* line 13, assets/scss/components/people/_people-card.scss */
+.card {
+  background: #fff;
+  padding: 0.5em;
+  margin: 0.5em;
+  -webkit-box-shadow: 0 1.5px 4px rgba(0, 0, 0, 0.24), 0 1px 8px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 1.5px 4px rgba(0, 0, 0, 0.24), 0 1px 8px rgba(0, 0, 0, 0.12); }
+
+/* line 25, assets/scss/components/people/_people-card.scss */
+.card--person h3 {
+  margin: 0; }
+
 @media (min-width: 64em) {
   /* line 1, assets/scss/pages/_front-page.scss */
   .site__intro {
@@ -1081,5 +1164,9 @@ svg.map {
 /* line 14, assets/scss/style.scss */
 body {
   background: #1C0E23; }
+
+/* line 19, assets/scss/style.scss */
+main.content {
+  min-height: 45vh; }
 
 /*# sourceMappingURL=style.css.map */

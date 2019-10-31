@@ -10,6 +10,7 @@
 
         .state__name {
             font-size: 3em;
+            color: #fff;
 
 
             @include breakpoint(laptop) {
@@ -32,15 +33,20 @@
     align-items: center;
     justify-content: space-between;
     max-width: 100%;
+    flex-direction: column;
 
     @include breakpoint(laptop) {
-
+flex-direction: row;
         max-width: 80%;
     }
 
     img {
         margin: 1em;
-        width: 40%;
+        width: 80%;
+        
+        @include breakpoint(laptop) {
+            width: 40%;
+        }
     }
 
     .state__flag{
@@ -48,7 +54,11 @@
     }
 
     .dynamicMap{
-        width: 50%;
+        width: 80%;
+
+        @include breakpoint(laptop){
+            width: 50%;
+        }
     }
 
 
@@ -70,8 +80,31 @@
             border-right: 1px solid #aaa;
             padding: 0.1em 0.5em;
 
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            @include breakpoint(laptop){
+
+                flex-direction: row;
+            }
+
+
+
             &:last-of-type{
                 border-right: none;
+            }
+
+            .value{
+                order: -1;
+                font-weight: 700;
+                font-size: 1.25em;
+
+                @include breakpoint(laptop){
+
+                    order: unset;
+                }
             }
 
 
@@ -91,4 +124,10 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+
+    width: 80%;
+    margin: 0 auto;
+    h2{
+        text-align: center;
+    }
 }

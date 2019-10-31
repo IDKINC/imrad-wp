@@ -3,6 +3,7 @@ svg.map {
     width: 100%;
     height: auto;
     display: block;
+    touch-action: auto;
 
     .state {
         fill: rgba(0,0,0,0.4);

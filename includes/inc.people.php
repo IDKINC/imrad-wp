@@ -22,6 +22,7 @@ class Person {
 		$this->bannerUrl = wp_get_attachment_image_url($this->getPostMeta($this->id, 'banner_image', true), 'full');
 
 		$this->url = get_permalink($this->id);
+		$this->slug = $post->post_name;
 
 		$this->website = $this->getPostMeta($this->id, 'website', true);
 		$this->facebook = $this->getPostMeta($this->id, 'facebook', true);
@@ -91,6 +92,14 @@ class Person {
 
 		return get_the_permalink($state->id);
 
+	}
+
+
+	public function personCard(){
+		// URL, SLUG, ImageURL, Name, Name
+		$template = "<a href='%s'><article class='card card--person' id='%s'><img src='%s' alt='%s'><h3>%s</h3></article></a>";
+
+		return sprintf($template, $this->url, $this->slug, $this->headshotUrl, $this->name, $this->name);
 	}
 
 }

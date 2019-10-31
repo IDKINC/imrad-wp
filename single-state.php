@@ -1,6 +1,6 @@
 <?php get_template_part("includes/inc.state"); ?>
+<?php get_template_part("includes/inc.people"); ?>
 <?php get_header();?>
-<main>
 	<article class="single single-state">
 
 
@@ -66,12 +66,17 @@ $people = $state->getPeople();
 
 
 if ($people->have_posts()) {
+	echo "<section class='card-grid'>";
     while ($people->have_posts()) {
 		$people->the_post();
 
-		echo sprintf("<a href='%s'>%s</a>", get_the_permalink(), get_the_title());
+		$rep = new Person(get_post());
+
+		echo $rep->personCard();
 		
 	}
+	echo "</section>";
+
 	}
 
 	else {
@@ -92,5 +97,4 @@ if ($people->have_posts()) {
 ?>
 
 </article>
-	</main>
 <?php get_footer();?>

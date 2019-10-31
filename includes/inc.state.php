@@ -40,10 +40,10 @@ class State {
         foreach ($meta_keys as $meta_key) {
 
 			$meta = get_post_meta($this->id, $meta_key['meta_id']);
-
+ 
             if ($meta[0]) {
 
-                echo sprintf("<li><i class='%s'></i>%s: %s</li>", $meta_key['icon'], $meta_key['label'], ($meta_key['format'] ? number_format($meta[0]) : $meta[0]));
+                echo sprintf("<li><i class='%s'></i>%s <span class='value'>%s</span></li>", $meta_key['icon'], $meta_key['label'], ($meta_key['format'] ? number_format($meta[0]) : $meta[0]));
             }
 
         }

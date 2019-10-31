@@ -1,7 +1,6 @@
 <?php get_template_part("includes/inc.people");?>
 <?php get_header();?>
 <?php $current_fp = get_query_var('fpage');?>
-<main>
 	<article class="single single-people">
 
 
@@ -68,7 +67,8 @@ if (have_posts()) {
 
     </nav>
 
-    
+    <main class="content">
+
 
 <?php if (!$current_fp) {
             get_template_part('single', 'people-overview');
@@ -81,6 +81,7 @@ if (have_posts()) {
         }
         ;?>
 
+    </main>
 
 
 <?php
@@ -89,5 +90,4 @@ if (have_posts()) {
 ?>
 
 </article>
-	</main>
 <?php get_footer();?>
