@@ -48,6 +48,11 @@ if (have_posts()) {
     </section>
 
 
+    <section class="people__banner">
+        <img src="<?=$person->bannerUrl ?>" >
+    </section>
+
+
 
 </header>
 

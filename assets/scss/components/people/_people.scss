@@ -7,46 +7,92 @@
     background: url('assets/img/dark-honeycomb.png');
     @include card(-2);
 
+    position: relative;
+
     .header__content {
+        position: relative;
         display: grid;
         align-items: flex-end;
+        grid-template-columns: 1fr;
+
         grid-column-gap: 1em;
         padding: 1em;
+        grid-auto-flow: dense;
+        z-index: 2;
 
         @include breakpoint(laptop) {
 
-
-            grid-template-columns: 5fr 1fr;
+            grid-template-columns: 3fr 1fr 1fr;
             grid-template-rows: 3fr 1fr 0.5fr;
             justify-content: flex-end;
         }
     }
 
+    .people__name, .people__title, .people__actions{
+
+        background: $bgColor;
+        padding: 0.25rem;
+        padding-left: 1rem;
+        margin: 0 auto;
+        width: 100%;
+
+    }
+
     .people__name {
 
-        margin: 0;
+        grid-column: 1;
+        
 
-        font-size: 2em;
+
+        font-size: 3em;
+        text-align: center;
+
+        color: #fff;
 
 
-        // text-shadow: 2px 2px 0 #000, 3px 3px 0 #fff;
+
 
         @include breakpoint(laptop) {
+
+            text-align: left;
 
             font-size: 4em;
         }
     }
 
     .people__title {
-        margin: 0;
+        
+        grid-column: 1;
+        text-align: center;
+        font-weight: 100;
+        font-family: $font-family--body;
+        font-size: 1.5em;
+        
+
+        @include breakpoint(laptop){
+            text-align: left;
+        font-size: 2em;
+
+        }
+        
+
     }
 
     .people__actions {
         display: flex;
         align-items: center;
-        justify-content: flex-start;
+        justify-content: center;
         align-self: center;
-        margin: 0;
+        grid-column: 1;
+
+
+        @include breakpoint(laptop){
+            justify-content: flex-start;
+
+
+        }
+        
+
 
         li {
             list-style: none;
@@ -67,18 +113,59 @@
 
     .people__headshot {
 
-        width: 100%;
-        grid-row: 1 / span 3;
-        align-self: center;
-        grid-column: 2;
-        border-radius: 50%;
-        // border-radius: 10px; 
-        // border-radius: 0px;
-        margin: 1em 0;
-        @include card(-1);
+        width: 75%;
+        margin: 0.5em auto;
+
+        grid-row: 1;
+        border-radius: 10px;
+
+        border: 2px solid #fff;
+
+
+        
+
+
+        @include breakpoint(laptop) {
+            margin: 1em 0;
+            width: 100%;
+
+
+            grid-row: 1 / span 3;
+            align-self: center;
+            grid-column: 3;
+
+        }
 
 
     }
+
+    .people__banner {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 1;
+        overflow: hidden;
+
+
+        img {
+
+            width: 100%;
+            height: auto;
+            position: absolute;
+            display:block;
+            left: 0;
+            z-index: 1;
+
+            @include breakpoint(laptop){
+                top: -25%;
+
+            }
+
+        }
+    }
+
 }
 
 .people__subpage-nav {
@@ -121,6 +208,21 @@
 
                 }
 
+            }
+        }
+    }
+
+
+    @include breakpoint(mobileonly){
+
+        width: 100vw;
+        overflow-y: scroll;
+
+        ul{
+            justify-content: flex-start;
+
+            li{
+                white-space: nowrap
             }
         }
     }

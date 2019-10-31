@@ -17,9 +17,9 @@ class Person {
 		$this->title = $this->setTitles($this->id);
 		$this->state = $this->getPostMeta($this->id, 'state', true);
 
-		$this->motto = $this->getPostMeta($this->id, 'motto', true);
+
 		$this->headshotUrl = wp_get_attachment_image_url(get_post_thumbnail_id($post_id), 'headshot');
-		$this->bannerUrl = wp_get_attachment_image_url(get_post_meta($post_id, 'people_banner', true), 'full');
+		$this->bannerUrl = wp_get_attachment_image_url($this->getPostMeta($this->id, 'banner_image', true), 'full');
 
 		$this->url = get_permalink($this->id);
 
