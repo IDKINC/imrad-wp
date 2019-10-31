@@ -1,7 +1,7 @@
 <?php 
 
 $people_sub_pages = array(
-        'vote-history' => 'Vote History',
+        'voting-history' => 'Vote History',
         'donations' => 'Donation History',
         'bio' => 'About'
     );
@@ -18,7 +18,7 @@ $people_sub_pages = array(
         foreach ($people_sub_pages as $slug => $title)
             $newrules['people/([^/]+)/' . $slug . '/?$'] = 'index.php?people=$matches[1]&fpage=' . $slug;
       
-        return $rules + $newrules;
+        return $newrules + $rules;
     }
       
     // Tell WordPress to accept our custom query variable

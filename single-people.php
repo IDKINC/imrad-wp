@@ -66,7 +66,7 @@ if (have_posts()) {
     
 
 <?php if (!$current_fp) {
-            get_template_part('single', 'people-index');
+            get_template_part('single', 'people-overview');
         } else if ($current_fp == 'voting-history') {
             get_template_part('single', 'people-voting-history');
         } else if ($current_fp == 'donations') {
