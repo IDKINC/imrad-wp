@@ -780,15 +780,18 @@ svg.map {
   .single-state .state__header .state__name {
     font-size: 3em;
     color: #fff; }
+    /* line 15, assets/scss/components/states/_states.scss */
+    .single-state .state__header .state__name a {
+      color: #fff; }
     @media (min-width: 64em) {
       /* line 11, assets/scss/components/states/_states.scss */
       .single-state .state__header .state__name {
         font-size: 6em; } }
-  /* line 21, assets/scss/components/states/_states.scss */
+  /* line 25, assets/scss/components/states/_states.scss */
   .single-state .state__header .state__motto {
     margin: 0 auto 0.5em; }
 
-/* line 30, assets/scss/components/states/_states.scss */
+/* line 34, assets/scss/components/states/_states.scss */
 .state__images {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -805,34 +808,34 @@ svg.map {
   -ms-flex-direction: column;
   flex-direction: column; }
   @media (min-width: 64em) {
-    /* line 30, assets/scss/components/states/_states.scss */
+    /* line 34, assets/scss/components/states/_states.scss */
     .state__images {
       -webkit-box-orient: horizontal;
       -webkit-box-direction: normal;
       -ms-flex-direction: row;
       flex-direction: row;
       max-width: 80%; } }
-  /* line 43, assets/scss/components/states/_states.scss */
+  /* line 47, assets/scss/components/states/_states.scss */
   .state__images img {
     margin: 1em;
     width: 80%; }
     @media (min-width: 64em) {
-      /* line 43, assets/scss/components/states/_states.scss */
+      /* line 47, assets/scss/components/states/_states.scss */
       .state__images img {
         width: 40%; } }
-  /* line 52, assets/scss/components/states/_states.scss */
+  /* line 56, assets/scss/components/states/_states.scss */
   .state__images .state__flag {
     -webkit-box-shadow: 0 1.5px 4px rgba(0, 0, 0, 0.24), 0 1px 8px rgba(0, 0, 0, 0.12);
     box-shadow: 0 1.5px 4px rgba(0, 0, 0, 0.24), 0 1px 8px rgba(0, 0, 0, 0.12); }
-  /* line 56, assets/scss/components/states/_states.scss */
+  /* line 60, assets/scss/components/states/_states.scss */
   .state__images .dynamicMap {
     width: 80%; }
     @media (min-width: 64em) {
-      /* line 56, assets/scss/components/states/_states.scss */
+      /* line 60, assets/scss/components/states/_states.scss */
       .state__images .dynamicMap {
         width: 50%; } }
 
-/* line 69, assets/scss/components/states/_states.scss */
+/* line 73, assets/scss/components/states/_states.scss */
 .state__meta ul {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -840,7 +843,7 @@ svg.map {
   margin: 0;
   padding: 0;
   color: #aaa; }
-  /* line 76, assets/scss/components/states/_states.scss */
+  /* line 80, assets/scss/components/states/_states.scss */
   .state__meta ul li {
     list-style: none;
     margin: 0;
@@ -861,16 +864,16 @@ svg.map {
     -ms-flex-pack: center;
     justify-content: center; }
     @media (min-width: 64em) {
-      /* line 76, assets/scss/components/states/_states.scss */
+      /* line 80, assets/scss/components/states/_states.scss */
       .state__meta ul li {
         -webkit-box-orient: horizontal;
         -webkit-box-direction: normal;
         -ms-flex-direction: row;
         flex-direction: row; } }
-    /* line 95, assets/scss/components/states/_states.scss */
+    /* line 99, assets/scss/components/states/_states.scss */
     .state__meta ul li:last-of-type {
       border-right: none; }
-    /* line 99, assets/scss/components/states/_states.scss */
+    /* line 103, assets/scss/components/states/_states.scss */
     .state__meta ul li .value {
       -webkit-box-ordinal-group: 0;
       -ms-flex-order: -1;
@@ -878,19 +881,19 @@ svg.map {
       font-weight: 700;
       font-size: 1.25em; }
       @media (min-width: 64em) {
-        /* line 99, assets/scss/components/states/_states.scss */
+        /* line 103, assets/scss/components/states/_states.scss */
         .state__meta ul li .value {
           -webkit-box-ordinal-group: unset;
           -ms-flex-order: unset;
           order: unset;
           margin-left: 0.15em; } }
-    /* line 112, assets/scss/components/states/_states.scss */
+    /* line 116, assets/scss/components/states/_states.scss */
     .state__meta ul li i {
       font-size: 2em;
       vertical-align: middle;
       margin: 0 0.25em; }
 
-/* line 122, assets/scss/components/states/_states.scss */
+/* line 126, assets/scss/components/states/_states.scss */
 .state__representatives {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -907,7 +910,7 @@ svg.map {
   justify-content: center;
   width: 80%;
   margin: 0 auto; }
-  /* line 131, assets/scss/components/states/_states.scss */
+  /* line 135, assets/scss/components/states/_states.scss */
   .state__representatives h2 {
     text-align: center; }
 
@@ -1118,12 +1121,17 @@ svg.map {
   background: #fff;
   padding: 0.5em;
   margin: 0.5em;
+  border-radius: 10px;
   -webkit-box-shadow: 0 1.5px 4px rgba(0, 0, 0, 0.24), 0 1px 8px rgba(0, 0, 0, 0.12);
   box-shadow: 0 1.5px 4px rgba(0, 0, 0, 0.24), 0 1px 8px rgba(0, 0, 0, 0.12); }
 
-/* line 25, assets/scss/components/people/_people-card.scss */
+/* line 27, assets/scss/components/people/_people-card.scss */
+.card--person img {
+  border-radius: 6px 6px 0 0; }
+
+/* line 31, assets/scss/components/people/_people-card.scss */
 .card--person h3 {
-  margin: 0; }
+  margin: 0.25em 0; }
 
 @media (min-width: 64em) {
   /* line 1, assets/scss/pages/_front-page.scss */

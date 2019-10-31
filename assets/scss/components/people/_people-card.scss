@@ -15,6 +15,7 @@
     background: #fff;
     padding: 0.5em;
     margin: 0.5em;
+    border-radius: 10px;
 
     @include card(1);
 }
@@ -22,7 +23,12 @@
 
 .card--person{
 
+
+    img{
+    border-radius: 6px 6px 0 0;
+
+    }
     h3{
-        margin: 0;
+        margin: 0.25em 0;
     }
 }
