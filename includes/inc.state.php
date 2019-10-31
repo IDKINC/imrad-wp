@@ -33,7 +33,7 @@ class State {
 	public function state_meta(){ 
 
 		$population = array('meta_id' => 'population', 'label' => 'Population', 'icon' => 'fas faw fa-users', 'format' => true);
-        $districts = array('meta_id' => 'districts_count', 'label' => '# of Districts', 'icon' => 'fas faw fa-border-none');
+        $districts = array('meta_id' => 'districts_count', 'label' => 'Districts', 'icon' => 'fas faw fa-border-none');
 
         $meta_keys = array($population, $districts);
 

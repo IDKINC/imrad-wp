@@ -882,14 +882,15 @@ svg.map {
         .state__meta ul li .value {
           -webkit-box-ordinal-group: unset;
           -ms-flex-order: unset;
-          order: unset; } }
-    /* line 111, assets/scss/components/states/_states.scss */
+          order: unset;
+          margin-left: 0.15em; } }
+    /* line 112, assets/scss/components/states/_states.scss */
     .state__meta ul li i {
       font-size: 2em;
       vertical-align: middle;
       margin: 0 0.25em; }
 
-/* line 121, assets/scss/components/states/_states.scss */
+/* line 122, assets/scss/components/states/_states.scss */
 .state__representatives {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -906,7 +907,7 @@ svg.map {
   justify-content: center;
   width: 80%;
   margin: 0 auto; }
-  /* line 130, assets/scss/components/states/_states.scss */
+  /* line 131, assets/scss/components/states/_states.scss */
   .state__representatives h2 {
     text-align: center; }
 

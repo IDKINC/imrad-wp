@@ -104,6 +104,7 @@ flex-direction: row;
                 @include breakpoint(laptop){
 
                     order: unset;
+                    margin-left: 0.15em;
                 }
             }
 
