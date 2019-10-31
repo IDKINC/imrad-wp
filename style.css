@@ -941,21 +941,24 @@ svg.map {
   .people__header .people__name, .people__header .people__title, .people__header .people__actions {
     background: #1C0E23;
     padding: 0.25rem;
-    padding-left: 1rem;
     margin: 0 auto;
     width: 100%; }
-  /* line 41, assets/scss/components/people/_people.scss */
+    @media (min-width: 64em) {
+      /* line 31, assets/scss/components/people/_people.scss */
+      .people__header .people__name, .people__header .people__title, .people__header .people__actions {
+        padding-left: 1rem; } }
+  /* line 46, assets/scss/components/people/_people.scss */
   .people__header .people__name {
     grid-column: 1;
     font-size: 3em;
     text-align: center;
     color: #fff; }
     @media (min-width: 64em) {
-      /* line 41, assets/scss/components/people/_people.scss */
+      /* line 46, assets/scss/components/people/_people.scss */
       .people__header .people__name {
         text-align: left;
         font-size: 4em; } }
-  /* line 63, assets/scss/components/people/_people.scss */
+  /* line 68, assets/scss/components/people/_people.scss */
   .people__header .people__title {
     grid-column: 1;
     text-align: center;
@@ -963,11 +966,11 @@ svg.map {
     font-family: "Ubuntu", serif;
     font-size: 1.5em; }
     @media (min-width: 64em) {
-      /* line 63, assets/scss/components/people/_people.scss */
+      /* line 68, assets/scss/components/people/_people.scss */
       .people__header .people__title {
         text-align: left;
         font-size: 2em; } }
-  /* line 81, assets/scss/components/people/_people.scss */
+  /* line 86, assets/scss/components/people/_people.scss */
   .people__header .people__actions {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -982,16 +985,16 @@ svg.map {
     align-self: center;
     grid-column: 1; }
     @media (min-width: 64em) {
-      /* line 81, assets/scss/components/people/_people.scss */
+      /* line 86, assets/scss/components/people/_people.scss */
       .people__header .people__actions {
         -webkit-box-pack: start;
         -ms-flex-pack: start;
         justify-content: flex-start; } }
-    /* line 97, assets/scss/components/people/_people.scss */
+    /* line 102, assets/scss/components/people/_people.scss */
     .people__header .people__actions li {
       list-style: none;
       padding: 0.25em 0.5em; }
-    /* line 102, assets/scss/components/people/_people.scss */
+    /* line 107, assets/scss/components/people/_people.scss */
     .people__header .people__actions .social-link {
       display: -webkit-box;
       display: -ms-flexbox;
@@ -1006,10 +1009,10 @@ svg.map {
       -webkit-box-pack: center;
       -ms-flex-pack: center;
       justify-content: center; }
-      /* line 108, assets/scss/components/people/_people.scss */
+      /* line 113, assets/scss/components/people/_people.scss */
       .people__header .people__actions .social-link i {
         font-size: 2em; }
-  /* line 114, assets/scss/components/people/_people.scss */
+  /* line 119, assets/scss/components/people/_people.scss */
   .people__header .people__headshot {
     width: 75%;
     margin: 0.5em auto;
@@ -1017,7 +1020,7 @@ svg.map {
     border-radius: 10px;
     border: 2px solid #fff; }
     @media (min-width: 64em) {
-      /* line 114, assets/scss/components/people/_people.scss */
+      /* line 119, assets/scss/components/people/_people.scss */
       .people__header .people__headshot {
         margin: 1em 0;
         width: 100%;
@@ -1025,7 +1028,7 @@ svg.map {
         -ms-flex-item-align: center;
         align-self: center;
         grid-column: 3; } }
-  /* line 142, assets/scss/components/people/_people.scss */
+  /* line 147, assets/scss/components/people/_people.scss */
   .people__header .people__banner {
     position: absolute;
     top: 0;
@@ -1034,7 +1037,7 @@ svg.map {
     bottom: 0;
     z-index: 1;
     overflow: hidden; }
-    /* line 152, assets/scss/components/people/_people.scss */
+    /* line 157, assets/scss/components/people/_people.scss */
     .people__header .people__banner img {
       width: 100%;
       height: auto;
@@ -1043,14 +1046,14 @@ svg.map {
       left: 0;
       z-index: 1; }
       @media (min-width: 64em) {
-        /* line 152, assets/scss/components/people/_people.scss */
+        /* line 157, assets/scss/components/people/_people.scss */
         .people__header .people__banner img {
           top: -25%; } }
 
-/* line 171, assets/scss/components/people/_people.scss */
+/* line 176, assets/scss/components/people/_people.scss */
 .people__subpage-nav {
   width: 100%; }
-  /* line 175, assets/scss/components/people/_people.scss */
+  /* line 180, assets/scss/components/people/_people.scss */
   .people__subpage-nav ul {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -1063,39 +1066,39 @@ svg.map {
     -ms-flex-pack: center;
     justify-content: center;
     width: 100%; }
-    /* line 183, assets/scss/components/people/_people.scss */
+    /* line 188, assets/scss/components/people/_people.scss */
     .people__subpage-nav ul li {
       margin: 0;
       display: block;
       width: 100%; }
-      /* line 188, assets/scss/components/people/_people.scss */
+      /* line 193, assets/scss/components/people/_people.scss */
       .people__subpage-nav ul li a {
         display: block;
         width: 100%;
         text-align: center;
         font-size: 1.25em;
         padding: 1em; }
-        /* line 196, assets/scss/components/people/_people.scss */
+        /* line 201, assets/scss/components/people/_people.scss */
         .people__subpage-nav ul li a.current {
           font-weight: 700;
           border-bottom: 3px solid #c56cf0;
           background: #c56cf0;
           color: #fff; }
-        /* line 205, assets/scss/components/people/_people.scss */
+        /* line 210, assets/scss/components/people/_people.scss */
         .people__subpage-nav ul li a:hover {
           background: #eac9f9;
           border-bottom: 3px solid #c56cf0; }
   @media (max-width: 37.5em) {
-    /* line 171, assets/scss/components/people/_people.scss */
+    /* line 176, assets/scss/components/people/_people.scss */
     .people__subpage-nav {
       width: 100vw;
       overflow-y: scroll; }
-      /* line 221, assets/scss/components/people/_people.scss */
+      /* line 226, assets/scss/components/people/_people.scss */
       .people__subpage-nav ul {
         -webkit-box-pack: start;
         -ms-flex-pack: start;
         justify-content: flex-start; }
-        /* line 224, assets/scss/components/people/_people.scss */
+        /* line 229, assets/scss/components/people/_people.scss */
         .people__subpage-nav ul li {
           white-space: nowrap; } }
 
