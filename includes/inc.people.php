@@ -15,6 +15,8 @@ class Person {
 		$this->id = $post->ID;
 		$this->name = get_the_title($this->id);
 		$this->title = $this->setTitles($this->id);
+		$this->party = $this->getParty($this->id);
+		$this->partyColor = "#" . get_term_meta($this->party->term_id, 'party_color', true);
 		$this->state = $this->getPostMeta($this->id, 'state', true);
 
 
@@ -29,6 +31,15 @@ class Person {
 		$this->twitter = $this->getPostMeta($this->id, 'twitter', true);
 
 
+
+	}
+
+	private function getParty($id){
+
+		$party = get_the_terms($id, 'party');
+
+
+		return $party[0];
 
 	}
 
@@ -94,12 +105,18 @@ class Person {
 
 	}
 
-
 	public function personCard(){
 		// URL, SLUG, ImageURL, Name, Name
-		$template = "<a href='%s'><article class='card card--person' id='%s'><img src='%s' alt='%s'><h3>%s</h3></article></a>";
+	 ?>
+		
+		<a href='<?=$this->url?>'>
+			<article class='card card--person card--<?=$this->party->slug?>' id='<?=$this->slug?>'>
+				<img src='<?=$this->headshotUrl?>' alt='<?=$this->name?>'>
+				<h3><?=$this->name?> <span class='party'><?=substr($this->party->name, 0, 1)?>-<?= $this->state ?></span></h3>
+			</article>
+		</a>
 
-		return sprintf($template, $this->url, $this->slug, $this->headshotUrl, $this->name, $this->name);
+	<?php
 	}
 
 }

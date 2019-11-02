@@ -24,7 +24,7 @@ if (have_posts()) {
 <section class="header__content">
 
 <h2 class="people__title"><?=$person->title?> from <a href="<?=$person->stateLink()?>"><?=$person->stateName()?></a></h2>
-<h1 class="people__name"><?=$person->name?></h1>
+<h1 class="people__name"><?=$person->name?> <a href="<?=get_term_link($person->party, 'party')?>" class="party party--<?=$person->party->slug?>" ><?=$person->party->name?></a></h1>
 
 <ul class="people__actions"> 
     <li><button class="follow-button btn-alt">Follow</button></li>
@@ -44,11 +44,6 @@ if (have_posts()) {
 
 <img src="<?=$person->headshotUrl?>" alt="<?=$person->name?>" class="people__headshot">
 
-    </section>
-
-
-    <section class="people__banner">
-        <img src="<?=$person->bannerUrl ?>" >
     </section>
 
 

@@ -17,6 +17,28 @@
  
     <!--=== TITLE ===-->  
     <title><?php wp_title(); ?> - <?php bloginfo( 'name' ); ?></title>
+
+    <!--=== COLOR VARS ===-->
+
+    <style>
+
+    
+    :root{
+    <?php 
+        $parties = get_terms(array(
+            'taxonomy' => 'party',
+            'hide_empty' => false,
+        ) );
+        foreach($parties as $party){
+
+            echo sprintf('--%s-color: #%s;', $party->slug, get_term_meta($party->term_id, 'party_color', true));
+
+        }
+?>
+    }
+    </style>
+
+
     <!--=== WP_HEAD() ===-->
     <?php wp_head(); ?>
       

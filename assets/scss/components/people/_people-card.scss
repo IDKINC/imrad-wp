@@ -30,5 +30,23 @@
     }
     h3{
         margin: 0.25em 0;
+        display: flex;
+        align-items: center;
+    }
+
+
+    .party{
+
+        margin-left: auto;
+        font-family: $font-family--body;
+    }
+
+
+
+    &.card--republican{
+
+        .party{
+            color: var(--republican-color);
+        }
     }
 }

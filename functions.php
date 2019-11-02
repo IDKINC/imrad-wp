@@ -9,7 +9,9 @@ include __DIR__ . "/includes/image_sizes.php";
 include __DIR__ . "/includes/customPostTypes/states.php";
 include __DIR__ . "/includes/customPostTypes/people.php";
 
-include __DIR__ . "/includes/customTaxonomies/title.php";
+include __DIR__ . "/includes/customTaxonomies/job_title.php";
+include __DIR__ . "/includes/customTaxonomies/zip_codes.php";
+include __DIR__ . "/includes/customTaxonomies/party.php";
 
 
 /**

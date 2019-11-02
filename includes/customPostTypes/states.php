@@ -51,6 +51,8 @@ function state_post_type()
         'has_archive' => 'states',
         'exclude_from_search' => false,
         'publicly_queryable' => true,
+        'taxonomies' => ['zip_codes'],
+
     );
     register_post_type('state', $args);
 

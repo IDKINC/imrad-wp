@@ -54,6 +54,20 @@
 
         color: #fff;
 
+        .party{
+            font-size: 0.5em;
+            vertical-align:middle;
+            &:hover{
+                opacity: 0.8;
+            }
+
+
+            &--republican{
+
+                color: var(--republican-color);
+            }
+        }
+
 
 
 
