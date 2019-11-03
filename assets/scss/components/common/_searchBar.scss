@@ -3,7 +3,6 @@
     display: none;
 
     button[type=submit] {
-        background: none;
         color: #fff;
         border: none;
         border-radius: 0 5px 5px 0;
@@ -61,6 +60,14 @@
 
     }
 
+    &.large{
+        width: 80%;
+
+        input{
+            font-size: 2em;
+        }
+    }
+
 }
 
 
@@ -76,4 +83,55 @@
     }
 
 
+}
+
+
+#searchBarZip{
+
+    display: grid;
+        grid-template-columns: auto 1fr;
+        margin-bottom: 1em;
+
+
+    input{
+    font-size: 4em;
+    width: 20rem;
+    margin: 0;
+    text-align: center;
+    margin-left: auto;
+    }
+
+    button[type=submit] {
+        color: #fff;
+        border: none;
+        border-radius: 0 5px 5px 0;
+        background: $mainColor;
+
+        i{
+
+            font-size: 4em
+        }
+
+    }
+}
+
+
+#searchBarFull{
+
+    display: grid;
+        grid-template-columns: 6fr 1fr;
+
+
+    input{
+    font-size: 2em;
+    margin: 0;
+    }
+
+    button[type=submit] {
+        color: #fff;
+        border: none;
+        border-radius: 0 5px 5px 0;
+        background: $mainColor;
+
+    }
 }

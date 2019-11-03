@@ -1,0 +1,33 @@
+.separator{
+
+    font-size: 2em;
+
+    background: $mainColor;
+    color: #fff;
+    width: 3em;
+    height: 3em;
+    border-radius: 3em;
+    align-items: center; justify-content: center;
+    display: flex;
+    margin: 1.5em auto;
+    position: relative;
+
+    &:before, &:after{
+
+        width:  20vw;
+        height: 0.25em;
+        background: #fff;
+        content: '';
+        position: absolute;
+    }
+
+    &:before{
+        left: 120%;
+    }
+
+
+    &:after{
+        right: 120%;
+    }
+
+}

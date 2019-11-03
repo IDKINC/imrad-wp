@@ -9,5 +9,9 @@
 
 <?php get_template_part("components/maps/us_map"); ?>
 
+<div class="separator">OR</div>
+
+<?php get_template_part("components/common/searchByZip"); ?>
+
 </main>
 <?php get_footer();?>

@@ -1,0 +1,31 @@
+.search-header{
+    width: 100%;
+    padding: 2em;
+    display: flex;
+    align-items:center;
+    justify-content: center;
+    flex-direction: column;
+    background: url('assets/img/dark-honeycomb.png');
+    .search-title{
+        color:#fff;
+    }
+
+
+    &.no-results{
+        min-height: 80vh;
+    }
+}
+.search-grid{
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    width: 100%;
+    margin: 1em auto;
+
+    @include breakpoint(laptop){
+        grid-template-columns: repeat(4, 1fr);
+
+        width: 80%;
+    }
+}

@@ -4,6 +4,7 @@ include __DIR__ . "/includes/first_post_date.php";
 include __DIR__ . "/includes/inc.input.php";
 include __DIR__ . "/includes/author_subpages.php";
 include __DIR__ . "/includes/image_sizes.php";
+include __DIR__ . "/includes/search_modifications.php";
 
 
 include __DIR__ . "/includes/customPostTypes/states.php";
