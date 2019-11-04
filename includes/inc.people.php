@@ -20,7 +20,7 @@ class Person {
 		$this->state = $this->getPostMeta($this->id, 'state', true);
 
 
-		$this->headshotUrl = wp_get_attachment_image_url(get_post_thumbnail_id($post_id), 'headshot');
+		$this->headshotUrl = $this->getImage($this->id);
 		$this->bannerUrl = wp_get_attachment_image_url($this->getPostMeta($this->id, 'banner_image', true), 'full');
 
 		$this->url = get_permalink($this->id);
@@ -30,6 +30,19 @@ class Person {
 		$this->facebook = $this->getPostMeta($this->id, 'facebook', true);
 		$this->twitter = $this->getPostMeta($this->id, 'twitter', true);
 
+
+
+	}
+
+	private function getImage($id){
+
+		$imageUrl = wp_get_attachment_image_url(get_post_thumbnail_id($post_id), 'headshot');
+
+		if($imageUrl){
+			return $imageUrl;
+		} else {
+			return "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png";
+		}
 
 
 	}

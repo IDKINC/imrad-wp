@@ -1,5 +1,7 @@
 <?php
 
+include __DIR__ . "/includes/imrad_import.php";
+
 // Peoples Custom Post Type
 
 function people_post_type()
@@ -376,3 +378,5 @@ function people_banner_save($post_id)
         }
     }
 }
+
+new ImradImport(array('Name','Party','State','District','Title'), 'people');

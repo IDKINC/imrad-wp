@@ -1,5 +1,6 @@
 <?php
 
+include __DIR__ . "/includes/imrad_import.php";
 // States Custom Post Type
 
 function state_post_type()
@@ -262,3 +263,4 @@ function custom_logo_meta_box_save($post_id)
 }
 
 // END Logo on Projects
+new ImradImport(array('Name','Abbreviation','Population','Motto'), 'state');
