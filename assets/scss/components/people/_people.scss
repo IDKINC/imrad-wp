@@ -9,6 +9,23 @@
 
     position: relative;
 
+
+    display: grid;
+    align-items: flex-end;
+    grid-template-columns: 1fr;
+
+    grid-column-gap: 1em;
+    padding: 1em;
+    grid-auto-flow: dense;
+    z-index: 2;
+
+    @include breakpoint(laptop) {
+
+        grid-template-columns: 3fr 1fr;
+        grid-template-rows: 1fr;
+        justify-content: flex-end;
+    }
+
     .header__content {
         position: relative;
         display: grid;
@@ -22,8 +39,6 @@
 
         @include breakpoint(laptop) {
 
-            grid-template-columns: 3fr 1fr 1fr;
-            grid-template-rows: 3fr 1fr 0.5fr;
             justify-content: flex-end;
         }
     }
@@ -66,6 +81,16 @@
 
                 color: var(--republican-color);
             }
+
+            &--democrat{
+
+                color: var(--democrat-color);
+            }
+
+            &--independent{
+
+                color: var(--independent-color);
+            }
         }
 
 
@@ -103,6 +128,8 @@
         justify-content: center;
         align-self: center;
         grid-column: 1;
+        margin: 0;
+        padding: 0.25rem;
 
 
         @include breakpoint(laptop){
@@ -116,6 +143,7 @@
         li {
             list-style: none;
             padding: 0.25em 0.5em;
+            margin: 0;
         }
 
         .social-link {

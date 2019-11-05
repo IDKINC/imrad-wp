@@ -1,16 +1,19 @@
-.card-grid{
+.card-grid {
 
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-gap: 1em;
+    width: 100%;
 
-    @include breakpoint(laptop){
 
-        grid-template-columns: 1fr 1fr 1fr;
+
+    @include breakpoint(laptop) {
+        width: 80%;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     }
 }
 
-.card{
+.card {
 
     background: #fff;
     padding: 0.5em;
@@ -21,21 +24,41 @@
 }
 
 
-.card--person{
+.card--person {
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
 
 
-    img{
-    border-radius: 6px 6px 0 0;
+    img {
+        border-radius: 6px 6px 0 0;
 
     }
-    h3{
+
+    .card__content{
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr;
+        align-items: center;
+
+
+        @include breakpoint(laptop){
+
+            grid-template-columns: 2fr 1fr;
+        }
+    }
+
+    h3 {
         margin: 0.25em 0;
         display: flex;
         align-items: center;
     }
 
 
-    .party{
+    .party {
+        font-size: 1.5em;
 
         margin-left: auto;
         font-family: $font-family--body;
@@ -43,10 +66,24 @@
 
 
 
-    &.card--republican{
+    &.card--republican {
 
-        .party{
+        .party {
             color: var(--republican-color);
+        }
+    }
+
+    &.card--democrat {
+
+        .party {
+            color: var(--democrat-color);
+        }
+    }
+
+    &.card--independent {
+
+        .party {
+            color: var(--independent-color);
         }
     }
 }

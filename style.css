@@ -993,11 +993,15 @@ svg.map {
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
-  width: 80%;
+  width: 95%;
   margin: 0 auto; }
   /* line 135, assets/scss/components/states/_states.scss */
   .state__representatives h2 {
     text-align: center; }
+  @media (min-width: 64em) {
+    /* line 126, assets/scss/components/states/_states.scss */
+    .state__representatives {
+      width: 80%; } }
 
 /* line 1, assets/scss/components/people/_people.scss */
 .people__header {
@@ -1005,8 +1009,25 @@ svg.map {
   background: url("assets/img/dark-honeycomb.png");
   -webkit-box-shadow: inset 0 3px 12px rgba(0, 0, 0, 0.23), inset 0 3px 12px rgba(0, 0, 0, 0.16);
   box-shadow: inset 0 3px 12px rgba(0, 0, 0, 0.23), inset 0 3px 12px rgba(0, 0, 0, 0.16);
-  position: relative; }
-  /* line 12, assets/scss/components/people/_people.scss */
+  position: relative;
+  display: grid;
+  -webkit-box-align: end;
+  -ms-flex-align: end;
+  align-items: flex-end;
+  grid-template-columns: 1fr;
+  grid-column-gap: 1em;
+  padding: 1em;
+  grid-auto-flow: dense;
+  z-index: 2; }
+  @media (min-width: 64em) {
+    /* line 1, assets/scss/components/people/_people.scss */
+    .people__header {
+      grid-template-columns: 3fr 1fr;
+      grid-template-rows: 1fr;
+      -webkit-box-pack: end;
+      -ms-flex-pack: end;
+      justify-content: flex-end; } }
+  /* line 29, assets/scss/components/people/_people.scss */
   .people__header .header__content {
     position: relative;
     display: grid;
@@ -1019,45 +1040,49 @@ svg.map {
     grid-auto-flow: dense;
     z-index: 2; }
     @media (min-width: 64em) {
-      /* line 12, assets/scss/components/people/_people.scss */
+      /* line 29, assets/scss/components/people/_people.scss */
       .people__header .header__content {
-        grid-template-columns: 3fr 1fr 1fr;
-        grid-template-rows: 3fr 1fr 0.5fr;
         -webkit-box-pack: end;
         -ms-flex-pack: end;
         justify-content: flex-end; } }
-  /* line 31, assets/scss/components/people/_people.scss */
+  /* line 46, assets/scss/components/people/_people.scss */
   .people__header .people__name, .people__header .people__title, .people__header .people__actions {
     background: #1C0E23;
     padding: 0.25rem;
     margin: 0 auto;
     width: 100%; }
     @media (min-width: 64em) {
-      /* line 31, assets/scss/components/people/_people.scss */
+      /* line 46, assets/scss/components/people/_people.scss */
       .people__header .people__name, .people__header .people__title, .people__header .people__actions {
         padding-left: 1rem; } }
-  /* line 46, assets/scss/components/people/_people.scss */
+  /* line 61, assets/scss/components/people/_people.scss */
   .people__header .people__name {
     grid-column: 1;
     font-size: 3em;
     text-align: center;
     color: #fff; }
-    /* line 57, assets/scss/components/people/_people.scss */
+    /* line 72, assets/scss/components/people/_people.scss */
     .people__header .people__name .party {
       font-size: 0.5em;
       vertical-align: middle; }
-      /* line 60, assets/scss/components/people/_people.scss */
+      /* line 75, assets/scss/components/people/_people.scss */
       .people__header .people__name .party:hover {
         opacity: 0.8; }
-      /* line 65, assets/scss/components/people/_people.scss */
+      /* line 80, assets/scss/components/people/_people.scss */
       .people__header .people__name .party--republican {
         color: var(--republican-color); }
+      /* line 85, assets/scss/components/people/_people.scss */
+      .people__header .people__name .party--democrat {
+        color: var(--democrat-color); }
+      /* line 90, assets/scss/components/people/_people.scss */
+      .people__header .people__name .party--independent {
+        color: var(--independent-color); }
     @media (min-width: 64em) {
-      /* line 46, assets/scss/components/people/_people.scss */
+      /* line 61, assets/scss/components/people/_people.scss */
       .people__header .people__name {
         text-align: left;
         font-size: 4em; } }
-  /* line 82, assets/scss/components/people/_people.scss */
+  /* line 107, assets/scss/components/people/_people.scss */
   .people__header .people__title {
     grid-column: 1;
     text-align: center;
@@ -1065,11 +1090,11 @@ svg.map {
     font-family: "Ubuntu", serif;
     font-size: 1.5em; }
     @media (min-width: 64em) {
-      /* line 82, assets/scss/components/people/_people.scss */
+      /* line 107, assets/scss/components/people/_people.scss */
       .people__header .people__title {
         text-align: left;
         font-size: 2em; } }
-  /* line 100, assets/scss/components/people/_people.scss */
+  /* line 125, assets/scss/components/people/_people.scss */
   .people__header .people__actions {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -1082,18 +1107,21 @@ svg.map {
     justify-content: center;
     -ms-flex-item-align: center;
     align-self: center;
-    grid-column: 1; }
+    grid-column: 1;
+    margin: 0;
+    padding: 0.25rem; }
     @media (min-width: 64em) {
-      /* line 100, assets/scss/components/people/_people.scss */
+      /* line 125, assets/scss/components/people/_people.scss */
       .people__header .people__actions {
         -webkit-box-pack: start;
         -ms-flex-pack: start;
         justify-content: flex-start; } }
-    /* line 116, assets/scss/components/people/_people.scss */
+    /* line 143, assets/scss/components/people/_people.scss */
     .people__header .people__actions li {
       list-style: none;
-      padding: 0.25em 0.5em; }
-    /* line 121, assets/scss/components/people/_people.scss */
+      padding: 0.25em 0.5em;
+      margin: 0; }
+    /* line 149, assets/scss/components/people/_people.scss */
     .people__header .people__actions .social-link {
       display: -webkit-box;
       display: -ms-flexbox;
@@ -1108,10 +1136,10 @@ svg.map {
       -webkit-box-pack: center;
       -ms-flex-pack: center;
       justify-content: center; }
-      /* line 127, assets/scss/components/people/_people.scss */
+      /* line 155, assets/scss/components/people/_people.scss */
       .people__header .people__actions .social-link i {
         font-size: 2em; }
-  /* line 133, assets/scss/components/people/_people.scss */
+  /* line 161, assets/scss/components/people/_people.scss */
   .people__header .people__headshot {
     width: 75%;
     margin: 0.5em auto;
@@ -1119,7 +1147,7 @@ svg.map {
     border-radius: 10px;
     border: 2px solid #fff; }
     @media (min-width: 64em) {
-      /* line 133, assets/scss/components/people/_people.scss */
+      /* line 161, assets/scss/components/people/_people.scss */
       .people__header .people__headshot {
         margin: 1em 0;
         width: 100%;
@@ -1127,7 +1155,7 @@ svg.map {
         -ms-flex-item-align: center;
         align-self: center;
         grid-column: 3; } }
-  /* line 161, assets/scss/components/people/_people.scss */
+  /* line 189, assets/scss/components/people/_people.scss */
   .people__header .people__banner {
     position: absolute;
     top: 0;
@@ -1136,7 +1164,7 @@ svg.map {
     bottom: 0;
     z-index: 1;
     overflow: hidden; }
-    /* line 171, assets/scss/components/people/_people.scss */
+    /* line 199, assets/scss/components/people/_people.scss */
     .people__header .people__banner img {
       width: 100%;
       height: auto;
@@ -1145,14 +1173,14 @@ svg.map {
       left: 0;
       z-index: 1; }
       @media (min-width: 64em) {
-        /* line 171, assets/scss/components/people/_people.scss */
+        /* line 199, assets/scss/components/people/_people.scss */
         .people__header .people__banner img {
           top: -25%; } }
 
-/* line 190, assets/scss/components/people/_people.scss */
+/* line 218, assets/scss/components/people/_people.scss */
 .people__subpage-nav {
   width: 100%; }
-  /* line 194, assets/scss/components/people/_people.scss */
+  /* line 222, assets/scss/components/people/_people.scss */
   .people__subpage-nav ul {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -1165,39 +1193,39 @@ svg.map {
     -ms-flex-pack: center;
     justify-content: center;
     width: 100%; }
-    /* line 202, assets/scss/components/people/_people.scss */
+    /* line 230, assets/scss/components/people/_people.scss */
     .people__subpage-nav ul li {
       margin: 0;
       display: block;
       width: 100%; }
-      /* line 207, assets/scss/components/people/_people.scss */
+      /* line 235, assets/scss/components/people/_people.scss */
       .people__subpage-nav ul li a {
         display: block;
         width: 100%;
         text-align: center;
         font-size: 1.25em;
         padding: 1em; }
-        /* line 215, assets/scss/components/people/_people.scss */
+        /* line 243, assets/scss/components/people/_people.scss */
         .people__subpage-nav ul li a.current {
           font-weight: 700;
           border-bottom: 3px solid #c56cf0;
           background: #c56cf0;
           color: #fff; }
-        /* line 224, assets/scss/components/people/_people.scss */
+        /* line 252, assets/scss/components/people/_people.scss */
         .people__subpage-nav ul li a:hover {
           background: #eac9f9;
           border-bottom: 3px solid #c56cf0; }
   @media (max-width: 37.5em) {
-    /* line 190, assets/scss/components/people/_people.scss */
+    /* line 218, assets/scss/components/people/_people.scss */
     .people__subpage-nav {
       width: 100vw;
       overflow-y: scroll; }
-      /* line 240, assets/scss/components/people/_people.scss */
+      /* line 268, assets/scss/components/people/_people.scss */
       .people__subpage-nav ul {
         -webkit-box-pack: start;
         -ms-flex-pack: start;
         justify-content: flex-start; }
-        /* line 243, assets/scss/components/people/_people.scss */
+        /* line 271, assets/scss/components/people/_people.scss */
         .people__subpage-nav ul li {
           white-space: nowrap; } }
 
@@ -1205,13 +1233,15 @@ svg.map {
 .card-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-gap: 1em; }
+  grid-gap: 1em;
+  width: 100%; }
   @media (min-width: 64em) {
     /* line 1, assets/scss/components/people/_people-card.scss */
     .card-grid {
-      grid-template-columns: 1fr 1fr 1fr; } }
+      width: 80%;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); } }
 
-/* line 13, assets/scss/components/people/_people-card.scss */
+/* line 16, assets/scss/components/people/_people-card.scss */
 .card {
   background: #fff;
   padding: 0.5em;
@@ -1221,27 +1251,58 @@ svg.map {
   box-shadow: 0 1.5px 4px rgba(0, 0, 0, 0.24), 0 1px 8px rgba(0, 0, 0, 0.12); }
 
 /* line 27, assets/scss/components/people/_people-card.scss */
-.card--person img {
-  border-radius: 6px 6px 0 0; }
-
-/* line 31, assets/scss/components/people/_people-card.scss */
-.card--person h3 {
-  margin: 0.25em 0;
+.card--person {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
   -ms-flex-align: center;
-  align-items: center; }
-
-/* line 38, assets/scss/components/people/_people-card.scss */
-.card--person .party {
-  margin-left: auto;
-  font-family: "Ubuntu", serif; }
-
-/* line 48, assets/scss/components/people/_people-card.scss */
-.card--person.card--republican .party {
-  color: var(--republican-color); }
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column; }
+  /* line 35, assets/scss/components/people/_people-card.scss */
+  .card--person img {
+    border-radius: 6px 6px 0 0; }
+  /* line 40, assets/scss/components/people/_people-card.scss */
+  .card--person .card__content {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center; }
+    @media (min-width: 64em) {
+      /* line 40, assets/scss/components/people/_people-card.scss */
+      .card--person .card__content {
+        grid-template-columns: 2fr 1fr; } }
+  /* line 53, assets/scss/components/people/_people-card.scss */
+  .card--person h3 {
+    margin: 0.25em 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center; }
+  /* line 60, assets/scss/components/people/_people-card.scss */
+  .card--person .party {
+    font-size: 1.5em;
+    margin-left: auto;
+    font-family: "Ubuntu", serif; }
+  /* line 71, assets/scss/components/people/_people-card.scss */
+  .card--person.card--republican .party {
+    color: var(--republican-color); }
+  /* line 78, assets/scss/components/people/_people-card.scss */
+  .card--person.card--democrat .party {
+    color: var(--democrat-color); }
+  /* line 85, assets/scss/components/people/_people-card.scss */
+  .card--person.card--independent .party {
+    color: var(--independent-color); }
 
 @media (min-width: 64em) {
   /* line 1, assets/scss/pages/_front-page.scss */

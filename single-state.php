@@ -62,13 +62,44 @@ if (have_posts()) {
 <h2>Current <?= get_the_title() ?> Representatives</h2>
 
 <?php 
-$people = $state->getPeople();
+$representatives = $state->getPeopleByTitle('Representative');
 
 
-if ($people->have_posts()) {
+if ($representatives->have_posts()) {
 	echo "<section class='card-grid'>";
-    while ($people->have_posts()) {
-		$people->the_post();
+    while ($representatives->have_posts()) {
+		$representatives->the_post();
+
+		$rep = new Person(get_post());
+
+		echo $rep->personCard();
+		
+	}
+	echo "</section>";
+
+	}
+
+	else {
+
+		echo "No Current Reps";
+	}
+
+    wp_reset_postdata();
+
+?>
+
+
+
+<h2>Current <?= get_the_title() ?> Senators</h2>
+
+<?php 
+$senators = $state->getPeopleByTitle(array('Senator - 1st Class', 'Senator - 2nd Class', 'Senator - 3rd Class'));
+
+
+if ($senators->have_posts()) {
+	echo "<section class='card-grid'>";
+    while ($senators->have_posts()) {
+		$senators->the_post();
 
 		$rep = new Person(get_post());
 

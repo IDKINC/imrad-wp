@@ -18,6 +18,7 @@ class Person {
 		$this->party = $this->getParty($this->id);
 		$this->partyColor = "#" . get_term_meta($this->party->term_id, 'party_color', true);
 		$this->state = $this->getPostMeta($this->id, 'state', true);
+		$this->district = $this->getPostMeta($this->id, 'district', true);
 
 
 		$this->headshotUrl = $this->getImage($this->id);
@@ -125,7 +126,10 @@ class Person {
 		<a href='<?=$this->url?>'>
 			<article class='card card--person card--<?=$this->party->slug?>' id='<?=$this->slug?>'>
 				<img src='<?=$this->headshotUrl?>' alt='<?=$this->name?>'>
-				<h3><?=$this->name?> <span class='party'><?=substr($this->party->name, 0, 1)?>-<?= $this->state ?></span></h3>
+				<section class="card__content">
+				<h3><?=$this->name?></h3>
+				<span class='party'><?=substr($this->party->name, 0, 1)?>-<?= $this->state ?></span>
+				</section>
 			</article>
 		</a>
 

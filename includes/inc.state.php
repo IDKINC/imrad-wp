@@ -18,7 +18,8 @@ class State {
 		$this->abbr = get_post_meta($this->id, 'abbreviation', true);
 		$this->url = get_the_permalink($this->id);
 		$this->flagUrl = wp_get_attachment_image_url(get_post_thumbnail_id($post_id), 'full');
-	}
+		$this->districtCount = $this->getDistricts()->found_posts;
+		}
 
 	private function getPostMeta($id, $meta_key, $arg = array()){
 
@@ -35,9 +36,8 @@ class State {
 	public function state_meta(){ 
 
 		$population = array('meta_id' => 'population', 'label' => 'Population', 'icon' => 'fas faw fa-users', 'format' => true);
-        $districts = array('meta_id' => 'districts_count', 'label' => 'Districts', 'icon' => 'fas faw fa-border-none');
 
-        $meta_keys = array($population, $districts);
+        $meta_keys = array($population);
 
         foreach ($meta_keys as $meta_key) {
 
@@ -48,7 +48,14 @@ class State {
                 echo sprintf("<li><i class='%s'></i>%s <span class='value'>%s</span></li>", $meta_key['icon'], $meta_key['label'], ($meta_key['format'] ? number_format($meta[0]) : $meta[0]));
             }
 
-        }
+		}
+		
+		if($this->districtCount){
+
+			$districts = array('meta_id' => 'districts_count', 'label' => 'Districts', 'icon' => 'fas faw fa-border-none');
+
+			echo sprintf("<li><i class='%s'></i>%s <span class='value'>%s</span></li>", $districts['icon'], $districts['label'], $this->districtCount);
+		}
 
 	}
 
@@ -63,6 +70,55 @@ class State {
 					'compare' => '=',
 				)
 			)
+		 );
+		 $query = new WP_Query($args);
+		
+
+		return $query;
+	}
+
+
+
+	public function getDistricts(){
+
+		$args = array(
+			'post_type' => array('district'),
+			'meta_query' => array(
+				array(
+					'key' => 'state',
+					'value' => $this->abbr,
+					'compare' => '=',
+				)
+			)
+		 );
+		 $query = new WP_Query($args);
+		
+
+		return $query;
+	}
+
+
+	public function getPeopleByTitle($title = array()){
+
+		$args = array(
+			'post_type' => array('people'),
+			'posts_per_page' => -1,
+			'meta_query' => array(
+				array(
+					'key' => 'state',
+					'value' => $this->abbr,
+					'compare' => '=',
+				)
+				),
+				'tax_query' => array(
+					array(
+						'taxonomy' => 'job_title',
+						'field' => 'name',
+						'terms' => $title,
+						'operator'  => 'IN'
+					)
+				)
+
 		 );
 		 $query = new WP_Query($args);
 		

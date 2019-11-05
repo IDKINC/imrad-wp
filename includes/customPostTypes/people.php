@@ -77,11 +77,10 @@ add_action('add_meta_boxes_people', 'people_add_meta_boxes');
 function people_build_state_meta_box($post)
 {
 
-
-
     wp_nonce_field(basename(__FILE__), 'people_meta_box_nonce');
 
     $current_state = get_post_meta($post->ID, 'state', true);
+    $current_district = get_post_meta($post->ID, 'district', true);
 
     ?>
 
@@ -89,13 +88,14 @@ function people_build_state_meta_box($post)
     <p>
         State: <select name="state" id="state">
 
-    <option <?=(!$current_state ? "selected" : "") ?> disabled>Select A State</option>
+    <option <?=(!$current_state ? "selected" : "")?> disabled>Select A State</option>
 
         <?php // WP_Query arguments
     $args = array(
         'post_type' => array('state'),
         'order' => 'ASC',
         'orderby' => 'menu_order',
+        'posts_per_page' => -1,
     );
 
 // The Query
@@ -108,8 +108,7 @@ function people_build_state_meta_box($post)
             // do something
             $abbr = get_post_meta(get_the_id(), 'abbreviation', true);
 
-    
-    echo sprintf('<option %s value="%s">%s - %s</option>',($current_state == $abbr ? "selected": ""), $abbr, $abbr, get_the_title());
+            echo sprintf('<option %s value="%s">%s - %s</option>', ($current_state == $abbr ? "selected" : ""), $abbr, $abbr, get_the_title());
 
         }
     } else {
@@ -117,9 +116,54 @@ function people_build_state_meta_box($post)
     }
 
 // Restore original Post Data
-    wp_reset_postdata(); ?>
+    wp_reset_postdata();?>
 
         </select>
+	</p>
+
+
+    <?php //District ?>
+    <p>
+        District(s):
+
+        <?php // WP_Query arguments
+    $districtArgs = array(
+        'post_type' => array('district'),
+        'order' => 'ASC',
+        'orderby' => 'name',
+        'posts_per_page' => -1,
+        'meta_query' => array(
+            array(
+                'key' => 'state',
+                'value' => $current_state,
+                'compare' => '=',
+            ),
+        ),
+    );
+
+// The Query
+    $district = new WP_Query($districtArgs);
+
+// The Loop
+    if ($district->have_posts()) {
+        while ($district->have_posts()) {
+            $district->the_post();
+            // do something
+            $district_name = get_the_title();
+
+            echo sprintf('<input type="checkbox" %s value="%s" id="%s"><label for="%s">%s</label>', ($current_district == $district_name ? "checked" : ""), $district_name, $district_name, $district_name, $district_name);
+
+        }
+    } else {
+        // no posts found
+    }
+
+// Restore original Post Data
+    wp_reset_postdata();?>
+
+        </select>
+        <br />
+        <em>For Senators, Check All Districts</em>
 	</p>
 
 
@@ -236,6 +280,10 @@ function people_save_meta_boxes_data($post_id)
     if (isset($_REQUEST['state'])) {
         update_post_meta($post_id, 'state', sanitize_text_field($_POST['state']));
     }
+
+    if (isset($_REQUEST['district'])) {
+        update_post_meta($post_id, 'district', sanitize_text_field($_POST['district']));
+    }
 ///////////
     // Stats //
     ///////////
@@ -275,13 +323,9 @@ function people_save_meta_boxes_data($post_id)
 }
 add_action('save_post_people', 'people_save_meta_boxes_data', 10, 2);
 
-
-
-
 // Banner Image for People
 
 add_action('after_setup_theme', 'people_banner_setup');
-
 
 function people_banner_setup()
 {
@@ -379,4 +423,48 @@ function people_banner_save($post_id)
     }
 }
 
-new ImradImport(array('Name','Party','State','District','Title'), 'people');
+// Add a column to the edit post list
+/**
+ * Add new columns to the post table
+ *
+ * @param Array $columns - Current columns on the list post
+ */
+function add_new_columns($columns)
+{
+    unset($columns['date']);
+    $columns['state'] = 'State';
+    $columns['district'] = 'District';
+    $columns['job_title'] = 'Job Title';
+    return $columns;
+}
+
+add_filter('manage_people_posts_columns', 'add_new_columns');
+
+function people_columns_data($column, $post_id)
+{
+    switch ($column) {
+        case "state":
+            echo get_post_meta($post_id, $column, true);
+            break;
+        case "district":
+            echo get_post_meta($post_id, $column, true);
+            break;
+        case "job_title":
+            echo get_the_terms($post_id, 'job_title')[0]->name;
+            break;
+
+    }
+}
+add_action('manage_people_posts_custom_column', 'people_columns_data', 10, 2);
+
+// Register the column as sortable
+function people_sortable_columns($columns)
+{
+    $columns['state'] = 'State';
+    $columns['district'] = 'District';
+    $columns['job_title'] = 'Job Title';
+    return $columns;
+}
+add_filter('manage_edit-people_sortable_columns', 'people_sortable_columns');
+
+new ImradImport(array('Name', 'Party', 'State', 'District', 'Title'), 'people');
