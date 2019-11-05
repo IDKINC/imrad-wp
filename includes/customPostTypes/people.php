@@ -467,4 +467,4 @@ function people_sortable_columns($columns)
 }
 add_filter('manage_edit-people_sortable_columns', 'people_sortable_columns');
 
-new ImradImport(array('Name', 'Party', 'State', 'District', 'Title'), 'people');
+new ImradImport(array('Name', 'Party', 'State', 'District', 'Title', 'Website', 'Facebook', 'Twitter'), 'people');

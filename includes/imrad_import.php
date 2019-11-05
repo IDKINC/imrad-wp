@@ -77,10 +77,10 @@ class ImradImport
             $unique_name_check = new WP_Query($args);
             if ($unique_name_check->have_posts()) {
 
-                while($unique_name_check->have_posts()){
+                while ($unique_name_check->have_posts()) {
 
-                    $unique_name_check->the_post();   
-                    if( $this->updatePost(get_the_id(), $record) ){
+                    $unique_name_check->the_post();
+                    if ($this->updatePost(get_the_id(), $record)) {
 
                         echo sprintf($template, 'Updated: ' . $record['Name']);
                     } else {
@@ -130,6 +130,18 @@ class ImradImport
             $taxArray['party'] = $record['Party'];
         }
 
+        if ($record['Website']) {
+            $metaArray['website'] = $record['Website'];
+        }
+
+        if ($record['Twitter']) {
+            $metaArray['twitter'] = $record['Twitter'];
+        }
+
+        if ($record['Facebook']) {
+            $metaArray['facebook'] = $record['Facebook'];
+        }
+
         $postarr = array(
             'post_title' => wp_strip_all_tags($record['Name']),
             'post_type' => $this->post_type,
@@ -173,6 +185,19 @@ class ImradImport
         }
         if ($record['Party']) {
             $taxArray['party'] = $record['Party'];
+        }
+
+
+        if ($record['Website']) {
+            $metaArray['website'] = $record['Website'];
+        }
+
+        if ($record['Twitter']) {
+            $metaArray['twitter'] = $record['Twitter'];
+        }
+
+        if ($record['Facebook']) {
+            $metaArray['facebook'] = $record['Facebook'];
         }
 
         $postarr = array(
