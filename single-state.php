@@ -59,16 +59,16 @@ if (have_posts()) {
 
 <section class="state__representatives">
 
-<h2>Current <?= get_the_title() ?> Representatives</h2>
+<h2>Current <?= get_the_title() ?> Senators</h2>
 
 <?php 
-$representatives = $state->getPeopleByTitle('Representative');
+$senators = $state->getPeopleByTitle(array('Senator - 1st Class', 'Senator - 2nd Class', 'Senator - 3rd Class'));
 
 
-if ($representatives->have_posts()) {
-	echo "<section class='card-grid'>";
-    while ($representatives->have_posts()) {
-		$representatives->the_post();
+if ($senators->have_posts()) {
+	echo "<section class='card-grid two-column'>";
+    while ($senators->have_posts()) {
+		$senators->the_post();
 
 		$rep = new Person(get_post());
 
@@ -89,17 +89,16 @@ if ($representatives->have_posts()) {
 ?>
 
 
-
-<h2>Current <?= get_the_title() ?> Senators</h2>
+<h2>Current <?= get_the_title() ?> Representatives</h2>
 
 <?php 
-$senators = $state->getPeopleByTitle(array('Senator - 1st Class', 'Senator - 2nd Class', 'Senator - 3rd Class'));
+$representatives = $state->getPeopleByTitle('Representative');
 
 
-if ($senators->have_posts()) {
+if ($representatives->have_posts()) {
 	echo "<section class='card-grid'>";
-    while ($senators->have_posts()) {
-		$senators->the_post();
+    while ($representatives->have_posts()) {
+		$representatives->the_post();
 
 		$rep = new Person(get_post());
 

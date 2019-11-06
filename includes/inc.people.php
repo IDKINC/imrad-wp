@@ -107,6 +107,7 @@ class Person {
 
 	public function stateName(){
 		$state = $this->getState($this->state);
+		wp_reset_postdata();
 
 		return get_the_title($state->id);
 

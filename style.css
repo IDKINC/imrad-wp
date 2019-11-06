@@ -487,7 +487,10 @@ button {
   .banner.purple {
     background: #c56cf0;
     color: #fff; }
-  /* line 15, assets/scss/components/_banners.scss */
+    /* line 14, assets/scss/components/_banners.scss */
+    .banner.purple > h2, .banner.purple > h3, .banner.purple > h4 {
+      color: #fff; }
+  /* line 19, assets/scss/components/_banners.scss */
   .banner.half-purple {
     background: -webkit-gradient(linear, left top, left bottom, color-stop(50%, #c56cf0), color-stop(50%, transparent));
     background: linear-gradient(to bottom, #c56cf0 50%, transparent 50%); }
@@ -1239,9 +1242,13 @@ svg.map {
     /* line 1, assets/scss/components/people/_people-card.scss */
     .card-grid {
       width: 80%;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); } }
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); } }
+  /* line 16, assets/scss/components/people/_people-card.scss */
+  .card-grid.two-column {
+    grid-template-columns: repeat(2, 1fr);
+    width: 53%; }
 
-/* line 16, assets/scss/components/people/_people-card.scss */
+/* line 22, assets/scss/components/people/_people-card.scss */
 .card {
   background: #fff;
   padding: 0.5em;
@@ -1250,7 +1257,7 @@ svg.map {
   -webkit-box-shadow: 0 1.5px 4px rgba(0, 0, 0, 0.24), 0 1px 8px rgba(0, 0, 0, 0.12);
   box-shadow: 0 1.5px 4px rgba(0, 0, 0, 0.24), 0 1px 8px rgba(0, 0, 0, 0.12); }
 
-/* line 27, assets/scss/components/people/_people-card.scss */
+/* line 33, assets/scss/components/people/_people-card.scss */
 .card--person {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1265,10 +1272,10 @@ svg.map {
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
   flex-direction: column; }
-  /* line 35, assets/scss/components/people/_people-card.scss */
+  /* line 41, assets/scss/components/people/_people-card.scss */
   .card--person img {
     border-radius: 6px 6px 0 0; }
-  /* line 40, assets/scss/components/people/_people-card.scss */
+  /* line 46, assets/scss/components/people/_people-card.scss */
   .card--person .card__content {
     width: 100%;
     display: grid;
@@ -1277,10 +1284,10 @@ svg.map {
     -ms-flex-align: center;
     align-items: center; }
     @media (min-width: 64em) {
-      /* line 40, assets/scss/components/people/_people-card.scss */
+      /* line 46, assets/scss/components/people/_people-card.scss */
       .card--person .card__content {
         grid-template-columns: 2fr 1fr; } }
-  /* line 53, assets/scss/components/people/_people-card.scss */
+  /* line 59, assets/scss/components/people/_people-card.scss */
   .card--person h3 {
     margin: 0.25em 0;
     display: -webkit-box;
@@ -1289,20 +1296,39 @@ svg.map {
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center; }
-  /* line 60, assets/scss/components/people/_people-card.scss */
+  /* line 66, assets/scss/components/people/_people-card.scss */
   .card--person .party {
     font-size: 1.5em;
     margin-left: auto;
     font-family: "Ubuntu", serif; }
-  /* line 71, assets/scss/components/people/_people-card.scss */
+  /* line 77, assets/scss/components/people/_people-card.scss */
   .card--person.card--republican .party {
     color: var(--republican-color); }
-  /* line 78, assets/scss/components/people/_people-card.scss */
+  /* line 84, assets/scss/components/people/_people-card.scss */
   .card--person.card--democrat .party {
     color: var(--democrat-color); }
-  /* line 85, assets/scss/components/people/_people-card.scss */
+  /* line 91, assets/scss/components/people/_people-card.scss */
   .card--person.card--independent .party {
     color: var(--independent-color); }
+
+/* line 101, assets/scss/components/people/_people-card.scss */
+.card--issue h3 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column; }
+  /* line 106, assets/scss/components/people/_people-card.scss */
+  .card--issue h3 svg {
+    font-size: 3em; }
 
 @media (min-width: 64em) {
   /* line 1, assets/scss/pages/_front-page.scss */

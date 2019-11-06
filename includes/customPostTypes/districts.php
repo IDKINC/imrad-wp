@@ -42,7 +42,7 @@ function district_post_type()
         'supports' => array('title', 'editor', 'thumbnail', 'revisions'),
         'hierarchical' => false,
 		'public' => true,
-		'menu_icon' => 'dashicons-admin-site',
+		'menu_icon' => 'dashicons-grid-view',
         'show_ui' => true,
         'show_in_menu' => true,
         'menu_position' => 4,

@@ -1,4 +1,5 @@
 <?php get_template_part("includes/inc.people");?>
+<?php global $person ?>
 <?php get_header();?>
 <?php $current_fp = get_query_var('fpage');?>
 	<article class="single single-people">
@@ -65,7 +66,10 @@ if (have_posts()) {
     <main class="content">
 
 
-<?php if (!$current_fp) {
+<?php 
+
+set_query_var("people_obj", $people);
+if (!$current_fp) {
             get_template_part('single', 'people-overview');
         } else if ($current_fp == 'voting-history') {
             get_template_part('single', 'people-voting-history');

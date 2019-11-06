@@ -9,7 +9,13 @@
 
     @include breakpoint(laptop) {
         width: 80%;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    }
+
+
+    &.two-column{
+        grid-template-columns: repeat(2, 1fr);
+        width: 53%;
     }
 }
 
@@ -84,6 +90,21 @@
 
         .party {
             color: var(--independent-color);
+        }
+    }
+}
+
+
+
+.card--issue{
+
+    h3{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        svg{
+            font-size: 3em;
         }
     }
 }

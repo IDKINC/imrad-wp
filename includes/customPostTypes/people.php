@@ -65,14 +65,109 @@ add_action('init', 'people_post_type', 0);
 
 function people_add_meta_boxes($post)
 {
-    add_meta_box('people_info', __('People Info', 'imrad'), 'people_build_info_meta_box', 'people', 'normal', 'high');
-    add_meta_box('people_info', __('State & District', 'imrad'), 'people_build_state_meta_box', 'people', 'normal', 'high');
+    add_meta_box('people_issue', __('Where Do They Stand', 'imrad'), 'people_build_issues_meta_box', 'people', 'normal', 'high');
+    add_meta_box('people_state', __('State & District', 'imrad'), 'people_build_state_meta_box', 'people', 'normal', 'high');
 
     add_meta_box('people_stats', __('People Stats', 'imrad'), 'people_build_stats_meta_box', 'people', 'side', 'high');
     add_meta_box('people_social', __('People Social Links', 'imrad'), 'people_build_social_meta_box', 'people', 'side', 'high');
 
 }
 add_action('add_meta_boxes_people', 'people_add_meta_boxes');
+
+function people_build_issues_meta_box($post)
+{
+
+    wp_nonce_field(basename(__FILE__), 'people_meta_box_nonce');
+    echo "<h4>Always Include Links To Sources</h4>";
+    // WP_Query arguments
+    $args = array(
+        'post_type' => array('issue'),
+        'order' => 'ASC',
+        'orderby' => 'menu_order',
+        'posts_per_page' => -1,
+    );
+
+// The Query
+    $issues = new WP_Query($args);
+
+// The Loop
+    if ($issues->have_posts()) {
+        while ($issues->have_posts()) {
+            $issues->the_post();
+            // do something
+            $icon = get_post_meta(get_the_id(), 'issue_icon', true);
+            $slug = get_post_field('post_name', get_post());
+            $content = get_post_meta($post->ID, 'issue-' . $slug, true);
+
+            echo sprintf('<h3><i class="%s"></i> - %s</h3>', $icon, get_the_title());
+
+
+            $settings = array(
+                'wpautop'       => true,
+                'media_buttons' => false,
+                'textarea_name' => 'issue-' . $slug,
+                'textarea_rows' => 10,
+                'teeny'         => true
+            );
+            wp_editor($content, 'issue-' . $slug, $settings);
+
+        }
+    } else {
+        // no posts found
+    }
+
+// Restore original Post Data
+    wp_reset_postdata();
+
+}
+
+function people_save_issues($post_id)
+{
+
+    if (!isset($_POST['people_meta_box_nonce']) || !wp_verify_nonce($_POST['people_meta_box_nonce'], basename(__FILE__))) {
+        return;
+    }
+
+    if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) {
+        return;
+    }
+
+    if (!current_user_can('edit_post', $post_id)) {
+        return;
+
+    }
+
+    $args = array(
+        'post_type' => array('issue'),
+        'order' => 'ASC',
+        'orderby' => 'menu_order',
+        'posts_per_page' => -1,
+    );
+
+// The Query
+    $issues = new WP_Query($args);
+
+// The Loop
+    if ($issues->have_posts()) {
+        while ($issues->have_posts()) {
+            $issues->the_post();
+            $slug = get_post_field('post_name', get_post());
+
+            if (isset($_REQUEST['issue-' . $slug])) {
+                update_post_meta($post_id, 'issue-' . $slug, wp_filter_post_kses($_POST['issue-' . $slug]));
+            }
+
+        }
+    } else {
+        // no posts found
+    }
+
+// Restore original Post Data
+    wp_reset_postdata();
+
+}
+
+add_action('save_post_people', 'people_save_issues', 10, 2);
 
 function people_build_state_meta_box($post)
 {
@@ -163,7 +258,7 @@ function people_build_state_meta_box($post)
 
         </select>
         <br />
-        <em>For Senators, Check All Districts</em>
+        <em>For Senators, Leave Blank</em>
 	</p>
 
 
@@ -189,13 +284,7 @@ function people_build_stats_meta_box($post)
     ?>
 
     <div class='inside'>
-    <p>
-        Population: <input type="number" placeholder="e.g. 2,123,412" name="population" value="<?php echo $current_population; ?>" />
-	</p>
 
-	<p>
-        # of Districts: <input type="number" placeholder="e.g. 12" name="districts_count" value="<?php echo $current_districts_count; ?>" />
-    </p>
 
 
 </div>
@@ -238,7 +327,7 @@ function people_build_social_meta_box($post)
 
 }
 
-function people_build_info_meta_box($post)
+function people_build_issue_meta_box($post)
 {
     // our code here
 
@@ -250,13 +339,7 @@ function people_build_info_meta_box($post)
     ?>
 
     <div class='inside'>
-    <p>
-	Abbreviation: <input type="text" maxlength="2" placeholder="e.g. NM" name="abbreviation" value="<?php echo $current_abbreviation; ?>" />
-	</p>
 
-	<p>
-	People Motto: <input type="text" placeholder="e.g. Land of Enchantment" name="motto" value="<?php echo $current_motto; ?>" />
-    </p>
 
 </div> <?php
 
@@ -296,7 +379,7 @@ function people_save_meta_boxes_data($post_id)
     }
 
 ///////////
-    // Info  //
+    // Issue  //
     ///////////
 
     if (isset($_REQUEST['abbreviation'])) {
@@ -432,6 +515,8 @@ function people_banner_save($post_id)
 function add_new_columns($columns)
 {
     unset($columns['date']);
+    $columns['image'] = 'Image';
+
     $columns['state'] = 'State';
     $columns['district'] = 'District';
     $columns['job_title'] = 'Job Title';
@@ -451,6 +536,12 @@ function people_columns_data($column, $post_id)
             break;
         case "job_title":
             echo get_the_terms($post_id, 'job_title')[0]->name;
+            break;
+        case "image":
+            if (get_the_post_thumbnail_url($post_id)) {
+
+                echo sprintf("<img src='%s' alt='%s' />", get_the_post_thumbnail_url($post_id, 'headshot-small'), get_the_title($post_id));
+            }
             break;
 
     }

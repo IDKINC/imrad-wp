@@ -11,6 +11,7 @@ include __DIR__ . "/includes/imrad_import.php";
 include __DIR__ . "/includes/customPostTypes/districts.php";
 include __DIR__ . "/includes/customPostTypes/states.php";
 include __DIR__ . "/includes/customPostTypes/people.php";
+include __DIR__ . "/includes/customPostTypes/issues.php";
 
 include __DIR__ . "/includes/customTaxonomies/job_title.php";
 include __DIR__ . "/includes/customTaxonomies/zip_codes.php";
@@ -29,6 +30,12 @@ function imrad_scripts()
     wp_enqueue_script('fontAwesome', 'https://kit.fontawesome.com/0e434539c2.js');
 }
 add_action('wp_enqueue_scripts', 'imrad_scripts');
+
+function imrad_admin_scripts(){
+wp_enqueue_script('fontAwesome-backend', 'https://kit.fontawesome.com/0e434539c2.js');
+}
+add_action('admin_enqueue_scripts', 'imrad_admin_scripts');
+
 
 function imrad_theme_support()
 {
