@@ -19,5 +19,8 @@
     &.half-purple{
 
         background: linear-gradient(to bottom, $mainColor 50%, transparent 50%);
+        & >h2, >h3, >h4{
+            color: #fff;
+        }
     }
 }

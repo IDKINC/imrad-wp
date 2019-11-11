@@ -142,6 +142,16 @@ class ImradImport
             $metaArray['facebook'] = $record['Facebook'];
         }
 
+        if ($record['VotesWith']) {
+            $metaArray['votes_with'] = $record['VotesWith'];
+        }
+
+        if ($record['VotesAgainst']) {
+            $metaArray['votes_against'] = $record['VotesAgainst'];
+        }
+
+
+
         $postarr = array(
             'post_title' => wp_strip_all_tags($record['Name']),
             'post_type' => $this->post_type,
@@ -198,6 +208,15 @@ class ImradImport
 
         if ($record['Facebook']) {
             $metaArray['facebook'] = $record['Facebook'];
+        }
+
+
+        if ($record['VotesWith']) {
+            $metaArray['votes_with'] = $record['VotesWith'];
+        }
+
+        if ($record['VotesAgainst']) {
+            $metaArray['votes_against'] = $record['VotesAgainst'];
         }
 
         $postarr = array(

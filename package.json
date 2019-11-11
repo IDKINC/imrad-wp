@@ -3,16 +3,22 @@
   "version": "0.0.1",
   "description": "Is My Rep A Dipshit?",
   "main": "gulpfile.js",
-  "dependencies": {},
+  "dependencies": {
+    "d3": "^5.12.0"
+  },
   "devDependencies": {
+    "@babel/core": "^7.7.2",
+    "@babel/preset-env": "^7.7.1",
     "browser-sync": "^2.26.7",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^5.0.0",
+    "gulp-babel": "^8.0.0",
     "gulp-bump": "^3.1.3",
     "gulp-concat": "^2.6.1",
     "gulp-connect": "^5.7.0",
     "gulp-git": "^2.9.0",
     "gulp-header": "^1.8.9",
+    "gulp-plumber": "^1.2.1",
     "gulp-rename": "^1.4.0",
     "gulp-sass": "^3.2.1",
     "gulp-sourcemaps": "^2.6.5",

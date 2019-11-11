@@ -28,6 +28,7 @@ function imrad_scripts()
     wp_enqueue_script('theme', get_template_directory_uri() . '/theme.js', array("jquery"), null, true);
 
     wp_enqueue_script('fontAwesome', 'https://kit.fontawesome.com/0e434539c2.js');
+    wp_enqueue_script('d3', 'https://d3js.org/d3.v5.min.js');
 }
 add_action('wp_enqueue_scripts', 'imrad_scripts');
 

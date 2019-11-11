@@ -40,7 +40,7 @@ function people_post_type()
         'label' => __('People', 'imrad'),
         'description' => __('Elected Officials in the USA', 'imrad'),
         'labels' => $labels,
-        'supports' => array('title', 'editor', 'thumbnail', 'revisions'),
+        'supports' => array('title', 'thumbnail', 'revisions'),
         'hierarchical' => false,
         'public' => true,
         'menu_icon' => 'dashicons-businessman',
@@ -68,8 +68,8 @@ function people_add_meta_boxes($post)
     add_meta_box('people_issue', __('Where Do They Stand', 'imrad'), 'people_build_issues_meta_box', 'people', 'normal', 'high');
     add_meta_box('people_state', __('State & District', 'imrad'), 'people_build_state_meta_box', 'people', 'normal', 'high');
 
-    add_meta_box('people_stats', __('People Stats', 'imrad'), 'people_build_stats_meta_box', 'people', 'side', 'high');
-    add_meta_box('people_social', __('People Social Links', 'imrad'), 'people_build_social_meta_box', 'people', 'side', 'high');
+    add_meta_box('people_vote', __('Vote History', 'imrad'), 'people_build_vote_meta_box', 'people', 'normal', 'high');
+    add_meta_box('people_social', __('Social Links', 'imrad'), 'people_build_social_meta_box', 'people', 'side', 'high');
 
 }
 add_action('add_meta_boxes_people', 'people_add_meta_boxes');
@@ -104,11 +104,9 @@ function people_build_issues_meta_box($post)
 
             $settings = array(
                 'wpautop'       => true,
-                'media_buttons' => false,
+                'media_buttons' => true,
                 'textarea_name' => 'issue-' . $slug,
-                'textarea_rows' => 10,
-                'teeny'         => true
-            );
+                'textarea_rows' => 10);
             wp_editor($content, 'issue-' . $slug, $settings);
 
         }
@@ -272,20 +270,43 @@ function people_build_state_meta_box($post)
 
 }
 
-function people_build_stats_meta_box($post)
+function people_build_vote_meta_box($post)
 {
     // our code here
 
     wp_nonce_field(basename(__FILE__), 'people_meta_box_nonce');
 
-    $current_population = get_post_meta($post->ID, 'population', true);
-    $current_districts_count = get_post_meta($post->ID, 'districts_count', true);
+    $current_votes_with = get_post_meta($post->ID, 'votes_with', true);
+    $current_votes_against = get_post_meta($post->ID, 'votes_against', true);
 
     ?>
 
     <div class='inside'>
 
+    <p>
+        Votes With Party: <input type="number" step="0.01" placeholder="" name="votes_with" value="<?php echo $current_votes_with; ?>" /> %
+    </p>
 
+
+    <p>
+        Votes Against Party: <input type="number" step="0.01" placeholder="" name="votes_against" value="<?php echo $current_votes_against; ?>" /> %
+    </p>
+
+
+    <h3>Voting History Details</h3>
+    <?php 
+
+
+$settings = array(
+    'wpautop'       => true,
+    'media_buttons' => false,
+    'textarea_name' => 'votes_details',
+    'textarea_rows' => 10
+);
+wp_editor($content, 'votes_details"', $settings);
+
+
+?>
 
 </div>
 
@@ -370,12 +391,17 @@ function people_save_meta_boxes_data($post_id)
 ///////////
     // Stats //
     ///////////
-    if (isset($_REQUEST['population'])) {
-        update_post_meta($post_id, 'population', sanitize_text_field($_POST['population']));
+    if (isset($_REQUEST['votes_with'])) {
+        update_post_meta($post_id, 'votes_with', sanitize_text_field($_POST['votes_with']));
     }
 
-    if (isset($_REQUEST['districts_count'])) {
-        update_post_meta($post_id, 'districts_count', sanitize_text_field($_POST['districts_count']));
+    if (isset($_REQUEST['votes_against'])) {
+        update_post_meta($post_id, 'votes_against', sanitize_text_field($_POST['votes_against']));
+    }
+
+
+    if (isset($_REQUEST['votes_details'])) {
+        update_post_meta($post_id, 'votes_details', sanitize_text_field($_POST['votes_details']));
     }
 
 ///////////
@@ -558,4 +584,4 @@ function people_sortable_columns($columns)
 }
 add_filter('manage_edit-people_sortable_columns', 'people_sortable_columns');
 
-new ImradImport(array('Name', 'Party', 'State', 'District', 'Title', 'Website', 'Facebook', 'Twitter'), 'people');
+new ImradImport(array('Name', 'Party', 'State', 'District', 'Title', 'Website', 'Facebook', 'Twitter', 'VotesWith', 'VotesAgainst'), 'people');

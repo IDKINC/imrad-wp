@@ -28,7 +28,7 @@ if (have_posts()) {
 <h1 class="people__name"><?=$person->name?> <a href="<?=get_term_link($person->party, 'party')?>" class="party party--<?=$person->party->slug?>" ><?=$person->party->name?></a></h1>
 
 <ul class="people__actions"> 
-    <li><button class="follow-button btn-alt">Follow</button></li>
+    <!-- <li><button class="follow-button btn-alt">Follow</button></li> -->
 
 
     <?php
@@ -68,7 +68,7 @@ if (have_posts()) {
 
 <?php 
 
-set_query_var("people_obj", $people);
+set_query_var("people_obj", $person);
 if (!$current_fp) {
             get_template_part('single', 'people-overview');
         } else if ($current_fp == 'voting-history') {

@@ -31,6 +31,15 @@ class Person {
 		$this->facebook = $this->getPostMeta($this->id, 'facebook', true);
 		$this->twitter = $this->getPostMeta($this->id, 'twitter', true);
 
+		$this->votesWith = $this->getPostMeta($this->id, 'votes_with', true);
+		$this->votesAgainst = $this->getPostMeta($this->id, 'votes_against', true);
+		$this->votesDetails = $this->getPostMeta($this->id, 'votes_details', true);
+
+
+
+		$this->dipshitScore = $this->getDipshitScore();
+
+
 
 
 	}
@@ -75,6 +84,12 @@ class Person {
 
 		return get_post_meta($id, $meta_key, $arg);
 
+	}
+
+	private function getDipshitScore(){
+
+
+		return 5;
 	}
 
 
