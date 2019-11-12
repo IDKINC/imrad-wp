@@ -824,45 +824,47 @@ footer.site__footer {
     margin: 0 0.5em;
     border-radius: 3px; }
 
-/* line 2, assets/scss/components/common/_dipshitMeter.scss */
+/* line 1, assets/scss/components/common/_dipshitMeter.scss */
 .dipshit-meter__container {
-  position: relative; }
+  position: relative;
+  padding: 5vh; }
 
-/* line 7, assets/scss/components/common/_dipshitMeter.scss */
+/* line 8, assets/scss/components/common/_dipshitMeter.scss */
 #dipshitMeter {
   width: 95%;
   height: auto;
-  margin: 1em auto; }
-  /* line 14, assets/scss/components/common/_dipshitMeter.scss */
+  margin: 4em auto; }
+  /* line 15, assets/scss/components/common/_dipshitMeter.scss */
   #dipshitMeter .dipshit__dot text {
     display: none; }
-  /* line 21, assets/scss/components/common/_dipshitMeter.scss */
+  /* line 22, assets/scss/components/common/_dipshitMeter.scss */
   #dipshitMeter .dipshit__dot:first-of-type text, #dipshitMeter .dipshit__dot:last-of-type text {
     display: block;
     opacity: 0.4; }
-  /* line 31, assets/scss/components/common/_dipshitMeter.scss */
-  #dipshitMeter .dipshit__dot.selected circle, #dipshitMeter .dipshit__dot.selected path {
+  /* line 32, assets/scss/components/common/_dipshitMeter.scss */
+  #dipshitMeter .dipshit__dot.selected circle,
+  #dipshitMeter .dipshit__dot.selected path {
     fill: #c56cf0;
     -webkit-filter: drop-shadow(0 1px 2px #000);
     filter: drop-shadow(0 1px 2px #000); }
-  /* line 35, assets/scss/components/common/_dipshitMeter.scss */
+  /* line 38, assets/scss/components/common/_dipshitMeter.scss */
   #dipshitMeter .dipshit__dot.selected circle {
     fill: #b33eeb; }
-  /* line 40, assets/scss/components/common/_dipshitMeter.scss */
+  /* line 43, assets/scss/components/common/_dipshitMeter.scss */
   #dipshitMeter .dipshit__dot.selected text {
     display: block;
     opacity: 1; }
-  /* line 50, assets/scss/components/common/_dipshitMeter.scss */
+  /* line 53, assets/scss/components/common/_dipshitMeter.scss */
   #dipshitMeter.no-data {
     opacity: 0.5;
     position: relative;
     -webkit-filter: drop-shadow(0 1px 2px #c56cf0);
     filter: drop-shadow(0 1px 2px #c56cf0); }
-    /* line 56, assets/scss/components/common/_dipshitMeter.scss */
+    /* line 59, assets/scss/components/common/_dipshitMeter.scss */
     #dipshitMeter.no-data * {
       fill: #1C0E23 !important; }
 
-/* line 62, assets/scss/components/common/_dipshitMeter.scss */
+/* line 66, assets/scss/components/common/_dipshitMeter.scss */
 h4.no-data {
   position: absolute;
   width: 100%;
@@ -880,6 +882,84 @@ h4.no-data {
   color: #fff;
   top: 0;
   left: 0; }
+
+/* line 80, assets/scss/components/common/_dipshitMeter.scss */
+.dipshit__conclusion {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center; }
+  /* line 87, assets/scss/components/common/_dipshitMeter.scss */
+  .dipshit__conclusion > span {
+    font-size: 2em;
+    text-transform: uppercase;
+    margin: 0.25em; }
+
+/* line 95, assets/scss/components/common/_dipshitMeter.scss */
+.dipshit__proof {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  border-top: 5px solid #fff;
+  padding: 1em;
+  width: 50%; }
+  /* line 106, assets/scss/components/common/_dipshitMeter.scss */
+  .dipshit__proof h2:first-of-type {
+    grid-column: 1 / -1;
+    text-align: center;
+    font-size: 2em;
+    margin: 0 auto 0.5em; }
+  /* line 113, assets/scss/components/common/_dipshitMeter.scss */
+  .dipshit__proof .proof, .dipshit__proof .and {
+    font-size: 1.5em;
+    color: #fff;
+    text-align: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column; }
+  /* line 125, assets/scss/components/common/_dipshitMeter.scss */
+  .dipshit__proof .proof {
+    padding: 1em;
+    border-right: 2px solid #fff; }
+    /* line 130, assets/scss/components/common/_dipshitMeter.scss */
+    .dipshit__proof .proof > span {
+      font-size: 1.5em;
+      font-weight: 900; }
+    /* line 137, assets/scss/components/common/_dipshitMeter.scss */
+    .dipshit__proof .proof:last-of-type {
+      border-right: none; }
+  /* line 142, assets/scss/components/common/_dipshitMeter.scss */
+  .dipshit__proof .and {
+    color: #1C0E23;
+    background: #c56cf0;
+    border-radius: 1em;
+    width: 2em;
+    height: 2em;
+    margin: 0 auto; }
 
 /* line 1, assets/scss/components/maps/_maps.scss */
 svg.map {

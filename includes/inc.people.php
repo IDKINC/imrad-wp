@@ -89,7 +89,7 @@ class Person {
 	private function getDipshitScore(){
 
 
-		return 5;
+		return 3;
 	}
 
 

@@ -4,34 +4,35 @@ $dipshitScore = $people_obj->dipshitScore;
 ?>
 
 
-<h1>
+<h1 class="dipshit__conclusion">
+<?=$people_obj->name . " is "?>
 
 
+<span>
 <?php
 
 switch ($dipshitScore) {
 
     case 1:
-        echo $people_obj->name . " is NOT a  Dipshit";
+        echo "NOT a  Dipshit";
         break;
     case 2:
-        echo $people_obj->name . " is a Little Dipshit";
+        echo "A Snack-Sized Dipshit";
         break;
     case 3:
-        echo $people_obj->name . " is Kind Of a Dipshit";
+        echo "A Small Dipshit";
         break;
     case 4:
-        echo $people_obj->name . " is A Lot Dipshit";
+        echo "A Big Dipshit";
         break;
     case 5:
-        echo $people_obj->name . " is A Total Dipshit";
+        echo "A Total Dipshit";
         break;
-    case 0:
-        echo "We Don't Have Any Data On " . $people_obj->name;
-        break;
+
 }
 
 ?>
+</span>
 </h1>
 
 
@@ -89,7 +90,8 @@ switch ($dipshitScore) {
 <h4 class="no-data">No Dipshit Data</h4>
 <?php endif;?>
 
+<div class="dipshit__proof">
+<h2>Based on</h2>
 
-<?=($dipshitScore == 1 ? "selected" : "")?>
-
-<h2>Based on 37 Pieces of Evidence and 42,500 Votes</h2>
+<span class="proof"><span>37</span> Pieces of Evidence</span><span class="proof"><span>42,500</span> Votes</span>
+</div>

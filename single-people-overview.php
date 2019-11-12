@@ -29,8 +29,8 @@ if ($issues->have_posts()) {
 
 <?php
 
+$issueResponses = array();
     while ($issues->have_posts()) {
-        $issueResponses = array();
         $issues->the_post();
         // do something
         $icon = get_post_meta(get_the_id(), 'issue_icon', true);
@@ -44,7 +44,7 @@ if ($issues->have_posts()) {
 
             echo $content;
             echo "</div>";
-            array_push($issuesResponses, $slug);
+            array_push($issueResponses, $slug);
         }
     }
 
@@ -55,15 +55,15 @@ if ($issues->have_posts()) {
 
         <?php
 
-    if (empty($issuesResponses)) {
-
-        echo "<h3>No Current Stance Data</h3>";
-
-    }
 
 } else {
     // no posts found
 }
+            if (empty($issueResponses)) {
+            
+                echo "<h3>No Current Stance Data</h3>";
+            
+            }
 
 // Restore original Post Data
 wp_reset_postdata();
