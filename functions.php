@@ -136,6 +136,15 @@ function logout_redirect() {
 }
 add_action('wp_logout','logout_redirect');
 
+
+function admin_default_page() {
+	return home_url();
+
+	//todo check user role and redirect accordingly.
+  }
+  
+  add_filter('login_redirect', 'admin_default_page');
+
 add_filter( 'show_admin_bar', function( $show ) {
 	if ( current_user_can( 'subscriber' ) ) {
 		return false;
