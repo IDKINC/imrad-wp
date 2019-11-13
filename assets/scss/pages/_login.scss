@@ -1,0 +1,98 @@
+.banner.login{
+    min-height: 80vh;
+}
+
+.login__card{
+
+    width:95%;
+    background: #fff;
+    padding: 2em;
+    margin: 1em auto;
+    display: flex;
+    flex-direction: column;
+
+
+    @include breakpoint(laptop){
+        width: 25%;
+    }
+
+    h1{
+        margin: 0 auto 1em;
+
+        text-align: center;
+
+    }
+
+
+    #loginform{
+
+        width: 100%;
+
+        p{
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+
+
+        }
+
+        input {
+            width: 100%;
+
+
+            &[type=text], &[type=password]{
+
+                border: 0;
+                border-bottom: 3px solid $black;
+                font-size: 2em;
+                padding: 0.1em;
+
+                &:focus{
+                    border-bottom: 3px solid $mainColor;
+                }
+            }
+
+
+            &[type=submit]{
+
+                background: $mainColor;
+                color: #fff;
+                border: 0;
+                padding: 0.25em;
+                font-size: 2em;
+                font-weight: bold;
+                line-height: 1em;
+            }
+        }
+
+        label{
+            width: 100%;
+        }
+
+        .login-remember{
+
+            label{
+                width: auto;
+                margin: 0 auto;
+                input{
+                    width: auto;
+                }
+            }
+        }
+
+    }
+
+
+
+    .need{
+        text-align: center;
+        color: #aaa;
+        margin: 0 auto;
+        width: auto;
+
+        &:hover{
+            color: #333;
+        }
+    }
+
+}

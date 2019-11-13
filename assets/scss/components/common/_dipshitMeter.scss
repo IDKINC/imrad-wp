@@ -64,21 +64,20 @@
 
     &.no-data {
         opacity: 0.5;
-        position: relative;
+        position: absolute;
 
-        filter: drop-shadow(0 1px 4px $mainColor);
+        filter: blur(2px);
         display: block;
         z-index: -1;
         
         
         @include breakpoint(laptop){
             
-            margin-top: -20vmin;
 
         }
 
         * {
-            fill: $bgColor !important;
+            fill: lighten($bgColor, 10) !important;
         }
 
     }

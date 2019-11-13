@@ -62,9 +62,10 @@
 
 #mobileMenuToggle{
     font-size: 2em;
-    margin: 0.5em;
+    margin: 0;
     order: -1;
     cursor: pointer;
+    padding: 0.25em;
 
     @include breakpoint(laptop){
         display: none;

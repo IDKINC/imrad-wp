@@ -1,5 +1,5 @@
 <?php get_template_part("includes/inc.people");?>
-<?php global $person ?>
+<?php global $person?>
 <?php get_header();?>
 <?php $current_fp = get_query_var('fpage');?>
 	<article class="single single-people">
@@ -24,10 +24,10 @@ if (have_posts()) {
 
 <section class="header__content">
 
-<h2 class="people__title"><?=$person->title?> <?=($person->district ? "(".$person->district.")" : "")?> from <a href="<?=$person->stateLink()?>"><?=$person->stateName()?></a></h2>
-<h1 class="people__name"><?=$person->name?> <a href="<?=get_term_link($person->party, 'party')?>" class="party party--<?=$person->party->slug?>" ><?=$person->party->name?></a></h1>
+    <h1 class="people__name"><?=$person->name?> <a href="<?=get_term_link($person->party, 'party')?>" class="party party--<?=$person->party->slug?>" ><?=$person->party->name?></a></h1>
+<h2 class="people__title"><?=$person->title?> <?=($person->district ? "(" . $person->district . ")" : "")?> from <a href="<?=get_the_permalink($person->state->ID)?>"><?=$person->state->post_title?></a></h2>
 
-<ul class="people__actions"> 
+<ul class="people__actions">
     <!-- <li><button class="follow-button btn-alt">Follow</button></li> -->
 
 
@@ -54,10 +54,10 @@ if (have_posts()) {
 <nav class="people__subpage-nav">
 
 <ul>
-    <li><a href="<?=$person->url?>" <?= (!$current_fp ? "class='current'" : "") ?>>Overview</a></li>
-    <li><a href="<?=$person->url?>voting-history/" <?= ($current_fp == 'voting-history' ? "class='current'" : "") ?>>Voting History</a></li>
-    <li><a href="<?=$person->url?>donations/" <?= ($current_fp == 'donations' ? "class='current'" : "") ?>>Donation History</a></li>
-    <li><a href="<?=$person->url?>bio/" <?= ($current_fp == 'bio' ? "class='current'" : "") ?>>About</a></li>
+    <li><a href="<?=$person->url?>" <?=(!$current_fp ? "class='current'" : "")?>>Overview</a></li>
+    <li><a href="<?=$person->url?>voting-history/" <?=($current_fp == 'voting-history' ? "class='current'" : "")?>>Voting History</a></li>
+    <li><a href="<?=$person->url?>donations/" <?=($current_fp == 'donations' ? "class='current'" : "")?>>Donation History</a></li>
+    <li><a href="<?=$person->url?>bio/" <?=($current_fp == 'bio' ? "class='current'" : "")?>>About</a></li>
 
     </ul>
 
@@ -66,10 +66,10 @@ if (have_posts()) {
     <main class="content">
 
 
-<?php 
+<?php
 
-set_query_var("people_obj", $person);
-if (!$current_fp) {
+        set_query_var("people_obj", $person);
+        if (!$current_fp) {
             get_template_part('single', 'people-overview');
         } else if ($current_fp == 'voting-history') {
             get_template_part('single', 'people-voting-history');

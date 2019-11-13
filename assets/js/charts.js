@@ -1,5 +1,5 @@
 /* start donut charts */
-var donut = (function (one) {
+(function (one) {
     var chart = d3.select("#votesWith"),
     chartJ = jQuery('#votesWith'),
     withColor = chartJ.data('withcolor'),
@@ -19,9 +19,7 @@ var donut = (function (one) {
     },];
 
 
-    var pie = d3.pie()
-
-        .value(function (d) {
+    var pie = d3.pie().value(function (d) {
 
             return d.value;
 

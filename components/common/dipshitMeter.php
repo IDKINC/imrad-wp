@@ -15,8 +15,8 @@ $dipshitScore = $people_obj->dipshitScore;
 
 switch ($dipshitScore) {
 
-	case 0:
-        echo "Any Data"; 
+    case 0:
+        echo "Any Data";
         break;
     case 1:
         echo "NOT a  Dipshit";
@@ -40,17 +40,9 @@ switch ($dipshitScore) {
 </span>
 </h1>
 
-<?php if ($dipshitScore == 0 || $dipshitScore == null): ?>
-<section class="dipshit__submit-box">
-<h1>Have Proof of Dipshit&#8209;ery?</h1>
-<a href="#" class="button button--large">Submit Some Evidence &raquo;</a>
-<p>All Evidence is reviewed for authenticity.</p>
-</section>
-<?php endif; ?>
 
 
-
-<svg version="1.1" id="dipshitMeter" class="<?=($dipshitScore == 0 ? "no-data" : "" )?>" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+<svg version="1.1" id="dipshitMeter" class="<?=($dipshitScore == 0 ? "no-data" : "")?>" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 502.109 86.615" enable-background="new 0 0 502.109 86.615" preserveAspectRatio="xMidYMid meet"
 	 xml:space="preserve">
 <rect x="31.352" y="36.549" width="439.406" height="10"  fill="#cccccc"/>
@@ -101,7 +93,7 @@ switch ($dipshitScore) {
 <?php if ($dipshitScore != 0 && $dipshitScore != null): ?>
 <div class="dipshit__proof">
 	<h2>Based on</h2>
-	
+
 	<span class="proof">
 		<span>37</span>
 		 Pieces of Evidence
@@ -112,3 +104,9 @@ switch ($dipshitScore) {
 	</span>
 </div>
 	<?php endif;?>
+
+	<section class="dipshit__submit-box">
+<h1>Have <?=($dipshitScore > 0 ? "More" : "")?> Proof of Dipshit&#8209;ery?</h1>
+<a href="#" class="button button--large">Submit Evidence &raquo;</a>
+<p>All Evidence is Reviewed for Authenticity. <a href="#">Learn More &raquo;</a></p>
+</section> 

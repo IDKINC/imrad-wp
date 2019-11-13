@@ -1,5 +1,4 @@
 <?php get_header();?>
-<main>
-
+<main class="content">
 	</main>
 <?php get_footer();?>

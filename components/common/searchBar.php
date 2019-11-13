@@ -28,7 +28,7 @@
  <input type="text" name="s" placeholder="Search By Zip, Candidate, etc."/>
  <button type="submit" id="submitSearch"><i class="fas fa-search"></i></button>
 </form>
-<i class="fas fa-search" id="mobileSearchToggle"></i>
+<button id="mobileSearchToggle"><i class="fas fa-search"></i></button>
 
 
 

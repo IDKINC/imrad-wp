@@ -20,6 +20,8 @@
                 $(".is-open").removeClass("is-open");
 
                 searchBar.addClass("is-open");
+                $(dropdwon + " input").focus();
+
 
             }
         });

@@ -1,16 +1,27 @@
 .separator{
 
-    font-size: 2em;
+    font-size: 1em;
 
     background: $mainColor;
     color: #fff;
-    width: 3em;
-    height: 3em;
-    border-radius: 3em;
+    width: 2em;
+    height: 2em;
+    border-radius: 2em;
     align-items: center; justify-content: center;
     display: flex;
-    margin: 1.5em auto;
+    margin: 0.5em auto;
     position: relative;
+
+
+    @include breakpoint(laptop){
+        font-size: 2em;
+        margin: 1.5em auto;
+
+        width: 3em;
+        height: 3em;
+        border-radius: 3em;
+
+    }
 
     &:before, &:after{
 

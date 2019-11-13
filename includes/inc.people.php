@@ -17,7 +17,10 @@ class Person {
 		$this->title = $this->setTitles($this->id);
 		$this->party = $this->getParty($this->id);
 		$this->partyColor = "#" . get_term_meta($this->party->term_id, 'party_color', true);
-		$this->state = $this->getPostMeta($this->id, 'state', true);
+		$this->stateAbbr = $this->getPostMeta($this->id, 'state', true);
+
+		$this->state = $this->getState($this->stateAbbr);
+		wp_reset_postdata();
 		$this->district = $this->getPostMeta($this->id, 'district', true);
 
 
@@ -46,7 +49,7 @@ class Person {
 
 	private function getImage($id){
 
-		$imageUrl = wp_get_attachment_image_url(get_post_thumbnail_id($post_id), 'headshot');
+		$imageUrl = wp_get_attachment_image_url(get_post_thumbnail_id($id), 'headshot');
 
 		if($imageUrl){
 			return $imageUrl;
@@ -89,7 +92,7 @@ class Person {
 	private function getDipshitScore(){
 
 
-		return 0;
+		return 1;
 	}
 
 
@@ -105,34 +108,21 @@ class Person {
 				)
 			)
 		 );
-		 $query = new WP_Query($args);
+		 $states = new WP_Query($args); 
 
-		 if ($query->have_posts()) {
-			while ($query->have_posts()) {
-				$query->the_post();
+		 if ($states->have_posts()) {
+			while ($states->have_posts()) {
+				$states->the_post();
 				// do something
-			return get_post();
+				$postObj = get_post();
+				wp_reset_postdata();
+			return $postObj;
 	
 			}
 		} else {
 			// no posts found
 			return false;
 		}
-	}
-
-	public function stateName(){
-		$state = $this->getState($this->state);
-		wp_reset_postdata();
-
-		return get_the_title($state->id);
-
-	}
-
-	public function stateLink(){
-		$state = $this->getState($this->state);
-
-		return get_the_permalink($state->id);
-
 	}
 
 	public function personCard(){
@@ -144,7 +134,7 @@ class Person {
 				<img src='<?=$this->headshotUrl?>' alt='<?=$this->name?>'>
 				<section class="card__content">
 				<h3><?=$this->name?></h3>
-				<span class='party'><?=substr($this->party->name, 0, 1)?>-<?= $this->state ?></span>
+				<span class='party'><?=substr($this->party->name, 0, 1)?>-<?= $this->stateAbbr ?></span>
 				</section>
 			</article>
 		</a>

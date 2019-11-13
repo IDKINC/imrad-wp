@@ -10,12 +10,12 @@
 
     }
 
-    input{
+    input {
         margin: 0;
     }
 
 
-    &.is-open{
+    &.is-open {
 
         position: absolute;
         width: 100%;
@@ -23,10 +23,12 @@
         left: 0;
         display: grid;
         grid-template-columns: 6fr 1fr;
-        transform:translatey(100%);
+        transform: translatey(100%);
         background: $darkerColor;
         padding: 0.5em;
         z-index: 9999;
+
+        @include card(5);
 
     }
 
@@ -35,24 +37,24 @@
 
         display: grid;
         grid-template-columns: 6fr 1fr;
-        position:relative;
+        position: relative;
 
-        input{
+        input {
             display: none;
         }
 
-        &.is-open{
+        &.is-open {
 
             position: relative;
-        width: auto;
-        bottom: 0;
-        left: 0;
-        
-        transform:none;
-        background: none;
-        padding: 0.5em;
+            width: auto;
+            bottom: 0;
+            left: 0;
 
-            input{
+            transform: none;
+            background: none;
+            padding: 0.5em;
+
+            input {
                 display: block;
             }
         }
@@ -60,10 +62,10 @@
 
     }
 
-    &.large{
+    &.large {
         width: 80%;
 
-        input{
+        input {
             font-size: 2em;
         }
     }
@@ -74,7 +76,8 @@
 #mobileSearchToggle {
 
     font-size: 2em;
-    margin: 0.5em;
+    margin: 0;
+    padding: 0.5em;
     cursor: pointer;
 
 
@@ -86,19 +89,30 @@
 }
 
 
-#searchBarZip{
+#searchBarZip {
 
     display: grid;
-        grid-template-columns: auto 1fr;
-        margin-bottom: 1em;
+    grid-template-columns: auto 1fr;
+    margin-bottom: 1em;
+    
+    @include breakpoint(laptop){
+        width: auto;
+
+    }
 
 
-    input{
-    font-size: 4em;
-    width: 20rem;
-    margin: 0;
-    text-align: center;
-    margin-left: auto;
+    input {
+        font-size: 2em;
+        margin: 0;
+        text-align: center;
+        margin-left: auto;
+        width: 100%;
+
+        @include breakpoint(laptop) {
+
+            width: 20rem;
+            font-size: 4em;
+        }
     }
 
     button[type=submit] {
@@ -107,24 +121,33 @@
         border-radius: 0 5px 5px 0;
         background: $mainColor;
 
-        i{
+        i, svg {
 
-            font-size: 4em
+            font-size: 2rem
         }
 
     }
 }
 
 
-#searchBarFull{
+#searchBarFull {
 
     display: grid;
-        grid-template-columns: 6fr 1fr;
+    grid-template-columns: 6fr 1fr;
+    width: 100%;
+    max-width: 80vw;
+
+    @include breakpoint(laptop){
+
+        max-width: 50vw;
+    }
 
 
-    input{
-    font-size: 2em;
-    margin: 0;
+
+    input {
+        font-size: 2em;
+        margin: 0;
+        width: 100%;
     }
 
     button[type=submit] {

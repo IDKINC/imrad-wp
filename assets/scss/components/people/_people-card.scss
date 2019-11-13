@@ -2,7 +2,7 @@
 
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-gap: 1em;
+    grid-gap: 0.5em;
     width: 100%;
 
 
@@ -10,12 +10,19 @@
     @include breakpoint(laptop) {
         width: 80%;
         grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        grid-gap: 1em;
+
     }
 
 
-    &.two-column{
+    &.two-column {
         grid-template-columns: repeat(2, 1fr);
-        width: 53%;
+
+        @include breakpoint(laptop) {
+
+            width: 53%;
+
+        }
     }
 }
 
@@ -43,23 +50,31 @@
 
     }
 
-    .card__content{
+    .card__content {
         width: 100%;
         display: grid;
         grid-template-columns: 1fr;
         align-items: center;
 
 
-        @include breakpoint(laptop){
+        @include breakpoint(laptop) {
 
             grid-template-columns: 2fr 1fr;
         }
     }
 
     h3 {
-        margin: 0.25em 0;
+        margin: 0.25em auto;
         display: flex;
         align-items: center;
+        text-align: center;
+
+        @include breakpoint(laptop) { 
+        margin: 0.25em 0;
+
+            text-align: left;
+        }
+
     }
 
 
@@ -96,14 +111,15 @@
 
 
 
-.card--issue{
+.card--issue {
 
-    h3{
+    h3 {
         display: flex;
         align-items: center;
         justify-content: center;
         flex-direction: column;
-        svg{
+
+        svg {
             font-size: 3em;
         }
     }

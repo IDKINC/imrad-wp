@@ -3,4 +3,4 @@
 
 </nav> 
 
-<i class="fas fa-bars" id="mobileMenuToggle"></i>
+<button id="mobileMenuToggle"><i class="fas fa-bars fa-fw"></i></button>
