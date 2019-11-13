@@ -8,7 +8,7 @@
 
         $(toggle).click(function () {
 
-
+            console.log(toggle + " CLICKED");
             var searchBar = $(dropdown);
 
             if (searchBar.hasClass("is-open")) {

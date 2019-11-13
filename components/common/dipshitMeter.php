@@ -5,7 +5,9 @@ $dipshitScore = $people_obj->dipshitScore;
 
 
 <h1 class="dipshit__conclusion">
-<?=$people_obj->name . " is "?>
+
+
+<?=($dipshitScore > 0 ? $people_obj->name . " is " : "We Don't Have")?>
 
 
 <span>
@@ -13,6 +15,9 @@ $dipshitScore = $people_obj->dipshitScore;
 
 switch ($dipshitScore) {
 
+	case 0:
+        echo "Any Data"; 
+        break;
     case 1:
         echo "NOT a  Dipshit";
         break;
@@ -35,10 +40,17 @@ switch ($dipshitScore) {
 </span>
 </h1>
 
+<?php if ($dipshitScore == 0 || $dipshitScore == null): ?>
+<section class="dipshit__submit-box">
+<h1>Have Proof of Dipshit&#8209;ery?</h1>
+<a href="#" class="button button--large">Submit Some Evidence &raquo;</a>
+<p>All Evidence is reviewed for authenticity.</p>
+</section>
+<?php endif; ?>
 
 
 
-<svg version="1.1" id="dipshitMeter" class="" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+<svg version="1.1" id="dipshitMeter" class="<?=($dipshitScore == 0 ? "no-data" : "" )?>" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 502.109 86.615" enable-background="new 0 0 502.109 86.615" preserveAspectRatio="xMidYMid meet"
 	 xml:space="preserve">
 <rect x="31.352" y="36.549" width="439.406" height="10"  fill="#cccccc"/>
@@ -86,12 +98,17 @@ switch ($dipshitScore) {
 </g>
 </svg>
 
-<?php if ($dipshitScore = null): ?>
-<h4 class="no-data">No Dipshit Data</h4>
-<?php endif;?>
-
+<?php if ($dipshitScore != 0 && $dipshitScore != null): ?>
 <div class="dipshit__proof">
-<h2>Based on</h2>
-
-<span class="proof"><span>37</span> Pieces of Evidence</span><span class="proof"><span>42,500</span> Votes</span>
+	<h2>Based on</h2>
+	
+	<span class="proof">
+		<span>37</span>
+		 Pieces of Evidence
+	</span>
+	<span class="proof">
+		<span>42,500</span>
+		Votes
+	</span>
 </div>
+	<?php endif;?>

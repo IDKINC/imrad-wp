@@ -2,13 +2,25 @@
 
     position: relative;
 
-    padding: 5vh;
+    padding: 1vw;
+
+    text-align: center;
+
+    @include breakpoint(laptop) {
+        padding: 5vh;
+    }
 }
 
 #dipshitMeter {
-    width: 95%;
     height: auto;
-    margin: 4em auto;
+    margin: 1em auto;
+    width: 100%;
+    
+    @include breakpoint(laptop){
+        width: 95%;
+        
+        margin: 4em auto 1em;
+    }
 
     .dipshit__dot {
 
@@ -54,7 +66,16 @@
         opacity: 0.5;
         position: relative;
 
-        filter: drop-shadow(0 1px 2px $mainColor);
+        filter: drop-shadow(0 1px 4px $mainColor);
+        display: block;
+        z-index: -1;
+        
+        
+        @include breakpoint(laptop){
+            
+            margin-top: -20vmin;
+
+        }
 
         * {
             fill: $bgColor !important;
@@ -63,88 +84,114 @@
     }
 }
 
-h4.no-data {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 2em;
-    color: #fff;
-    top: 0;
-    left: 0;
 
-}
-
-.dipshit__conclusion{
+.dipshit__conclusion {
 
     display: flex;
     flex-direction: column;
-    align-items:center; 
+    align-items: center;
     justify-content: center;
 
-    & > span {
+    &>span {
 
         font-size: 2em;
         text-transform: uppercase;
         margin: 0.25em;
+        line-height: 1em;
     }
 }
 
-.dipshit__proof{
+.dipshit__proof {
 
     display: grid;
 
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     align-items: center;
     justify-content: center;
-    border-top: 5px solid #fff;
+    // border-top: 5px solid #fff;
     padding: 1em;
-    width: 50%;
+    width: 90%;
 
-    h2:first-of-type{
+    @include breakpoint(laptop){
+        width: 50%;
+
+    grid-template-columns: 1fr 1fr;
+        
+
+    }
+
+    h2:first-of-type {
         grid-column: 1 / -1;
         text-align: center;
         font-size: 2em;
         margin: 0 auto 0.5em;
     }
 
-    .proof, .and{
+    .proof{
 
         font-size: 1.5em;
         color: #fff;
-        text-align: center;
+        text-align: right;
         display: flex;
         align-items: center;
-        justify-content: center;
-        flex-direction: column;
-        
-    }
-
-    .proof{
-
+        justify-content: space-between;
         padding: 1em;
-        border-right: 2px solid #fff;
+        
+        border-bottom: 2px solid #fff;
+        
+        @include breakpoint(laptop){
+        justify-content: center;
+        text-align: center;
+            
+            border-right: 2px solid #fff;
+            border-bottom: none;
+            flex-direction: column;
 
-        & > span{
+
+        }
+
+        &>span {
+            text-align: left;
 
             font-size: 1.5em;
             font-weight: 900;
+            margin: 0.5em;
         }
 
 
-        &:last-of-type{
+        &:last-of-type {
             border-right: none;
+            border-bottom: none;
+
         }
     }
 
-    .and{
-        color: $bgColor;
-        background: $mainColor;
-        border-radius: 1em;
-        width: 2em;
-        height: 2em;
-        margin: 0 auto;
+
+}
+
+
+.dipshit__submit-box {
+
+
+    width: 100%;
+
+    display: flex;
+flex-direction: column;
+
+
+@include breakpoint(laptop){
+    width: 50%;
+}
+
+
+    h1,
+    h2 {
+        word-wrap: break-word;
+
+    }
+
+    p{
+        color: #fff;
+        margin: 1em;
     }
 }

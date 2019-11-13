@@ -352,21 +352,31 @@ img {
   max-width: 100%; }
 
 /* line 1, assets/scss/atoms/_button.scss */
-button {
+button, a.button {
   background: #c56cf0;
   color: #fff;
   border: none;
   padding: 0.5em 1em;
-  cursor: pointer; }
-  /* line 11, assets/scss/atoms/_button.scss */
-  button.btn-alt {
+  cursor: pointer;
+  border-radius: 5px; }
+  /* line 12, assets/scss/atoms/_button.scss */
+  button.btn-alt, a.btn-alt.button {
     color: #c56cf0;
     background: none;
     border: 2px solid #c56cf0; }
-    /* line 16, assets/scss/atoms/_button.scss */
-    button.btn-alt:hover {
+    /* line 17, assets/scss/atoms/_button.scss */
+    button.btn-alt:hover, a.btn-alt.button:hover {
       background: #d79af5;
       color: #fff; }
+  /* line 24, assets/scss/atoms/_button.scss */
+  button.button--large, a.button--large.button {
+    font-size: 1.25rem;
+    padding: 0.5em 2em;
+    font-weight: 900; }
+    @media (min-width: 64em) {
+      /* line 24, assets/scss/atoms/_button.scss */
+      button.button--large, a.button--large.button {
+        font-size: 2rem; } }
 
 /* line 1, assets/scss/components/_formField.scss */
 .group {
@@ -550,7 +560,7 @@ footer.site__footer {
 #searchBar {
   display: none; }
   /* line 5, assets/scss/components/common/_searchBar.scss */
-  #searchBar button[type=submit] {
+  #searchBar button[type=submit], #searchBar a.button[type=submit] {
     color: #fff;
     border: none;
     border-radius: 0 5px 5px 0;
@@ -623,13 +633,13 @@ footer.site__footer {
     text-align: center;
     margin-left: auto; }
   /* line 104, assets/scss/components/common/_searchBar.scss */
-  #searchBarZip button[type=submit] {
+  #searchBarZip button[type=submit], #searchBarZip a.button[type=submit] {
     color: #fff;
     border: none;
     border-radius: 0 5px 5px 0;
     background: #c56cf0; }
     /* line 110, assets/scss/components/common/_searchBar.scss */
-    #searchBarZip button[type=submit] i {
+    #searchBarZip button[type=submit] i, #searchBarZip a.button[type=submit] i {
       font-size: 4em; }
 
 /* line 119, assets/scss/components/common/_searchBar.scss */
@@ -641,7 +651,7 @@ footer.site__footer {
     font-size: 2em;
     margin: 0; }
   /* line 130, assets/scss/components/common/_searchBar.scss */
-  #searchBarFull button[type=submit] {
+  #searchBarFull button[type=submit], #searchBarFull a.button[type=submit] {
     color: #fff;
     border: none;
     border-radius: 0 5px 5px 0;
@@ -827,63 +837,60 @@ footer.site__footer {
 /* line 1, assets/scss/components/common/_dipshitMeter.scss */
 .dipshit-meter__container {
   position: relative;
-  padding: 5vh; }
+  padding: 1vw;
+  text-align: center; }
+  @media (min-width: 64em) {
+    /* line 1, assets/scss/components/common/_dipshitMeter.scss */
+    .dipshit-meter__container {
+      padding: 5vh; } }
 
-/* line 8, assets/scss/components/common/_dipshitMeter.scss */
+/* line 14, assets/scss/components/common/_dipshitMeter.scss */
 #dipshitMeter {
-  width: 95%;
   height: auto;
-  margin: 4em auto; }
-  /* line 15, assets/scss/components/common/_dipshitMeter.scss */
+  margin: 1em auto;
+  width: 100%; }
+  @media (min-width: 64em) {
+    /* line 14, assets/scss/components/common/_dipshitMeter.scss */
+    #dipshitMeter {
+      width: 95%;
+      margin: 4em auto 1em; } }
+  /* line 27, assets/scss/components/common/_dipshitMeter.scss */
   #dipshitMeter .dipshit__dot text {
     display: none; }
-  /* line 22, assets/scss/components/common/_dipshitMeter.scss */
+  /* line 34, assets/scss/components/common/_dipshitMeter.scss */
   #dipshitMeter .dipshit__dot:first-of-type text, #dipshitMeter .dipshit__dot:last-of-type text {
     display: block;
     opacity: 0.4; }
-  /* line 32, assets/scss/components/common/_dipshitMeter.scss */
+  /* line 44, assets/scss/components/common/_dipshitMeter.scss */
   #dipshitMeter .dipshit__dot.selected circle,
   #dipshitMeter .dipshit__dot.selected path {
     fill: #c56cf0;
     -webkit-filter: drop-shadow(0 1px 2px #000);
     filter: drop-shadow(0 1px 2px #000); }
-  /* line 38, assets/scss/components/common/_dipshitMeter.scss */
+  /* line 50, assets/scss/components/common/_dipshitMeter.scss */
   #dipshitMeter .dipshit__dot.selected circle {
     fill: #b33eeb; }
-  /* line 43, assets/scss/components/common/_dipshitMeter.scss */
+  /* line 55, assets/scss/components/common/_dipshitMeter.scss */
   #dipshitMeter .dipshit__dot.selected text {
     display: block;
     opacity: 1; }
-  /* line 53, assets/scss/components/common/_dipshitMeter.scss */
+  /* line 65, assets/scss/components/common/_dipshitMeter.scss */
   #dipshitMeter.no-data {
     opacity: 0.5;
     position: relative;
-    -webkit-filter: drop-shadow(0 1px 2px #c56cf0);
-    filter: drop-shadow(0 1px 2px #c56cf0); }
-    /* line 59, assets/scss/components/common/_dipshitMeter.scss */
+    -webkit-filter: drop-shadow(0 1px 4px #c56cf0);
+    filter: drop-shadow(0 1px 4px #c56cf0);
+    display: block;
+    z-index: -1; }
+    @media (min-width: 64em) {
+      /* line 65, assets/scss/components/common/_dipshitMeter.scss */
+      #dipshitMeter.no-data {
+        margin-top: -20vmin; } }
+    /* line 80, assets/scss/components/common/_dipshitMeter.scss */
     #dipshitMeter.no-data * {
       fill: #1C0E23 !important; }
 
-/* line 66, assets/scss/components/common/_dipshitMeter.scss */
-h4.no-data {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  font-size: 2em;
-  color: #fff;
-  top: 0;
-  left: 0; }
-
-/* line 80, assets/scss/components/common/_dipshitMeter.scss */
+/* line 88, assets/scss/components/common/_dipshitMeter.scss */
 .dipshit__conclusion {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -898,68 +905,98 @@ h4.no-data {
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center; }
-  /* line 87, assets/scss/components/common/_dipshitMeter.scss */
+  /* line 95, assets/scss/components/common/_dipshitMeter.scss */
   .dipshit__conclusion > span {
     font-size: 2em;
     text-transform: uppercase;
-    margin: 0.25em; }
+    margin: 0.25em;
+    line-height: 1em; }
 
-/* line 95, assets/scss/components/common/_dipshitMeter.scss */
+/* line 104, assets/scss/components/common/_dipshitMeter.scss */
 .dipshit__proof {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
-  border-top: 5px solid #fff;
   padding: 1em;
-  width: 50%; }
-  /* line 106, assets/scss/components/common/_dipshitMeter.scss */
+  width: 90%; }
+  @media (min-width: 64em) {
+    /* line 104, assets/scss/components/common/_dipshitMeter.scss */
+    .dipshit__proof {
+      width: 50%;
+      grid-template-columns: 1fr 1fr; } }
+  /* line 123, assets/scss/components/common/_dipshitMeter.scss */
   .dipshit__proof h2:first-of-type {
     grid-column: 1 / -1;
     text-align: center;
     font-size: 2em;
     margin: 0 auto 0.5em; }
-  /* line 113, assets/scss/components/common/_dipshitMeter.scss */
-  .dipshit__proof .proof, .dipshit__proof .and {
+  /* line 130, assets/scss/components/common/_dipshitMeter.scss */
+  .dipshit__proof .proof {
     font-size: 1.5em;
     color: #fff;
-    text-align: center;
+    text-align: right;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column; }
-  /* line 125, assets/scss/components/common/_dipshitMeter.scss */
-  .dipshit__proof .proof {
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
     padding: 1em;
-    border-right: 2px solid #fff; }
-    /* line 130, assets/scss/components/common/_dipshitMeter.scss */
+    border-bottom: 2px solid #fff; }
+    @media (min-width: 64em) {
+      /* line 130, assets/scss/components/common/_dipshitMeter.scss */
+      .dipshit__proof .proof {
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        text-align: center;
+        border-right: 2px solid #fff;
+        border-bottom: none;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column; } }
+    /* line 153, assets/scss/components/common/_dipshitMeter.scss */
     .dipshit__proof .proof > span {
+      text-align: left;
       font-size: 1.5em;
-      font-weight: 900; }
-    /* line 137, assets/scss/components/common/_dipshitMeter.scss */
+      font-weight: 900;
+      margin: 0.5em; }
+    /* line 162, assets/scss/components/common/_dipshitMeter.scss */
     .dipshit__proof .proof:last-of-type {
-      border-right: none; }
-  /* line 142, assets/scss/components/common/_dipshitMeter.scss */
-  .dipshit__proof .and {
-    color: #1C0E23;
-    background: #c56cf0;
-    border-radius: 1em;
-    width: 2em;
-    height: 2em;
-    margin: 0 auto; }
+      border-right: none;
+      border-bottom: none; }
+
+/* line 173, assets/scss/components/common/_dipshitMeter.scss */
+.dipshit__submit-box {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column; }
+  @media (min-width: 64em) {
+    /* line 173, assets/scss/components/common/_dipshitMeter.scss */
+    .dipshit__submit-box {
+      width: 50%; } }
+  /* line 187, assets/scss/components/common/_dipshitMeter.scss */
+  .dipshit__submit-box h1,
+  .dipshit__submit-box h2 {
+    word-wrap: break-word; }
+  /* line 193, assets/scss/components/common/_dipshitMeter.scss */
+  .dipshit__submit-box p {
+    color: #fff;
+    margin: 1em; }
 
 /* line 1, assets/scss/components/maps/_maps.scss */
 svg.map {

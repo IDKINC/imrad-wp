@@ -7,6 +7,7 @@ button{
 
     cursor: pointer;
 
+    border-radius: 5px;
 
     &.btn-alt{
         color: $mainColor;
@@ -19,5 +20,21 @@ button{
         }
     }
 
+
+    &.button--large{
+        font-size: 1.25rem;
+        padding: 0.5em 2em;
+        font-weight: 900;
+
+        @include breakpoint(laptop){
+            font-size: 2rem;
+        }
+    }
+
     
+}
+
+
+a.button{
+    @extend button
 }
