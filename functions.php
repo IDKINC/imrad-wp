@@ -8,10 +8,11 @@ include __DIR__ . "/includes/search_modifications.php";
 include __DIR__ . "/includes/imrad_import.php";
 
 
-include __DIR__ . "/includes/customPostTypes/districts.php";
-include __DIR__ . "/includes/customPostTypes/states.php";
 include __DIR__ . "/includes/customPostTypes/people.php";
+include __DIR__ . "/includes/customPostTypes/evidence.php";
 include __DIR__ . "/includes/customPostTypes/issues.php";
+include __DIR__ . "/includes/customPostTypes/states.php";
+include __DIR__ . "/includes/customPostTypes/districts.php";
 
 include __DIR__ . "/includes/customTaxonomies/job_title.php";
 include __DIR__ . "/includes/customTaxonomies/zip_codes.php";
@@ -53,3 +54,28 @@ function cc_mime_types($mimes)
     return $mimes;
 }
 add_filter('upload_mimes', 'cc_mime_types');
+
+
+
+
+// Removing Default post Type
+
+
+add_action( 'admin_menu', 'remove_default_post_type' );
+
+function remove_default_post_type() {
+    remove_menu_page( 'edit.php' );
+}
+
+add_action( 'admin_bar_menu', 'remove_default_post_type_menu_bar', 999 );
+
+function remove_default_post_type_menu_bar( $wp_admin_bar ) {
+    $wp_admin_bar->remove_node( 'new-post' );
+}
+
+
+add_action( 'wp_dashboard_setup', 'remove_draft_widget', 999 );
+
+function remove_draft_widget(){
+    remove_meta_box( 'dashboard_quick_press', 'dashboard', 'side' );
+}
