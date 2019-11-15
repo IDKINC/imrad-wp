@@ -41,4 +41,29 @@
         right: 120%;
     }
 
+
+
+    &.vertical{
+
+
+
+        &:before, &:after{
+
+            width:  1vw;
+            height: 10vh;
+            left:calc(50% - 0.5vw);
+        }
+    
+        &:before{
+            top: 120%;
+        }
+    
+    
+        &:after{
+            bottom: 120%;
+        }
+
+
+    }
+
 }
