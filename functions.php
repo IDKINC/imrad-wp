@@ -46,6 +46,12 @@ function imrad_theme_support()
 
 add_action('after_setup_theme', 'imrad_theme_support');
 
+
+function imrad_menus() {
+    register_nav_menu('header-menu',__( 'Header Menu' ));
+  }
+  add_action( 'init', 'imrad_menus' );
+
 function cc_mime_types($mimes)
 {
     $mimes['svg'] = 'image/svg+xml';
