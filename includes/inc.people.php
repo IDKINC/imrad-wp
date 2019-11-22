@@ -21,6 +21,10 @@ class Person {
 
 		$this->state = $this->getState($this->stateAbbr);
 		wp_reset_postdata();
+
+		$this->evidence = $this->getEvidence();
+		wp_reset_postdata();
+		$this->evidenceCount = count($this->evidence);
 		$this->district = $this->getPostMeta($this->id, 'district', true);
 
 
@@ -40,7 +44,7 @@ class Person {
 
 
 
-		$this->dipshitScore = $this->getDipshitScore();
+		$this->dipshitScore = $this->getDipshitScore();  
 
 
 
@@ -89,10 +93,18 @@ class Person {
 
 	}
 
-	private function getDipshitScore(){
+	private function getDipshitScore($score = null){
 
+		if(!is_null($score)){
 
-		return 1;
+			return round($score);
+		} else {
+			
+			return null;
+
+		}
+
+		//No Data
 	}
 
 
@@ -119,6 +131,38 @@ class Person {
 			return $postObj;
 	
 			}
+		} else {
+			// no posts found
+			return false;
+		}
+	}
+
+	private function getEvidence(){
+
+		$args = array(
+			'post_type' => array('evidence'),
+			'meta_query' => array(
+				array(
+					'key' => 'evidence_people',
+					'value' => $this->id,
+					'compare' => '=',
+				)
+			)
+		 );
+		 $evidence = new WP_Query($args); 
+
+		 if ($evidence->have_posts()) {
+			 $evidenceArr = array();
+			while ($evidence->have_posts()) {
+				$evidence->the_post();
+				// do something
+				$postObj = get_post();
+
+				array_push($evidenceArr, $postObj);
+				wp_reset_postdata();
+				
+			}
+			return $evidenceArr;
 		} else {
 			// no posts found
 			return false;

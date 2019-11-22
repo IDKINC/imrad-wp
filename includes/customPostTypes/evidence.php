@@ -1,6 +1,5 @@
 <?php
 
-
 // Evidence Custom Post Type
 
 function evidence_post_type()
@@ -37,12 +36,12 @@ function evidence_post_type()
     );
     $args = array(
         'label' => __('Evidence', 'imrad'),
-        'description' => __('The Congressional Evidence of the USA', 'imrad'),
+        'description' => __('Evidence of Dipshitery', 'imrad'),
         'labels' => $labels,
-        'supports' => array('title', 'editor', 'thumbnail', 'revisions'),
+        'supports' => array('title', 'thumbnail', 'revisions'),
         'hierarchical' => false,
-		'public' => true,
-		'menu_icon' => 'dashicons-visibility',
+        'public' => true,
+        'menu_icon' => 'dashicons-visibility',
         'show_ui' => true,
         'show_in_menu' => true,
         'menu_position' => 2,
@@ -60,4 +59,117 @@ function evidence_post_type()
 }
 add_action('init', 'evidence_post_type', 0);
 
+function evidence_add_meta_boxes($post)
+{
 
+    add_meta_box('evidence_people', __('People', 'imrad'), 'evidence_build_person_meta_box', 'evidence', 'normal', 'high');
+    add_meta_box('evidence_url', __('URL', 'imrad'), 'evidence_build_icon_meta_box', 'evidence', 'normal', 'high');
+
+}
+add_action('add_meta_boxes_evidence', 'evidence_add_meta_boxes');
+
+function evidence_build_icon_meta_box($post)
+{
+
+    wp_nonce_field(basename(__FILE__), 'evidence_meta_box_nonce');
+
+    $current_icon = get_post_meta($post->ID, 'evidence_url', true);
+
+    ?>
+
+    <div class='inside'>
+    <p>
+        URL:
+        <input type="text" placeholder="e.g 'https://bbc.com/'" name="evidence_url" value="<?=$current_icon?>"/>
+	</p>
+
+</div>
+
+
+<?php
+
+}
+
+function evidence_build_person_meta_box($post)
+{
+
+    wp_nonce_field(basename(__FILE__), 'evidence_meta_box_nonce');
+
+    $current_person = get_post_meta($post->ID, 'evidence_people', true);
+
+    ?>
+
+    <div class='inside'>
+    <p>
+        Person:
+        <select id="evidence_people" name="evidence_people" value="<?=$current_person?>">
+
+
+
+<?php
+        $args = array(
+        'post_type' => array('people'),
+        'order' => 'ASC',
+        'orderby' => 'name',
+        'posts_per_page' => -1,
+    );
+
+// The Query
+    $issues = new WP_Query($args);
+
+// The Loop
+    if ($issues->have_posts()) {
+        while ($issues->have_posts()) {
+            $issues->the_post();
+            // do something
+            echo "<option value='". get_the_id() ."'>" . get_the_title() . "</option>";
+
+        }
+    } else {
+        // no posts found
+    }
+
+// Restore original Post Data
+    wp_reset_postdata(); ?>
+
+
+
+
+
+	</p>
+
+</div>
+
+
+<?php
+
+}
+
+function evidence_save_meta_boxes_data($post_id)
+{
+    if (!isset($_POST['evidence_meta_box_nonce']) || !wp_verify_nonce($_POST['evidence_meta_box_nonce'], basename(__FILE__))) {
+        return;
+    }
+
+    if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) {
+        return;
+    }
+
+    if (!current_user_can('edit_post', $post_id)) {
+        return;
+
+    }
+
+///////////
+    // Info  //
+    ///////////
+
+    if (isset($_REQUEST['evidence_url'])) {
+        update_post_meta($post_id, 'evidence_url', sanitize_text_field($_POST['evidence_url']));
+        update_post_meta($post_id, 'evidence_people', sanitize_text_field($_POST['evidence_people']));
+
+        
+    }
+
+}
+add_action('save_post_evidence', 'evidence_save_meta_boxes_data', 10, 2);

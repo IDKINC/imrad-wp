@@ -55,6 +55,7 @@ if (have_posts()) {
 
 <ul>
     <li><a href="<?=$person->url?>" <?=(!$current_fp ? "class='current'" : "")?>>Overview</a></li>
+    <li><a href="<?=$person->url?>evidence/" <?=($current_fp == 'evidence' ? "class='current'" : "")?>>Evidence <?= ($person->evidenceCount > 0 ? "($person->evidenceCount)" : "") ?></a></li>
     <li><a href="<?=$person->url?>voting-history/" <?=($current_fp == 'voting-history' ? "class='current'" : "")?>>Voting History</a></li>
     <li><a href="<?=$person->url?>donations/" <?=($current_fp == 'donations' ? "class='current'" : "")?>>Donation History</a></li>
     <li><a href="<?=$person->url?>bio/" <?=($current_fp == 'bio' ? "class='current'" : "")?>>About</a></li>
