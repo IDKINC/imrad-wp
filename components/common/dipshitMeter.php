@@ -95,11 +95,11 @@ switch ($dipshitScore) {
 	<h2>Based on</h2>
 
 	<span class="proof">
-		<span>37</span>
+		<span class="countUp" data-number="37">37</span>
 		 Pieces of Evidence
 	</span>
 	<span class="proof">
-		<span>42,500</span>
+		<span class="countUp" data-number="42500">42,500</span>
 		Votes
 	</span>
 </div>
