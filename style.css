@@ -736,9 +736,18 @@ footer.site__footer {
       margin-left: auto;
       display: -webkit-box;
       display: -ms-flexbox;
-      display: flex; } }
+      display: flex; }
+      /* line 56, assets/scss/components/common/_nav.scss */
+      .header__nav ul {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+        flex-direction: row; } }
 
-/* line 63, assets/scss/components/common/_nav.scss */
+/* line 67, assets/scss/components/common/_nav.scss */
 #mobileMenuToggle {
   font-size: 2em;
   margin: 0;
@@ -748,7 +757,7 @@ footer.site__footer {
   cursor: pointer;
   padding: 0.25em; }
   @media (min-width: 64em) {
-    /* line 63, assets/scss/components/common/_nav.scss */
+    /* line 67, assets/scss/components/common/_nav.scss */
     #mobileMenuToggle {
       display: none; } }
 
