@@ -64,6 +64,7 @@ function evidence_add_meta_boxes($post)
 
     add_meta_box('evidence_people', __('People', 'imrad'), 'evidence_build_person_meta_box', 'evidence', 'normal', 'high');
     add_meta_box('evidence_url', __('URL', 'imrad'), 'evidence_build_icon_meta_box', 'evidence', 'normal', 'high');
+    add_meta_box('evidence_image', __('Data Scraped from URL', 'imrad'), 'evidence_build_image_meta_box', 'evidence', 'normal', 'high');
 
 }
 add_action('add_meta_boxes_evidence', 'evidence_add_meta_boxes');
@@ -107,7 +108,7 @@ function evidence_build_person_meta_box($post)
 
 
 <?php
-        $args = array(
+$args = array(
         'post_type' => array('people'),
         'order' => 'ASC',
         'orderby' => 'name',
@@ -122,7 +123,7 @@ function evidence_build_person_meta_box($post)
         while ($issues->have_posts()) {
             $issues->the_post();
             // do something
-            echo "<option value='". get_the_id() ."'>" . get_the_title() . "</option>";
+            echo "<option ".($current_person == get_the_id() ? "selected" : "") ." value='" . get_the_id() . "'>" . get_the_title() . "</option>";
 
         }
     } else {
@@ -130,13 +131,54 @@ function evidence_build_person_meta_box($post)
     }
 
 // Restore original Post Data
-    wp_reset_postdata(); ?>
+    wp_reset_postdata();?>
 
 
 
 
 
 	</p>
+
+</div>
+
+
+<?php
+
+}
+
+function evidence_build_image_meta_box($post)
+{
+
+    wp_nonce_field(basename(__FILE__), 'evidence_meta_box_nonce');
+
+    $current_image_url = get_post_meta($post->ID, 'evidence_image', true);
+
+    $current_desc = get_post_meta($post->ID, 'evidence_desc', true);
+    $current_title = get_post_meta($post->ID, 'evidence_title', true);
+
+    ?>
+
+    <div class='inside'>
+    <p>
+        Link Title:
+        <input id="evidence_title" name="evidence_title" value="<?= $current_title ?>">
+
+    </p>
+    <p>
+        Link Desc:
+        <textarea id="evidence_desc" name="evidence_desc">
+            <?= $current_desc ?>
+        </textarea>
+
+    
+    </p>
+    <p>
+        Image URL:
+        <input id="evidence_image" name="evidence_image" value="<?= $current_image_url ?>">
+
+        <?php if(isset($current_image_url)){
+            echo "<img src='$current_image_url' width='200' />";} ?>
+    </p>
 
 </div>
 
@@ -166,10 +208,65 @@ function evidence_save_meta_boxes_data($post_id)
 
     if (isset($_REQUEST['evidence_url'])) {
         update_post_meta($post_id, 'evidence_url', sanitize_text_field($_POST['evidence_url']));
-        update_post_meta($post_id, 'evidence_people', sanitize_text_field($_POST['evidence_people']));
-
-        
     }
+
+    if(isset($_REQUEST['evidence_people'])){
+
+        update_post_meta($post_id, 'evidence_people', sanitize_text_field($_POST['evidence_people']));
+    }
+        
+    
 
 }
 add_action('save_post_evidence', 'evidence_save_meta_boxes_data', 10, 2);
+
+// Update OG:Image on Post Update
+
+add_action('save_post_evidence', 'getOGImage', 10, 2);
+
+function getOGImage($post_id, $post)
+{
+    $evidence_url = get_post_meta($post_id, 'evidence_url',true);
+    print_r($evidence_url);
+    $page_content = file_get_contents($evidence_url);
+
+    $dom_obj = new DOMDocument();
+    $dom_obj->loadHTML($page_content);
+    $meta_img = null;
+    $meta_desc = null;
+    $meta_title = null;
+
+    foreach ($dom_obj->getElementsByTagName('meta') as $meta) {
+
+        if ($meta->getAttribute('property') == 'og:image') {
+
+            $meta_img = $meta->getAttribute('content');
+        }
+
+
+        if ($meta->getAttribute('property') == 'og:description') {
+
+            $meta_desc = $meta->getAttribute('content');
+        }
+
+        if ($meta->getAttribute('property') == 'og:title') {
+
+            $meta_title = $meta->getAttribute('content');
+        }
+    }
+    if(!is_null($meta_img)){
+
+        update_post_meta($post_id, 'evidence_image', sanitize_text_field($meta_img));
+    } 
+
+    if(!is_null($meta_desc)){
+
+        update_post_meta($post_id, 'evidence_desc', sanitize_text_field($meta_desc));
+    } 
+
+    if(!is_null($meta_title)){
+
+        update_post_meta($post_id, 'evidence_title', sanitize_text_field($meta_title));
+    } 
+
+}

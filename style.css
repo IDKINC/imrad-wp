@@ -1525,23 +1525,23 @@ svg.map {
           white-space: nowrap; } }
 
 /* line 1, assets/scss/components/people/_people-card.scss */
-.card-grid {
+.card-grid, .evidence-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 0.5em;
   width: 100%; }
   @media (min-width: 64em) {
     /* line 1, assets/scss/components/people/_people-card.scss */
-    .card-grid {
+    .card-grid, .evidence-grid {
       width: 80%;
       grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
       grid-gap: 1em; } }
   /* line 18, assets/scss/components/people/_people-card.scss */
-  .card-grid.two-column {
+  .card-grid.two-column, .two-column.evidence-grid {
     grid-template-columns: repeat(2, 1fr); }
     @media (min-width: 64em) {
       /* line 18, assets/scss/components/people/_people-card.scss */
-      .card-grid.two-column {
+      .card-grid.two-column, .two-column.evidence-grid {
         width: 53%; } }
 
 /* line 29, assets/scss/components/people/_people-card.scss */
@@ -1631,6 +1631,78 @@ svg.map {
   /* line 122, assets/scss/components/people/_people-card.scss */
   .card--issue h3 svg {
     font-size: 3em; }
+
+/* line 1, assets/scss/components/evidence/_evidence.scss */
+.evidence-grid {
+  grid-template-columns: 1fr;
+  width: 50%;
+  margin: 0 auto; }
+
+/* line 9, assets/scss/components/evidence/_evidence.scss */
+.evidence__card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column; }
+  /* line 16, assets/scss/components/evidence/_evidence.scss */
+  .evidence__card .evidence__card-content {
+    width: 100%;
+    padding: 0 1em; }
+  /* line 21, assets/scss/components/evidence/_evidence.scss */
+  .evidence__card .evidence__title {
+    margin: 0;
+    text-align: center; }
+
+/* line 32, assets/scss/components/evidence/_evidence.scss */
+.evidence__voting-grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center; }
+  /* line 41, assets/scss/components/evidence/_evidence.scss */
+  .evidence__voting-grid .evidence__score {
+    margin: 0;
+    text-align: center;
+    -ms-flex-item-align: center;
+    align-self: center; }
+
+/* line 50, assets/scss/components/evidence/_evidence.scss */
+.evidence__og-data {
+  border: 1px solid gray;
+  background: #1C0E23;
+  margin: 1em auto; }
+  /* line 56, assets/scss/components/evidence/_evidence.scss */
+  .evidence__og-data p {
+    font-size: 1em;
+    color: #fff;
+    padding: 0em 1em; }
+  /* line 62, assets/scss/components/evidence/_evidence.scss */
+  .evidence__og-data .evidence__title {
+    font-weight: bold;
+    text-align: left; }
+  /* line 68, assets/scss/components/evidence/_evidence.scss */
+  .evidence__og-data .evidence__description {
+    margin: 0;
+    opacity: 0.8; }
+  /* line 73, assets/scss/components/evidence/_evidence.scss */
+  .evidence__og-data .evidence__source {
+    font-family: "Ubuntu", serif;
+    margin: 0 0 0.5em;
+    text-align: right;
+    color: #aaa; }
 
 @media (min-width: 64em) {
   /* line 1, assets/scss/pages/_front-page.scss */

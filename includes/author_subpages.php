@@ -1,6 +1,7 @@
 <?php 
 
 $people_sub_pages = array(
+        'evidence' => 'Evidence',
         'voting-history' => 'Vote History',
         'donations' => 'Donation History',
         'bio' => 'About'
