@@ -90,7 +90,7 @@ gulp.task('js', gulp.series(function() {
     return gulp.src(jsFiles)
         .pipe(sourcemaps.init())
         .pipe(concat('theme.js'))
-        .pipe(uglify())
+        // .pipe(uglify())
         .pipe(sourcemaps.write(jsDest))
 
         .pipe(gulp.dest(jsDest));
