@@ -1634,8 +1634,8 @@ svg.map {
 
 /* line 1, assets/scss/components/evidence/_evidence.scss */
 .evidence-grid {
-  grid-template-columns: 1fr;
-  width: 50%;
+  grid-template-columns: 1fr 1fr;
+  width: 80%;
   margin: 0 auto; }
 
 /* line 9, assets/scss/components/evidence/_evidence.scss */
