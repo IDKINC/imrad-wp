@@ -4,9 +4,9 @@ add_filter('cron_schedules', 'example_add_cron_interval');
 
 function example_add_cron_interval($schedules)
 {
-    $schedules['five_seconds'] = array(
-        'interval' => 5,
-        'display' => esc_html__('Every Five Seconds'),
+    $schedules['sixty_seconds'] = array(
+        'interval' => 60,
+        'display' => esc_html__('Every 60 Seconds'),
     );
 
     return $schedules;
@@ -20,7 +20,7 @@ add_action('init', function () {
 
     error_reporting(1);
 
-    do_action('bl_cron_hook');
+    do_action('addCronTime');
 
     die();
 
@@ -142,5 +142,5 @@ function updateDipshitScore()
 add_action('bl_cron_hook', 'updateDipshitScore');
 
 if (!wp_next_scheduled('bl_cron_hook')) {
-    wp_schedule_event(time(), 'five_seconds', 'bl_cron_hook');
+    wp_schedule_event(time(), 'sixty_seconds', 'bl_cron_hook');
 }
