@@ -28,7 +28,8 @@ class Person {
 		$this->district = $this->getPostMeta($this->id, 'district', true);
 
 
-		$this->headshotUrl = $this->getImage($this->id);
+		$this->headshotUrl = $this->getImage($this->id, "headshot");
+		$this->headshotIconUrl = $this->getImage($this->id, "icon");
 		$this->bannerUrl = wp_get_attachment_image_url($this->getPostMeta($this->id, 'banner_image', true), 'full');
 
 		$this->url = get_permalink($this->id);
@@ -51,9 +52,9 @@ class Person {
 
 	}
 
-	private function getImage($id){
+	private function getImage($id, $size){
 
-		$imageUrl = wp_get_attachment_image_url(get_post_thumbnail_id($id), 'headshot');
+		$imageUrl = wp_get_attachment_image_url(get_post_thumbnail_id($id), $size);
 
 		if($imageUrl){
 			return $imageUrl;
@@ -187,6 +188,33 @@ class Person {
 		</a>
 
 	<?php
+	}
+
+
+	public function personLeaderboard(){
+
+
+		?>
+		
+		<a href='<?=$this->url?>'>
+			<article class='leaderboard__item leaderboard__item--<?=$this->party->slug?>' id='<?=$this->slug?>'>
+				<img src='<?=$this->headshotUrl?>' alt='<?=$this->name?>'>
+				<div class="leaderboard__name">
+					<h3><?=$this->name?></h3>
+					<span class='party'><?=substr($this->party->name, 0, 1)?>-<?= $this->stateAbbr ?></span>
+				</div>
+				<div class='leaderboard__score'>
+					<h4><?= $this->dipshitScore?> / 5</h4>
+					<h5>Dipshit Score</h5>
+					<hr/>
+					<h5>See Evidence &raquo;</h5> 
+				</div>
+
+			</article>
+		</a>
+
+	<?php
+
 	}
 
 }

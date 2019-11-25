@@ -1,0 +1,100 @@
+.person__leaderboard {
+
+
+    display: flex;
+    flex-direction: column;
+    width: 95%;
+
+    @include breakpoint(laptop) {
+        width: 50%;
+    }
+
+
+    .leaderboard__item {
+        width: 100%;
+        display: grid;
+        align-items: center;
+        justify-content: space-around;
+        grid-template-columns: 1fr 3fr;
+        grid-template-rows: 1fr 1fr;
+
+
+        padding: 0.5em;
+        margin-bottom: 1em;
+        // border-bottom: 4px solid #fff;
+
+        color: #fff;
+        text-align: center;
+
+        background: transparentize($color: #fff, $amount: 0.9);
+
+
+        @include breakpoint(laptop) {
+            grid-template-columns: 1fr 3fr 1fr;
+            grid-template-rows: 1fr;
+
+        }
+
+        &:hover {
+            background: transparentize($color: #fff, $amount: 0.8);
+        }
+
+
+        h3,
+        a {
+            color: #fff;
+            margin: 0 auto;
+        }
+
+
+        img {
+            grid-row: 1 / -1;
+        }
+
+        .leaderboard__score {
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            hr {
+                width: 50%;
+                margin: 10px;
+            }
+
+            h4 {
+                color: #fff;
+                margin: 0;
+
+            }
+
+            h5 {
+                font-family: $font-family--body;
+                color: #fff;
+                font-weight: 400;
+                font-size: 1em;
+                margin: 0;
+
+            }
+
+
+
+        }
+
+        &--republican {
+
+            border-left: 15px solid var(--republican-color);
+        }
+
+        &--democrat {
+
+            border-left: 15px solid var(--democrat-color);
+        }
+
+        &--independent {
+
+            border-left: 15px solid var(--independent-color);
+        }
+    }
+}

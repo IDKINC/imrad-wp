@@ -1632,6 +1632,92 @@ svg.map {
   .card--issue h3 svg {
     font-size: 3em; }
 
+/* line 1, assets/scss/components/people/_people-leaderboard.scss */
+.person__leaderboard {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 95%; }
+  @media (min-width: 64em) {
+    /* line 1, assets/scss/components/people/_people-leaderboard.scss */
+    .person__leaderboard {
+      width: 50%; } }
+  /* line 13, assets/scss/components/people/_people-leaderboard.scss */
+  .person__leaderboard .leaderboard__item {
+    width: 100%;
+    display: grid;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: 1fr 1fr;
+    padding: 0.5em;
+    margin-bottom: 1em;
+    color: #fff;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.1); }
+    @media (min-width: 64em) {
+      /* line 13, assets/scss/components/people/_people-leaderboard.scss */
+      .person__leaderboard .leaderboard__item {
+        grid-template-columns: 1fr 3fr 1fr;
+        grid-template-rows: 1fr; } }
+    /* line 38, assets/scss/components/people/_people-leaderboard.scss */
+    .person__leaderboard .leaderboard__item:hover {
+      background: rgba(255, 255, 255, 0.2); }
+    /* line 43, assets/scss/components/people/_people-leaderboard.scss */
+    .person__leaderboard .leaderboard__item h3,
+    .person__leaderboard .leaderboard__item a {
+      color: #fff;
+      margin: 0 auto; }
+    /* line 50, assets/scss/components/people/_people-leaderboard.scss */
+    .person__leaderboard .leaderboard__item img {
+      grid-row: 1 / -1; }
+    /* line 54, assets/scss/components/people/_people-leaderboard.scss */
+    .person__leaderboard .leaderboard__item .leaderboard__score {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center; }
+      /* line 61, assets/scss/components/people/_people-leaderboard.scss */
+      .person__leaderboard .leaderboard__item .leaderboard__score hr {
+        width: 50%;
+        margin: 10px; }
+      /* line 66, assets/scss/components/people/_people-leaderboard.scss */
+      .person__leaderboard .leaderboard__item .leaderboard__score h4 {
+        color: #fff;
+        margin: 0; }
+      /* line 72, assets/scss/components/people/_people-leaderboard.scss */
+      .person__leaderboard .leaderboard__item .leaderboard__score h5 {
+        font-family: "Ubuntu", serif;
+        color: #fff;
+        font-weight: 400;
+        font-size: 1em;
+        margin: 0; }
+    /* line 85, assets/scss/components/people/_people-leaderboard.scss */
+    .person__leaderboard .leaderboard__item--republican {
+      border-left: 15px solid var(--republican-color); }
+    /* line 90, assets/scss/components/people/_people-leaderboard.scss */
+    .person__leaderboard .leaderboard__item--democrat {
+      border-left: 15px solid var(--democrat-color); }
+    /* line 95, assets/scss/components/people/_people-leaderboard.scss */
+    .person__leaderboard .leaderboard__item--independent {
+      border-left: 15px solid var(--independent-color); }
+
 /* line 1, assets/scss/components/evidence/_evidence.scss */
 .evidence-grid {
   margin: 1em auto;

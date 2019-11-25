@@ -22,6 +22,9 @@
 $args = array(
 			'post_type' => array('people'),
 			'posts_per_page' => 10,
+			'meta_key' => 'dipshit_score',
+        'orderby' => 'meta_value_num',
+        'order' => 'DESC'
 
 		 );
          $biggestDipshits = new WP_Query($args);
@@ -31,13 +34,13 @@ $args = array(
 
 
 if ($biggestDipshits->have_posts()) {
-	echo "<section class='card-grid'>";
+	echo "<section class='person__leaderboard'>";
     while ($biggestDipshits->have_posts()) {
 		$biggestDipshits->the_post();
 
 		$rep = new Person(get_post());
 
-		echo $rep->personCard();
+		echo $rep->personLeaderboard();
 		
 	}
 	echo "</section>";
