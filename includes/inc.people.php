@@ -39,12 +39,12 @@ class Person {
 		$this->twitter = $this->getPostMeta($this->id, 'twitter', true);
 
 		$this->votesWith = $this->getPostMeta($this->id, 'votes_with', true);
-		$this->votesAgainst = $this->getPostMeta($this->id, 'votes_against', true);
-		$this->votesDetails = $this->getPostMeta($this->id, 'votes_details', true);
+		$this->votesAgainst = $post->votes_against;  
+		$this->votesDetails = $post->votes_details;
 
 
 
-		$this->dipshitScore = $this->getDipshitScore();  
+		$this->dipshitScore = $this->getDipshitScore($post->dipshit_score);  
 
 
 
@@ -93,18 +93,21 @@ class Person {
 
 	}
 
-	private function getDipshitScore($score = null){
+	private function getDipshitScore($score=null){
+
+		// Sets $score to null if the field is empty.
+		if(empty($score)){$score = null;}
 
 		if(!is_null($score)){
 
 			return round($score);
 		} else {
 			
+			//No Data
 			return null;
 
 		}
 
-		//No Data
 	}
 
 

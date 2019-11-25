@@ -7,6 +7,9 @@ include __DIR__ . "/includes/image_sizes.php";
 include __DIR__ . "/includes/search_modifications.php";
 include __DIR__ . "/includes/imrad_import.php";
 
+include __DIR__ . "/includes/cron/cron.php";
+
+
 include __DIR__ . "/includes/customPostTypes/people.php";
 include __DIR__ . "/includes/customPostTypes/evidence.php";
 include __DIR__ . "/includes/customPostTypes/issues.php";
@@ -27,6 +30,7 @@ function imrad_scripts()
     wp_enqueue_script('theme', get_template_directory_uri() . '/theme.js', array("jquery"), null, true);
 
     wp_enqueue_script('fontAwesome', 'https://kit.fontawesome.com/0e434539c2.js');
+    wp_enqueue_script( 'twitter-embed', 'https://platform.twitter.com/widgets.js',  true );
     wp_enqueue_script('d3', 'https://d3js.org/d3.v5.min.js');
 }
 add_action('wp_enqueue_scripts', 'imrad_scripts');

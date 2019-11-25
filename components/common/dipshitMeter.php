@@ -100,19 +100,19 @@ switch (true) {
 <div class="dipshit__proof">
 	<h2>Based on</h2>
 
-	<span class="proof">
+	<a class="proof">
 		<span class="countUp" data-number="<?=$evidenceCount?>"><?=$evidenceCount?></span>
 		 Piece<?=($evidenceCount > 1 ? "s" : "")?> of Evidence
-	</span>
-	<span class="proof">
+	</a>
+	<a class="proof">
 		<span class="countUp" data-number="42500">42,500</span>
 		Votes
-	</span>
+	</a>
 </div>
 	<?php endif;?>
 
 	<section class="dipshit__submit-box">
 <h1>Have <?=($dipshitScore > 0 ? "More" : "")?> Proof of Dipshit&#8209;ery?</h1>
-<a href="#" class="button button--large">Submit Evidence &raquo;</a>
+<a href="<?=$people_obj->url?>evidence" class="button button--large">Submit Evidence &raquo;</a>
 <p>All Evidence is Reviewed for Authenticity. <a href="#">Learn More &raquo;</a></p>
 </section> 

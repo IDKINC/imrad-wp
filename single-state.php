@@ -81,7 +81,7 @@ if ($senators->have_posts()) {
 
 	else {
 
-		echo "No Current Reps";
+		echo "No Current Senators";
 	}
 
     wp_reset_postdata();

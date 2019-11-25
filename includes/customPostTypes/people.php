@@ -70,9 +70,27 @@ function people_add_meta_boxes($post)
 
     add_meta_box('people_vote', __('Vote History', 'imrad'), 'people_build_vote_meta_box', 'people', 'normal', 'high');
     add_meta_box('people_social', __('Social Links', 'imrad'), 'people_build_social_meta_box', 'people', 'side', 'high');
+    add_meta_box('people_score', __("Dipshit Score", 'imrad'), 'people_build_score_meta_box', 'people', 'normal', 'high');
 
 }
 add_action('add_meta_boxes_people', 'people_add_meta_boxes');
+
+function people_build_score_meta_box($post)
+{
+
+    wp_nonce_field(basename(__FILE__), 'people_meta_box_nonce');
+    $currentScore = get_post_meta($post->ID, "dipshit_score", true);
+
+    ?>
+    <div class='inside'>
+    <p>
+        Dipshit Score: <input type="number" step="0.01" value="<?=$currentScore?>" name="dipshit_score" id="dipshit_score" />
+    </p>
+
+    </div>
+<?php
+
+}
 
 function people_build_issues_meta_box($post)
 {
@@ -101,9 +119,8 @@ function people_build_issues_meta_box($post)
 
             echo sprintf('<h3><i class="%s"></i> - %s</h3>', $icon, get_the_title());
 
-
             $settings = array(
-                'wpautop'       => true,
+                'wpautop' => true,
                 'media_buttons' => true,
                 'textarea_name' => 'issue-' . $slug,
                 'textarea_rows' => 10);
@@ -294,19 +311,17 @@ function people_build_vote_meta_box($post)
 
 
     <h3>Voting History Details</h3>
-    <?php 
+    <?php
 
+    $settings = array(
+        'wpautop' => true,
+        'media_buttons' => false,
+        'textarea_name' => 'votes_details',
+        'textarea_rows' => 10,
+    );
+    wp_editor($content, 'votes_details"', $settings);
 
-$settings = array(
-    'wpautop'       => true,
-    'media_buttons' => false,
-    'textarea_name' => 'votes_details',
-    'textarea_rows' => 10
-);
-wp_editor($content, 'votes_details"', $settings);
-
-
-?>
+    ?>
 
 </div>
 
@@ -348,24 +363,6 @@ function people_build_social_meta_box($post)
 
 }
 
-function people_build_issue_meta_box($post)
-{
-    // our code here
-
-    wp_nonce_field(basename(__FILE__), 'people_meta_box_nonce');
-
-    $current_abbreviation = get_post_meta($post->ID, 'abbreviation', true);
-    $current_motto = get_post_meta($post->ID, 'motto', true);
-
-    ?>
-
-    <div class='inside'>
-
-
-</div> <?php
-
-}
-
 function people_save_meta_boxes_data($post_id)
 {
     if (!isset($_POST['people_meta_box_nonce']) || !wp_verify_nonce($_POST['people_meta_box_nonce'], basename(__FILE__))) {
@@ -399,7 +396,6 @@ function people_save_meta_boxes_data($post_id)
         update_post_meta($post_id, 'votes_against', sanitize_text_field($_POST['votes_against']));
     }
 
-
     if (isset($_REQUEST['votes_details'])) {
         update_post_meta($post_id, 'votes_details', sanitize_text_field($_POST['votes_details']));
     }
@@ -428,6 +424,10 @@ function people_save_meta_boxes_data($post_id)
 
     if (isset($_REQUEST['twitter'])) {
         update_post_meta($post_id, 'twitter', sanitize_text_field($_POST['twitter']));
+    }
+
+    if(isset($_REQUEST['dipshit_score'])){
+        update_post_meta($post_id, 'dipshit_score', sanitize_text_field( $_POST['dipshit_score'] ));
     }
 }
 add_action('save_post_people', 'people_save_meta_boxes_data', 10, 2);
@@ -542,10 +542,13 @@ function add_new_columns($columns)
 {
     unset($columns['date']);
     $columns['image'] = 'Image';
+    $columns['dipshit_score'] = 'Dipshit Score';
+
 
     $columns['state'] = 'State';
     $columns['district'] = 'District';
     $columns['job_title'] = 'Job Title';
+    $columns['cron_last_updated'] = 'Cron Last Updated';
     return $columns;
 }
 
@@ -554,6 +557,9 @@ add_filter('manage_people_posts_columns', 'add_new_columns');
 function people_columns_data($column, $post_id)
 {
     switch ($column) {
+        case "dipshit_score":
+            echo get_post_meta($post_id, $column, true);
+        break;
         case "state":
             echo get_post_meta($post_id, $column, true);
             break;
@@ -562,6 +568,17 @@ function people_columns_data($column, $post_id)
             break;
         case "job_title":
             echo get_the_terms($post_id, 'job_title')[0]->name;
+            break;
+        case "cron_last_updated":
+            $difference = time() - get_post_meta($post_id, $column, true);
+            switch( true ){
+                case $difference == 0:
+                    echo "Just Now";
+                    break;
+                default:
+                    echo ($difference + " Seconds Ago");
+                    break;
+            }
             break;
         case "image":
             if (get_the_post_thumbnail_url($post_id)) {
@@ -577,11 +594,28 @@ add_action('manage_people_posts_custom_column', 'people_columns_data', 10, 2);
 // Register the column as sortable
 function people_sortable_columns($columns)
 {
-    $columns['state'] = 'State';
-    $columns['district'] = 'District';
-    $columns['job_title'] = 'Job Title';
+    $columns['dipshit_score'] = 'dipshit_score';
+    $columns['state'] = 'state';
+    $columns['district'] = 'district';
+    $columns['job_title'] = 'job_title';
+    $columns['cron_last_updated'] = 'cron_last_updated';
+
     return $columns;
 }
 add_filter('manage_edit-people_sortable_columns', 'people_sortable_columns');
+
+
+add_action( 'pre_get_posts', 'imrad_sorting_people' );
+function imrad_sorting_people( $query ) {
+  if( ! is_admin() || ! $query->is_main_query() ) {
+    return;
+  }
+
+  if ( 'cron_last_updated' === $query->get( 'orderby') ) {
+    $query->set( 'orderby', 'meta_value_num' );
+    $query->set( 'meta_key', 'cron_last_updated' );
+  }
+}
+
 
 new ImradImport(array('Name', 'Party', 'State', 'District', 'Title', 'Website', 'Facebook', 'Twitter', 'VotesWith', 'VotesAgainst'), 'people');

@@ -74,14 +74,14 @@ function evidence_build_icon_meta_box($post)
 
     wp_nonce_field(basename(__FILE__), 'evidence_meta_box_nonce');
 
-    $current_icon = get_post_meta($post->ID, 'evidence_url', true);
+    $current_url = sanitize_url( get_post_meta($post->ID, 'evidence_url', true) );
 
     ?>
 
     <div class='inside'>
     <p>
         URL:
-        <input type="text" placeholder="e.g 'https://bbc.com/'" name="evidence_url" value="<?=$current_icon?>"/>
+        <input type="text" placeholder="e.g 'https://bbc.com/'" name="evidence_url" value="<?=$current_url?>"/>
 	</p>
 
 </div>
@@ -151,22 +151,23 @@ function evidence_build_image_meta_box($post)
 
     wp_nonce_field(basename(__FILE__), 'evidence_meta_box_nonce');
 
-    $current_image_url = get_post_meta($post->ID, 'evidence_image', true);
+    $current_image_url = sanitize_url( get_post_meta($post->ID, 'evidence_image', true) ) ;
 
-    $current_desc = get_post_meta($post->ID, 'evidence_desc', true);
-    $current_title = get_post_meta($post->ID, 'evidence_title', true);
+    $current_desc = sanitize_textarea_field( get_post_meta($post->ID, 'evidence_desc', true) ) ;
+    $current_title = sanitize_text_field( get_post_meta($post->ID, 'evidence_title', true) );
 
     ?>
 
     <div class='inside'>
+    <h3>This Info Is Updated Whenever You Click "Update"</h3>
     <p>
         Link Title:
-        <input id="evidence_title" name="evidence_title" value="<?= $current_title ?>">
+        <input disabled id="evidence_title" name="evidence_title" value="<?= $current_title ?>">
 
     </p>
     <p>
         Link Desc:
-        <textarea id="evidence_desc" name="evidence_desc">
+        <textarea disabled id="evidence_desc" name="evidence_desc">
             <?= $current_desc ?>
         </textarea>
 
@@ -174,7 +175,7 @@ function evidence_build_image_meta_box($post)
     </p>
     <p>
         Image URL:
-        <input id="evidence_image" name="evidence_image" value="<?= $current_image_url ?>">
+        <input disabled id="evidence_image" name="evidence_image" value="<?= $current_image_url ?>">
 
         <?php if(isset($current_image_url)){
             echo "<img src='$current_image_url' width='200' />";} ?>

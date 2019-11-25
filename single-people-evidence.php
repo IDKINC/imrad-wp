@@ -18,19 +18,35 @@ if ($evidence) {?>
 
     foreach ($evidence as $data) {
 
-        $url = get_post_meta( $data->ID, 'evidence_url', true);
+        $url = sanitize_url(get_post_meta($data->ID, 'evidence_url', true));
+        $urlObj = parse_url($url);
+        $evidenceTitle = get_the_title($data->ID);
+        $ogTitle = sanitize_text_field(get_post_meta($data->ID, 'evidence_title', true)); 
+        $ogImage = sanitize_url(get_post_meta($data->ID, 'evidence_image', true));
+        $ogDesc = sanitize_textarea_field(get_post_meta($data->ID, 'evidence_desc', true));
 
         ?>
 
         <div class="card evidence__card">
-        <a target="_blank" rel="noopener" class="evidence__card-content" href="<?=$url ?>">
-        <h2 class="evidence__title">"<?=get_the_title($data->ID)?>"</h2>
+        <a target="_blank" rel="noopener" class="evidence__card-content" href="<?=$url?>">
+        <h2 class="evidence__title"><?=$evidenceTitle?></h2>
+
+        <?php if ($urlObj['host'] == 'twitter.com') {?>
+            <section class="evidence__tweet-embed">
+            <blockquote class="twitter-tweet"><a href="<?=$url?>">
+        <p class="evidence__title"><?=$ogTitle?></p>
+        <p class="evidence__description"><?=$ogDesc?> Read More &raquo;</p>
+        <p class="evidence__source" title="<?=$url?>"><i class="fas fa-link"></i> via <?php echo $urlObj['host'] ?></p></a></blockquote>
+            </section>
+            <?php
+} else {?>
         <section class="evidence__og-data">
-        <img src=<?= get_post_meta($data->ID, 'evidence_image', true );?>>
-        <p class="evidence__title"><?= get_post_meta($data->ID, 'evidence_title', true); ?></p>
-        <p class="evidence__description"><?= get_post_meta($data->ID, 'evidence_desc', true); ?> Read More &raquo;</p> 
-        <p class="evidence__source" title="<?=$url?>"><i class="fas fa-link"></i> via <?php echo parse_url($url)['host'] ?></p>
+        <img src=<?= $ogImage?>>
+        <p class="evidence__title"><?=$ogTitle?></p>
+        <p class="evidence__description"><?=$ogDesc?> Read More &raquo;</p>
+        <p class="evidence__source" title="<?=$url?>"><i class="fas fa-link"></i> via <?php echo $urlObj['host'] ?></p>
     </section>
+        <?php }?>
         </a>
 
         <section class="evidence__voting-grid">
