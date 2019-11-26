@@ -35,15 +35,15 @@ if ($evidence) {?>
             <section class="evidence__tweet-embed">
             <blockquote class="twitter-tweet"><a href="<?=$url?>">
         <p class="evidence__title"><?=$ogTitle?></p>
-        <p class="evidence__description"><?=$ogDesc?> Read More &raquo;</p>
+        <p class="evidence__description"><?=$ogDesc?></p>
         <p class="evidence__source" title="<?=$url?>"><i class="fas fa-link"></i> via <?php echo $urlObj['host'] ?></p></a></blockquote>
             </section>
             <?php
 } else {?>
         <section class="evidence__og-data">
-        <img src=<?= $ogImage?>>
+        <img class="og__img" src=<?= $ogImage?>>
         <p class="evidence__title"><?=$ogTitle?></p>
-        <p class="evidence__description"><?=$ogDesc?> Read More &raquo;</p>
+        <p class="evidence__description"><?=$ogDesc?></p>
         <p class="evidence__source" title="<?=$url?>"><i class="fas fa-link"></i> via <?php echo $urlObj['host'] ?></p>
     </section>
         <?php }?>

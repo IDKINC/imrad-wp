@@ -8,6 +8,7 @@ include __DIR__ . "/includes/search_modifications.php";
 include __DIR__ . "/includes/imrad_import.php";
 
 include __DIR__ . "/includes/cron/cron.php";
+include __DIR__ . "/includes/votes/votes.php";
 
 
 include __DIR__ . "/includes/customPostTypes/people.php";

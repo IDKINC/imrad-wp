@@ -74,7 +74,7 @@ function evidence_build_icon_meta_box($post)
 
     wp_nonce_field(basename(__FILE__), 'evidence_meta_box_nonce');
 
-    $current_url = sanitize_url( get_post_meta($post->ID, 'evidence_url', true) );
+    $current_url = sanitize_url(get_post_meta($post->ID, 'evidence_url', true));
 
     ?>
 
@@ -123,7 +123,7 @@ $args = array(
         while ($issues->have_posts()) {
             $issues->the_post();
             // do something
-            echo "<option ".($current_person == get_the_id() ? "selected" : "") ." value='" . get_the_id() . "'>" . get_the_title() . "</option>";
+            echo "<option " . ($current_person == get_the_id() ? "selected" : "") . " value='" . get_the_id() . "'>" . get_the_title() . "</option>";
 
         }
     } else {
@@ -151,10 +151,10 @@ function evidence_build_image_meta_box($post)
 
     wp_nonce_field(basename(__FILE__), 'evidence_meta_box_nonce');
 
-    $current_image_url = sanitize_url( get_post_meta($post->ID, 'evidence_image', true) ) ;
+    $current_image_url = sanitize_url(get_post_meta($post->ID, 'evidence_image', true));
 
-    $current_desc = sanitize_textarea_field( get_post_meta($post->ID, 'evidence_desc', true) ) ;
-    $current_title = sanitize_text_field( get_post_meta($post->ID, 'evidence_title', true) );
+    $current_desc = sanitize_textarea_field(get_post_meta($post->ID, 'evidence_desc', true));
+    $current_title = sanitize_text_field(get_post_meta($post->ID, 'evidence_title', true));
 
     ?>
 
@@ -162,23 +162,23 @@ function evidence_build_image_meta_box($post)
     <h3>This Info Is Updated Whenever You Click "Update"</h3>
     <p>
         Link Title:
-        <input disabled id="evidence_title" name="evidence_title" value="<?= $current_title ?>">
+        <input disabled id="evidence_title" name="evidence_title" value="<?=$current_title?>">
 
     </p>
     <p>
         Link Desc:
         <textarea disabled id="evidence_desc" name="evidence_desc">
-            <?= $current_desc ?>
+            <?=$current_desc?>
         </textarea>
 
-    
+
     </p>
     <p>
         Image URL:
-        <input disabled id="evidence_image" name="evidence_image" value="<?= $current_image_url ?>">
+        <input disabled id="evidence_image" name="evidence_image" value="<?=$current_image_url?>">
 
-        <?php if(isset($current_image_url)){
-            echo "<img src='$current_image_url' width='200' />";} ?>
+        <?php if (isset($current_image_url)) {
+        echo "<img src='$current_image_url' width='200' />";}?>
     </p>
 
 </div>
@@ -211,12 +211,10 @@ function evidence_save_meta_boxes_data($post_id)
         update_post_meta($post_id, 'evidence_url', sanitize_text_field($_POST['evidence_url']));
     }
 
-    if(isset($_REQUEST['evidence_people'])){
+    if (isset($_REQUEST['evidence_people'])) {
 
         update_post_meta($post_id, 'evidence_people', sanitize_text_field($_POST['evidence_people']));
     }
-        
-    
 
 }
 add_action('save_post_evidence', 'evidence_save_meta_boxes_data', 10, 2);
@@ -227,7 +225,7 @@ add_action('save_post_evidence', 'getOGImage', 10, 2);
 
 function getOGImage($post_id, $post)
 {
-    $evidence_url = get_post_meta($post_id, 'evidence_url',true);
+    $evidence_url = get_post_meta($post_id, 'evidence_url', true);
     print_r($evidence_url);
     $page_content = file_get_contents($evidence_url);
 
@@ -244,7 +242,6 @@ function getOGImage($post_id, $post)
             $meta_img = $meta->getAttribute('content');
         }
 
-
         if ($meta->getAttribute('property') == 'og:description') {
 
             $meta_desc = $meta->getAttribute('content');
@@ -255,19 +252,31 @@ function getOGImage($post_id, $post)
             $meta_title = $meta->getAttribute('content');
         }
     }
-    if(!is_null($meta_img)){
+    if (!is_null($meta_img)) {
 
-        update_post_meta($post_id, 'evidence_image', sanitize_text_field($meta_img));
-    } 
+        update_post_meta($post_id, '
+        evidence_image', sanitize_text_field($meta_img));
+    }
 
-    if(!is_null($meta_desc)){
+    if (!is_null($meta_desc)) {
 
         update_post_meta($post_id, 'evidence_desc', sanitize_text_field($meta_desc));
-    } 
+    }
 
-    if(!is_null($meta_title)){
+    if (!is_null($meta_title)) {
 
         update_post_meta($post_id, 'evidence_title', sanitize_text_field($meta_title));
-    } 
+    }
 
 }
+
+function custom_js_to_head() {
+    ?>
+    <script>
+    jQuery(function(){
+        jQuery("body.post-type-people .wrap h1").append('<a href="<?=admin_url()?>?updateDipshitScore<?=(isset($_GET['post']) ? "&id=" . $_GET['post'] : "")?>" class="page-title-action">Update Dipshit Scores</a>');
+    });
+    </script>
+    <?php
+}
+add_action('admin_head', 'custom_js_to_head');

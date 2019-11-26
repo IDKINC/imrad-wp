@@ -24,7 +24,12 @@
 
     .evidence__card-content {
         width: 100%;
-        padding: 0 1em;
+        padding: 0 0.25em;
+        
+        @include breakpoint(laptop){
+            padding: 0 1em;
+
+        }
     }
 
     .evidence__title {
@@ -64,12 +69,27 @@
     border: 1px solid gray;
     background: $bgColor;
     margin: 1em auto;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: auto auto;
+    align-items: center; justify-content: center;
+
+    .og__img{
+        grid-row: 1 / span 3;
+        display: block;
+    }
 
 
     p {
-        font-size: 1em;
+        font-size: 0.8em;
         color: #fff;
         padding: 0em 1em;
+
+        @include breakpoint(laptop){
+            font-size: 1em;
+
+
+        }
     }
 
     .evidence__title {
@@ -81,6 +101,7 @@
     .evidence__description {
         margin: 0;
         opacity: 0.8;
+        // display: none;
     }
 
     .evidence__source {
