@@ -55,10 +55,10 @@ if (have_posts()) {
 
 <ul>
     <li><a href="<?=$person->url?>" <?=(!$current_fp ? "class='current'" : "")?>>Overview</a></li>
-    <li><a href="<?=$person->url?>evidence/" <?=($current_fp == 'evidence' ? "class='current'" : "")?>>Evidence <?= ($person->evidenceCount > 0 ? "($person->evidenceCount)" : "") ?></a></li>
-    <li><a href="<?=$person->url?>voting-history/" <?=($current_fp == 'voting-history' ? "class='current'" : "")?>>Voting History</a></li>
-    <li><a href="<?=$person->url?>donations/" <?=($current_fp == 'donations' ? "class='current'" : "")?>>Donation History</a></li>
-    <li><a href="<?=$person->url?>bio/" <?=($current_fp == 'bio' ? "class='current'" : "")?>>About</a></li>
+    <li><a href="<?=$person->url?>evidence/" <?=('evidence' == $current_fp ? "class='current'" : "")?>>Evidence <?=($person->evidenceCount > 0 ? "($person->evidenceCount)" : "")?></a></li>
+    <li><a href="<?=$person->url?>voting-history/" <?=('voting-history' == $current_fp ? "class='current'" : "")?>>Voting History</a></li>
+    <li><a href="<?=$person->url?>donations/" <?=('donations' == $current_fp ? "class='current'" : "")?>>Donation History</a></li>
+    <li><a href="<?=$person->url?>bio/" <?=('bio' == $current_fp ? "class='current'" : "")?>>About</a></li>
 
     </ul>
 
@@ -71,15 +71,15 @@ if (have_posts()) {
 
         set_query_var("people_obj", $person);
         if (!$current_fp) {
-            get_template_part('single', 'people-overview');
-        } else if ($current_fp == 'evidence') {
-            get_template_part('single', 'people-evidence');
-        } else if ($current_fp == 'voting-history') {
-            get_template_part('single', 'people-voting-history');
-        } else if ($current_fp == 'donations') {
-            get_template_part('single', 'people-donations');
-        } else if ($current_fp == 'bio') {
-            get_template_part('single', 'people-bio');
+            get_template_part('components/people/single', 'people-overview');
+        } else if ('evidence' == $current_fp) {
+            get_template_part('components/people/single', 'people-evidence');
+        } else if ('voting-history' == $current_fp) {
+            get_template_part('components/people/single', 'people-voting-history');
+        } else if ('donations' == $current_fp) {
+            get_template_part('components/people/single', 'people-donations');
+        } else if ('bio' == $current_fp) {
+            get_template_part('components/people/single', 'people-bio');
         }
         ;?>
 
