@@ -28,7 +28,14 @@ function imrad_scripts()
 {
     wp_enqueue_style('style', get_stylesheet_uri());
     wp_enqueue_style('googleFonts', 'https://fonts.googleapis.com/css?family=Oswald:700|Ubuntu:400,400i,700&display=swap');
-    wp_enqueue_script('theme', get_template_directory_uri() . '/theme.js', array("jquery"), null, true);
+    wp_register_script('theme', get_template_directory_uri() . '/theme.js', array("jquery"), null, true);
+
+   
+    // localize the script to your domain name, so that you can reference the url to admin-ajax.php file easily
+    wp_localize_script( 'theme', 'myAjax', array( 'ajaxurl' => admin_url( 'admin-ajax.php' )));        
+    
+    // enqueue jQuery library and the script you registered above
+    wp_enqueue_script( 'theme' );
 
     wp_enqueue_script('fontAwesome', 'https://kit.fontawesome.com/0e434539c2.js');
     wp_enqueue_script( 'twitter-embed', 'https://platform.twitter.com/widgets.js',  true );
