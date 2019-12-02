@@ -11,6 +11,9 @@ jQuery(document).ready(function () {
             success: function (response) {
                 if (response.type == "success") {
                     jQuery("#voteCount").html(response.vote_count);
+                    jQuery('.voted').removeClass("voted");
+
+                    jQuery("#votePlus").addClass("voted");
                 }
                 else {
                     alert("Your like could not be added");
@@ -32,6 +35,9 @@ jQuery(document).ready(function () {
             success: function (response) {
                 if (response.type == "success") {
                     jQuery("#evidence__"+post_id+" #voteCount").html(response.vote_count);
+                    jQuery('.voted').removeClass("voted");
+                    jQuery("#voteMinus").addClass("voted");
+
                 }
                 else {
                     alert("Your like could not be added");

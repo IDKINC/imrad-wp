@@ -25,8 +25,8 @@
     .evidence__card-content {
         width: 100%;
         padding: 0 0.25em;
-        
-        @include breakpoint(laptop){
+
+        @include breakpoint(laptop) {
             padding: 0 1em;
 
         }
@@ -46,9 +46,11 @@
 .evidence__voting-grid {
 
     display: grid;
-    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     align-items: stretch;
     justify-content: center;
+    padding: 0.5em 1em;
+    width: 100%;
 
 
 
@@ -58,8 +60,23 @@
         align-self: center;
     }
 
-    button {
+    .button {
         min-height: 4em;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+
+        background: #ccc;
+
+        &:hover {
+            background: $mainColor;
+        }
+
+        &.voted{
+            background: $mainColor;
+            font-weight: bold;
+        }
     }
 }
 
@@ -72,9 +89,11 @@
     display: grid;
     grid-template-columns: 1fr 2fr;
     grid-template-rows: auto auto;
-    align-items: center; justify-content: center;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
 
-    .og__img{
+    .og__img {
         grid-row: 1 / span 3;
         display: block;
     }
@@ -85,7 +104,7 @@
         color: #fff;
         padding: 0em 1em;
 
-        @include breakpoint(laptop){
+        @include breakpoint(laptop) {
             font-size: 1em;
 
 

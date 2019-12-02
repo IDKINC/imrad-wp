@@ -58,7 +58,7 @@ if ($evidence) {
 
             <?php
 	$link = admin_url('admin-ajax.php?action=imrad_vote&vote=-1&post_id='.$data->ID.'&nonce='.$nonce);
-	echo '<a class="button" id="voteMinus" data-nonce="' . $nonce . '" data-post_id="' . $data->ID . '" href="' . $link . '">Dipshit Move</a>'; ?>            <h3 class="evidence__score"><span id="voteCount"><?= count(getVotes($data->ID))?></span> Votes</h3>
+	echo '<a class="button" id="voteMinus" data-nonce="' . $nonce . '" data-post_id="' . $data->ID . '" href="' . $link . '">Not A Dipshit Move</a>'; ?>            <h3 class="evidence__score"><span id="voteCount"><?= count(getVotes($data->ID))?></span> Votes</h3>
             <?php
 	$link = admin_url('admin-ajax.php?action=imrad_vote&vote=1&post_id='.$data->ID.'&nonce='.$nonce);
 	echo '<a class="button" id="votePlus" data-nonce="' . $nonce . '" data-post_id="' . $data->ID . '" href="' . $link . '">Dipshit Move</a>'; ?>
