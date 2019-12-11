@@ -54,5 +54,7 @@
 	<?php get_template_part("components/common/nav"); ?>
 
 	<?php get_template_part("components/common/searchBar"); ?> 
+    <?php get_template_part("components/common/accountMenu"); ?>
+
  
-</header>
+</header> 

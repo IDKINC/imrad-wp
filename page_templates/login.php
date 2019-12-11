@@ -52,28 +52,10 @@ wp_login_form($loginArgs); ?>
 
 <hr />
 
-<a href="#" class="need">Need An Account?</a>
+<a href="<?= home_url() ?>/register" class="need">Need An Account?</a>
 
 </section>
 
-<div class="separator vertical">OR</div>
-
-
-
-<section class="login__card">
-<h1>Create An Account</h1>
-
-<?php 
-
-$loginArgs = array('redirect' => home_url());
-
-wp_register_form($loginArgs); ?>
-
-<hr />
-
-<a href="#" class="need">Need An Account?</a>
-
-</section>
 </container>
 
 	</main>

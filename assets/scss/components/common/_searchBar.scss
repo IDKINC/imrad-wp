@@ -8,6 +8,10 @@
         border-radius: 0 5px 5px 0;
         background: $mainColor;
 
+        svg {
+            font-size: $headerIconSize;
+        }
+
     }
 
     input {
@@ -28,7 +32,10 @@
         padding: 0.5em;
         z-index: 9999;
 
-        @include card(5);
+        @include breakpoint(mobileonly){
+
+            @include card(5);
+        }
 
     }
 
@@ -94,8 +101,8 @@
     display: grid;
     grid-template-columns: auto 1fr;
     margin-bottom: 1em;
-    
-    @include breakpoint(laptop){
+
+    @include breakpoint(laptop) {
         width: auto;
 
     }
@@ -121,7 +128,8 @@
         border-radius: 0 5px 5px 0;
         background: $mainColor;
 
-        i, svg {
+        i,
+        svg {
 
             font-size: 2rem
         }
@@ -137,7 +145,7 @@
     width: 100%;
     max-width: 80vw;
 
-    @include breakpoint(laptop){
+    @include breakpoint(laptop) {
 
         max-width: 50vw;
     }

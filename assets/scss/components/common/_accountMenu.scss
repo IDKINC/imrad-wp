@@ -1,0 +1,57 @@
+.account__menu{
+
+    position: relative;
+
+    svg{
+        font-size: $headerIconSize;
+    }
+
+
+    .account__sub-menu{
+
+        margin: 0;
+        padding: 0;
+
+        position:absolute;
+        right: 0;
+        top: 100%;
+        min-width: 200px;
+        display: none;
+        background: #ececec;
+
+        flex-direction: column;
+
+        @include card(2);
+        
+        li{
+            list-style: none;
+            margin: 0;
+            border-bottom: 1px solid #ccc;
+            
+            a{
+                background: #fff;
+                padding: 1rem ;
+                margin: 0;
+                color: #333;
+                width: 100%;
+                display: block;
+                
+
+                &:hover{
+                    color: #fff;
+                    background: $mainColor;
+                }
+
+            }
+      
+        }
+    }
+
+
+
+    &:hover{
+        .account__sub-menu{
+            display: flex;
+        }
+    }
+}
