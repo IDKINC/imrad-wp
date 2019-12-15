@@ -105,7 +105,7 @@ switch (true) {
 		 Piece<?=($evidenceCount > 1 ? "s" : "")?> of Evidence
 	</a>
 	<a class="proof">
-		<span class="countUp" data-number="42500">42,500</span>
+		<span class="countUp" data-number="<?= getVotes(get_the_id()) ?>"><?= getVotes(get_the_id()) ?></span>
 		Votes
 	</a>
 </div>
@@ -116,3 +116,18 @@ switch (true) {
 <a href="<?=$people_obj->url?>evidence" class="button button--large">Submit Evidence &raquo;</a>
 <p>All Evidence is Reviewed for Authenticity. <a href="#">Learn More &raquo;</a></p>
 </section> 
+
+
+<?php
+function getVotes($politicianId){
+
+
+    global $wpdb;
+
+    $table_name = $wpdb->prefix . 'evidence_votes';
+
+	$results = $wpdb->get_var("SELECT COUNT(*) FROM {$table_name} WHERE politicianId = {$politicianId} AND vote IS NOT NULL");
+	
+
+    return $results;
+}

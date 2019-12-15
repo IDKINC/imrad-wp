@@ -1,7 +1,5 @@
 <?php
 
-include __DIR__ . "/includes/imrad_import.php";
-
 // Peoples Custom Post Type
 
 function people_post_type()

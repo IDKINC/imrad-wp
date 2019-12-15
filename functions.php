@@ -1,25 +1,25 @@
 <?php
 
-include __DIR__ . "/includes/first_post_date.php";
-include __DIR__ . "/includes/inc.input.php";
-include __DIR__ . "/includes/author_subpages.php";
-include __DIR__ . "/includes/image_sizes.php";
-include __DIR__ . "/includes/search_modifications.php";
-include __DIR__ . "/includes/imrad_import.php";
+include get_template_directory() . "/includes/first_post_date.php";
+include get_template_directory() . "/includes/inc.input.php";
+include get_template_directory() . "/includes/author_subpages.php";
+include get_template_directory() . "/includes/image_sizes.php";
+include get_template_directory() . "/includes/search_modifications.php";
+include get_template_directory() . "/includes/imrad_import.php";
 
-include __DIR__ . "/includes/cron/cron.php";
-include __DIR__ . "/includes/votes/votes.php";
+include get_template_directory() . "/includes/cron/cron.php";
+include get_template_directory() . "/includes/votes/votes.php";
 
 
-include __DIR__ . "/includes/customPostTypes/people.php";
-include __DIR__ . "/includes/customPostTypes/evidence.php";
-include __DIR__ . "/includes/customPostTypes/issues.php";
-include __DIR__ . "/includes/customPostTypes/states.php";
-include __DIR__ . "/includes/customPostTypes/districts.php";
+include get_template_directory() . "/includes/customPostTypes/people.php";
+include get_template_directory() . "/includes/customPostTypes/evidence.php";
+include get_template_directory() . "/includes/customPostTypes/issues.php";
+include get_template_directory() . "/includes/customPostTypes/states.php";
+include get_template_directory() . "/includes/customPostTypes/districts.php";
 
-include __DIR__ . "/includes/customTaxonomies/job_title.php";
-include __DIR__ . "/includes/customTaxonomies/zip_codes.php";
-include __DIR__ . "/includes/customTaxonomies/party.php";
+include get_template_directory() . "/includes/customTaxonomies/job_title.php";
+include get_template_directory() . "/includes/customTaxonomies/zip_codes.php";
+include get_template_directory() . "/includes/customTaxonomies/party.php";
 
 /**
  * Proper way to enqueue scripts and styles.
@@ -139,7 +139,7 @@ function redirect_login_page()
         wp_redirect($login_page);
         exit;
     }
-    if ($page_viewd == "/wp-login.php?loggedout=true" && $_SERVER['REQUEST_METHOD'] == 'GET') {
+    if ($page_viewed == "/wp-login.php?loggedout=true" && $_SERVER['REQUEST_METHOD'] == 'GET') {
 
         wp_redirect(home_url());
         exit;

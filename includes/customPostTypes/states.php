@@ -1,6 +1,5 @@
 <?php
 
-include __DIR__ . "/includes/imrad_import.php";
 // States Custom Post Type
 
 function state_post_type()

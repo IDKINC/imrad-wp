@@ -74,7 +74,7 @@ function evidence_build_icon_meta_box($post)
 
     wp_nonce_field(basename(__FILE__), 'evidence_meta_box_nonce');
 
-    $current_url = sanitize_url(get_post_meta($post->ID, 'evidence_url', true));
+    $current_url = esc_url_raw(get_post_meta($post->ID, 'evidence_url', true));
 
     ?>
 
@@ -151,7 +151,7 @@ function evidence_build_image_meta_box($post)
 
     wp_nonce_field(basename(__FILE__), 'evidence_meta_box_nonce');
 
-    $current_image_url = sanitize_url(get_post_meta($post->ID, 'evidence_image', true));
+    $current_image_url = esc_url_raw(get_post_meta($post->ID, 'evidence_image', true));
 
     $current_desc = sanitize_textarea_field(get_post_meta($post->ID, 'evidence_desc', true));
     $current_title = sanitize_text_field(get_post_meta($post->ID, 'evidence_title', true));

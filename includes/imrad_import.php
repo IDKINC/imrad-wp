@@ -1,4 +1,5 @@
 <?php
+
 class ImradImport
 {
 
@@ -24,7 +25,7 @@ class ImradImport
             'dashicons-plus-alt',
             8
         );
-    }
+    } 
 
     public function imrad_import_page__content()
     {

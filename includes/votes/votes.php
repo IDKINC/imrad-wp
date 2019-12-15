@@ -1,18 +1,18 @@
 <?php
 
-add_action('init', function () {
+// add_action('init', function () {
 
-    if (!isset($_GET['vote'])) {
-        return;
-    }
+//     if (!isset($_GET['vote'])) {
+//         return;
+//     }
 
-    error_reporting(1);
+//     error_reporting(1);
 
-    do_action('imrad_vote', get_current_user_id(), $_GET['evidenceId'], $_GET['vote']);
+//     // do_action('imrad_vote', get_current_user_id(), $_GET['evidenceId'], $_GET['vote']);
 
-    die();
+//     die();
 
-});
+// });
 
 global $imrad_votes_db_version;
 $imrad_votes_db_version = '1.0';
@@ -42,28 +42,10 @@ function imrad_votes_install()
     add_option('imrad_votes_db_version', $imrad_votes_db_version);
 }
 
-function imrad_votes_install_data()
-{
-    global $wpdb;
-
-    $table_name = $wpdb->prefix . 'evidence_votes';
-
-    $wpdb->insert(
-        $table_name,
-        array(
-            'time'       => current_time('mysql'),
-            'evidenceid' => 123,
-            'userid'     => 123,
-            'vote'       => true,
-        )
-    );
-}
-
-function imrad_vote($userId = null, $evidenceId = null, $vote = null)
+function imrad_vote($userId, $evidenceId, $vote, $politicianid)
 {
 
     global $wpdb;
-
     $table_name = $wpdb->prefix . 'evidence_votes';
 
     $results = $wpdb->get_row("SELECT * FROM {$table_name} WHERE userid = {$userId} AND evidenceid = {$evidenceId}");
@@ -74,12 +56,14 @@ function imrad_vote($userId = null, $evidenceId = null, $vote = null)
 
             switch (true) {
 
+                // If The New Vote Is The Same As The Stored Vote, Set the vote to null
                 case $results->vote == $vote:
                     $wpdb->update(
                         $table_name,
                         array(
                             'timeUpdated' => current_time('mysql'),
                             'evidenceid'  => $evidenceId,
+                            'politicianid' => $politicianid,
                             'userid'      => $userId,
                             'vote'        => null,
 
@@ -91,6 +75,7 @@ function imrad_vote($userId = null, $evidenceId = null, $vote = null)
 
                     );
                     break;
+                // If the new vote is not the same as the stored vote, update the vote to the new vote.
                 case $results->vote != $vote:
                     $wpdb->update(
                         $table_name,
@@ -98,39 +83,30 @@ function imrad_vote($userId = null, $evidenceId = null, $vote = null)
                             'timeUpdated' => current_time('mysql'),
                             'userid'      => $userId,
                             'evidenceid'  => $evidenceId,
+                            'politicianid' => $politicianid,
                             'vote'        => $vote,
                         ),
                         array(
-                            'evidenceid' => $evidenceId,
                             'userid'     => $userId,
+                            'evidenceid' => $evidenceId,
                         )
                     );
                     break;
-                default:
-                    $wpdb->update(
-                        $table_name,
-                        array(
-                            'time'       => current_time('mysql'),
-                            'userid'     => $userId,
-                            'evidenceid' => $evidenceId,
-                            'vote'       => $vote,
-                        ),
-                        array(
-                            'evidenceid' => $evidenceId,
-                            'userid'     => $userId,
-                        )
-                    );
-                    break;
+
+                    default:
+                break;
             }
-
+            
         } else {
-
+            
+            // No Previously Recorded Votes.
             $wpdb->insert(
                 $table_name,
                 array(
                     'time'       => current_time('mysql'),
                     'userid'     => $userId,
                     'evidenceid' => $evidenceId,
+                    'politicianid' => $politicianid,
                     'vote'       => $vote,
                 )
             );
@@ -168,19 +144,20 @@ function imrad_vote_ajax()
 
     // fetch like_count for a post, set it to 0 if it's empty, increment by 1 when a click is registered
 
-    $postId = $_REQUEST["post_id"];
+    $evidenceId = $_REQUEST["evidence_id"];
+    $politicianid = get_post_meta($evidenceId, 'evidence_people', true);
     $userId = get_current_user_id();
     $vote   = $_REQUEST["vote"];
 
-    $voteResults = imrad_vote($userId, $postId, $vote);
+    $voteResults = imrad_vote($userId, $evidenceId, $vote, $politicianid);
 
     // If above action fails, result type is set to 'error' and like_count set to old value, if success, updated to new_like_count
     if (false === $voteResults) {
         $result['type'] = "error";
+
     } else {
         $result['type'] = "success";
-
-        $result['vote_count'] =   $wpdb->get_var("SELECT COUNT(*) FROM {$table_name} WHERE evidenceid = {$postId} AND vote IS NOT NULL");
+        $result['vote_count'] =   $wpdb->get_var("SELECT COUNT(*) FROM {$table_name} WHERE evidenceid = {$evidenceId} AND vote IS NOT NULL");
     }
 
     // Check if action was fired via Ajax call. If yes, JS code will be triggered, else the user is redirected to the post page
@@ -197,6 +174,14 @@ function imrad_vote_ajax()
 // define the function to be fired for logged out users
 function please_login()
 {
-    echo "You must log in to like";
+    if (!empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest') {
+
+        $result['type'] = "login";
+        $result = json_encode($result);
+        echo $result;
+    } else {
+        header("Location: " . home_url( "/login"));
+        
+    }
     die();
 }

@@ -4,9 +4,19 @@
 
 
 <ul class="account__sub-menu">
+<?php if(!is_user_logged_in(  )){
 
-<li><a href="/login">Login</a></li>
-<li><a>Create Account</a></li>
+    echo "<li><a href='/login'>Login</a></li>";
+    echo "<li><a href='/register'>Create Account</a></li>";
+    
+} else {
+
+    echo "<li><a>My Account</a></li>";
+
+}
+
+
+?>
 
 </ul>
 

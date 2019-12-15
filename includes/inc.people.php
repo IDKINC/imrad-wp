@@ -24,7 +24,7 @@ class Person {
 
 		$this->evidence = $this->getEvidence();
 		wp_reset_postdata();
-		$this->evidenceCount = count($this->evidence);
+		$this->evidenceCount = (!is_null($this->evidence) ? count($this->evidence) : "0");
 		$this->district = $this->getPostMeta($this->id, 'district', true);
 
 
@@ -169,7 +169,7 @@ class Person {
 			return $evidenceArr;
 		} else {
 			// no posts found
-			return false;
+			return null;
 		}
 	}
 

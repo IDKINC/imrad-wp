@@ -2,6 +2,9 @@
 
 // Search Bar
 
+$zip = get_query_var('zip');
+$search_page = get_query_var('search_page');
+
 ?>
 
 <?php if($zip){ ?>
@@ -32,4 +35,4 @@
 
 
 
-<?php } ?>
+<?php } ?> 
