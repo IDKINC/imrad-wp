@@ -131,7 +131,7 @@ class State {
 	 ?>
 		
 		<a href='<?=$this->url?>'>
-			<article class='card card--state card--<?=$this->abbr?>' id='<?=$this->slug?>'>
+			<article class='card card--state card--<?=$this->abbr?>' id='<?=$this->abbr?>'>
 				<img src='<?=$this->flagUrl?>' alt="<?=$this->name?>'s Flag">
 				<h3 class="state__name"><?=$this->name?></h3>
 				<?=($this->motto ? "<h4 class='state__motto'>" . $this->motto . "</h4>" : '');?>

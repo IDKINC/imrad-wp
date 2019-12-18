@@ -7,7 +7,7 @@ function people_post_type()
 
     $labels = array(
         'name' => _x('People', 'Post Type General Name', 'imrad'),
-        'singular_name' => _x('People', 'Post Type Singular Name', 'imrad'),
+        'singular_name' => _x('Person', 'Post Type Singular Name', 'imrad'),
         'menu_name' => __('People', 'imrad'),
         'name_admin_bar' => __('People', 'imrad'),
         'archives' => __('Directory', 'imrad'),

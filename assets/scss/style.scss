@@ -16,6 +16,33 @@ body {
 }
 
 
-main.content{
+main.content {
     min-height: 45vh;
+}
+
+
+#toTop {
+
+    margin: 1em auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    @include card(1);
+
+    svg {
+        font-size: 2em;
+    }
+
+    @include breakpoint(laptop) {
+        position: fixed;
+        width: auto;
+        bottom: 10px;
+        left: 10px;
+
+        flex-direction: column;
+
+
+
+    }
 }

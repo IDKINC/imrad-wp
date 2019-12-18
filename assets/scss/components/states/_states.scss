@@ -1,6 +1,35 @@
-.card--state{
-    .state__name{
+.card--state {
+
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+
+    img{
+        margin: auto 0;
+    }
+
+    .state__name {
         margin: 0.25em;
+
+        @include breakpoint(mobileonly){
+            font-size: 1rem;
+            text-align: center;
+        }
+    }
+
+    .state__motto {
+        margin: 0.25em;
+        margin-left: 1em;
+        color: $paragraph-color;
+        font-weight: 400;
+
+
+        @include breakpoint(mobileonly){
+            font-size: 0.8rem;
+            text-align: center;
+            margin: 0.25em;
+        }
     }
 }
 
@@ -19,7 +48,7 @@
             font-size: 3em;
             color: #fff;
 
-            a{
+            a {
                 color: #fff;
             }
 
@@ -29,9 +58,9 @@
             }
         }
 
-        .state__motto{
+        .state__motto {
 
-            margin:0 auto 0.5em;
+            margin: 0 auto 0.5em;
         }
 
     }
@@ -47,27 +76,27 @@
     flex-direction: column;
 
     @include breakpoint(laptop) {
-flex-direction: row;
+        flex-direction: row;
         max-width: 80%;
     }
 
     img {
         margin: 1em;
         width: 80%;
-        
+
         @include breakpoint(laptop) {
             width: 40%;
         }
     }
 
-    .state__flag{
+    .state__flag {
         @include card(1);
     }
 
-    .dynamicMap{
+    .dynamicMap {
         width: 80%;
 
-        @include breakpoint(laptop){
+        @include breakpoint(laptop) {
             width: 50%;
         }
     }
@@ -96,23 +125,23 @@ flex-direction: row;
             align-items: center;
             justify-content: center;
 
-            @include breakpoint(laptop){
+            @include breakpoint(laptop) {
 
                 flex-direction: row;
             }
 
 
 
-            &:last-of-type{
+            &:last-of-type {
                 border-right: none;
             }
 
-            .value{
+            .value {
                 order: -1;
                 font-weight: 700;
                 font-size: 1.25em;
 
-                @include breakpoint(laptop){
+                @include breakpoint(laptop) {
 
                     order: unset;
                     margin-left: 0.15em;
@@ -120,7 +149,8 @@ flex-direction: row;
             }
 
 
-            i, svg {
+            i,
+            svg {
                 font-size: 2em;
                 vertical-align: middle;
                 margin: 0 0.25em;
@@ -130,7 +160,7 @@ flex-direction: row;
 }
 
 
-.state__representatives{
+.state__representatives {
 
     display: flex;
     flex-direction: column;
@@ -139,11 +169,12 @@ flex-direction: row;
     width: 95%;
 
     margin: 0 auto;
-    h2{
+
+    h2 {
         text-align: center;
     }
 
-    @include breakpoint(laptop){
+    @include breakpoint(laptop) {
 
         width: 80%;
 

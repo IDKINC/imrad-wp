@@ -17,11 +17,31 @@
         }
     }
 
+    &.darker{
+
+        background: $darkerColor;
+
+        color: #fff;
+        @include card(-1);
+
+        & >h2, >h3, >h4{
+            color: #fff;
+        }
+    }
+
     &.half-purple{
 
         background: linear-gradient(to bottom, $mainColor 50%, transparent 50%);
         & >h2, >h3, >h4{
             color: #fff;
         }
+    }
+
+    & > h1{
+        margin:0.5em;
+    }
+
+    & > .searchBar{
+        margin-bottom: 1em;
     }
 }

@@ -502,12 +502,27 @@ button, a.button {
     .banner.purple > h2, .banner.purple > h3, .banner.purple > h4 {
       color: #fff; }
   /* line 20, assets/scss/components/_banners.scss */
+  .banner.darker {
+    background: #b33eeb;
+    color: #fff;
+    -webkit-box-shadow: inset 0 1.5px 4px rgba(0, 0, 0, 0.24), inset 0 1px 8px rgba(0, 0, 0, 0.12);
+    box-shadow: inset 0 1.5px 4px rgba(0, 0, 0, 0.24), inset 0 1px 8px rgba(0, 0, 0, 0.12); }
+    /* line 27, assets/scss/components/_banners.scss */
+    .banner.darker > h2, .banner.darker > h3, .banner.darker > h4 {
+      color: #fff; }
+  /* line 32, assets/scss/components/_banners.scss */
   .banner.half-purple {
     background: -webkit-gradient(linear, left top, left bottom, color-stop(50%, #c56cf0), color-stop(50%, transparent));
     background: linear-gradient(to bottom, #c56cf0 50%, transparent 50%); }
-    /* line 23, assets/scss/components/_banners.scss */
+    /* line 35, assets/scss/components/_banners.scss */
     .banner.half-purple > h2, .banner.half-purple > h3, .banner.half-purple > h4 {
       color: #fff; }
+  /* line 40, assets/scss/components/_banners.scss */
+  .banner > h1 {
+    margin: 0.5em; }
+  /* line 44, assets/scss/components/_banners.scss */
+  .banner > .searchBar {
+    margin-bottom: 1em; }
 
 /* line 3, assets/scss/components/common/_header.scss */
 .site-header {
@@ -888,7 +903,7 @@ footer.site__footer {
 
 /* line 25, assets/scss/components/common/_charts.scss */
 .chart__legend {
-  background: #1C0E23;
+  background: #2b063d;
   border: 2px solid #c56cf0;
   border-radius: 3px;
   padding: 0.5em;
@@ -986,7 +1001,7 @@ footer.site__footer {
     z-index: -1; }
     /* line 79, assets/scss/components/common/_dipshitMeter.scss */
     #dipshitMeter.no-data * {
-      fill: #391d47 !important; }
+      fill: #4c0b6c !important; }
 
 /* line 87, assets/scss/components/common/_dipshitMeter.scss */
 .dipshit__conclusion {
@@ -1166,7 +1181,7 @@ svg.map {
     top: 0;
     left: 0;
     right: 0;
-    background: #1C0E23;
+    background: #2b063d;
     margin: 0;
     padding: 0;
     height: 100vh;
@@ -1194,11 +1209,44 @@ svg.map {
       margin-top: 1vh;
       margin-bottom: 1vh; }
 
-/* line 2, assets/scss/components/states/_states.scss */
-.card--state .state__name {
-  margin: 0.25em; }
+/* line 1, assets/scss/components/states/_states.scss */
+.card--state {
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column; }
+  /* line 8, assets/scss/components/states/_states.scss */
+  .card--state img {
+    margin: auto 0; }
+  /* line 12, assets/scss/components/states/_states.scss */
+  .card--state .state__name {
+    margin: 0.25em; }
+    @media (max-width: 37.5em) {
+      /* line 12, assets/scss/components/states/_states.scss */
+      .card--state .state__name {
+        font-size: 1rem;
+        text-align: center; } }
+  /* line 21, assets/scss/components/states/_states.scss */
+  .card--state .state__motto {
+    margin: 0.25em;
+    margin-left: 1em;
+    color: #505050;
+    font-weight: 400; }
+    @media (max-width: 37.5em) {
+      /* line 21, assets/scss/components/states/_states.scss */
+      .card--state .state__motto {
+        font-size: 0.8rem;
+        text-align: center;
+        margin: 0.25em; } }
 
-/* line 11, assets/scss/components/states/_states.scss */
+/* line 40, assets/scss/components/states/_states.scss */
 .single-state .state__header {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1213,22 +1261,22 @@ svg.map {
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
   flex-direction: column; }
-  /* line 18, assets/scss/components/states/_states.scss */
+  /* line 47, assets/scss/components/states/_states.scss */
   .single-state .state__header .state__name {
     font-size: 3em;
     color: #fff; }
-    /* line 22, assets/scss/components/states/_states.scss */
+    /* line 51, assets/scss/components/states/_states.scss */
     .single-state .state__header .state__name a {
       color: #fff; }
     @media (min-width: 64em) {
-      /* line 18, assets/scss/components/states/_states.scss */
+      /* line 47, assets/scss/components/states/_states.scss */
       .single-state .state__header .state__name {
         font-size: 6em; } }
-  /* line 32, assets/scss/components/states/_states.scss */
+  /* line 61, assets/scss/components/states/_states.scss */
   .single-state .state__header .state__motto {
     margin: 0 auto 0.5em; }
 
-/* line 41, assets/scss/components/states/_states.scss */
+/* line 70, assets/scss/components/states/_states.scss */
 .state__images {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1245,34 +1293,34 @@ svg.map {
   -ms-flex-direction: column;
   flex-direction: column; }
   @media (min-width: 64em) {
-    /* line 41, assets/scss/components/states/_states.scss */
+    /* line 70, assets/scss/components/states/_states.scss */
     .state__images {
       -webkit-box-orient: horizontal;
       -webkit-box-direction: normal;
       -ms-flex-direction: row;
       flex-direction: row;
       max-width: 80%; } }
-  /* line 54, assets/scss/components/states/_states.scss */
+  /* line 83, assets/scss/components/states/_states.scss */
   .state__images img {
     margin: 1em;
     width: 80%; }
     @media (min-width: 64em) {
-      /* line 54, assets/scss/components/states/_states.scss */
+      /* line 83, assets/scss/components/states/_states.scss */
       .state__images img {
         width: 40%; } }
-  /* line 63, assets/scss/components/states/_states.scss */
+  /* line 92, assets/scss/components/states/_states.scss */
   .state__images .state__flag {
     -webkit-box-shadow: 0 1.5px 4px rgba(0, 0, 0, 0.24), 0 1px 8px rgba(0, 0, 0, 0.12);
     box-shadow: 0 1.5px 4px rgba(0, 0, 0, 0.24), 0 1px 8px rgba(0, 0, 0, 0.12); }
-  /* line 67, assets/scss/components/states/_states.scss */
+  /* line 96, assets/scss/components/states/_states.scss */
   .state__images .dynamicMap {
     width: 80%; }
     @media (min-width: 64em) {
-      /* line 67, assets/scss/components/states/_states.scss */
+      /* line 96, assets/scss/components/states/_states.scss */
       .state__images .dynamicMap {
         width: 50%; } }
 
-/* line 80, assets/scss/components/states/_states.scss */
+/* line 109, assets/scss/components/states/_states.scss */
 .state__meta ul {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1280,7 +1328,7 @@ svg.map {
   margin: 0;
   padding: 0;
   color: #aaa; }
-  /* line 87, assets/scss/components/states/_states.scss */
+  /* line 116, assets/scss/components/states/_states.scss */
   .state__meta ul li {
     list-style: none;
     margin: 0;
@@ -1301,16 +1349,16 @@ svg.map {
     -ms-flex-pack: center;
     justify-content: center; }
     @media (min-width: 64em) {
-      /* line 87, assets/scss/components/states/_states.scss */
+      /* line 116, assets/scss/components/states/_states.scss */
       .state__meta ul li {
         -webkit-box-orient: horizontal;
         -webkit-box-direction: normal;
         -ms-flex-direction: row;
         flex-direction: row; } }
-    /* line 106, assets/scss/components/states/_states.scss */
+    /* line 135, assets/scss/components/states/_states.scss */
     .state__meta ul li:last-of-type {
       border-right: none; }
-    /* line 110, assets/scss/components/states/_states.scss */
+    /* line 139, assets/scss/components/states/_states.scss */
     .state__meta ul li .value {
       -webkit-box-ordinal-group: 0;
       -ms-flex-order: -1;
@@ -1318,19 +1366,20 @@ svg.map {
       font-weight: 700;
       font-size: 1.25em; }
       @media (min-width: 64em) {
-        /* line 110, assets/scss/components/states/_states.scss */
+        /* line 139, assets/scss/components/states/_states.scss */
         .state__meta ul li .value {
           -webkit-box-ordinal-group: unset;
           -ms-flex-order: unset;
           order: unset;
           margin-left: 0.15em; } }
-    /* line 123, assets/scss/components/states/_states.scss */
-    .state__meta ul li i, .state__meta ul li svg {
+    /* line 152, assets/scss/components/states/_states.scss */
+    .state__meta ul li i,
+    .state__meta ul li svg {
       font-size: 2em;
       vertical-align: middle;
       margin: 0 0.25em; }
 
-/* line 133, assets/scss/components/states/_states.scss */
+/* line 163, assets/scss/components/states/_states.scss */
 .state__representatives {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1347,11 +1396,11 @@ svg.map {
   justify-content: center;
   width: 95%;
   margin: 0 auto; }
-  /* line 142, assets/scss/components/states/_states.scss */
+  /* line 173, assets/scss/components/states/_states.scss */
   .state__representatives h2 {
     text-align: center; }
   @media (min-width: 64em) {
-    /* line 133, assets/scss/components/states/_states.scss */
+    /* line 163, assets/scss/components/states/_states.scss */
     .state__representatives {
       width: 80%; } }
 
@@ -1399,7 +1448,7 @@ svg.map {
         justify-content: flex-end; } }
   /* line 46, assets/scss/components/people/_people.scss */
   .people__header .people__name, .people__header .people__title, .people__header .people__actions {
-    background: #1C0E23;
+    background: #2b063d;
     padding: 0.25rem;
     margin: 0 auto;
     width: 100%; }
@@ -1585,6 +1634,7 @@ svg.map {
 .card-grid, .evidence-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  grid-template-rows: repeat(auto-fill, minmax(170px, 1fr));
   grid-gap: 0.5em;
   width: 100%; }
   @media (min-width: 64em) {
@@ -1592,16 +1642,20 @@ svg.map {
     .card-grid, .evidence-grid {
       width: 80%;
       grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-      grid-gap: 1em; } }
-  /* line 18, assets/scss/components/people/_people-card.scss */
+      grid-template-rows: repeat(auto-fill, minmax(300px, 100%));
+      grid-gap: 1em;
+      -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+      align-items: stretch; } }
+  /* line 23, assets/scss/components/people/_people-card.scss */
   .card-grid.two-column, .two-column.evidence-grid {
     grid-template-columns: repeat(2, 1fr); }
     @media (min-width: 64em) {
-      /* line 18, assets/scss/components/people/_people-card.scss */
+      /* line 23, assets/scss/components/people/_people-card.scss */
       .card-grid.two-column, .two-column.evidence-grid {
         width: 53%; } }
 
-/* line 29, assets/scss/components/people/_people-card.scss */
+/* line 34, assets/scss/components/people/_people-card.scss */
 .card {
   background: #fff;
   padding: 0.5em;
@@ -1610,7 +1664,7 @@ svg.map {
   -webkit-box-shadow: 0 1.5px 4px rgba(0, 0, 0, 0.24), 0 1px 8px rgba(0, 0, 0, 0.12);
   box-shadow: 0 1.5px 4px rgba(0, 0, 0, 0.24), 0 1px 8px rgba(0, 0, 0, 0.12); }
 
-/* line 40, assets/scss/components/people/_people-card.scss */
+/* line 45, assets/scss/components/people/_people-card.scss */
 .card--person {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1625,10 +1679,10 @@ svg.map {
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
   flex-direction: column; }
-  /* line 48, assets/scss/components/people/_people-card.scss */
+  /* line 53, assets/scss/components/people/_people-card.scss */
   .card--person img {
     border-radius: 6px 6px 0 0; }
-  /* line 53, assets/scss/components/people/_people-card.scss */
+  /* line 58, assets/scss/components/people/_people-card.scss */
   .card--person .card__content {
     width: 100%;
     display: grid;
@@ -1637,10 +1691,10 @@ svg.map {
     -ms-flex-align: center;
     align-items: center; }
     @media (min-width: 64em) {
-      /* line 53, assets/scss/components/people/_people-card.scss */
+      /* line 58, assets/scss/components/people/_people-card.scss */
       .card--person .card__content {
         grid-template-columns: 2fr 1fr; } }
-  /* line 66, assets/scss/components/people/_people-card.scss */
+  /* line 71, assets/scss/components/people/_people-card.scss */
   .card--person h3 {
     margin: 0.25em auto;
     display: -webkit-box;
@@ -1651,26 +1705,34 @@ svg.map {
     align-items: center;
     text-align: center; }
     @media (min-width: 64em) {
-      /* line 66, assets/scss/components/people/_people-card.scss */
+      /* line 71, assets/scss/components/people/_people-card.scss */
       .card--person h3 {
         margin: 0.25em 0;
         text-align: left; } }
-  /* line 81, assets/scss/components/people/_people-card.scss */
+    @media (max-width: 37.5em) {
+      /* line 71, assets/scss/components/people/_people-card.scss */
+      .card--person h3 {
+        font-size: 1rem; } }
+  /* line 92, assets/scss/components/people/_people-card.scss */
   .card--person .party {
     font-size: 1.5em;
     margin-left: auto;
     font-family: "Ubuntu", serif; }
-  /* line 92, assets/scss/components/people/_people-card.scss */
+    @media (max-width: 37.5em) {
+      /* line 92, assets/scss/components/people/_people-card.scss */
+      .card--person .party {
+        font-size: 0.8rem; } }
+  /* line 108, assets/scss/components/people/_people-card.scss */
   .card--person.card--republican .party {
     color: var(--republican-color); }
-  /* line 99, assets/scss/components/people/_people-card.scss */
+  /* line 115, assets/scss/components/people/_people-card.scss */
   .card--person.card--democrat .party {
     color: var(--democrat-color); }
-  /* line 106, assets/scss/components/people/_people-card.scss */
+  /* line 122, assets/scss/components/people/_people-card.scss */
   .card--person.card--independent .party {
     color: var(--independent-color); }
 
-/* line 116, assets/scss/components/people/_people-card.scss */
+/* line 132, assets/scss/components/people/_people-card.scss */
 .card--issue h3 {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1685,7 +1747,7 @@ svg.map {
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
   flex-direction: column; }
-  /* line 122, assets/scss/components/people/_people-card.scss */
+  /* line 138, assets/scss/components/people/_people-card.scss */
   .card--issue h3 svg {
     font-size: 3em; }
 
@@ -1886,7 +1948,7 @@ svg.map {
 /* line 107, assets/scss/components/evidence/_evidence.scss */
 .evidence__og-data {
   border: 1px solid gray;
-  background: #1C0E23;
+  background: #2b063d;
   margin: 1em auto;
   display: grid;
   grid-template-columns: 1fr 2fr;
@@ -2120,7 +2182,7 @@ svg.map {
 
 /* line 40, assets/scss/pages/_page.scss */
 .navigation.pagination {
-  width: 100%;
+  width: 80%;
   padding: 1em;
   color: #c56cf0;
   background: #fff;
@@ -2147,10 +2209,40 @@ svg.map {
 
 /* line 14, assets/scss/style.scss */
 body {
-  background: #1C0E23; }
+  background: #2b063d; }
 
 /* line 19, assets/scss/style.scss */
 main.content {
   min-height: 45vh; }
+
+/* line 24, assets/scss/style.scss */
+#toTop {
+  margin: 1em auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  width: 100%;
+  -webkit-box-shadow: 0 1.5px 4px rgba(0, 0, 0, 0.24), 0 1px 8px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 1.5px 4px rgba(0, 0, 0, 0.24), 0 1px 8px rgba(0, 0, 0, 0.12); }
+  /* line 33, assets/scss/style.scss */
+  #toTop svg {
+    font-size: 2em; }
+  @media (min-width: 64em) {
+    /* line 24, assets/scss/style.scss */
+    #toTop {
+      position: fixed;
+      width: auto;
+      bottom: 10px;
+      left: 10px;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+      flex-direction: column; } }
 
 /*# sourceMappingURL=style.css.map */
