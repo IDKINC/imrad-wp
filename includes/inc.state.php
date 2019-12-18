@@ -17,7 +17,7 @@ class State {
 		$this->motto = $this->getPostMeta($this->id, 'motto', true);
 		$this->abbr = get_post_meta($this->id, 'abbreviation', true);
 		$this->url = get_the_permalink($this->id);
-		$this->flagUrl = wp_get_attachment_image_url(get_post_thumbnail_id($post_id), 'full');
+		$this->flagUrl = wp_get_attachment_image_url(get_post_thumbnail_id($this->id), 'full');
 		$this->districtCount = $this->getDistricts()->found_posts;
 		}
 
@@ -43,7 +43,7 @@ class State {
 
 			$meta = get_post_meta($this->id, $meta_key['meta_id']);
  
-            if ($meta[0]) {
+            if ($meta) {
 
                 echo sprintf("<li><i class='%s'></i>%s <span class='value'>%s</span></li>", $meta_key['icon'], $meta_key['label'], ($meta_key['format'] ? number_format($meta[0]) : $meta[0]));
             }
@@ -132,9 +132,9 @@ class State {
 		
 		<a href='<?=$this->url?>'>
 			<article class='card card--state card--<?=$this->abbr?>' id='<?=$this->slug?>'>
-				<img src='<?=$this->flagUrl?>' alt='<?=$this->name?>'>
-				<h3><?=$this->name?></h3>
-				<h4><?=$this->motto?></h4>
+				<img src='<?=$this->flagUrl?>' alt="<?=$this->name?>'s Flag">
+				<h3 class="state__name"><?=$this->name?></h3>
+				<?=($this->motto ? "<h4 class='state__motto'>" . $this->motto . "</h4>" : '');?>
 			</article>
 		</a>
 

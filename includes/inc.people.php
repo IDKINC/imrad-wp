@@ -207,6 +207,9 @@ class Person {
 					<h4><?= $this->dipshitScore?> / 5</h4>
 					<h5>Dipshit Score</h5>
 					<hr/>
+					<h4><?=$this->evidenceCount?></h4>
+					<h5>Pieces Of Evidence</h5>
+					<hr/>
 					<h5>See Evidence &raquo;</h5> 
 				</div>
 

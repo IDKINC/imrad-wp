@@ -18,7 +18,7 @@
 <?php 
 
 
-$content = apply_filters('the_content', $people_obj->voteDetails);
+$content = apply_filters('the_content', $people_obj->votesDetails);
 
 if($content){
 

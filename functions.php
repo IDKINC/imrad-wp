@@ -183,3 +183,26 @@ add_filter('show_admin_bar', function ($show) {
     }
     return $show;
 });
+
+
+
+
+
+
+
+
+
+
+function custom_posts_per_page( $query ) {
+
+    if ( $query->is_post_type_archive('state') ) {
+        set_query_var('posts_per_page', -1);
+        $query->set('orderby', array('name' => 'ASC'));
+    }
+
+    if ( $query->is_post_type_archive('people') ) {
+        set_query_var('posts_per_page', 50);
+        $query->set('orderby', array('name' => 'ASC'));
+    }
+    }
+    add_action( 'pre_get_posts', 'custom_posts_per_page' );

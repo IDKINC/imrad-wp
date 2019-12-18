@@ -317,7 +317,7 @@ function people_build_vote_meta_box($post)
         'textarea_name' => 'votes_details',
         'textarea_rows' => 10,
     );
-    wp_editor($content, 'votes_details"', $settings);
+    wp_editor($content, 'votes_details', $settings);
 
     ?>
 

@@ -86,6 +86,10 @@ if ($evidence) {
 
 
     <?php
+} else {
+
+    get_template_part( "components/common/dipshitSubmitBox" );
+
 }
 
 ?>
