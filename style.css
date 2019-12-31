@@ -394,79 +394,62 @@ button, a.button {
     border-bottom: 2px solid;
     line-height: 1.5em;
     height: 1.5em;
+    font-size: 1em;
     width: 100%;
-    padding: 0.25em;
-    -webkit-transition: all 0.3s ease;
-    transition: all 0.3s ease; }
-    /* line 21, assets/scss/components/_formField.scss */
+    padding: 0.5em;
+    -webkit-transition: .2s;
+    transition: .2s; }
+    /* line 22, assets/scss/components/_formField.scss */
     .material_input input::-webkit-input-placeholder, .material_input textarea::-webkit-input-placeholder, .material_input input[type="submit"]::-webkit-input-placeholder {
-      -webkit-transition: all 0.2s ease;
-      transition: all 0.2s ease;
+      -webkit-transition: .2s;
+      transition: .2s;
       padding-left: 0.25em;
       opacity: 0; }
     .material_input input:-ms-input-placeholder, .material_input textarea:-ms-input-placeholder, .material_input input[type="submit"]:-ms-input-placeholder {
-      -webkit-transition: all 0.2s ease;
-      transition: all 0.2s ease;
+      -webkit-transition: .2s;
+      transition: .2s;
       padding-left: 0.25em;
       opacity: 0; }
     .material_input input::-ms-input-placeholder, .material_input textarea::-ms-input-placeholder, .material_input input[type="submit"]::-ms-input-placeholder {
-      -webkit-transition: all 0.2s ease;
-      transition: all 0.2s ease;
+      -webkit-transition: .2s;
+      transition: .2s;
       padding-left: 0.25em;
       opacity: 0; }
     .material_input input::placeholder, .material_input textarea::placeholder, .material_input input[type="submit"]::placeholder {
-      -webkit-transition: all 0.2s ease;
-      transition: all 0.2s ease;
+      -webkit-transition: .2s;
+      transition: .2s;
       padding-left: 0.25em;
       opacity: 0; }
-    /* line 28, assets/scss/components/_formField.scss */
+    /* line 29, assets/scss/components/_formField.scss */
     .material_input input:focus, .material_input textarea:focus, .material_input input:valid, .material_input textarea:valid {
       outline: none;
       border-bottom: 2px solid #c56cf0; }
-      /* line 32, assets/scss/components/_formField.scss */
+      /* line 34, assets/scss/components/_formField.scss */
       .material_input input:focus::-webkit-input-placeholder, .material_input textarea:focus::-webkit-input-placeholder, .material_input input:valid::-webkit-input-placeholder, .material_input textarea:valid::-webkit-input-placeholder {
         opacity: 0.5;
-        -webkit-transition: all 0.3s ease 0.3s;
-        transition: all 0.3s ease 0.3s; }
+        -webkit-transition: .2s ease .3s;
+        transition: .2s ease .3s; }
       .material_input input:focus:-ms-input-placeholder, .material_input textarea:focus:-ms-input-placeholder, .material_input input:valid:-ms-input-placeholder, .material_input textarea:valid:-ms-input-placeholder {
         opacity: 0.5;
-        -webkit-transition: all 0.3s ease 0.3s;
-        transition: all 0.3s ease 0.3s; }
+        -webkit-transition: .2s ease .3s;
+        transition: .2s ease .3s; }
       .material_input input:focus::-ms-input-placeholder, .material_input textarea:focus::-ms-input-placeholder, .material_input input:valid::-ms-input-placeholder, .material_input textarea:valid::-ms-input-placeholder {
         opacity: 0.5;
-        -webkit-transition: all 0.3s ease 0.3s;
-        transition: all 0.3s ease 0.3s; }
+        -webkit-transition: .2s ease .3s;
+        transition: .2s ease .3s; }
       .material_input input:focus::placeholder, .material_input textarea:focus::placeholder, .material_input input:valid::placeholder, .material_input textarea:valid::placeholder {
         opacity: 0.5;
-        -webkit-transition: all 0.3s ease 0.3s;
-        transition: all 0.3s ease 0.3s; }
-      /* line 37, assets/scss/components/_formField.scss */
+        -webkit-transition: .2s ease .3s;
+        transition: .2s ease .3s; }
+      /* line 40, assets/scss/components/_formField.scss */
       .material_input input:focus ~ label, .material_input textarea:focus ~ label, .material_input input:valid ~ label, .material_input textarea:valid ~ label {
         top: 0;
         -webkit-transform: translate(0, -110%);
         transform: translate(0, -110%);
         color: #c56cf0;
-        font-size: 0.8em; }
-  /* line 46, assets/scss/components/_formField.scss */
-  .material_input textarea {
-    line-height: 1.5em;
-    height: 1.5em; }
-    /* line 52, assets/scss/components/_formField.scss */
-    .material_input textarea:focus, .material_input textarea:valid {
-      height: 5em; }
-  /* line 58, assets/scss/components/_formField.scss */
-  .material_input textarea[type="submit"], .material_input input[type="submit"] {
-    border: 0;
-    background: #c56cf0;
-    color: #fff;
-    padding: 0.5em 0;
-    height: auto;
-    -webkit-transition: all 0.3s ease 0.3s;
-    transition: all 0.3s ease 0.3s; }
-    /* line 67, assets/scss/components/_formField.scss */
-    .material_input textarea[type="submit"]:hover, .material_input input[type="submit"]:hover {
-      background: #ca5dff; }
-  /* line 72, assets/scss/components/_formField.scss */
+        font-size: 0.8em;
+        opacity: 1; }
+  /* line 50, assets/scss/components/_formField.scss */
   .material_input label {
     position: absolute;
     left: 0.25em;
@@ -476,6 +459,50 @@ button, a.button {
     opacity: 0.5;
     -webkit-transition: all 0.3s ease;
     transition: all 0.3s ease; }
+  /* line 59, assets/scss/components/_formField.scss */
+  .material_input textarea {
+    line-height: 1.5em;
+    height: 1.5em; }
+    /* line 65, assets/scss/components/_formField.scss */
+    .material_input textarea:focus, .material_input textarea:valid {
+      height: 5em; }
+  /* line 71, assets/scss/components/_formField.scss */
+  .material_input textarea[type="submit"], .material_input input[type="submit"] {
+    border: 0;
+    background: #c56cf0;
+    color: #fff;
+    padding: 0.5em 0;
+    height: auto;
+    -webkit-transition: all 0.3s ease 0.3s;
+    transition: all 0.3s ease 0.3s; }
+    /* line 80, assets/scss/components/_formField.scss */
+    .material_input textarea[type="submit"]:hover, .material_input input[type="submit"]:hover {
+      background: #ca5dff; }
+  /* line 86, assets/scss/components/_formField.scss */
+  .material_input.select {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center; }
+    /* line 92, assets/scss/components/_formField.scss */
+    .material_input.select label {
+      position: relative;
+      left: unset;
+      top: unset;
+      -webkit-transform: none;
+      transform: none;
+      margin-right: 0.25em; }
+      /* line 99, assets/scss/components/_formField.scss */
+      .material_input.select label:after {
+        content: ':'; }
+    /* line 106, assets/scss/components/_formField.scss */
+    .material_input.select select {
+      width: 100%; }
 
 /* line 1, assets/scss/components/_banners.scss */
 .banner {
@@ -1097,16 +1124,24 @@ footer.site__footer {
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
-  flex-direction: column; }
+  flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  text-align: center;
+  margin: 0 auto; }
   @media (min-width: 64em) {
     /* line 172, assets/scss/components/common/_dipshitMeter.scss */
     .dipshit__submit-box {
       width: 50%; } }
-  /* line 186, assets/scss/components/common/_dipshitMeter.scss */
+  /* line 191, assets/scss/components/common/_dipshitMeter.scss */
   .dipshit__submit-box h1,
   .dipshit__submit-box h2 {
     word-wrap: break-word; }
-  /* line 192, assets/scss/components/common/_dipshitMeter.scss */
+  /* line 197, assets/scss/components/common/_dipshitMeter.scss */
   .dipshit__submit-box p {
     color: #fff;
     margin: 1em; }
@@ -1847,8 +1882,14 @@ svg.map {
     .evidence-grid {
       width: 80%;
       grid-template-columns: 1fr 1fr; } }
+  /* line 17, assets/scss/components/evidence/_evidence.scss */
+  .evidence-grid .dipshit__submit-box {
+    width: 80%; }
+  /* line 21, assets/scss/components/evidence/_evidence.scss */
+  .evidence-grid > h1 {
+    text-align: center; }
 
-/* line 18, assets/scss/components/evidence/_evidence.scss */
+/* line 27, assets/scss/components/evidence/_evidence.scss */
 .evidence__card {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1863,7 +1904,7 @@ svg.map {
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
   flex-direction: column; }
-  /* line 25, assets/scss/components/evidence/_evidence.scss */
+  /* line 34, assets/scss/components/evidence/_evidence.scss */
   .evidence__card .evidence__card-content {
     width: 100%;
     padding: 0 0.25em;
@@ -1881,15 +1922,15 @@ svg.map {
     -ms-flex-direction: column;
     flex-direction: column; }
     @media (min-width: 64em) {
-      /* line 25, assets/scss/components/evidence/_evidence.scss */
+      /* line 34, assets/scss/components/evidence/_evidence.scss */
       .evidence__card .evidence__card-content {
         padding: 0 1em; } }
-  /* line 39, assets/scss/components/evidence/_evidence.scss */
+  /* line 48, assets/scss/components/evidence/_evidence.scss */
   .evidence__card .evidence__title {
     margin: 0;
     text-align: center; }
 
-/* line 50, assets/scss/components/evidence/_evidence.scss */
+/* line 59, assets/scss/components/evidence/_evidence.scss */
 .evidence__voting-grid {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -1901,13 +1942,13 @@ svg.map {
   justify-content: center;
   padding: 0.5em 1em;
   width: 100%; }
-  /* line 61, assets/scss/components/evidence/_evidence.scss */
+  /* line 70, assets/scss/components/evidence/_evidence.scss */
   .evidence__voting-grid .evidence__score {
     margin: 0;
     text-align: center;
     -ms-flex-item-align: center;
     align-self: center; }
-  /* line 67, assets/scss/components/evidence/_evidence.scss */
+  /* line 76, assets/scss/components/evidence/_evidence.scss */
   .evidence__voting-grid .button {
     min-height: 4em;
     display: -webkit-box;
@@ -1921,21 +1962,21 @@ svg.map {
     justify-content: center;
     text-align: center;
     background: #ccc; }
-    /* line 76, assets/scss/components/evidence/_evidence.scss */
+    /* line 85, assets/scss/components/evidence/_evidence.scss */
     .evidence__voting-grid .button:hover {
       background: #c56cf0; }
-    /* line 80, assets/scss/components/evidence/_evidence.scss */
+    /* line 89, assets/scss/components/evidence/_evidence.scss */
     .evidence__voting-grid .button.voted {
       background: #c56cf0;
       font-weight: bold; }
-    /* line 85, assets/scss/components/evidence/_evidence.scss */
+    /* line 94, assets/scss/components/evidence/_evidence.scss */
     .evidence__voting-grid .button:disabled {
       background: #b33eeb;
       position: relative; }
-      /* line 88, assets/scss/components/evidence/_evidence.scss */
+      /* line 97, assets/scss/components/evidence/_evidence.scss */
       .evidence__voting-grid .button:disabled a {
         color: #fff; }
-        /* line 91, assets/scss/components/evidence/_evidence.scss */
+        /* line 100, assets/scss/components/evidence/_evidence.scss */
         .evidence__voting-grid .button:disabled a:before {
           content: '';
           display: block;
@@ -1945,7 +1986,7 @@ svg.map {
           right: 0;
           bottom: 0; }
 
-/* line 107, assets/scss/components/evidence/_evidence.scss */
+/* line 116, assets/scss/components/evidence/_evidence.scss */
 .evidence__og-data {
   border: 1px solid gray;
   background: #2b063d;
@@ -1960,33 +2001,70 @@ svg.map {
   -ms-flex-pack: center;
   justify-content: center;
   width: 100%; }
-  /* line 118, assets/scss/components/evidence/_evidence.scss */
+  /* line 127, assets/scss/components/evidence/_evidence.scss */
   .evidence__og-data .og__img {
     grid-row: 1 / span 3;
     display: block; }
-  /* line 124, assets/scss/components/evidence/_evidence.scss */
+  /* line 133, assets/scss/components/evidence/_evidence.scss */
   .evidence__og-data p {
     font-size: 0.8em;
     color: #fff;
     padding: 0em 1em; }
     @media (min-width: 64em) {
-      /* line 124, assets/scss/components/evidence/_evidence.scss */
+      /* line 133, assets/scss/components/evidence/_evidence.scss */
       .evidence__og-data p {
         font-size: 1em; } }
-  /* line 136, assets/scss/components/evidence/_evidence.scss */
+  /* line 145, assets/scss/components/evidence/_evidence.scss */
   .evidence__og-data .evidence__title {
     font-weight: bold;
     text-align: left; }
-  /* line 142, assets/scss/components/evidence/_evidence.scss */
+  /* line 151, assets/scss/components/evidence/_evidence.scss */
   .evidence__og-data .evidence__description {
     margin: 0;
     opacity: 0.8; }
-  /* line 148, assets/scss/components/evidence/_evidence.scss */
+  /* line 157, assets/scss/components/evidence/_evidence.scss */
   .evidence__og-data .evidence__source {
     font-family: "Ubuntu", serif;
     margin: 0 0 0.5em;
     text-align: right;
     color: #aaa; }
+
+/* line 1, assets/scss/components/evidence/_submitForm.scss */
+.submit__grid {
+  display: grid !important;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  grid-gap: 1em; }
+  @media (min-width: 64em) {
+    /* line 1, assets/scss/components/evidence/_submitForm.scss */
+    .submit__grid {
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 3em; } }
+
+/* line 18, assets/scss/components/evidence/_submitForm.scss */
+.submit__form {
+  background: #fff;
+  padding: 1em;
+  -webkit-box-shadow: 0 1.5px 4px rgba(0, 0, 0, 0.24), 0 1px 8px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 1.5px 4px rgba(0, 0, 0, 0.24), 0 1px 8px rgba(0, 0, 0, 0.12);
+  font-size: 1.5rem; }
+  /* line 26, assets/scss/components/evidence/_submitForm.scss */
+  .submit__form > h2 {
+    margin-top: 0; }
+  /* line 27, assets/scss/components/evidence/_submitForm.scss */
+  .submit__form > em {
+    margin-bottom: 0.5em; }
+
+/* line 31, assets/scss/components/evidence/_submitForm.scss */
+.submit__rules {
+  color: #fff; }
+  /* line 34, assets/scss/components/evidence/_submitForm.scss */
+  .submit__rules ul, .submit__rules li {
+    color: #fff; }
 
 @media (min-width: 64em) {
   /* line 1, assets/scss/pages/_front-page.scss */
@@ -2243,6 +2321,12 @@ main.content {
       -webkit-box-orient: vertical;
       -webkit-box-direction: normal;
       -ms-flex-direction: column;
-      flex-direction: column; } }
+      flex-direction: column;
+      display: none; }
+      /* line 47, assets/scss/style.scss */
+      #toTop.visible {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex; } }
 
 /*# sourceMappingURL=style.css.map */

@@ -88,8 +88,13 @@ if ($evidence) {
     <?php
 } else {
 
+    echo "<section class='evidence-grid'>";
+
+    echo "<h1>No Evidence On File</h1>";
     get_template_part( "components/common/dipshitSubmitBox" );
 
+
+    echo "</section>";
 }
 
 ?>

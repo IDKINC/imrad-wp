@@ -13,13 +13,14 @@
         border-bottom: 2px solid;
         line-height: 1.5em;
         height: 1.5em;
+        font-size: 1em;
         width: 100%;
-        padding: 0.25em;
+        padding: 0.5em;
 
-        @include transition(all .3s ease);
+        transition: .2s;
 
         &::placeholder {
-            @include transition(all .2s ease);
+            transition: .2s;
             padding-left: 0.25em;
             opacity: 0;
         }
@@ -29,9 +30,11 @@
         &:valid {
             outline: none;
             border-bottom: 2px solid $mainColor;
+
             &::placeholder {
                 opacity: 0.5;
-                @include transition(all .3s ease .3s);
+                transition: .2s ease .3s;
+
             }
 
             &~label {
@@ -39,8 +42,18 @@
                 transform: translate(0, -110%);
                 color: $mainColor;
                 font-size: 0.8em;
+                opacity: 1;
             }
         }
+    }
+
+    label {
+        position: absolute;
+        left: 0.25em;
+        top: 50%;
+        transform: translate(0, -50%);
+        opacity: 0.5;
+        @include transition(all .3s ease);
     }
 
     textarea {
@@ -69,12 +82,32 @@
         }
     }
 
-    label {
-        position: absolute;
-        left: 0.25em;
-        top: 50%;
-        transform: translate(0, -50%);
-        opacity: 0.5;
-        @include transition(all .3s ease);
+
+    &.select {
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        label {
+            position: relative;
+            left: unset;
+            top: unset;
+            transform: none;
+
+            margin-right: 0.25em;
+            &:after {
+                content: ':';
+            }
+
+
+        }
+
+        select {
+            width: 100%;
+        }
+
+
     }
+
 }

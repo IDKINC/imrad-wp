@@ -52,7 +52,7 @@ wp_login_form($loginArgs); ?>
 
 <hr />
 
-<a href="<?= home_url() ?>/register" class="need">Need An Account?</a>
+<a href="<?= home_url('/register') ?>" class="need">Need An Account?</a>
 
 </section>
 

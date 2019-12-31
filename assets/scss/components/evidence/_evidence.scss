@@ -12,6 +12,15 @@
         width: 80%;
         grid-template-columns: 1fr 1fr;
     }
+
+
+    .dipshit__submit-box{
+        width: 80%;
+    }
+
+    & > h1{
+        text-align: center;
+    }
 }
 
 
@@ -152,3 +161,6 @@
         color: #aaa;
     }
 }
+
+
+@import "submitForm";

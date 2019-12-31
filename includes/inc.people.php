@@ -33,6 +33,7 @@ class Person {
 		$this->bannerUrl = wp_get_attachment_image_url($this->getPostMeta($this->id, 'banner_image', true), 'full');
 
 		$this->url = get_permalink($this->id);
+		$this->submitUrl = home_url("/submit?politician=" . $this->id);
 		$this->slug = $post->post_name;
 
 		$this->website = $this->getPostMeta($this->id, 'website', true);
@@ -59,7 +60,7 @@ class Person {
 		if($imageUrl){
 			return $imageUrl;
 		} else {
-			return "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png";
+			return get_stylesheet_directory_uri() . "/assets/img/default-profile.png";
 		}
 
 

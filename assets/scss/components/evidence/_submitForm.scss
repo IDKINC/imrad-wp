@@ -1,0 +1,37 @@
+.submit__grid{
+
+    display: grid !important;
+
+    align-items: flex-start;
+    justify-content: center;
+    grid-gap: 1em;
+
+
+
+    @include breakpoint(laptop){
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 3em;
+    }
+}
+
+
+.submit__form{
+    background: #fff;
+    padding:1em;
+    @include card(1);
+
+    font-size: 1.5rem;
+
+
+    & > h2{ margin-top: 0;}
+    & > em{ margin-bottom: 0.5em;}
+}
+
+
+.submit__rules{
+    color: #fff;
+
+    ul, li{
+        color: #fff;
+    }
+}
