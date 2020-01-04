@@ -17,17 +17,12 @@
         justify-content: space-around;
         grid-template-columns: 1fr 3fr;
         grid-template-rows: 1fr 1fr;
-
-
         padding: 0.5em;
         margin-bottom: 1em;
-        // border-bottom: 4px solid #fff;
-
-        color: #fff;
+        color: $mainTextColor;
         text-align: center;
-
         background: transparentize($color: #fff, $amount: 0.9);
-
+        @include card(1);
 
         @include breakpoint(laptop) {
             grid-template-columns: 1fr 3fr 1fr;
@@ -42,7 +37,7 @@
 
         h3,
         a {
-            color: #fff;
+            color: $mainTextColor;
             margin: 0 auto;
         }
 
@@ -64,14 +59,14 @@
             }
 
             h4 {
-                color: #fff;
+                color: $mainTextColor;
                 margin: 0;
 
             }
 
             h5 {
                 font-family: $font-family--body;
-                color: #fff;
+                color: $mainTextColor;
                 font-weight: 400;
                 font-size: 1em;
                 margin: 0;

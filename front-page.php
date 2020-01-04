@@ -18,7 +18,7 @@
 </section>
 
 <container class="banner white biggest-dipshits">
-<h2>Biggest Dipshits</h2>
+<h2>Dipshit Leaderboard</h2>
 <?php 
 $args = array(
 			'post_type' => array('people'),
