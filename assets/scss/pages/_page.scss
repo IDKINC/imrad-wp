@@ -39,14 +39,26 @@
 
 .navigation.pagination {
 
-    width: 80%;
+    width: 100%;
     padding: 1em;
     color: $mainColor;
     background: #fff;
-    font-size: 1.5rem;
+    font-size: 1rem;
     display: flex;
     align-items: center;
     justify-content: center;
+
+    @include breakpoint(laptop){
+
+        font-size: 1.5rem;
+        width: 80%;
+    }
+
+    .nav-links{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 
     .screen-reader-text {
         font-size: 0;
@@ -59,7 +71,18 @@
 
         &.current{
             color: #333;
+            margin: 0 auto;
         }
 
+    }
+
+    @include breakpoint(mobileonly){
+        .page-numbers{
+            display: none; 
+
+            &.current, &.next, &.prev{
+                display: block;
+            }
+        }
     }
 }

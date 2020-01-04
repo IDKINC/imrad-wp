@@ -2,21 +2,22 @@
 
 <?php get_header();?>
 <main>
-<container class="banner purple site__intro">
+<container class="banner white site__intro">
 
 <h1><?= bloginfo("name"); ?></h1>
 <p>An online voting tool that identifies whether elected officials and candidates for public office are, in fact, dipshits.</p>
 
 </container>
 
+<section class="grid--three">
 <?php get_template_part("components/maps/us_map"); ?>
 
-<div class="separator">OR</div>
+<div class="separator vertical">OR</div>
 
 <?php get_template_part("components/common/searchByZip"); ?>
+</section>
 
-
-<container class="banner purple biggest-dipshits">
+<container class="banner white biggest-dipshits">
 <h2>Biggest Dipshits</h2>
 <?php 
 $args = array(

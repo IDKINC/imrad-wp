@@ -1,4 +1,4 @@
-<container class="banner half-purple us-map map__link"><h2>Search By State</h2>
+<container class="banner blue us-map map__link"><h2>Search By State</h2>
 
 
 

@@ -1,4 +1,4 @@
-<section class="banner search-by-zip"> 
+<container class="banner red search-by-zip"> 
 
     <h2>Search By Zip</h2>
 
@@ -9,4 +9,4 @@
     
     ?>
 
-</section>
+</container>

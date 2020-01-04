@@ -176,7 +176,7 @@ h4,
 h5,
 h6 {
   margin: 36px 0 24px 0;
-  color: #c56cf0;
+  color: #212121;
   line-height: 1.25em;
   font-weight: 400;
   font-family: "Oswald", sans-serif; }
@@ -217,13 +217,13 @@ p {
 
 /* line 73, assets/scss/_type.scss */
 a {
-  color: #c56cf0;
+  color: #212121;
   text-decoration: none;
   -webkit-transition: all 0.2s ease;
   transition: all 0.2s ease; }
   /* line 78, assets/scss/_type.scss */
   a:hover {
-    color: #b33eeb; }
+    color: #080808; }
 
 /* line 85, assets/scss/_type.scss */
 ul,
@@ -353,7 +353,7 @@ img {
 
 /* line 1, assets/scss/atoms/_button.scss */
 button, a.button {
-  background: #c56cf0;
+  background: #212121;
   color: #fff;
   border: none;
   padding: 0.5em 1em;
@@ -361,12 +361,12 @@ button, a.button {
   border-radius: 5px; }
   /* line 12, assets/scss/atoms/_button.scss */
   button.btn-alt, a.btn-alt.button {
-    color: #c56cf0;
+    color: #212121;
     background: none;
-    border: 2px solid #c56cf0; }
+    border: 2px solid #212121; }
     /* line 17, assets/scss/atoms/_button.scss */
     button.btn-alt:hover, a.btn-alt.button:hover {
-      background: #d79af5;
+      background: #3b3b3b;
       color: #fff; }
   /* line 24, assets/scss/atoms/_button.scss */
   button.button--large, a.button--large.button {
@@ -423,7 +423,7 @@ button, a.button {
     /* line 29, assets/scss/components/_formField.scss */
     .material_input input:focus, .material_input textarea:focus, .material_input input:valid, .material_input textarea:valid {
       outline: none;
-      border-bottom: 2px solid #c56cf0; }
+      border-bottom: 2px solid #212121; }
       /* line 34, assets/scss/components/_formField.scss */
       .material_input input:focus::-webkit-input-placeholder, .material_input textarea:focus::-webkit-input-placeholder, .material_input input:valid::-webkit-input-placeholder, .material_input textarea:valid::-webkit-input-placeholder {
         opacity: 0.5;
@@ -446,7 +446,7 @@ button, a.button {
         top: 0;
         -webkit-transform: translate(0, -110%);
         transform: translate(0, -110%);
-        color: #c56cf0;
+        color: #212121;
         font-size: 0.8em;
         opacity: 1; }
   /* line 50, assets/scss/components/_formField.scss */
@@ -469,7 +469,7 @@ button, a.button {
   /* line 71, assets/scss/components/_formField.scss */
   .material_input textarea[type="submit"], .material_input input[type="submit"] {
     border: 0;
-    background: #c56cf0;
+    background: #212121;
     color: #fff;
     padding: 0.5em 0;
     height: auto;
@@ -477,7 +477,7 @@ button, a.button {
     transition: all 0.3s ease 0.3s; }
     /* line 80, assets/scss/components/_formField.scss */
     .material_input textarea[type="submit"]:hover, .material_input input[type="submit"]:hover {
-      background: #ca5dff; }
+      background: #2b1717; }
   /* line 86, assets/scss/components/_formField.scss */
   .material_input.select {
     display: -webkit-box;
@@ -522,32 +522,53 @@ button, a.button {
   flex-direction: column;
   padding: 0 0.25em; }
   /* line 10, assets/scss/components/_banners.scss */
-  .banner.purple {
-    background: #c56cf0;
-    color: #fff; }
+  .banner.white {
+    background: #fff;
+    color: #333; }
     /* line 15, assets/scss/components/_banners.scss */
+    .banner.white > h1, .banner.white > h2, .banner.white > h3, .banner.white > h4, .banner.white > p {
+      color: #333; }
+  /* line 20, assets/scss/components/_banners.scss */
+  .banner.blue {
+    background: var(--democrat-color);
+    color: #fff; }
+    /* line 25, assets/scss/components/_banners.scss */
+    .banner.blue > h1, .banner.blue > h2, .banner.blue > h3, .banner.blue > h4, .banner.blue > p {
+      color: #fff; }
+  /* line 30, assets/scss/components/_banners.scss */
+  .banner.red {
+    background: var(--republican-color);
+    color: #fff; }
+    /* line 35, assets/scss/components/_banners.scss */
+    .banner.red > h1, .banner.red > h2, .banner.red > h3, .banner.red > h4, .banner.red > p {
+      color: #fff; }
+  /* line 40, assets/scss/components/_banners.scss */
+  .banner.purple {
+    background: #212121;
+    color: #fff; }
+    /* line 45, assets/scss/components/_banners.scss */
     .banner.purple > h2, .banner.purple > h3, .banner.purple > h4 {
       color: #fff; }
-  /* line 20, assets/scss/components/_banners.scss */
+  /* line 50, assets/scss/components/_banners.scss */
   .banner.darker {
-    background: #b33eeb;
+    background: #080808;
     color: #fff;
     -webkit-box-shadow: inset 0 1.5px 4px rgba(0, 0, 0, 0.24), inset 0 1px 8px rgba(0, 0, 0, 0.12);
     box-shadow: inset 0 1.5px 4px rgba(0, 0, 0, 0.24), inset 0 1px 8px rgba(0, 0, 0, 0.12); }
-    /* line 27, assets/scss/components/_banners.scss */
+    /* line 57, assets/scss/components/_banners.scss */
     .banner.darker > h2, .banner.darker > h3, .banner.darker > h4 {
       color: #fff; }
-  /* line 32, assets/scss/components/_banners.scss */
+  /* line 62, assets/scss/components/_banners.scss */
   .banner.half-purple {
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(50%, #c56cf0), color-stop(50%, transparent));
-    background: linear-gradient(to bottom, #c56cf0 50%, transparent 50%); }
-    /* line 35, assets/scss/components/_banners.scss */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(50%, #212121), color-stop(50%, transparent));
+    background: linear-gradient(to bottom, #212121 50%, transparent 50%); }
+    /* line 65, assets/scss/components/_banners.scss */
     .banner.half-purple > h2, .banner.half-purple > h3, .banner.half-purple > h4 {
       color: #fff; }
-  /* line 40, assets/scss/components/_banners.scss */
+  /* line 70, assets/scss/components/_banners.scss */
   .banner > h1 {
     margin: 0.5em; }
-  /* line 44, assets/scss/components/_banners.scss */
+  /* line 74, assets/scss/components/_banners.scss */
   .banner > .searchBar {
     margin-bottom: 1em; }
 
@@ -564,7 +585,7 @@ button, a.button {
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  background: #c56cf0;
+  background: #212121;
   color: #fff;
   padding: 0.5em;
   position: relative; }
@@ -622,7 +643,7 @@ button, a.button {
         /* line 40, assets/scss/components/common/_accountMenu.scss */
         .account__menu .account__sub-menu li a:hover {
           color: #fff;
-          background: #c56cf0; }
+          background: #212121; }
   /* line 53, assets/scss/components/common/_accountMenu.scss */
   .account__menu:hover .account__sub-menu {
     display: -webkit-box;
@@ -642,7 +663,7 @@ footer.site__footer {
   justify-content: center;
   padding: 2em;
   color: #fff;
-  background: #b33eeb; }
+  background: #080808; }
 
 /* line 1, assets/scss/components/common/_searchBar.scss */
 #searchBar {
@@ -652,7 +673,7 @@ footer.site__footer {
     color: #fff;
     border: none;
     border-radius: 0 5px 5px 0;
-    background: #c56cf0; }
+    background: #212121; }
     /* line 11, assets/scss/components/common/_searchBar.scss */
     #searchBar button[type=submit] svg, #searchBar a.button[type=submit] svg {
       font-size: 1.5rem; }
@@ -669,7 +690,7 @@ footer.site__footer {
     grid-template-columns: 6fr 1fr;
     -webkit-transform: translatey(100%);
     transform: translatey(100%);
-    background: #b33eeb;
+    background: #080808;
     padding: 0.5em;
     z-index: 9999; }
     @media (max-width: 37.5em) {
@@ -743,7 +764,7 @@ footer.site__footer {
     color: #fff;
     border: none;
     border-radius: 0 5px 5px 0;
-    background: #c56cf0; }
+    background: #212121; }
     /* line 131, assets/scss/components/common/_searchBar.scss */
     #searchBarZip button[type=submit] i, #searchBarZip a.button[type=submit] i,
     #searchBarZip button[type=submit] svg,
@@ -762,25 +783,32 @@ footer.site__footer {
       max-width: 50vw; } }
   /* line 155, assets/scss/components/common/_searchBar.scss */
   #searchBarFull input, #searchBarFull .material_input textarea, .material_input #searchBarFull textarea {
-    font-size: 2em;
+    font-size: 1em;
     margin: 0;
     width: 100%; }
-  /* line 161, assets/scss/components/common/_searchBar.scss */
+    @media (min-width: 64em) {
+      /* line 155, assets/scss/components/common/_searchBar.scss */
+      #searchBarFull input, #searchBarFull .material_input textarea, .material_input #searchBarFull textarea {
+        font-size: 2em; } }
+  /* line 165, assets/scss/components/common/_searchBar.scss */
   #searchBarFull button[type=submit], #searchBarFull a.button[type=submit] {
     color: #fff;
     border: none;
     border-radius: 0 5px 5px 0;
-    background: #c56cf0; }
+    background: #212121; }
 
-/* line 3, assets/scss/components/common/_searchByZip.scss */
-.search-by-zip h2 {
-  color: #fff;
-  font-size: 1.5em;
-  margin: 0.5em; }
-  @media (min-width: 64em) {
-    /* line 3, assets/scss/components/common/_searchByZip.scss */
-    .search-by-zip h2 {
-      font-size: 3em; } }
+/* line 1, assets/scss/components/common/_searchByZip.scss */
+.search-by-zip {
+  min-height: 25vh; }
+  /* line 4, assets/scss/components/common/_searchByZip.scss */
+  .search-by-zip h2 {
+    color: #fff;
+    font-size: 1.5em;
+    margin: 0.5em; }
+    @media (min-width: 64em) {
+      /* line 4, assets/scss/components/common/_searchByZip.scss */
+      .search-by-zip h2 {
+        font-size: 3em; } }
 
 /* line 1, assets/scss/components/common/_nav.scss */
 .header__nav {
@@ -822,7 +850,7 @@ footer.site__footer {
     grid-template-columns: 1fr;
     -webkit-transform: translatey(100%);
     transform: translatey(100%);
-    background: #b33eeb;
+    background: #080808;
     padding: 0.5em;
     z-index: 9999; }
   @media (min-width: 64em) {
@@ -859,7 +887,7 @@ footer.site__footer {
 /* line 1, assets/scss/components/common/_separator.scss */
 .separator {
   font-size: 1em;
-  background: #c56cf0;
+  background: var(--republican-color);
   color: #fff;
   width: 2em;
   height: 2em;
@@ -930,8 +958,8 @@ footer.site__footer {
 
 /* line 25, assets/scss/components/common/_charts.scss */
 .chart__legend {
-  background: #2b063d;
-  border: 2px solid #c56cf0;
+  background: #fff;
+  border: 2px solid #212121;
   border-radius: 3px;
   padding: 0.5em;
   margin: 1em auto; }
@@ -1008,12 +1036,12 @@ footer.site__footer {
   /* line 44, assets/scss/components/common/_dipshitMeter.scss */
   #dipshitMeter .dipshit__dot.selected circle,
   #dipshitMeter .dipshit__dot.selected path {
-    fill: #c56cf0;
+    fill: #212121;
     -webkit-filter: drop-shadow(0 1px 2px #000);
     filter: drop-shadow(0 1px 2px #000); }
   /* line 50, assets/scss/components/common/_dipshitMeter.scss */
   #dipshitMeter .dipshit__dot.selected circle {
-    fill: #b33eeb; }
+    fill: #080808; }
   /* line 55, assets/scss/components/common/_dipshitMeter.scss */
   #dipshitMeter .dipshit__dot.selected text {
     display: block;
@@ -1028,7 +1056,7 @@ footer.site__footer {
     z-index: -1; }
     /* line 79, assets/scss/components/common/_dipshitMeter.scss */
     #dipshitMeter.no-data * {
-      fill: #4c0b6c !important; }
+      fill: white !important; }
 
 /* line 87, assets/scss/components/common/_dipshitMeter.scss */
 .dipshit__conclusion {
@@ -1156,7 +1184,7 @@ svg.map {
   /* line 8, assets/scss/components/maps/_maps.scss */
   svg.map .state {
     fill: rgba(0, 0, 0, 0.4);
-    stroke: #c56cf0;
+    stroke: #212121;
     stroke-width: 0.5px; }
   /* line 14, assets/scss/components/maps/_maps.scss */
   svg.map .state a path {
@@ -1164,9 +1192,9 @@ svg.map {
     stroke: none; }
     /* line 19, assets/scss/components/maps/_maps.scss */
     svg.map .state a path:hover {
-      fill: #c56cf0;
-      -webkit-filter: drop-shadow(0 1px 3px #b33eeb);
-      filter: drop-shadow(0 1px 3px #b33eeb);
+      fill: #212121;
+      -webkit-filter: drop-shadow(0 1px 3px #080808);
+      filter: drop-shadow(0 1px 3px #080808);
       z-index: 2; }
   /* line 26, assets/scss/components/maps/_maps.scss */
   svg.map .state path {
@@ -1216,7 +1244,7 @@ svg.map {
     top: 0;
     left: 0;
     right: 0;
-    background: #2b063d;
+    background: #fff;
     margin: 0;
     padding: 0;
     height: 100vh;
@@ -1483,7 +1511,7 @@ svg.map {
         justify-content: flex-end; } }
   /* line 46, assets/scss/components/people/_people.scss */
   .people__header .people__name, .people__header .people__title, .people__header .people__actions {
-    background: #2b063d;
+    background: #fff;
     padding: 0.25rem;
     margin: 0 auto;
     width: 100%; }
@@ -1644,13 +1672,13 @@ svg.map {
         /* line 243, assets/scss/components/people/_people.scss */
         .people__subpage-nav ul li a.current {
           font-weight: 700;
-          border-bottom: 3px solid #c56cf0;
-          background: #c56cf0;
+          border-bottom: 3px solid #212121;
+          background: #212121;
           color: #fff; }
         /* line 252, assets/scss/components/people/_people.scss */
         .people__subpage-nav ul li a:hover {
-          background: #eac9f9;
-          border-bottom: 3px solid #c56cf0; }
+          background: #545454;
+          border-bottom: 3px solid #212121; }
   @media (max-width: 37.5em) {
     /* line 218, assets/scss/components/people/_people.scss */
     .people__subpage-nav {
@@ -1964,14 +1992,14 @@ svg.map {
     background: #ccc; }
     /* line 85, assets/scss/components/evidence/_evidence.scss */
     .evidence__voting-grid .button:hover {
-      background: #c56cf0; }
+      background: #212121; }
     /* line 89, assets/scss/components/evidence/_evidence.scss */
     .evidence__voting-grid .button.voted {
-      background: #c56cf0;
+      background: #212121;
       font-weight: bold; }
     /* line 94, assets/scss/components/evidence/_evidence.scss */
     .evidence__voting-grid .button:disabled {
-      background: #b33eeb;
+      background: #080808;
       position: relative; }
       /* line 97, assets/scss/components/evidence/_evidence.scss */
       .evidence__voting-grid .button:disabled a {
@@ -1989,7 +2017,7 @@ svg.map {
 /* line 116, assets/scss/components/evidence/_evidence.scss */
 .evidence__og-data {
   border: 1px solid gray;
-  background: #2b063d;
+  background: #fff;
   margin: 1em auto;
   display: grid;
   grid-template-columns: 1fr 2fr;
@@ -2090,21 +2118,50 @@ svg.map {
     .site__intro h1 {
       font-size: 4em; } }
 
-/* line 33, assets/scss/pages/_front-page.scss */
-.home .map__link {
+/* line 31, assets/scss/pages/_front-page.scss */
+.grid--three {
+  display: grid;
+  grid-template-columns: 1fr; }
+  @media (min-width: 64em) {
+    /* line 31, assets/scss/pages/_front-page.scss */
+    .grid--three {
+      grid-template-columns: 4fr 1fr 4fr;
+      -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+      align-items: stretch; } }
+  /* line 41, assets/scss/pages/_front-page.scss */
+  .grid--three .separator {
+    -ms-flex-item-align: center;
+    align-self: center; }
+
+/* line 48, assets/scss/pages/_front-page.scss */
+.home .map__link,
+.home .search-by-zip {
   padding: 2em; }
   @media (min-width: 64em) {
-    /* line 33, assets/scss/pages/_front-page.scss */
-    .home .map__link {
-      padding: 1vw 20vw; } }
-  /* line 42, assets/scss/pages/_front-page.scss */
-  .home .map__link h2 {
+    /* line 48, assets/scss/pages/_front-page.scss */
+    .home .map__link,
+    .home .search-by-zip {
+      padding: 1vw;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center; } }
+  /* line 59, assets/scss/pages/_front-page.scss */
+  .home .map__link h2,
+  .home .search-by-zip h2 {
     color: #fff;
     font-size: 1.5em; }
     @media (min-width: 64em) {
-      /* line 42, assets/scss/pages/_front-page.scss */
-      .home .map__link h2 {
-        font-size: 3em; } }
+      /* line 59, assets/scss/pages/_front-page.scss */
+      .home .map__link h2,
+      .home .search-by-zip h2 {
+        font-size: 3em;
+        margin: 1em;
+        margin-bottom: auto; } }
+
+/* line 73, assets/scss/pages/_front-page.scss */
+.home #searchBarZip {
+  margin-bottom: auto; }
 
 /* line 1, assets/scss/pages/_search.scss */
 .search-header {
@@ -2198,10 +2255,10 @@ svg.map {
         padding: 0.1em; }
         /* line 52, assets/scss/pages/_login.scss */
         .login__card #loginform input[type=text]:focus, .login__card #loginform .material_input textarea[type=text]:focus, .material_input .login__card #loginform textarea[type=text]:focus, .login__card #loginform input[type=password]:focus, .login__card #loginform .material_input textarea[type=password]:focus, .material_input .login__card #loginform textarea[type=password]:focus {
-          border-bottom: 3px solid #c56cf0; }
+          border-bottom: 3px solid #212121; }
       /* line 58, assets/scss/pages/_login.scss */
       .login__card #loginform input[type=submit], .login__card #loginform .material_input textarea[type="submit"], .material_input .login__card #loginform textarea[type="submit"] {
-        background: #c56cf0;
+        background: #212121;
         color: #fff;
         border: 0;
         padding: 0.25em;
@@ -2260,11 +2317,11 @@ svg.map {
 
 /* line 40, assets/scss/pages/_page.scss */
 .navigation.pagination {
-  width: 80%;
+  width: 100%;
   padding: 1em;
-  color: #c56cf0;
+  color: #212121;
   background: #fff;
-  font-size: 1.5rem;
+  font-size: 1rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2274,20 +2331,44 @@ svg.map {
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center; }
-  /* line 51, assets/scss/pages/_page.scss */
+  @media (min-width: 64em) {
+    /* line 40, assets/scss/pages/_page.scss */
+    .navigation.pagination {
+      font-size: 1.5rem;
+      width: 80%; } }
+  /* line 57, assets/scss/pages/_page.scss */
+  .navigation.pagination .nav-links {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center; }
+  /* line 63, assets/scss/pages/_page.scss */
   .navigation.pagination .screen-reader-text {
     font-size: 0;
     margin: 0; }
-  /* line 56, assets/scss/pages/_page.scss */
+  /* line 68, assets/scss/pages/_page.scss */
   .navigation.pagination .page-numbers {
     padding: 0.25em; }
-    /* line 60, assets/scss/pages/_page.scss */
+    /* line 72, assets/scss/pages/_page.scss */
     .navigation.pagination .page-numbers.current {
-      color: #333; }
+      color: #333;
+      margin: 0 auto; }
+  @media (max-width: 37.5em) {
+    /* line 80, assets/scss/pages/_page.scss */
+    .navigation.pagination .page-numbers {
+      display: none; }
+      /* line 83, assets/scss/pages/_page.scss */
+      .navigation.pagination .page-numbers.current, .navigation.pagination .page-numbers.next, .navigation.pagination .page-numbers.prev {
+        display: block; } }
 
 /* line 14, assets/scss/style.scss */
 body {
-  background: #2b063d; }
+  background: #212121; }
 
 /* line 19, assets/scss/style.scss */
 main.content {

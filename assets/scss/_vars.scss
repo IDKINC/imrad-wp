@@ -7,13 +7,17 @@
                # Colors
 \*------------------------------------*/
 
-$mainColor: #c56cf0;
+// $mainColor: #c56cf0;
+$mainColor: #212121;
 
 // $mainColor: #FFEB3B;
 $darkerColor: darken($mainColor, 10);
-$bgColor: darken($darkerColor, 45);
+$bgColor: #fff;
 $lighterColor: lighten($mainColor, 10);
 $black: #111111;
+
+$red: var(--republican-color);
+$blue: var(--democrat-color);
 
 
 

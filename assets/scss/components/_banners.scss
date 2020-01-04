@@ -7,6 +7,36 @@
     flex-direction: column;
     padding:0 0.25em;
 
+    &.white{
+        background: #fff;
+
+        color: #333;
+
+        & >h1, >h2, >h3, >h4, >p{
+            color: #333;
+        }
+    }
+
+    &.blue{
+        background: var(--democrat-color);
+
+        color: #fff;
+
+        & >h1, >h2, >h3, >h4, >p{
+            color: #fff;
+        }
+    }
+
+    &.red{
+        background: var(--republican-color);
+
+        color: #fff;
+
+        & >h1, >h2, >h3, >h4, >p{
+            color: #fff;
+        }
+    }
+
     &.purple{
         background: $mainColor;
 
