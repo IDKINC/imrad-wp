@@ -28,7 +28,7 @@ if (have_posts()) {
 <h2 class="people__title"><?=$person->title?> <?=($person->district ? "(" . $person->district . ")" : "")?> from <a href="<?=get_the_permalink($person->state->ID)?>"><?=$person->state->post_title?></a></h2>
 
 <ul class="people__actions">
-    <!-- <li><button class="follow-button btn-alt">Follow</button></li> -->
+    <!-- <li><button class="follow-button button--alt">Follow</button></li> -->
 
 
     <?php

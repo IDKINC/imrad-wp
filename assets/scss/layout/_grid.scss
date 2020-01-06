@@ -1,0 +1,30 @@
+.grid{
+    display: grid;
+    grid-template-columns: 1fr;
+
+    &--three {
+    
+        @include breakpoint(laptop) {
+    
+            grid-template-columns: 4fr 1fr 4fr;
+            align-items: stretch;
+        }
+    
+        .separator {
+            align-self: center;
+        }
+    }
+
+
+    &--two{
+
+        @include breakpoint(laptop) {
+    
+            grid-template-columns: 1fr 1fr ;
+            align-items: stretch;
+        }
+
+    }
+
+}
+

@@ -1,6 +1,6 @@
 button{
 
-    background: $mainColor;
+    background: $accentColor;
     color: #fff;
     border: none;
     padding: 0.5em 1em;
@@ -9,10 +9,10 @@ button{
 
     border-radius: 5px;
 
-    &.btn-alt{
-        color: $mainColor;
+    &.button--alt{
+        color: $accentColor;
         background: none;
-        border: 2px solid $mainColor;
+        border: 2px solid $accentColor;
 
         &:hover{
             background: $lighterColor;

@@ -2,6 +2,7 @@
  * Variables
  */
 
+ 
 
 /*------------------------------------*\
                # Colors
@@ -11,14 +12,16 @@
 $mainColor: #212121;
 $mainTextColor: #212121;
 
-// $mainColor: #FFEB3B;
+$accentColor: #c56cf0;
 $darkerColor: darken($mainColor, 10);
-$bgColor: #fff;
+$bgColor: rgb(37, 28, 28);
 $lighterColor: lighten($mainColor, 10);
 $black: #111111;
 
-$red: var(--republican-color);
-$blue: var(--democrat-color);
+// $red: var(--republican-color);
+$red: #eb4a4d;
+// $blue: var(--democrat-color);
+$blue: #5796d1;
 
 
 
@@ -42,7 +45,7 @@ $paragraph-line-height: 1.5em;
 $paragraph-margin: 20px;
 
 // Header Styles
-$header-color: $mainColor;
+$header-color: $accentColor;
 $header-size: rem(40px);
 $header-line-height: 1.25em;
 $header-margin: $paragraph-margin * 1.2;
@@ -54,7 +57,7 @@ $blockquote-line-height: 1.5em;
 $blockquote-margin: $paragraph-margin * 1.5;
 
 // Links
-$link-color: $mainColor;
+$link-color: inherit;
 
 // hr
 $hr-margin: 30px;

@@ -45,7 +45,7 @@
 
     .people__name, .people__title, .people__actions{
 
-        background: $bgColor;
+        background: #fff;
         padding: 0.25rem;
         margin: 0 auto;
         width: 100%;
@@ -67,7 +67,7 @@
         font-size: 3em;
         text-align: center;
 
-        color: #fff;
+        color: $mainTextColor;
 
         .party{
             font-size: 0.5em;
@@ -239,19 +239,20 @@
                 text-align: center;
                 font-size: 1.25em;
                 padding: 1em;
+                color: #fff;
 
                 &.current {
                     font-weight: 700;
 
-                    border-bottom: 3px solid $mainColor;
+                    border-bottom: 3px solid $blue;
 
-                    background: $mainColor;
-                    color: #fff;
+                    background: #fff;
+                    color: $mainColor;
                 }
 
                 &:hover {
                     background: lighten($mainColor, 20);
-                    border-bottom: 3px solid $mainColor;
+                    border-bottom: 3px solid $blue;
 
                 }
 

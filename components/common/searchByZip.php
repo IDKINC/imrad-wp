@@ -1,4 +1,4 @@
-<container class="banner red search-by-zip"> 
+<container class="banner blue search-by-zip"> 
 
     <h2>Search By Zip</h2>
 

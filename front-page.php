@@ -4,17 +4,22 @@
 <main>
 <container class="banner white site__intro">
 
-<h1><?= bloginfo("name"); ?></h1>
+<img src="<?=get_template_directory_uri()?>/assets/svg/imrad-logo.svg">
 <p>An online voting tool that identifies whether elected officials and candidates for public office are, in fact, dipshits.</p>
+<h3>Let's get these dipshits out of office, together.</h3>
+<div class="buttons">
+	<a class="button">Sign Up</a>
+	<a class="button button--alt">Login</a>
+</div>
 
 </container>
 
-<section class="grid--three">
-<?php get_template_part("components/maps/us_map"); ?>
+<section class="grid grid--three">
+	
+	<?php get_template_part("components/common/searchByZip"); ?>
+	<div class="separator vertical">OR</div>
+	<?php get_template_part("components/maps/us_map"); ?>
 
-<div class="separator vertical">OR</div>
-
-<?php get_template_part("components/common/searchByZip"); ?>
 </section>
 
 <container class="banner white biggest-dipshits">

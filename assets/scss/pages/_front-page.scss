@@ -28,20 +28,7 @@
 
 }
 
-.grid--three {
-    display: grid;
-    grid-template-columns: 1fr;
 
-    @include breakpoint(laptop) {
-
-        grid-template-columns: 4fr 1fr 4fr;
-        align-items: stretch;
-    }
-
-    .separator {
-        align-self: center;
-    }
-}
 
 .home {
 

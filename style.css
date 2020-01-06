@@ -176,7 +176,7 @@ h4,
 h5,
 h6 {
   margin: 36px 0 24px 0;
-  color: #212121;
+  color: #c56cf0;
   line-height: 1.25em;
   font-weight: 400;
   font-family: "Oswald", sans-serif; }
@@ -217,13 +217,13 @@ p {
 
 /* line 73, assets/scss/_type.scss */
 a {
-  color: #212121;
+  color: inherit;
   text-decoration: none;
   -webkit-transition: all 0.2s ease;
   transition: all 0.2s ease; }
   /* line 78, assets/scss/_type.scss */
   a:hover {
-    color: #080808; }
+    color: inherit; }
 
 /* line 85, assets/scss/_type.scss */
 ul,
@@ -351,21 +351,44 @@ img {
   display: block;
   max-width: 100%; }
 
+/* line 1, assets/scss/layout/_grid.scss */
+.grid {
+  display: grid;
+  grid-template-columns: 1fr; }
+  @media (min-width: 64em) {
+    /* line 5, assets/scss/layout/_grid.scss */
+    .grid--three {
+      grid-template-columns: 4fr 1fr 4fr;
+      -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+      align-items: stretch; } }
+  /* line 13, assets/scss/layout/_grid.scss */
+  .grid--three .separator {
+    -ms-flex-item-align: center;
+    align-self: center; }
+  @media (min-width: 64em) {
+    /* line 19, assets/scss/layout/_grid.scss */
+    .grid--two {
+      grid-template-columns: 1fr 1fr;
+      -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+      align-items: stretch; } }
+
 /* line 1, assets/scss/atoms/_button.scss */
 button, a.button {
-  background: #212121;
+  background: #c56cf0;
   color: #fff;
   border: none;
   padding: 0.5em 1em;
   cursor: pointer;
   border-radius: 5px; }
   /* line 12, assets/scss/atoms/_button.scss */
-  button.btn-alt, a.btn-alt.button {
-    color: #212121;
+  button.button--alt, a.button--alt.button {
+    color: #c56cf0;
     background: none;
-    border: 2px solid #212121; }
+    border: 2px solid #c56cf0; }
     /* line 17, assets/scss/atoms/_button.scss */
-    button.btn-alt:hover, a.btn-alt.button:hover {
+    button.button--alt:hover, a.button--alt.button:hover {
       background: #3b3b3b;
       color: #fff; }
   /* line 24, assets/scss/atoms/_button.scss */
@@ -887,7 +910,7 @@ footer.site__footer {
 /* line 1, assets/scss/components/common/_separator.scss */
 .separator {
   font-size: 1em;
-  background: var(--republican-color);
+  background: #eb4a4d;
   color: #fff;
   width: 2em;
   height: 2em;
@@ -958,7 +981,7 @@ footer.site__footer {
 
 /* line 25, assets/scss/components/common/_charts.scss */
 .chart__legend {
-  background: #fff;
+  background: #251c1c;
   border: 2px solid #212121;
   border-radius: 3px;
   padding: 0.5em;
@@ -1036,12 +1059,12 @@ footer.site__footer {
   /* line 44, assets/scss/components/common/_dipshitMeter.scss */
   #dipshitMeter .dipshit__dot.selected circle,
   #dipshitMeter .dipshit__dot.selected path {
-    fill: #212121;
+    fill: #c56cf0;
     -webkit-filter: drop-shadow(0 1px 2px #000);
     filter: drop-shadow(0 1px 2px #000); }
   /* line 50, assets/scss/components/common/_dipshitMeter.scss */
   #dipshitMeter .dipshit__dot.selected circle {
-    fill: #080808; }
+    fill: #b33eeb; }
   /* line 55, assets/scss/components/common/_dipshitMeter.scss */
   #dipshitMeter .dipshit__dot.selected text {
     display: block;
@@ -1054,11 +1077,11 @@ footer.site__footer {
     filter: blur(2px);
     display: block;
     z-index: -1; }
-    /* line 79, assets/scss/components/common/_dipshitMeter.scss */
+    /* line 76, assets/scss/components/common/_dipshitMeter.scss */
     #dipshitMeter.no-data * {
-      fill: white !important; }
+      fill: #423232 !important; }
 
-/* line 87, assets/scss/components/common/_dipshitMeter.scss */
+/* line 84, assets/scss/components/common/_dipshitMeter.scss */
 .dipshit__conclusion {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1072,15 +1095,16 @@ footer.site__footer {
   align-items: center;
   -webkit-box-pack: center;
   -ms-flex-pack: center;
-  justify-content: center; }
-  /* line 94, assets/scss/components/common/_dipshitMeter.scss */
+  justify-content: center;
+  color: #fff; }
+  /* line 93, assets/scss/components/common/_dipshitMeter.scss */
   .dipshit__conclusion > span {
     font-size: 2em;
     text-transform: uppercase;
     margin: 0.25em;
     line-height: 1em; }
 
-/* line 103, assets/scss/components/common/_dipshitMeter.scss */
+/* line 102, assets/scss/components/common/_dipshitMeter.scss */
 .dipshit__proof {
   display: grid;
   grid-template-columns: 1fr;
@@ -1093,17 +1117,17 @@ footer.site__footer {
   padding: 1em;
   width: 90%; }
   @media (min-width: 64em) {
-    /* line 103, assets/scss/components/common/_dipshitMeter.scss */
+    /* line 102, assets/scss/components/common/_dipshitMeter.scss */
     .dipshit__proof {
       width: 50%;
       grid-template-columns: 1fr 1fr; } }
-  /* line 122, assets/scss/components/common/_dipshitMeter.scss */
+  /* line 121, assets/scss/components/common/_dipshitMeter.scss */
   .dipshit__proof h2:first-of-type {
     grid-column: 1 / -1;
     text-align: center;
     font-size: 2em;
     margin: 0 auto 0.5em; }
-  /* line 129, assets/scss/components/common/_dipshitMeter.scss */
+  /* line 128, assets/scss/components/common/_dipshitMeter.scss */
   .dipshit__proof .proof {
     font-size: 1.5em;
     color: #fff;
@@ -1120,7 +1144,7 @@ footer.site__footer {
     padding: 1em;
     border-bottom: 2px solid #fff; }
     @media (min-width: 64em) {
-      /* line 129, assets/scss/components/common/_dipshitMeter.scss */
+      /* line 128, assets/scss/components/common/_dipshitMeter.scss */
       .dipshit__proof .proof {
         -webkit-box-pack: center;
         -ms-flex-pack: center;
@@ -1132,18 +1156,18 @@ footer.site__footer {
         -webkit-box-direction: normal;
         -ms-flex-direction: column;
         flex-direction: column; } }
-    /* line 152, assets/scss/components/common/_dipshitMeter.scss */
+    /* line 151, assets/scss/components/common/_dipshitMeter.scss */
     .dipshit__proof .proof > span {
       text-align: left;
       font-size: 1.5em;
       font-weight: 900;
       margin: 0.5em; }
-    /* line 161, assets/scss/components/common/_dipshitMeter.scss */
+    /* line 160, assets/scss/components/common/_dipshitMeter.scss */
     .dipshit__proof .proof:last-of-type {
       border-right: none;
       border-bottom: none; }
 
-/* line 172, assets/scss/components/common/_dipshitMeter.scss */
+/* line 171, assets/scss/components/common/_dipshitMeter.scss */
 .dipshit__submit-box {
   width: 100%;
   display: -webkit-box;
@@ -1162,17 +1186,21 @@ footer.site__footer {
   text-align: center;
   margin: 0 auto; }
   @media (min-width: 64em) {
-    /* line 172, assets/scss/components/common/_dipshitMeter.scss */
+    /* line 171, assets/scss/components/common/_dipshitMeter.scss */
     .dipshit__submit-box {
       width: 50%; } }
-  /* line 191, assets/scss/components/common/_dipshitMeter.scss */
+  /* line 190, assets/scss/components/common/_dipshitMeter.scss */
   .dipshit__submit-box h1,
   .dipshit__submit-box h2 {
-    word-wrap: break-word; }
+    word-wrap: break-word;
+    color: #fff; }
   /* line 197, assets/scss/components/common/_dipshitMeter.scss */
   .dipshit__submit-box p {
     color: #fff;
     margin: 1em; }
+    /* line 201, assets/scss/components/common/_dipshitMeter.scss */
+    .dipshit__submit-box p a {
+      color: #fff; }
 
 /* line 1, assets/scss/components/maps/_maps.scss */
 svg.map {
@@ -1188,7 +1216,7 @@ svg.map {
     stroke-width: 0.5px; }
   /* line 14, assets/scss/components/maps/_maps.scss */
   svg.map .state a path {
-    fill: #aaa;
+    fill: #fff;
     stroke: none; }
     /* line 19, assets/scss/components/maps/_maps.scss */
     svg.map .state a path:hover {
@@ -1244,7 +1272,7 @@ svg.map {
     top: 0;
     left: 0;
     right: 0;
-    background: #fff;
+    background: #251c1c;
     margin: 0;
     padding: 0;
     height: 100vh;
@@ -1524,7 +1552,7 @@ svg.map {
     grid-column: 1;
     font-size: 3em;
     text-align: center;
-    color: #fff; }
+    color: #212121; }
     /* line 72, assets/scss/components/people/_people.scss */
     .people__header .people__name .party {
       font-size: 0.5em;
@@ -1668,28 +1696,29 @@ svg.map {
         width: 100%;
         text-align: center;
         font-size: 1.25em;
-        padding: 1em; }
-        /* line 243, assets/scss/components/people/_people.scss */
+        padding: 1em;
+        color: #fff; }
+        /* line 244, assets/scss/components/people/_people.scss */
         .people__subpage-nav ul li a.current {
           font-weight: 700;
-          border-bottom: 3px solid #212121;
-          background: #212121;
-          color: #fff; }
-        /* line 252, assets/scss/components/people/_people.scss */
+          border-bottom: 3px solid #5796d1;
+          background: #fff;
+          color: #212121; }
+        /* line 253, assets/scss/components/people/_people.scss */
         .people__subpage-nav ul li a:hover {
           background: #545454;
-          border-bottom: 3px solid #212121; }
+          border-bottom: 3px solid #5796d1; }
   @media (max-width: 37.5em) {
     /* line 218, assets/scss/components/people/_people.scss */
     .people__subpage-nav {
       width: 100vw;
       overflow-y: scroll; }
-      /* line 268, assets/scss/components/people/_people.scss */
+      /* line 269, assets/scss/components/people/_people.scss */
       .people__subpage-nav ul {
         -webkit-box-pack: start;
         -ms-flex-pack: start;
         justify-content: flex-start; }
-        /* line 271, assets/scss/components/people/_people.scss */
+        /* line 272, assets/scss/components/people/_people.scss */
         .people__subpage-nav ul li {
           white-space: nowrap; } }
 
@@ -2019,7 +2048,7 @@ svg.map {
 /* line 116, assets/scss/components/evidence/_evidence.scss */
 .evidence__og-data {
   border: 1px solid gray;
-  background: #fff;
+  background: #251c1c;
   margin: 1em auto;
   display: grid;
   grid-template-columns: 1fr 2fr;
@@ -2120,48 +2149,32 @@ svg.map {
     .site__intro h1 {
       font-size: 4em; } }
 
-/* line 31, assets/scss/pages/_front-page.scss */
-.grid--three {
-  display: grid;
-  grid-template-columns: 1fr; }
-  @media (min-width: 64em) {
-    /* line 31, assets/scss/pages/_front-page.scss */
-    .grid--three {
-      grid-template-columns: 4fr 1fr 4fr;
-      -webkit-box-align: stretch;
-      -ms-flex-align: stretch;
-      align-items: stretch; } }
-  /* line 41, assets/scss/pages/_front-page.scss */
-  .grid--three .separator {
-    -ms-flex-item-align: center;
-    align-self: center; }
-
-/* line 48, assets/scss/pages/_front-page.scss */
+/* line 35, assets/scss/pages/_front-page.scss */
 .home .map__link,
 .home .search-by-zip {
   padding: 2em; }
   @media (min-width: 64em) {
-    /* line 48, assets/scss/pages/_front-page.scss */
+    /* line 35, assets/scss/pages/_front-page.scss */
     .home .map__link,
     .home .search-by-zip {
       padding: 1vw;
       -webkit-box-pack: center;
       -ms-flex-pack: center;
       justify-content: center; } }
-  /* line 59, assets/scss/pages/_front-page.scss */
+  /* line 46, assets/scss/pages/_front-page.scss */
   .home .map__link h2,
   .home .search-by-zip h2 {
     color: #fff;
     font-size: 1.5em; }
     @media (min-width: 64em) {
-      /* line 59, assets/scss/pages/_front-page.scss */
+      /* line 46, assets/scss/pages/_front-page.scss */
       .home .map__link h2,
       .home .search-by-zip h2 {
         font-size: 3em;
         margin: 1em;
         margin-bottom: auto; } }
 
-/* line 73, assets/scss/pages/_front-page.scss */
+/* line 60, assets/scss/pages/_front-page.scss */
 .home #searchBarZip {
   margin-bottom: auto; }
 
@@ -2368,15 +2381,15 @@ svg.map {
       .navigation.pagination .page-numbers.current, .navigation.pagination .page-numbers.next, .navigation.pagination .page-numbers.prev {
         display: block; } }
 
-/* line 14, assets/scss/style.scss */
+/* line 16, assets/scss/style.scss */
 body {
   background: #212121; }
 
-/* line 19, assets/scss/style.scss */
+/* line 21, assets/scss/style.scss */
 main.content {
   min-height: 45vh; }
 
-/* line 24, assets/scss/style.scss */
+/* line 26, assets/scss/style.scss */
 #toTop {
   margin: 1em auto;
   display: -webkit-box;
@@ -2391,11 +2404,11 @@ main.content {
   width: 100%;
   -webkit-box-shadow: 0 1.5px 4px rgba(0, 0, 0, 0.24), 0 1px 8px rgba(0, 0, 0, 0.12);
   box-shadow: 0 1.5px 4px rgba(0, 0, 0, 0.24), 0 1px 8px rgba(0, 0, 0, 0.12); }
-  /* line 33, assets/scss/style.scss */
+  /* line 35, assets/scss/style.scss */
   #toTop svg {
     font-size: 2em; }
   @media (min-width: 64em) {
-    /* line 24, assets/scss/style.scss */
+    /* line 26, assets/scss/style.scss */
     #toTop {
       position: fixed;
       width: auto;
@@ -2406,7 +2419,7 @@ main.content {
       -ms-flex-direction: column;
       flex-direction: column;
       display: none; }
-      /* line 47, assets/scss/style.scss */
+      /* line 49, assets/scss/style.scss */
       #toTop.visible {
         display: -webkit-box;
         display: -ms-flexbox;
