@@ -43,15 +43,17 @@
         }
     }
 
-    .people__name, .people__title, .people__actions{
+    .people__name,
+    .people__title,
+    .people__actions {
 
         background: #fff;
         padding: 0.25rem;
         margin: 0 auto;
         width: 100%;
-        
-        @include breakpoint(laptop){
-            
+
+        @include breakpoint(laptop) {
+
             padding-left: 1rem;
 
         }
@@ -61,7 +63,7 @@
     .people__name {
 
         grid-column: 1;
-        
+
 
 
         font-size: 3em;
@@ -69,25 +71,26 @@
 
         color: $mainTextColor;
 
-        .party{
+        .party {
             font-size: 0.5em;
-            vertical-align:middle;
-            &:hover{
+            vertical-align: middle;
+
+            &:hover {
                 opacity: 0.8;
             }
 
 
-            &--republican{
+            &--republican {
 
                 color: $red;
             }
 
-            &--democrat{
+            &--democrat {
 
                 color: $blue;
             }
 
-            &--independent{
+            &--independent {
 
                 color: var(--independent-color);
             }
@@ -105,20 +108,20 @@
     }
 
     .people__title {
-        
+
         grid-column: 1;
         text-align: center;
         font-weight: 100;
         font-family: $font-family--body;
         font-size: 1.5em;
-        
 
-        @include breakpoint(laptop){
+
+        @include breakpoint(laptop) {
             text-align: left;
-        font-size: 2em;
+            font-size: 2em;
 
         }
-        
+
 
     }
 
@@ -132,12 +135,12 @@
         padding: 0.25rem;
 
 
-        @include breakpoint(laptop){
+        @include breakpoint(laptop) {
             justify-content: flex-start;
 
 
         }
-        
+
 
 
         li {
@@ -152,7 +155,8 @@
             align-items: center;
             justify-content: center;
 
-            i, svg {
+            i,
+            svg {
                 font-size: 2em;
             }
         }
@@ -169,7 +173,7 @@
         border: 2px solid #fff;
 
 
-        
+
 
 
         @include breakpoint(laptop) {
@@ -201,11 +205,11 @@
             width: 100%;
             height: auto;
             position: absolute;
-            display:block;
+            display: block;
             left: 0;
             z-index: 1;
 
-            @include breakpoint(laptop){
+            @include breakpoint(laptop) {
                 top: -25%;
 
             }
@@ -239,20 +243,22 @@
                 text-align: center;
                 font-size: 1.25em;
                 padding: 1em;
-                color: #fff;
+                color: $mainTextColor;
+                border-bottom: 3px solid #fff;
+
 
                 &.current {
                     font-weight: 700;
 
                     border-bottom: 3px solid $blue;
 
-                    background: #fff;
-                    color: $mainColor;
+                    color: #fff;
+                    background: $mainColor;
                 }
 
                 &:hover {
-                    background: lighten($mainColor, 20);
-                    border-bottom: 3px solid $blue;
+                    background: transparentize($mainColor, 0.9);
+                    border-bottom: 3px solid lighten($mainColor, 20);
 
                 }
 
@@ -261,15 +267,15 @@
     }
 
 
-    @include breakpoint(mobileonly){
+    @include breakpoint(mobileonly) {
 
         width: 100vw;
         overflow-y: scroll;
 
-        ul{
+        ul {
             justify-content: flex-start;
 
-            li{
+            li {
                 white-space: nowrap
             }
         }

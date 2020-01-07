@@ -26,6 +26,7 @@
 
         text {
             display: none;
+            fill: $mainTextColor;
 
         }
 
@@ -43,12 +44,12 @@
 
             circle,
             path {
-                fill: $accentColor;
+                fill: $red;
                 filter: drop-shadow(0 1px 2px #000);
             }
 
             circle {
-                fill: darken($accentColor, 10);
+                fill: darken($red, 10);
             }
 
 
@@ -88,7 +89,7 @@
     align-items: center;
     justify-content: center;
 
-    color: #fff;
+    color: $mainTextColor;
 
     &>span {
 
@@ -128,20 +129,20 @@
     .proof {
 
         font-size: 1.5em;
-        color: #fff;
+        color: $mainTextColor;
         text-align: right;
         display: flex;
         align-items: center;
         justify-content: space-between;
         padding: 1em;
 
-        border-bottom: 2px solid #fff;
+        border-bottom: 2px solid $mainTextColor;
 
         @include breakpoint(laptop) {
             justify-content: center;
             text-align: center;
 
-            border-right: 2px solid #fff;
+            border-right: 2px solid $mainTextColor;
             border-bottom: none;
             flex-direction: column;
 
@@ -190,14 +191,14 @@
     h1,
     h2 {
         word-wrap: break-word;
-        color: #fff;
+        color: $mainTextColor;
 
     }
 
     p {
-        color: #fff;
+        color: $mainTextColor;
         margin: 1em;
 
-        a{color: #fff;}
+        a{color: $mainTextColor;}
     }
 }

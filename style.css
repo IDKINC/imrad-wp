@@ -1172,25 +1172,26 @@ footer.site__footer {
       margin: 4em auto 1em; } }
   /* line 27, assets/scss/components/common/_dipshitMeter.scss */
   #dipshitMeter .dipshit__dot text {
-    display: none; }
-  /* line 34, assets/scss/components/common/_dipshitMeter.scss */
+    display: none;
+    fill: #212121; }
+  /* line 35, assets/scss/components/common/_dipshitMeter.scss */
   #dipshitMeter .dipshit__dot:first-of-type text, #dipshitMeter .dipshit__dot:last-of-type text {
     display: block;
     opacity: 0.4; }
-  /* line 44, assets/scss/components/common/_dipshitMeter.scss */
+  /* line 45, assets/scss/components/common/_dipshitMeter.scss */
   #dipshitMeter .dipshit__dot.selected circle,
   #dipshitMeter .dipshit__dot.selected path {
-    fill: #c56cf0;
+    fill: #eb4a4d;
     -webkit-filter: drop-shadow(0 1px 2px #000);
     filter: drop-shadow(0 1px 2px #000); }
-  /* line 50, assets/scss/components/common/_dipshitMeter.scss */
+  /* line 51, assets/scss/components/common/_dipshitMeter.scss */
   #dipshitMeter .dipshit__dot.selected circle {
-    fill: #b33eeb; }
-  /* line 55, assets/scss/components/common/_dipshitMeter.scss */
+    fill: #e61c20; }
+  /* line 56, assets/scss/components/common/_dipshitMeter.scss */
   #dipshitMeter .dipshit__dot.selected text {
     display: block;
     opacity: 1; }
-  /* line 65, assets/scss/components/common/_dipshitMeter.scss */
+  /* line 66, assets/scss/components/common/_dipshitMeter.scss */
   #dipshitMeter.no-data {
     opacity: 0.5;
     position: absolute;
@@ -1198,11 +1199,11 @@ footer.site__footer {
     filter: blur(2px);
     display: block;
     z-index: -1; }
-    /* line 76, assets/scss/components/common/_dipshitMeter.scss */
+    /* line 77, assets/scss/components/common/_dipshitMeter.scss */
     #dipshitMeter.no-data * {
       fill: #423232 !important; }
 
-/* line 84, assets/scss/components/common/_dipshitMeter.scss */
+/* line 85, assets/scss/components/common/_dipshitMeter.scss */
 .dipshit__conclusion {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1217,15 +1218,15 @@ footer.site__footer {
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
-  color: #fff; }
-  /* line 93, assets/scss/components/common/_dipshitMeter.scss */
+  color: #212121; }
+  /* line 94, assets/scss/components/common/_dipshitMeter.scss */
   .dipshit__conclusion > span {
     font-size: 2em;
     text-transform: uppercase;
     margin: 0.25em;
     line-height: 1em; }
 
-/* line 102, assets/scss/components/common/_dipshitMeter.scss */
+/* line 103, assets/scss/components/common/_dipshitMeter.scss */
 .dipshit__proof {
   display: grid;
   grid-template-columns: 1fr;
@@ -1238,20 +1239,20 @@ footer.site__footer {
   padding: 1em;
   width: 90%; }
   @media (min-width: 64em) {
-    /* line 102, assets/scss/components/common/_dipshitMeter.scss */
+    /* line 103, assets/scss/components/common/_dipshitMeter.scss */
     .dipshit__proof {
       width: 50%;
       grid-template-columns: 1fr 1fr; } }
-  /* line 121, assets/scss/components/common/_dipshitMeter.scss */
+  /* line 122, assets/scss/components/common/_dipshitMeter.scss */
   .dipshit__proof h2:first-of-type {
     grid-column: 1 / -1;
     text-align: center;
     font-size: 2em;
     margin: 0 auto 0.5em; }
-  /* line 128, assets/scss/components/common/_dipshitMeter.scss */
+  /* line 129, assets/scss/components/common/_dipshitMeter.scss */
   .dipshit__proof .proof {
     font-size: 1.5em;
-    color: #fff;
+    color: #212121;
     text-align: right;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -1263,32 +1264,32 @@ footer.site__footer {
     -ms-flex-pack: justify;
     justify-content: space-between;
     padding: 1em;
-    border-bottom: 2px solid #fff; }
+    border-bottom: 2px solid #212121; }
     @media (min-width: 64em) {
-      /* line 128, assets/scss/components/common/_dipshitMeter.scss */
+      /* line 129, assets/scss/components/common/_dipshitMeter.scss */
       .dipshit__proof .proof {
         -webkit-box-pack: center;
         -ms-flex-pack: center;
         justify-content: center;
         text-align: center;
-        border-right: 2px solid #fff;
+        border-right: 2px solid #212121;
         border-bottom: none;
         -webkit-box-orient: vertical;
         -webkit-box-direction: normal;
         -ms-flex-direction: column;
         flex-direction: column; } }
-    /* line 151, assets/scss/components/common/_dipshitMeter.scss */
+    /* line 152, assets/scss/components/common/_dipshitMeter.scss */
     .dipshit__proof .proof > span {
       text-align: left;
       font-size: 1.5em;
       font-weight: 900;
       margin: 0.5em; }
-    /* line 160, assets/scss/components/common/_dipshitMeter.scss */
+    /* line 161, assets/scss/components/common/_dipshitMeter.scss */
     .dipshit__proof .proof:last-of-type {
       border-right: none;
       border-bottom: none; }
 
-/* line 171, assets/scss/components/common/_dipshitMeter.scss */
+/* line 172, assets/scss/components/common/_dipshitMeter.scss */
 .dipshit__submit-box {
   width: 100%;
   display: -webkit-box;
@@ -1307,21 +1308,21 @@ footer.site__footer {
   text-align: center;
   margin: 0 auto; }
   @media (min-width: 64em) {
-    /* line 171, assets/scss/components/common/_dipshitMeter.scss */
+    /* line 172, assets/scss/components/common/_dipshitMeter.scss */
     .dipshit__submit-box {
       width: 50%; } }
-  /* line 190, assets/scss/components/common/_dipshitMeter.scss */
+  /* line 191, assets/scss/components/common/_dipshitMeter.scss */
   .dipshit__submit-box h1,
   .dipshit__submit-box h2 {
     word-wrap: break-word;
-    color: #fff; }
-  /* line 197, assets/scss/components/common/_dipshitMeter.scss */
+    color: #212121; }
+  /* line 198, assets/scss/components/common/_dipshitMeter.scss */
   .dipshit__submit-box p {
-    color: #fff;
+    color: #212121;
     margin: 1em; }
-    /* line 201, assets/scss/components/common/_dipshitMeter.scss */
+    /* line 202, assets/scss/components/common/_dipshitMeter.scss */
     .dipshit__submit-box p a {
-      color: #fff; }
+      color: #212121; }
 
 /* line 1, assets/scss/components/maps/_maps.scss */
 svg.map {
@@ -1659,43 +1660,47 @@ svg.map {
         -ms-flex-pack: end;
         justify-content: flex-end; } }
   /* line 46, assets/scss/components/people/_people.scss */
-  .people__header .people__name, .people__header .people__title, .people__header .people__actions {
+  .people__header .people__name,
+  .people__header .people__title,
+  .people__header .people__actions {
     background: #fff;
     padding: 0.25rem;
     margin: 0 auto;
     width: 100%; }
     @media (min-width: 64em) {
       /* line 46, assets/scss/components/people/_people.scss */
-      .people__header .people__name, .people__header .people__title, .people__header .people__actions {
+      .people__header .people__name,
+      .people__header .people__title,
+      .people__header .people__actions {
         padding-left: 1rem; } }
-  /* line 61, assets/scss/components/people/_people.scss */
+  /* line 63, assets/scss/components/people/_people.scss */
   .people__header .people__name {
     grid-column: 1;
     font-size: 3em;
     text-align: center;
     color: #212121; }
-    /* line 72, assets/scss/components/people/_people.scss */
+    /* line 74, assets/scss/components/people/_people.scss */
     .people__header .people__name .party {
       font-size: 0.5em;
       vertical-align: middle; }
-      /* line 75, assets/scss/components/people/_people.scss */
+      /* line 78, assets/scss/components/people/_people.scss */
       .people__header .people__name .party:hover {
         opacity: 0.8; }
-      /* line 80, assets/scss/components/people/_people.scss */
+      /* line 83, assets/scss/components/people/_people.scss */
       .people__header .people__name .party--republican {
         color: #eb4a4d; }
-      /* line 85, assets/scss/components/people/_people.scss */
+      /* line 88, assets/scss/components/people/_people.scss */
       .people__header .people__name .party--democrat {
         color: #5796d1; }
-      /* line 90, assets/scss/components/people/_people.scss */
+      /* line 93, assets/scss/components/people/_people.scss */
       .people__header .people__name .party--independent {
         color: var(--independent-color); }
     @media (min-width: 64em) {
-      /* line 61, assets/scss/components/people/_people.scss */
+      /* line 63, assets/scss/components/people/_people.scss */
       .people__header .people__name {
         text-align: left;
         font-size: 4em; } }
-  /* line 107, assets/scss/components/people/_people.scss */
+  /* line 110, assets/scss/components/people/_people.scss */
   .people__header .people__title {
     grid-column: 1;
     text-align: center;
@@ -1703,11 +1708,11 @@ svg.map {
     font-family: "Ubuntu", serif;
     font-size: 1.5em; }
     @media (min-width: 64em) {
-      /* line 107, assets/scss/components/people/_people.scss */
+      /* line 110, assets/scss/components/people/_people.scss */
       .people__header .people__title {
         text-align: left;
         font-size: 2em; } }
-  /* line 125, assets/scss/components/people/_people.scss */
+  /* line 128, assets/scss/components/people/_people.scss */
   .people__header .people__actions {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -1724,17 +1729,17 @@ svg.map {
     margin: 0;
     padding: 0.25rem; }
     @media (min-width: 64em) {
-      /* line 125, assets/scss/components/people/_people.scss */
+      /* line 128, assets/scss/components/people/_people.scss */
       .people__header .people__actions {
         -webkit-box-pack: start;
         -ms-flex-pack: start;
         justify-content: flex-start; } }
-    /* line 143, assets/scss/components/people/_people.scss */
+    /* line 146, assets/scss/components/people/_people.scss */
     .people__header .people__actions li {
       list-style: none;
       padding: 0.25em 0.5em;
       margin: 0; }
-    /* line 149, assets/scss/components/people/_people.scss */
+    /* line 152, assets/scss/components/people/_people.scss */
     .people__header .people__actions .social-link {
       display: -webkit-box;
       display: -ms-flexbox;
@@ -1749,10 +1754,11 @@ svg.map {
       -webkit-box-pack: center;
       -ms-flex-pack: center;
       justify-content: center; }
-      /* line 155, assets/scss/components/people/_people.scss */
-      .people__header .people__actions .social-link i, .people__header .people__actions .social-link svg {
+      /* line 158, assets/scss/components/people/_people.scss */
+      .people__header .people__actions .social-link i,
+      .people__header .people__actions .social-link svg {
         font-size: 2em; }
-  /* line 161, assets/scss/components/people/_people.scss */
+  /* line 165, assets/scss/components/people/_people.scss */
   .people__header .people__headshot {
     width: 75%;
     margin: 0.5em auto;
@@ -1760,7 +1766,7 @@ svg.map {
     border-radius: 10px;
     border: 2px solid #fff; }
     @media (min-width: 64em) {
-      /* line 161, assets/scss/components/people/_people.scss */
+      /* line 165, assets/scss/components/people/_people.scss */
       .people__header .people__headshot {
         margin: 1em 0;
         width: 100%;
@@ -1768,7 +1774,7 @@ svg.map {
         -ms-flex-item-align: center;
         align-self: center;
         grid-column: 3; } }
-  /* line 189, assets/scss/components/people/_people.scss */
+  /* line 193, assets/scss/components/people/_people.scss */
   .people__header .people__banner {
     position: absolute;
     top: 0;
@@ -1777,7 +1783,7 @@ svg.map {
     bottom: 0;
     z-index: 1;
     overflow: hidden; }
-    /* line 199, assets/scss/components/people/_people.scss */
+    /* line 203, assets/scss/components/people/_people.scss */
     .people__header .people__banner img {
       width: 100%;
       height: auto;
@@ -1786,14 +1792,14 @@ svg.map {
       left: 0;
       z-index: 1; }
       @media (min-width: 64em) {
-        /* line 199, assets/scss/components/people/_people.scss */
+        /* line 203, assets/scss/components/people/_people.scss */
         .people__header .people__banner img {
           top: -25%; } }
 
-/* line 218, assets/scss/components/people/_people.scss */
+/* line 222, assets/scss/components/people/_people.scss */
 .people__subpage-nav {
   width: 100%; }
-  /* line 222, assets/scss/components/people/_people.scss */
+  /* line 226, assets/scss/components/people/_people.scss */
   .people__subpage-nav ul {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -1806,40 +1812,41 @@ svg.map {
     -ms-flex-pack: center;
     justify-content: center;
     width: 100%; }
-    /* line 230, assets/scss/components/people/_people.scss */
+    /* line 234, assets/scss/components/people/_people.scss */
     .people__subpage-nav ul li {
       margin: 0;
       display: block;
       width: 100%; }
-      /* line 235, assets/scss/components/people/_people.scss */
+      /* line 239, assets/scss/components/people/_people.scss */
       .people__subpage-nav ul li a {
         display: block;
         width: 100%;
         text-align: center;
         font-size: 1.25em;
         padding: 1em;
-        color: #fff; }
-        /* line 244, assets/scss/components/people/_people.scss */
+        color: #212121;
+        border-bottom: 3px solid #fff; }
+        /* line 250, assets/scss/components/people/_people.scss */
         .people__subpage-nav ul li a.current {
           font-weight: 700;
           border-bottom: 3px solid #5796d1;
-          background: #fff;
-          color: #212121; }
-        /* line 253, assets/scss/components/people/_people.scss */
+          color: #fff;
+          background: #212121; }
+        /* line 259, assets/scss/components/people/_people.scss */
         .people__subpage-nav ul li a:hover {
-          background: #545454;
-          border-bottom: 3px solid #5796d1; }
+          background: rgba(33, 33, 33, 0.1);
+          border-bottom: 3px solid #545454; }
   @media (max-width: 37.5em) {
-    /* line 218, assets/scss/components/people/_people.scss */
+    /* line 222, assets/scss/components/people/_people.scss */
     .people__subpage-nav {
       width: 100vw;
       overflow-y: scroll; }
-      /* line 269, assets/scss/components/people/_people.scss */
+      /* line 275, assets/scss/components/people/_people.scss */
       .people__subpage-nav ul {
         -webkit-box-pack: start;
         -ms-flex-pack: start;
         justify-content: flex-start; }
-        /* line 272, assets/scss/components/people/_people.scss */
+        /* line 278, assets/scss/components/people/_people.scss */
         .people__subpage-nav ul li {
           white-space: nowrap; } }
 
