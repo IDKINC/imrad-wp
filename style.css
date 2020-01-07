@@ -640,19 +640,20 @@ button, a.button, .footer__email-sign-up form input[type=submit], .footer__email
   background: #212121;
   color: #212121;
   position: relative;
+  z-index: 99999;
   -webkit-box-shadow: 0 1.5px 4px rgba(0, 0, 0, 0.24), 0 1px 8px rgba(0, 0, 0, 0.12);
   box-shadow: 0 1.5px 4px rgba(0, 0, 0, 0.24), 0 1px 8px rgba(0, 0, 0, 0.12); }
   @media (min-width: 64em) {
     /* line 3, assets/scss/components/common/_header.scss */
     .site-header {
       padding: 0 10vw; } }
-  /* line 20, assets/scss/components/common/_header.scss */
+  /* line 21, assets/scss/components/common/_header.scss */
   .site-header .site-logo {
     color: #fff;
     background: #fff;
     padding: 0.5em 1em; }
     @media (min-width: 64em) {
-      /* line 20, assets/scss/components/common/_header.scss */
+      /* line 21, assets/scss/components/common/_header.scss */
       .site-header .site-logo {
         -webkit-transform-origin: 50% 0;
         transform-origin: 50% 0;
@@ -661,7 +662,7 @@ button, a.button, .footer__email-sign-up form input[type=submit], .footer__email
         border-radius: 0 0 0.5em 0.5em;
         -webkit-transform: scale(1.1);
         transform: scale(1.1); } }
-    /* line 34, assets/scss/components/common/_header.scss */
+    /* line 35, assets/scss/components/common/_header.scss */
     .site-header .site-logo a,
     .site-header .site-logo h1 {
       color: inherit;
@@ -670,11 +671,11 @@ button, a.button, .footer__email-sign-up form input[type=submit], .footer__email
       font-size: 1.25em;
       max-width: 100%; }
       @media (min-width: 64em) {
-        /* line 34, assets/scss/components/common/_header.scss */
+        /* line 35, assets/scss/components/common/_header.scss */
         .site-header .site-logo a,
         .site-header .site-logo h1 {
           font-size: 2em; } }
-      /* line 46, assets/scss/components/common/_header.scss */
+      /* line 47, assets/scss/components/common/_header.scss */
       .site-header .site-logo a img,
       .site-header .site-logo h1 img {
         width: auto;

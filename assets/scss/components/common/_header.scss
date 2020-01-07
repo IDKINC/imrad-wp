@@ -10,6 +10,7 @@ $headerIconSize:1.5rem;
     background: $mainColor;
     color: $mainTextColor;
     position: relative;
+    z-index: 99999;
     @include card(1);
 
     @include breakpoint(laptop) {
