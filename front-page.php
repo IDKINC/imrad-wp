@@ -5,7 +5,7 @@
 <container class="banner white site__intro">
 
 <img class="intro__logo" src="<?=get_template_directory_uri()?>/assets/svg/imrad-logo.svg">
-<p>An online voting tool that identifies whether elected officials and candidates for public office are, in fact, dipshits.</p>
+<p>A voter education platform that identifies whether elected officials and candidates for public office are, in fact, dipshits.</p>
 <h3>Let's Get These Dipshits Out Of Office, Together.</h3>
 <?php if(!is_user_logged_in(  )):?>
 <div class="buttons">
@@ -34,7 +34,7 @@ $args = array(
 			'posts_per_page' => 5,
 			'meta_key' => 'dipshit_score',
         'orderby' => 'meta_value_num',
-        'order' => 'ASC'
+        'order' => 'DESC'
 
 		 );
          $biggestDipshits = new WP_Query($args);
@@ -74,7 +74,7 @@ $args = array(
 			'posts_per_page' => 5,
 			'meta_key' => 'dipshit_score',
         'orderby' => 'meta_value_num',
-        'order' => 'DESC'
+        'order' => 'ASC'
 
 		 );
          $leastDipshit = new WP_Query($args);
