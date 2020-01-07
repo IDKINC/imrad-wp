@@ -8,3 +8,69 @@ footer.site__footer {
     background: $darkerColor;
 
 }
+
+
+.footer__email-sign-up {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    width: 100%;
+    padding: 2em;
+
+    background: $red;
+
+    h2,
+    p {
+        color: #fff;
+        margin: 0;
+        text-align: center;
+    }
+
+    @include breakpoint(laptop) {
+
+        flex-direction: row;
+        justify-content: space-around;
+
+    }
+
+
+    form {
+        display: grid;
+        grid-template-columns: 5fr 1fr;
+        align-items: center;
+
+        .material_input {
+            margin: 0;
+            font-size: 1.5em;
+
+            input{
+                background: none;
+                color: #fff;
+
+            }
+
+            label{
+                color: #fff;
+            }
+        }
+
+        input[type=submit] {
+            margin: 0;
+            // font-size: 2em;
+
+            @extend a.button;
+        }
+
+        .finePrint{
+
+            color: #fff;
+            grid-column: 1 / -1;
+            text-align: center;
+            font-size: 0.8em;
+            margin-top: 1em;
+        }
+    }
+
+}

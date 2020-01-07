@@ -1,3 +1,10 @@
+.dipshit-leaderboard{
+
+    grid-gap: 2em;
+
+    max-width: 80%;
+}
+
 .person__leaderboard {
 
 
@@ -6,7 +13,12 @@
     width: 95%;
 
     @include breakpoint(laptop) {
-        width: 50%;
+        width: 100%;
+    }
+
+
+    & > h2{
+        text-align: center;
     }
 
 
@@ -79,12 +91,12 @@
 
         &--republican {
 
-            border-left: 15px solid var(--republican-color);
+            border-left: 15px solid $red;
         }
 
         &--democrat {
 
-            border-left: 15px solid var(--democrat-color);
+            border-left: 15px solid $blue;
         }
 
         &--independent {

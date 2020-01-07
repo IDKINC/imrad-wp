@@ -176,7 +176,7 @@ h4,
 h5,
 h6 {
   margin: 36px 0 24px 0;
-  color: #c56cf0;
+  color: #212121;
   line-height: 1.25em;
   font-weight: 400;
   font-family: "Oswald", sans-serif; }
@@ -375,31 +375,60 @@ img {
       align-items: stretch; } }
 
 /* line 1, assets/scss/atoms/_button.scss */
-button, a.button {
-  background: #c56cf0;
+button, a.button, .footer__email-sign-up form input[type=submit], .footer__email-sign-up form .material_input textarea[type=submit], .material_input .footer__email-sign-up form textarea[type=submit] {
+  background: #5796d1;
   color: #fff;
   border: none;
   padding: 0.5em 1em;
   cursor: pointer;
   border-radius: 5px; }
   /* line 12, assets/scss/atoms/_button.scss */
-  button.button--alt, a.button--alt.button {
-    color: #c56cf0;
+  button.button--alt, a.button--alt.button, .footer__email-sign-up form input.button--alt[type=submit], .footer__email-sign-up form .material_input textarea.button--alt[type=submit], .material_input .footer__email-sign-up form textarea.button--alt[type=submit] {
+    color: #5796d1;
     background: none;
-    border: 2px solid #c56cf0; }
+    border: 2px solid #5796d1; }
     /* line 17, assets/scss/atoms/_button.scss */
-    button.button--alt:hover, a.button--alt.button:hover {
+    button.button--alt:hover, a.button--alt.button:hover, .footer__email-sign-up form input.button--alt:hover[type=submit], .footer__email-sign-up form .material_input textarea.button--alt:hover[type=submit], .material_input .footer__email-sign-up form textarea.button--alt:hover[type=submit] {
       background: #3b3b3b;
       color: #fff; }
   /* line 24, assets/scss/atoms/_button.scss */
-  button.button--large, a.button--large.button {
+  button.button--large, a.button--large.button, .footer__email-sign-up form input.button--large[type=submit], .footer__email-sign-up form .material_input textarea.button--large[type=submit], .material_input .footer__email-sign-up form textarea.button--large[type=submit] {
     font-size: 1.25rem;
     padding: 0.5em 2em;
     font-weight: 900; }
     @media (min-width: 64em) {
       /* line 24, assets/scss/atoms/_button.scss */
-      button.button--large, a.button--large.button {
+      button.button--large, a.button--large.button, .footer__email-sign-up form input.button--large[type=submit], .footer__email-sign-up form .material_input textarea.button--large[type=submit], .material_input .footer__email-sign-up form textarea.button--large[type=submit] {
         font-size: 2rem; } }
+
+/* line 42, assets/scss/atoms/_button.scss */
+.buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 80%; }
+  @media (min-width: 64em) {
+    /* line 42, assets/scss/atoms/_button.scss */
+    .buttons {
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+      flex-direction: row; } }
+  /* line 55, assets/scss/atoms/_button.scss */
+  .buttons .button {
+    margin: 0.5em;
+    width: 100%;
+    text-align: center; }
 
 /* line 1, assets/scss/components/_formField.scss */
 .group {
@@ -490,7 +519,7 @@ button, a.button {
     .material_input textarea:focus, .material_input textarea:valid {
       height: 5em; }
   /* line 71, assets/scss/components/_formField.scss */
-  .material_input textarea[type="submit"], .material_input input[type="submit"] {
+  .material_input textarea[type=submit], .material_input input[type="submit"] {
     border: 0;
     background: #212121;
     color: #fff;
@@ -553,14 +582,14 @@ button, a.button {
       color: #333; }
   /* line 20, assets/scss/components/_banners.scss */
   .banner.blue {
-    background: var(--democrat-color);
+    background: #5796d1;
     color: #fff; }
     /* line 25, assets/scss/components/_banners.scss */
     .banner.blue > h1, .banner.blue > h2, .banner.blue > h3, .banner.blue > h4, .banner.blue > p {
       color: #fff; }
   /* line 30, assets/scss/components/_banners.scss */
   .banner.red {
-    background: var(--republican-color);
+    background: #eb4a4d;
     color: #fff; }
     /* line 35, assets/scss/components/_banners.scss */
     .banner.red > h1, .banner.red > h2, .banner.red > h3, .banner.red > h4, .banner.red > p {
@@ -609,24 +638,47 @@ button, a.button {
   -ms-flex-pack: justify;
   justify-content: space-between;
   background: #212121;
-  color: #fff;
-  padding: 0.5em;
-  position: relative; }
-  /* line 15, assets/scss/components/common/_header.scss */
+  color: #212121;
+  position: relative;
+  -webkit-box-shadow: 0 1.5px 4px rgba(0, 0, 0, 0.24), 0 1px 8px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 1.5px 4px rgba(0, 0, 0, 0.24), 0 1px 8px rgba(0, 0, 0, 0.12); }
+  @media (min-width: 64em) {
+    /* line 3, assets/scss/components/common/_header.scss */
+    .site-header {
+      padding: 0 10vw; } }
+  /* line 20, assets/scss/components/common/_header.scss */
   .site-header .site-logo {
-    color: #fff; }
-    /* line 18, assets/scss/components/common/_header.scss */
+    color: #fff;
+    background: #fff;
+    padding: 0.5em 1em; }
+    @media (min-width: 64em) {
+      /* line 20, assets/scss/components/common/_header.scss */
+      .site-header .site-logo {
+        -webkit-transform-origin: 50% 0;
+        transform-origin: 50% 0;
+        -webkit-box-shadow: 0 1.5px 4px rgba(0, 0, 0, 0.24), 0 1px 8px rgba(0, 0, 0, 0.12);
+        box-shadow: 0 1.5px 4px rgba(0, 0, 0, 0.24), 0 1px 8px rgba(0, 0, 0, 0.12);
+        border-radius: 0 0 0.5em 0.5em;
+        -webkit-transform: scale(1.1);
+        transform: scale(1.1); } }
+    /* line 34, assets/scss/components/common/_header.scss */
     .site-header .site-logo a,
     .site-header .site-logo h1 {
       color: inherit;
       margin: 0;
       text-align: center;
-      font-size: 1.25em; }
+      font-size: 1.25em;
+      max-width: 100%; }
       @media (min-width: 64em) {
-        /* line 18, assets/scss/components/common/_header.scss */
+        /* line 34, assets/scss/components/common/_header.scss */
         .site-header .site-logo a,
         .site-header .site-logo h1 {
           font-size: 2em; } }
+      /* line 46, assets/scss/components/common/_header.scss */
+      .site-header .site-logo a img,
+      .site-header .site-logo h1 img {
+        width: auto;
+        height: 3em; }
 
 /* line 1, assets/scss/components/common/_accountMenu.scss */
 .account__menu {
@@ -688,17 +740,79 @@ footer.site__footer {
   color: #fff;
   background: #080808; }
 
+/* line 13, assets/scss/components/common/_footer.scss */
+.footer__email-sign-up {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+  padding: 2em;
+  background: #eb4a4d; }
+  /* line 24, assets/scss/components/common/_footer.scss */
+  .footer__email-sign-up h2,
+  .footer__email-sign-up p {
+    color: #fff;
+    margin: 0;
+    text-align: center; }
+  @media (min-width: 64em) {
+    /* line 13, assets/scss/components/common/_footer.scss */
+    .footer__email-sign-up {
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+      flex-direction: row;
+      -ms-flex-pack: distribute;
+      justify-content: space-around; } }
+  /* line 39, assets/scss/components/common/_footer.scss */
+  .footer__email-sign-up form {
+    display: grid;
+    grid-template-columns: 5fr 1fr;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center; }
+    /* line 44, assets/scss/components/common/_footer.scss */
+    .footer__email-sign-up form .material_input {
+      margin: 0;
+      font-size: 1.5em; }
+      /* line 48, assets/scss/components/common/_footer.scss */
+      .footer__email-sign-up form .material_input input, .footer__email-sign-up form .material_input textarea {
+        background: none;
+        color: #fff; }
+      /* line 54, assets/scss/components/common/_footer.scss */
+      .footer__email-sign-up form .material_input label {
+        color: #fff; }
+    /* line 59, assets/scss/components/common/_footer.scss */
+    .footer__email-sign-up form input[type=submit], .footer__email-sign-up form .material_input textarea[type=submit], .material_input .footer__email-sign-up form textarea[type=submit] {
+      margin: 0; }
+    /* line 66, assets/scss/components/common/_footer.scss */
+    .footer__email-sign-up form .finePrint {
+      color: #fff;
+      grid-column: 1 / -1;
+      text-align: center;
+      font-size: 0.8em;
+      margin-top: 1em; }
+
 /* line 1, assets/scss/components/common/_searchBar.scss */
 #searchBar {
   display: none; }
   /* line 5, assets/scss/components/common/_searchBar.scss */
-  #searchBar button[type=submit], #searchBar a.button[type=submit] {
+  #searchBar button[type=submit], #searchBar a.button[type=submit], #searchBar .footer__email-sign-up form input[type=submit], .footer__email-sign-up form #searchBar input[type=submit], #searchBar .footer__email-sign-up form .material_input textarea[type=submit], .footer__email-sign-up form .material_input #searchBar textarea[type=submit], #searchBar .material_input .footer__email-sign-up form textarea[type=submit], .material_input .footer__email-sign-up form #searchBar textarea[type=submit] {
     color: #fff;
     border: none;
     border-radius: 0 5px 5px 0;
     background: #212121; }
     /* line 11, assets/scss/components/common/_searchBar.scss */
-    #searchBar button[type=submit] svg, #searchBar a.button[type=submit] svg {
+    #searchBar button[type=submit] svg, #searchBar a.button[type=submit] svg, #searchBar .footer__email-sign-up form input[type=submit] svg, .footer__email-sign-up form #searchBar input[type=submit] svg, #searchBar .footer__email-sign-up form .material_input textarea[type=submit] svg, .footer__email-sign-up form .material_input #searchBar textarea[type=submit] svg, #searchBar .material_input .footer__email-sign-up form textarea[type=submit] svg, .material_input .footer__email-sign-up form #searchBar textarea[type=submit] svg {
       font-size: 1.5rem; }
   /* line 17, assets/scss/components/common/_searchBar.scss */
   #searchBar input, #searchBar .material_input textarea, .material_input #searchBar textarea {
@@ -783,15 +897,21 @@ footer.site__footer {
         width: 20rem;
         font-size: 4em; } }
   /* line 125, assets/scss/components/common/_searchBar.scss */
-  #searchBarZip button[type=submit], #searchBarZip a.button[type=submit] {
+  #searchBarZip button[type=submit], #searchBarZip a.button[type=submit], #searchBarZip .footer__email-sign-up form input[type=submit], .footer__email-sign-up form #searchBarZip input[type=submit], #searchBarZip .footer__email-sign-up form .material_input textarea[type=submit], .footer__email-sign-up form .material_input #searchBarZip textarea[type=submit], #searchBarZip .material_input .footer__email-sign-up form textarea[type=submit], .material_input .footer__email-sign-up form #searchBarZip textarea[type=submit] {
     color: #fff;
     border: none;
     border-radius: 0 5px 5px 0;
     background: #212121; }
     /* line 131, assets/scss/components/common/_searchBar.scss */
-    #searchBarZip button[type=submit] i, #searchBarZip a.button[type=submit] i,
+    #searchBarZip button[type=submit] i, #searchBarZip a.button[type=submit] i, #searchBarZip .footer__email-sign-up form input[type=submit] i, .footer__email-sign-up form #searchBarZip input[type=submit] i, #searchBarZip .footer__email-sign-up form .material_input textarea[type=submit] i, .footer__email-sign-up form .material_input #searchBarZip textarea[type=submit] i, #searchBarZip .material_input .footer__email-sign-up form textarea[type=submit] i, .material_input .footer__email-sign-up form #searchBarZip textarea[type=submit] i,
     #searchBarZip button[type=submit] svg,
-    #searchBarZip a.button[type=submit] svg {
+    #searchBarZip a.button[type=submit] svg,
+    #searchBarZip .footer__email-sign-up form input[type=submit] svg,
+    .footer__email-sign-up form #searchBarZip input[type=submit] svg,
+    #searchBarZip .footer__email-sign-up form .material_input textarea[type=submit] svg,
+    .footer__email-sign-up form .material_input #searchBarZip textarea[type=submit] svg,
+    #searchBarZip .material_input .footer__email-sign-up form textarea[type=submit] svg,
+    .material_input .footer__email-sign-up form #searchBarZip textarea[type=submit] svg {
       font-size: 2rem; }
 
 /* line 141, assets/scss/components/common/_searchBar.scss */
@@ -814,7 +934,7 @@ footer.site__footer {
       #searchBarFull input, #searchBarFull .material_input textarea, .material_input #searchBarFull textarea {
         font-size: 2em; } }
   /* line 165, assets/scss/components/common/_searchBar.scss */
-  #searchBarFull button[type=submit], #searchBarFull a.button[type=submit] {
+  #searchBarFull button[type=submit], #searchBarFull a.button[type=submit], #searchBarFull .footer__email-sign-up form input[type=submit], .footer__email-sign-up form #searchBarFull input[type=submit], #searchBarFull .footer__email-sign-up form .material_input textarea[type=submit], .footer__email-sign-up form .material_input #searchBarFull textarea[type=submit], #searchBarFull .material_input .footer__email-sign-up form textarea[type=submit], .material_input .footer__email-sign-up form #searchBarFull textarea[type=submit] {
     color: #fff;
     border: none;
     border-radius: 0 5px 5px 0;
@@ -1562,10 +1682,10 @@ svg.map {
         opacity: 0.8; }
       /* line 80, assets/scss/components/people/_people.scss */
       .people__header .people__name .party--republican {
-        color: var(--republican-color); }
+        color: #eb4a4d; }
       /* line 85, assets/scss/components/people/_people.scss */
       .people__header .people__name .party--democrat {
-        color: var(--democrat-color); }
+        color: #5796d1; }
       /* line 90, assets/scss/components/people/_people.scss */
       .people__header .people__name .party--independent {
         color: var(--independent-color); }
@@ -1816,10 +1936,10 @@ svg.map {
         font-size: 0.8rem; } }
   /* line 108, assets/scss/components/people/_people-card.scss */
   .card--person.card--republican .party {
-    color: var(--republican-color); }
+    color: #eb4a4d; }
   /* line 115, assets/scss/components/people/_people-card.scss */
   .card--person.card--democrat .party {
-    color: var(--democrat-color); }
+    color: #5796d1; }
   /* line 122, assets/scss/components/people/_people-card.scss */
   .card--person.card--independent .party {
     color: var(--independent-color); }
@@ -1844,6 +1964,11 @@ svg.map {
     font-size: 3em; }
 
 /* line 1, assets/scss/components/people/_people-leaderboard.scss */
+.dipshit-leaderboard {
+  grid-gap: 2em;
+  max-width: 80%; }
+
+/* line 8, assets/scss/components/people/_people-leaderboard.scss */
 .person__leaderboard {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1854,10 +1979,13 @@ svg.map {
   flex-direction: column;
   width: 95%; }
   @media (min-width: 64em) {
-    /* line 1, assets/scss/components/people/_people-leaderboard.scss */
+    /* line 8, assets/scss/components/people/_people-leaderboard.scss */
     .person__leaderboard {
-      width: 50%; } }
-  /* line 13, assets/scss/components/people/_people-leaderboard.scss */
+      width: 100%; } }
+  /* line 20, assets/scss/components/people/_people-leaderboard.scss */
+  .person__leaderboard > h2 {
+    text-align: center; }
+  /* line 25, assets/scss/components/people/_people-leaderboard.scss */
   .person__leaderboard .leaderboard__item {
     width: 100%;
     display: grid;
@@ -1876,22 +2004,22 @@ svg.map {
     -webkit-box-shadow: 0 1.5px 4px rgba(0, 0, 0, 0.24), 0 1px 8px rgba(0, 0, 0, 0.12);
     box-shadow: 0 1.5px 4px rgba(0, 0, 0, 0.24), 0 1px 8px rgba(0, 0, 0, 0.12); }
     @media (min-width: 64em) {
-      /* line 13, assets/scss/components/people/_people-leaderboard.scss */
+      /* line 25, assets/scss/components/people/_people-leaderboard.scss */
       .person__leaderboard .leaderboard__item {
         grid-template-columns: 1fr 3fr 1fr;
         grid-template-rows: 1fr; } }
-    /* line 33, assets/scss/components/people/_people-leaderboard.scss */
+    /* line 45, assets/scss/components/people/_people-leaderboard.scss */
     .person__leaderboard .leaderboard__item:hover {
       background: rgba(255, 255, 255, 0.2); }
-    /* line 38, assets/scss/components/people/_people-leaderboard.scss */
+    /* line 50, assets/scss/components/people/_people-leaderboard.scss */
     .person__leaderboard .leaderboard__item h3,
     .person__leaderboard .leaderboard__item a {
       color: #212121;
       margin: 0 auto; }
-    /* line 45, assets/scss/components/people/_people-leaderboard.scss */
+    /* line 57, assets/scss/components/people/_people-leaderboard.scss */
     .person__leaderboard .leaderboard__item img {
       grid-row: 1 / -1; }
-    /* line 49, assets/scss/components/people/_people-leaderboard.scss */
+    /* line 61, assets/scss/components/people/_people-leaderboard.scss */
     .person__leaderboard .leaderboard__item .leaderboard__score {
       display: -webkit-box;
       display: -ms-flexbox;
@@ -1906,28 +2034,28 @@ svg.map {
       -webkit-box-pack: center;
       -ms-flex-pack: center;
       justify-content: center; }
-      /* line 56, assets/scss/components/people/_people-leaderboard.scss */
+      /* line 68, assets/scss/components/people/_people-leaderboard.scss */
       .person__leaderboard .leaderboard__item .leaderboard__score hr {
         width: 50%;
         margin: 10px; }
-      /* line 61, assets/scss/components/people/_people-leaderboard.scss */
+      /* line 73, assets/scss/components/people/_people-leaderboard.scss */
       .person__leaderboard .leaderboard__item .leaderboard__score h4 {
         color: #212121;
         margin: 0; }
-      /* line 67, assets/scss/components/people/_people-leaderboard.scss */
+      /* line 79, assets/scss/components/people/_people-leaderboard.scss */
       .person__leaderboard .leaderboard__item .leaderboard__score h5 {
         font-family: "Ubuntu", serif;
         color: #212121;
         font-weight: 400;
         font-size: 1em;
         margin: 0; }
-    /* line 80, assets/scss/components/people/_people-leaderboard.scss */
+    /* line 92, assets/scss/components/people/_people-leaderboard.scss */
     .person__leaderboard .leaderboard__item--republican {
-      border-left: 15px solid var(--republican-color); }
-    /* line 85, assets/scss/components/people/_people-leaderboard.scss */
+      border-left: 15px solid #eb4a4d; }
+    /* line 97, assets/scss/components/people/_people-leaderboard.scss */
     .person__leaderboard .leaderboard__item--democrat {
-      border-left: 15px solid var(--democrat-color); }
-    /* line 90, assets/scss/components/people/_people-leaderboard.scss */
+      border-left: 15px solid #5796d1; }
+    /* line 102, assets/scss/components/people/_people-leaderboard.scss */
     .person__leaderboard .leaderboard__item--independent {
       border-left: 15px solid var(--independent-color); }
 
@@ -2149,32 +2277,42 @@ svg.map {
     .site__intro h1 {
       font-size: 4em; } }
 
-/* line 35, assets/scss/pages/_front-page.scss */
+/* line 28, assets/scss/pages/_front-page.scss */
+.site__intro .intro__logo {
+  margin-bottom: 1em;
+  padding: 1em;
+  display: block; }
+
+/* line 41, assets/scss/pages/_front-page.scss */
+.home .grid--three {
+  background: #251c1c; }
+
+/* line 45, assets/scss/pages/_front-page.scss */
 .home .map__link,
 .home .search-by-zip {
   padding: 2em; }
   @media (min-width: 64em) {
-    /* line 35, assets/scss/pages/_front-page.scss */
+    /* line 45, assets/scss/pages/_front-page.scss */
     .home .map__link,
     .home .search-by-zip {
       padding: 1vw;
       -webkit-box-pack: center;
       -ms-flex-pack: center;
       justify-content: center; } }
-  /* line 46, assets/scss/pages/_front-page.scss */
+  /* line 56, assets/scss/pages/_front-page.scss */
   .home .map__link h2,
   .home .search-by-zip h2 {
     color: #fff;
     font-size: 1.5em; }
     @media (min-width: 64em) {
-      /* line 46, assets/scss/pages/_front-page.scss */
+      /* line 56, assets/scss/pages/_front-page.scss */
       .home .map__link h2,
       .home .search-by-zip h2 {
         font-size: 3em;
         margin: 1em;
         margin-bottom: auto; } }
 
-/* line 60, assets/scss/pages/_front-page.scss */
+/* line 70, assets/scss/pages/_front-page.scss */
 .home #searchBarZip {
   margin-bottom: auto; }
 
@@ -2272,7 +2410,7 @@ svg.map {
         .login__card #loginform input[type=text]:focus, .login__card #loginform .material_input textarea[type=text]:focus, .material_input .login__card #loginform textarea[type=text]:focus, .login__card #loginform input[type=password]:focus, .login__card #loginform .material_input textarea[type=password]:focus, .material_input .login__card #loginform textarea[type=password]:focus {
           border-bottom: 3px solid #212121; }
       /* line 58, assets/scss/pages/_login.scss */
-      .login__card #loginform input[type=submit], .login__card #loginform .material_input textarea[type="submit"], .material_input .login__card #loginform textarea[type="submit"] {
+      .login__card #loginform input[type=submit], .login__card #loginform .material_input textarea[type=submit], .material_input .login__card #loginform textarea[type=submit] {
         background: #212121;
         color: #fff;
         border: 0;
@@ -2383,7 +2521,7 @@ svg.map {
 
 /* line 16, assets/scss/style.scss */
 body {
-  background: #212121; }
+  background: #fff; }
 
 /* line 21, assets/scss/style.scss */
 main.content {

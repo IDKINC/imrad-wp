@@ -106,14 +106,14 @@
     &.card--republican {
 
         .party {
-            color: var(--republican-color);
+            color: $red;
         }
     }
 
     &.card--democrat {
 
         .party {
-            color: var(--democrat-color);
+            color: $blue;
         }
     }
 

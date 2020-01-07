@@ -79,12 +79,12 @@
 
             &--republican{
 
-                color: var(--republican-color);
+                color: $red;
             }
 
             &--democrat{
 
-                color: var(--democrat-color);
+                color: $blue;
             }
 
             &--independent{

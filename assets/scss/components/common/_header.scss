@@ -8,12 +8,28 @@ $headerIconSize:1.5rem;
     align-items: center;
     justify-content: space-between;
     background: $mainColor;
-    color: #fff;
-    padding: 0.5em;
-    position:relative;
+    color: $mainTextColor;
+    position: relative;
+    @include card(1);
+
+    @include breakpoint(laptop) {
+
+        padding: 0 10vw;
+    }
 
     .site-logo {
         color: #fff;
+        background: #fff;
+        padding: 0.5em 1em;
+
+        @include breakpoint(laptop) {
+
+            transform-origin: 50% 0;
+            @include card(1);
+            border-radius: 0 0 0.5em 0.5em;
+            transform: scale(1.1);
+        }
+
 
         a,
         h1 {
@@ -21,9 +37,15 @@ $headerIconSize:1.5rem;
             margin: 0;
             text-align: center;
             font-size: 1.25em;
+            max-width: 100%;
 
-            @include breakpoint(laptop){
+            @include breakpoint(laptop) {
                 font-size: 2em;
+            }
+
+            img {
+                width: auto;
+                height: 3em;
             }
         }
     }

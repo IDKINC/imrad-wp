@@ -18,7 +18,7 @@
     }
 
     &.blue{
-        background: var(--democrat-color);
+        background: $blue;
 
         color: #fff;
 
@@ -28,7 +28,7 @@
     }
 
     &.red{
-        background: var(--republican-color);
+        background: $red;
 
         color: #fff;
 

@@ -1,6 +1,6 @@
 button{
 
-    background: $accentColor;
+    background: $blue;
     color: #fff;
     border: none;
     padding: 0.5em 1em;
@@ -10,9 +10,9 @@ button{
     border-radius: 5px;
 
     &.button--alt{
-        color: $accentColor;
+        color: $blue;
         background: none;
-        border: 2px solid $accentColor;
+        border: 2px solid $blue;
 
         &:hover{
             background: $lighterColor;
@@ -37,4 +37,24 @@ button{
 
 a.button{
     @extend button
+}
+
+.buttons{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-direction: column;
+    width: 80%;
+
+    @include breakpoint(laptop){
+
+        flex-direction: row;
+    }
+
+    .button{
+        margin: 0.5em;
+        width: 100%;
+        text-align: center;
+    }
 }

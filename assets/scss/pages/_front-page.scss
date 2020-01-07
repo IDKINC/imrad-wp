@@ -25,12 +25,22 @@
         }
     }
 
+    .intro__logo{
+        margin-bottom: 1em;
+        padding: 1em;
+        display: block
+    }
+
 
 }
 
 
 
 .home {
+
+    .grid--three{
+        background: $bgColor;
+    }
 
     .map__link,
     .search-by-zip {
