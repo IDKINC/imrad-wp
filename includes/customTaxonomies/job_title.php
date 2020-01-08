@@ -26,8 +26,36 @@ function create_people_title_tax() {
             'labels'            => $labels,
             'public' => true,
             'rewrite' => false,
-            'hierarchical' => false,
+            'hierarchical' => true,
             'update_count_callback' => '_update_post_term_count',
         )
     );
+}
+
+
+
+add_action( 'create_term', 'add_sub_titles_tax', 10, 3);
+
+
+function add_sub_titles_tax($term_id, $tt_id , $taxonomy){
+
+    if($taxonomy != "job_title"){
+        return;
+    }
+
+    $term = get_term_by( 'id', $term_id, $taxonomy );
+
+    if(!$term->parent){
+
+        // If Term Isn't A Child Of Anything
+
+        wp_insert_term( "Candidate", "job_title", array("parent" => $term_id, "slug" => $term->slug . "-candidate") );
+        wp_insert_term( "In Office", "job_title", array("parent" => $term_id, "slug" => $term->slug ."-in-office") );
+        wp_insert_term( "Former", "job_title", array("parent" => $term_id, "slug" => $term->slug . "-former") );
+
+
+    } else { return;}
+
+
+
 }
