@@ -683,11 +683,12 @@ button, a.button, .footer__email-sign-up form input[type=submit], .footer__email
 
 /* line 1, assets/scss/components/common/_accountMenu.scss */
 .account__menu {
-  position: relative; }
-  /* line 5, assets/scss/components/common/_accountMenu.scss */
+  position: relative;
+  color: #fff; }
+  /* line 6, assets/scss/components/common/_accountMenu.scss */
   .account__menu svg {
     font-size: 1.5rem; }
-  /* line 10, assets/scss/components/common/_accountMenu.scss */
+  /* line 11, assets/scss/components/common/_accountMenu.scss */
   .account__menu .account__sub-menu {
     margin: 0;
     padding: 0;
@@ -703,12 +704,12 @@ button, a.button, .footer__email-sign-up form input[type=submit], .footer__email
     flex-direction: column;
     -webkit-box-shadow: 0 3px 12px rgba(0, 0, 0, 0.23), 0 3px 12px rgba(0, 0, 0, 0.16);
     box-shadow: 0 3px 12px rgba(0, 0, 0, 0.23), 0 3px 12px rgba(0, 0, 0, 0.16); }
-    /* line 26, assets/scss/components/common/_accountMenu.scss */
+    /* line 27, assets/scss/components/common/_accountMenu.scss */
     .account__menu .account__sub-menu li {
       list-style: none;
       margin: 0;
       border-bottom: 1px solid #ccc; }
-      /* line 31, assets/scss/components/common/_accountMenu.scss */
+      /* line 32, assets/scss/components/common/_accountMenu.scss */
       .account__menu .account__sub-menu li a {
         background: #fff;
         padding: 1rem;
@@ -716,11 +717,11 @@ button, a.button, .footer__email-sign-up form input[type=submit], .footer__email
         color: #333;
         width: 100%;
         display: block; }
-        /* line 40, assets/scss/components/common/_accountMenu.scss */
+        /* line 41, assets/scss/components/common/_accountMenu.scss */
         .account__menu .account__sub-menu li a:hover {
           color: #fff;
           background: #212121; }
-  /* line 53, assets/scss/components/common/_accountMenu.scss */
+  /* line 54, assets/scss/components/common/_accountMenu.scss */
   .account__menu:hover .account__sub-menu {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -1397,26 +1398,28 @@ svg.map {
     background: #fff;
     margin: 0;
     padding: 0;
+    min-height: 100vh;
     height: 100vh;
     overflow: auto;
     -webkit-box-align: start;
     -ms-flex-align: start;
     align-items: flex-start;
     -ms-touch-action: auto;
-    touch-action: auto; }
-    /* line 49, assets/scss/components/maps/_dynamicMap.scss */
+    touch-action: auto;
+    z-index: 999999; }
+    /* line 50, assets/scss/components/maps/_dynamicMap.scss */
     .dynamicMap.zoom #zoomToggle {
       position: fixed; }
-      /* line 52, assets/scss/components/maps/_dynamicMap.scss */
+      /* line 53, assets/scss/components/maps/_dynamicMap.scss */
       .dynamicMap.zoom #zoomToggle i {
         font-size: 3em; }
-      /* line 55, assets/scss/components/maps/_dynamicMap.scss */
+      /* line 56, assets/scss/components/maps/_dynamicMap.scss */
       .dynamicMap.zoom #zoomToggle .fa-search-plus {
         display: none; }
-      /* line 56, assets/scss/components/maps/_dynamicMap.scss */
+      /* line 57, assets/scss/components/maps/_dynamicMap.scss */
       .dynamicMap.zoom #zoomToggle .fa-times {
         display: block; }
-    /* line 59, assets/scss/components/maps/_dynamicMap.scss */
+    /* line 60, assets/scss/components/maps/_dynamicMap.scss */
     .dynamicMap.zoom svg.map {
       width: 80%;
       margin-top: 1vh;
@@ -2445,6 +2448,11 @@ svg.map {
     /* line 95, assets/scss/pages/_login.scss */
     .login__card .need:hover {
       color: #333; }
+
+/* line 1, assets/scss/pages/_register.scss */
+p.register-newsletter {
+  display: grid !important;
+  grid-template-columns: 50px 1fr; }
 
 @media (min-width: 64em) {
   /* line 6, assets/scss/pages/_page.scss */

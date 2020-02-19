@@ -12,6 +12,7 @@
 } else {
 
     echo "<li><a>My Account</a></li>";
+    echo "<li><a href='" . wp_logout_url( home_url() ) . "'>Logout</a></li>";
 
 }
 

@@ -40,11 +40,12 @@
         background: #fff;
         margin: 0;
         padding: 0;
+        min-height: 100vh;
         height: 100vh;
         overflow: auto;
         align-items: flex-start;
     touch-action: auto;
-
+z-index: 999999;
 
         #zoomToggle{
             position: fixed;

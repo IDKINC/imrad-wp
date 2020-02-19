@@ -9,8 +9,8 @@
 <h3>Let's Get These Dipshits Out Of Office, Together.</h3>
 <?php if(!is_user_logged_in(  )):?>
 <div class="buttons">
-	<a class="button">Sign Up</a>
-	<a class="button button--alt">Login</a>
+	<a class="button" href="<?= home_url( "/register" )?>">Sign Up</a>
+	<a class="button button--alt" href="<?= home_url( "/login" )?>">Login</a>
 </div>
 <?php endif; ?>
 

@@ -22,17 +22,17 @@ if ($_POST) {
         $remember = "false";
     }
 
-    $login_data                  = array();
-    $login_data['user_login']    = $username;
+    $login_data = array();
+    $login_data['user_login'] = $username;
     $login_data['user_password'] = $password;
-    $login_data['remember']      = $remember;
+    $login_data['remember'] = $remember;
 
     $user_verify = wp_signon($login_data, false);
 
     if (is_wp_error($user_verify)) {
         echo '<span class="mine">Invlaid Login Details</span>';
     } else {
-        echo "<script type='text/javascript'>window.location.href='" . home_url() . "'</script>";
+        wp_redirect( home_url() );
         exit();
     }
 
@@ -46,23 +46,28 @@ if ($_POST) {
 
 <form name="loginform" id="loginform" method="post">
 
-			<p class="login-username">
+			<p class="register-username">
 				<label for="user_login">Email Address</label>
-				<input type="text" name="log" id="user_login" class="input" value="" size="20">
+				<input type="text" name="log" id="user_login" class="input" value="">
 			</p>
-			<p class="login-password">
+			<p class="register-password">
 				<label for="user_pass">Password</label>
-				<input type="password" name="pwd" id="user_pass" class="input" value="" size="20">
+				<input type="password" name="pwd" id="user_pass" class="input" value="">
 			</p>
 
-            <p class="login-confirm">
+            <p class="register-confirm">
 				<label for="user_pass">Confirm Password</label>
-				<input type="password" name="pwd" id="user_pass" class="input" value="" size="20">
+				<input type="password" name="pwd" id="user_pass" class="input" value="">
 			</p>
+            <p class="register-newsletter">
+
+    <input type="checkbox" name="newsletter" id="newsletter">
+    <label for="newsletter">Receive News and Updates via Email?</label>
+            </p>
 
 
 			<p class="login-submit">
-				<input type="submit" name="wp-submit" id="wp-submit" class="button button-primary" value="Log In">
+				<input type="submit" name="wp-submit" id="wp-submit" class="button button-primary" value="Create Account">
 			</p>
 
 		</form>
@@ -70,7 +75,7 @@ if ($_POST) {
 
 <hr />
 
-<a href="<?=home_url()?>/login" class="need">Already Have An Account?</a>
+<a href="<?=home_url()?>/login" class="need">Already Have An Account? Login &raquo;</a>
 
 </section>
 </container>
