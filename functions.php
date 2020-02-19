@@ -27,7 +27,7 @@ include get_template_directory() . "/includes/customTaxonomies/party.php";
 function imrad_scripts()
 {
     wp_enqueue_style('style', get_stylesheet_uri());
-    wp_enqueue_style('googleFonts', 'https://fonts.googleapis.com/css?family=Oswald:700|Ubuntu:400,400i,700&display=swap');
+    wp_enqueue_style('googleFonts', 'https://fonts.googleapis.com/css?family=Oswald:700|Martel:300,400,900&display=swap');
     wp_register_script('theme', get_template_directory_uri() . '/theme.js', array("jquery"), null, true);
 
    

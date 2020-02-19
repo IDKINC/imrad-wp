@@ -214,8 +214,8 @@ jQuery(document).ready(function () {
         var evidence_id = jQuery(this).attr("data-evidence_id");
         var buttonClicked = jQuery(this);
         var vote = null;
-        if(buttonClicked.data("voteMinus") === true) {vote = -1}
-        if(buttonClicked.data("votePlus") === true) {vote = 1}
+        if(buttonClicked.data("voteminus") === true) {vote = -1}
+        if(buttonClicked.data("voteplus") === true) {vote = 1}
 
         toggleButton(buttonClicked, true);
 

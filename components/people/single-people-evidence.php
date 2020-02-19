@@ -64,13 +64,13 @@ if ($evidence) {
 
             <?php
 	$link = admin_url('admin-ajax.php?action=imrad_vote&vote=-1&evidence_id='.$data->ID.'&nonce='.$nonce);
-	echo '<button class="button '. ($voted === "-1" ? "voted" : "") .'" data-voteButton data-voteMinus id="'.$data->ID.'-voteMinus" data-nonce="' . $nonce . '" data-evidence_id="' . $data->ID . '" href="' . $link . '">Not A Dipshit Move</button>'; ?>
+	echo '<button class="button '. ($voted === "-1" ? "voted" : "") .'" data-voteButton data-voteMinus="true" id="'.$data->ID.'-voteMinus" data-nonce="' . $nonce . '" data-evidence_id="' . $data->ID . '" href="' . $link . '">Not A Dipshit Move</button>'; ?>
 
                 <h3 class="evidence__score"><span id="voteCount"><?= count(getVotes($data->ID))?></span> Votes</h3>
 
             <?php
 	$link = admin_url('admin-ajax.php?action=imrad_vote&vote=1&evidence_id='.$data->ID.'&nonce='.$nonce);
-	echo '<button class="button '. ($voted === "1" ? "voted" : "") .'" data-voteButton data-votePlus id="'.$data->ID.'-votePlus" data-nonce="' . $nonce . '" data-evidence_id="' . $data->ID . '" href="' . $link . '">Dipshit Move</button>'; ?>
+	echo '<button class="button '. ($voted === "1" ? "voted" : "") .'" data-voteButton data-votePlus="true" id="'.$data->ID.'-votePlus" data-nonce="' . $nonce . '" data-evidence_id="' . $data->ID . '" href="' . $link . '">Dipshit Move</button>'; ?>
         </section>
         </div>
 

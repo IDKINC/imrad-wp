@@ -111,14 +111,15 @@ function imrad_vote($userId, $evidenceId, $vote, $politicianid)
                 )
             );
 
+            return true;
+
+
         }
 
     } catch (Exception $e) {
 
         return false;
     }
-
-    return true;
 
 }
 

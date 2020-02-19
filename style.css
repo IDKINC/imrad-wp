@@ -162,7 +162,7 @@ table {
 html,
 body {
   font-size: 16px;
-  font-family: "Ubuntu", serif;
+  font-family: "Martel", serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
@@ -1705,7 +1705,7 @@ svg.map {
     grid-column: 1;
     text-align: center;
     font-weight: 100;
-    font-family: "Ubuntu", serif;
+    font-family: "Martel", serif;
     font-size: 1.5em; }
     @media (min-width: 64em) {
       /* line 110, assets/scss/components/people/_people.scss */
@@ -1937,7 +1937,7 @@ svg.map {
   .card--person .party {
     font-size: 1.5em;
     margin-left: auto;
-    font-family: "Ubuntu", serif; }
+    font-family: "Martel", serif; }
     @media (max-width: 37.5em) {
       /* line 92, assets/scss/components/people/_people-card.scss */
       .card--person .party {
@@ -2052,7 +2052,7 @@ svg.map {
         margin: 0; }
       /* line 79, assets/scss/components/people/_people-leaderboard.scss */
       .person__leaderboard .leaderboard__item .leaderboard__score h5 {
-        font-family: "Ubuntu", serif;
+        font-family: "Martel", serif;
         color: #212121;
         font-weight: 400;
         font-size: 1em;
@@ -2219,7 +2219,7 @@ svg.map {
     opacity: 0.8; }
   /* line 157, assets/scss/components/evidence/_evidence.scss */
   .evidence__og-data .evidence__source {
-    font-family: "Ubuntu", serif;
+    font-family: "Martel", serif;
     margin: 0 0 0.5em;
     text-align: right;
     color: #aaa; }
