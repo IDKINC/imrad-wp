@@ -4,7 +4,7 @@
   "description": "Is My Rep A Dipshit?",
   "main": "gulpfile.js",
   "dependencies": {
-    "d3": "^5.12.0"
+    "d3": "^7.6.1"
   },
   "devDependencies": {
     "@babel/core": "^7.7.2",
